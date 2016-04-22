@@ -1,5 +1,5 @@
 @extends('layout')
 
 @section('content')
-    Welcome!
+	Homepage
 @stop
