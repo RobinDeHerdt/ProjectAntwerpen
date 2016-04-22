@@ -1,0 +1,49 @@
+@font-face {
+font-family: MyWebfont;
+src: url(../../public/font/SunAntwerpen_800.woff) format(”woff”);
+}
+
+@font-face {
+font-family: MyWebfont;
+src: url(../../public/font/SunAntwerpen_800.eot);
+}
+
+@font-face {
+font-family: MyWebfont;
+src: url("../../public/font/SunAntwerpen_800.svg#SunAntwerpen_800") format("svg");
+}
+
+.titelpage {
+font-family: MyWebfont, Verdana, sans-serif;
+
+}
+
+.navbar{
+  background-color:#CF0039; /* #DA291C; */
+  border-radius: 0px;
+  height: 100px;
+}
+
+.navbar img{
+  height: 98px;
+  padding-left: 5px;
+  padding-right: 7px;
+  border-right: 2px white solid;
+}
+
+.titelpage{
+  padding-top: 40px;
+  padding-bottom: 60px;
+  font-size:25px;
+}
+.navbar a, .navbar li {
+  color:white;
+}
+.navbar li{
+  padding-top: 20px;
+  padding-bottom: 30px;
+  font-size:18px;
+}
+.navbar-right{
+  margin-right: 30px;
+}
