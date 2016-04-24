@@ -2,15 +2,25 @@
 font-family: MyWebfont;
 src: url(../../public/font/SunAntwerpen_800.woff) format(”woff”);
 }
-
 @font-face {
 font-family: MyWebfont;
 src: url(../../public/font/SunAntwerpen_800.eot);
 }
-
 @font-face {
 font-family: MyWebfont;
-src: url("../../public/font/SunAntwerpen_800.svg#SunAntwerpen_800") format("svg");
+src: url("../../public/font/SunAntwerpen_800.svg") format("svg");
+}
+@font-face {
+font-family: AntwerpTall;
+src: url(../../public/font/AntwerpenTall-Tall.woff) format(”woff”);
+}
+@font-face {
+font-family: AntwerpTall;
+src: url(../../public/font/AntwerpenTall-Tall.eot);
+}
+@font-face {
+font-family: AntwerpTall;
+src: url("../../public/font/AntwerpenTall-Tall.svg") format("svg");
 }
 
 .titelpage {
@@ -116,8 +126,8 @@ font-family: MyWebfont, Verdana, sans-serif;
 }
 .blue:hover{
   background-color: #004851;
-
 }
+
 .tile{
   text-align: center;
   color: white;
@@ -125,10 +135,17 @@ font-family: MyWebfont, Verdana, sans-serif;
   width:  100%;
   padding-top: 9vh;
   margin-bottom: 30px;
-
 }
-
-
+.tile .title{
+  font-family: MyWebfont, Verdana, sans-serif;
+}
+.tile p {
+  width: 90%;
+  margin-left: 5%;
+}
+.imgtile a{
+  text-decoration: none;
+}
 
 
 @media(max-width:767px)
@@ -156,8 +173,5 @@ font-family: MyWebfont, Verdana, sans-serif;
   }
   .container{
     margin-top: 80px;
-  }
-  .tile{
-    width: 100%;
   }
 }
