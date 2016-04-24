@@ -58,52 +58,77 @@ font-family: MyWebfont, Verdana, sans-serif;
   margin-right: 30px;
 }
 
-.red{
-  background-image: url(../../public/img/kaaien523d9eb14a7d9.jpg);
+.imgtile{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
-.red:hover{
-  background-image: none;
-  background-color: #DA291C;
+.Tile1{
+  background-image: url(../../public/img/mas.jpg);
 }
 .purple{
-  background-image: url(../../public/img/mas.jpg);
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-transition: background-color 0.5s ease;
 }
 .purple:hover{
   background-image: none;
   background-color: #840B55;
 }
-.orange{
+.Tile2{
+  background-image: url(../../public/img/kaaien523d9eb14a7d9.jpg);
+}
+.red{
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-transition: background-color 0.5s ease;
+}
+.red:hover{
+  background-image: none;
+  background-color: #DA291C;
+}
+.Tile3{
   background-image: url(../../public/img/kathedraal.jpg);
+}
+.orange{
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-transition: background-color 0.5s ease;
 }
 .orange:hover{
   background-image: none;
   background-color: #F18A00;
 }
-.green{
+.Tile4{
   background-image: url(../../public/img/steen.jpg);
+}
+.green{
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-transition: background-color 0.5s ease;
 }
 .green:hover{
   background-image: none;
   background-color: #4AA32C;
 }
-.blue{
+.Tile5{
   background-image: url(../../public/img/station.jpg);
 }
+.blue{
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-transition: background-color 0.5s ease;
+}
 .blue:hover{
-  background-image: none;
   background-color: #004851;
+
 }
 .tile{
   text-align: center;
   color: white;
   height: 35vh;
   width:  100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   padding-top: 9vh;
   margin-bottom: 30px;
+
 }
+
+
 
 
 @media(max-width:767px)
