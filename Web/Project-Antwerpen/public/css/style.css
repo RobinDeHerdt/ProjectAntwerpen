@@ -17,6 +17,10 @@ src: url("../../public/font/SunAntwerpen_800.svg#SunAntwerpen_800") format("svg"
 font-family: MyWebfont, Verdana, sans-serif;
 
 }
+.titelpage:hover{
+  text-decoration: none;
+  color: #BCE194;
+}
 
 .navbar{
   background-color:#CF0039; /* #DA291C; */
@@ -46,15 +50,46 @@ font-family: MyWebfont, Verdana, sans-serif;
   padding-bottom: 30px;
   font-size:18px;
 }
+.navbar li:hover a{
+  background-color:#CF0039;
+  border-bottom: 2px solid white;
+}
 .navbar-right{
   margin-right: 30px;
 }
+
+.red{
+  background-image: url(../../public/img/kaaien523d9eb14a7d9.jpg);
+}
+.purple{
+  background-image: url(../../public/img/mas.jpg);
+}
+.orange{
+  background-image: url(../../public/img/kathedraal.jpg);
+}
+.green{
+  background-image: url(../../public/img/steen.jpg);
+}
+.blue{
+  background-image: url(../../public/img/station.jpg);
+}
+.tile{
+  height: 300px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 @media(max-width:767px)
 {
+  .navbar{
+    border: 0px;
+  }
   .navbar li{
     padding-top: 0px;
     padding-bottom: 0px;
     font-size:18px;
+    border-top: 1px solid white;
   }
   .navbar-right{
     margin-right: 0px;
@@ -64,9 +99,8 @@ font-family: MyWebfont, Verdana, sans-serif;
   }
 
   .titelpage{
-
     font-size:20px;
-      margin-left: 10px;
+    margin-left: 10px;
 
   }
 }
