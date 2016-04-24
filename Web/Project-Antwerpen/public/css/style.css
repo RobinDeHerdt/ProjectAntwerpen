@@ -32,9 +32,11 @@ font-family: MyWebfont, Verdana, sans-serif;
 }
 
 .titelpage{
-  padding-top: 40px;
-  padding-bottom: 60px;
+  padding-top: 32.5px;
+  padding-bottom: 32.5px;
   font-size:25px;
+  margin-left: 20px;
+  margin-top: 0px;
 }
 .navbar a, .navbar li {
   color:white;
@@ -46,4 +48,25 @@ font-family: MyWebfont, Verdana, sans-serif;
 }
 .navbar-right{
   margin-right: 30px;
+}
+@media(max-width:767px)
+{
+  .navbar li{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size:18px;
+  }
+  .navbar-right{
+    margin-right: 0px;
+    margin-top: 0px;
+    text-align: center;
+    background-color: #BCE194;
+  }
+
+  .titelpage{
+
+    font-size:20px;
+      margin-left: 10px;
+
+  }
 }
