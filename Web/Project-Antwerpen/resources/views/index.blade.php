@@ -31,7 +31,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1><strong>Bootstrap - Microsoft Metro Tiles</strong></h1>
+          <h1><strong>Dit zijn project Tiles</strong></h1>
         </div>
       </div>
       <div class="row">
@@ -54,7 +54,7 @@
           </div>
         </div>
       </div>
-    
+
       <div class="row">
         <div class="col-sm-4">
           <div class="tile green">

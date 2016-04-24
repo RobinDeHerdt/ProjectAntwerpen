@@ -61,17 +61,37 @@ font-family: MyWebfont, Verdana, sans-serif;
 .red{
   background-image: url(../../public/img/kaaien523d9eb14a7d9.jpg);
 }
+.red:hover{
+  background-image: none;
+  background-color: #DA291C;
+}
 .purple{
   background-image: url(../../public/img/mas.jpg);
+}
+.purple:hover{
+  background-image: none;
+  background-color: #840B55;
 }
 .orange{
   background-image: url(../../public/img/kathedraal.jpg);
 }
+.orange:hover{
+  background-image: none;
+  background-color: #F18A00;
+}
 .green{
   background-image: url(../../public/img/steen.jpg);
 }
+.green:hover{
+  background-image: none;
+  background-color: #4AA32C;
+}
 .blue{
   background-image: url(../../public/img/station.jpg);
+}
+.blue:hover{
+  background-image: none;
+  background-color: #004851;
 }
 .tile{
   text-align: center;
