@@ -67,7 +67,9 @@ font-family: MyWebfont, Verdana, sans-serif;
 .navbar-right{
   margin-right: 30px;
 }
-
+.allTiles{
+  min-height: 83.1vh;
+}
 .imgtile{
   background-repeat: no-repeat;
   background-position: center;
@@ -146,7 +148,12 @@ font-family: MyWebfont, Verdana, sans-serif;
 .imgtile a{
   text-decoration: none;
 }
-
+footer{
+  background-color: black;
+  width: 100%;
+  height: 45px;
+  padding-top: 12px;
+}
 
 @media(max-width:767px)
 {
