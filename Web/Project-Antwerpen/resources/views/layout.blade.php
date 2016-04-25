@@ -1,45 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>@yield('title')</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
+        <link rel="stylesheet" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/font-awesome.min.css">
     </head>
     <body>
-    <div class="container">
-            <div class="content">
-                <div class="title"> @yield('content') </div>
-            </div>
+    <div class="navbar ">
+      <div class="">
+
+        <div class="navbar-header">
+          <a class="navbar-left" href="#"><img src="../../img/A_logo_RGB_123x123.jpg" alt="Logo antwerpen"/></a>
+          <a class="navbar-left titelpage" href="#">Antwerpen Projecten</a>
         </div>
-    </body>
+
+        <ul class="nav navbar-nav navbar-right">
+         <li><a href="#"><span class="fa  fa-pencil "></span> Sign Up</a></li>
+         <li><a href="#"><span class="fa  fa-sign-in "></span> Login</a></li>
+       </ul>
+
+      </div>
+    </div>
+
+    @yield('content')
+
+    <footer class="footer">
+        <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+    </div>
+</footer>
 </html>
