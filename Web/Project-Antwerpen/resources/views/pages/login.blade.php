@@ -25,14 +25,14 @@
                         <form role="form" method="POST" action="/register">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
                             <div class="form-group">
-                                <input type="email" name="email" id="email" class="form-control input-md" placeholder="Email adres" required>
+                                <input type="email" name="email" id="email" class="form-control input-md" placeholder="Email adres" required alt="vul je email adres in">
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" id="password" class="form-control input-md" placeholder="Wachtwoord" required>
+                                <input type="password" name="password" id="password" class="form-control input-md" placeholder="Wachtwoord" required alt="vul je wachtwoord in">
                             </div>
                             
                             
-                            <input type="submit" value="Login" class="btn btn-danger btn-block">
+                            <input type="submit" value="Login" class="btn btn-danger btn-block" alt="login knop">
                         </form>
                     </div>
                 </div>

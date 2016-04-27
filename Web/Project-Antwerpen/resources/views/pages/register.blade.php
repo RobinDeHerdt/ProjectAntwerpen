@@ -25,46 +25,46 @@
                         <form role="form" method="POST" action="/register">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
                             <div class="form-group">
-                                <input type="text" name="first_name" id="first_name" class="form-control input-md" placeholder="Voornaam" required>
+                                <input type="text" name="first_name" id="first_name" class="form-control input-md" placeholder="Voornaam" required alt="vul je voornaam in">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="last_name" id="last_name" class="form-control input-md" placeholder="Achternaam" required>
+                                <input type="text" name="last_name" id="last_name" class="form-control input-md" placeholder="Achternaam" required alt="vul je achternaam in">
                             </div>
                             <div class="form-group">
-                                <input type="email" name="email" id="email" class="form-control input-md" placeholder="Email adres" required>
+                                <input type="email" name="email" id="email" class="form-control input-md" placeholder="Email adres" required alt="vul je email in">
                             </div>
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="number" name="age" id="age" min="0" max="120" class="form-control input-md" placeholder="Leeftijd">
+                                        <input type="number" name="age" id="age" min="0" max="120" class="form-control input-md" placeholder="Leeftijd" alt="vul je leeftijd in">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="number" name="postalcode" id="postcode" class="form-control input-md" placeholder="Postcode">
+                                        <input type="number" name="postalcode" id="postcode" class="form-control input-md" placeholder="Postcode" alt="vul je postcode in">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <select class="c-select form-control input-md" name="gender">
-                                    <option selected>Geslacht</option>
-                                    <option value="1">Man</option>
-                                    <option value="2">Vrouw</option>
+                                <select class="c-select form-control input-md" name="gender" alt="Duid je geslacht aan">
+                                    <option selected alt="Geslacht" >Geslacht</option>
+                                    <option value="1" alt="Man"     >Man</option>
+                                    <option value="2" alt="Vrouw"   >Vrouw</option>
                                 </select>
                             </div>
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="password" name="password" id="password" class="form-control input-md" placeholder="Wachtwoord" required>
+                                        <input type="password" name="password" id="password" class="form-control input-md" placeholder="Wachtwoord" required alt="vul je wachtwoord in">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-md" placeholder="Bevestig wachtwoord" required>
+                                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-md" placeholder="Herhaal wachtwoord" required alt="Herhaal je wachtwoord">
                                     </div>
                                 </div>
                             </div>
-                            <input type="submit" value="Registreer" class="btn btn-danger btn-block">
+                            <input type="submit" value="Registreer" class="btn btn-danger btn-block" alt="Registreer knop">
                         </form>
                     </div>
                 </div>
