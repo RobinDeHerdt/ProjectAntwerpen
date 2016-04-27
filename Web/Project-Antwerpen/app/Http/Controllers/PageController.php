@@ -30,5 +30,9 @@ class PageController extends Controller
 	{
 		return view('pages.login');
 	}
+	public function template()
+	{
+		return view('pages.template');
+	}
 
 }
