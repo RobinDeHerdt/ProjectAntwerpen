@@ -10,7 +10,7 @@ class PageController extends Controller
 {
 	public function welcome()
 	{
-		return view('welcome');
+		return view('pages.welcome');
 	}
 
 	public function about()
@@ -18,13 +18,9 @@ class PageController extends Controller
 		return view('pages.about');
 	}
 
-	public function home()
+	public function overview()
 	{
 		return view('index');
-	}
-	public function register()
-	{
-		return view('pages.register');
 	}
 	public function login()
 	{
