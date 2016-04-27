@@ -14,12 +14,12 @@
       <div class="">
 
         <div class="navbar-header">
-          <a class="navbar-left" href="#"><img src="../../img/A_logo_RGB_123x123.jpg" alt="Logo antwerpen"/></a>
-          <a class="navbar-left titelpage" href="#">Antwerpen Projecten</a>
+          <a class="navbar-left" href="/home"><img src="../../img/A_logo_RGB_123x123.jpg" alt="Logo antwerpen"/></a>
+          <a class="navbar-left titelpage" href="/home">Antwerpen Projecten</a>
         </div>
 
         <ul class="nav navbar-nav navbar-right">
-         <li><a href="#"><span class="fa  fa-pencil "></span> Sign Up</a></li>
+         <li><a href="/register"><span class="fa  fa-pencil "></span> Sign Up</a></li>
          <li><a href="#"><span class="fa  fa-sign-in "></span> Login</a></li>
        </ul>
 

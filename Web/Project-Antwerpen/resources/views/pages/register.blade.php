@@ -6,7 +6,7 @@
 
 @section('content')
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
-   <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 
@@ -22,7 +22,8 @@
                         <h3 class="panel-title text-center">Registreren</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" method="POST" action="/register">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
                             <div class="form-group">
                                 <input type="text" name="first_name" id="first_name" class="form-control input-md" placeholder="Voornaam" required>
                             </div>
@@ -40,12 +41,12 @@
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="number" name="postcode" id="postcode" class="form-control input-md" placeholder="Postcode">
+                                        <input type="number" name="postalcode" id="postcode" class="form-control input-md" placeholder="Postcode">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <select class="c-select form-control input-md">
+                                <select class="c-select form-control input-md" name="gender">
                                     <option selected>Geslacht</option>
                                     <option value="1">Man</option>
                                     <option value="2">Vrouw</option>
