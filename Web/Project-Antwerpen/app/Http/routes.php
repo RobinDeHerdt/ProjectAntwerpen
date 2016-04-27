@@ -14,9 +14,11 @@
 Route::get('/', 'PageController@welcome');
 Route::get('about', 'PageController@about');
 Route::get('register', 'PageController@register');
+Route::get('login', 'PageController@login');
 Route::get('home', 'PageController@home');
 
 Route::post('/register', 'UserController@store');
+
 
 
 // Route::get('')
