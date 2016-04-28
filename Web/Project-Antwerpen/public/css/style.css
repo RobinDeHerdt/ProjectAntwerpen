@@ -59,6 +59,10 @@ font-family: MyWebfont, Verdana, sans-serif;
   padding-top: 20px;
   padding-bottom: 30px;
   font-size:18px;
+
+}
+.navbar li a{
+    font-family: MyWebfont, Verdana, sans-serif;
 }
 .navbar li:hover a{
   background-color:#CF0039;
@@ -66,6 +70,7 @@ font-family: MyWebfont, Verdana, sans-serif;
 }
 .navbar-right{
   margin-right: 30px;
+
 }
 .allTiles{
   min-height: 83.1vh;
@@ -76,7 +81,9 @@ font-family: MyWebfont, Verdana, sans-serif;
   background-size: cover;
 }
 .Tile1{
-  background-image: url(../../img/mas.jpg);
+
+  background-image: url(../img/mas.jpg);
+
 }
 .purple{
   background-color: rgba(255, 255, 255, 0);
@@ -87,7 +94,9 @@ font-family: MyWebfont, Verdana, sans-serif;
   background-color: #840B55;
 }
 .Tile2{
-  background-image: url(../../img/kaaien523d9eb14a7d9.jpg);
+
+  background-image: url(../img/kaaien523d9eb14a7d9.jpg);
+
 }
 .red{
   background-color: rgba(255, 255, 255, 0);
@@ -108,7 +117,9 @@ font-family: MyWebfont, Verdana, sans-serif;
   height:auto;
 }
 .Tile3{
-  background-image: url(../../img/kathedraal.jpg);
+
+  background-image: url(../img/kathedraal.jpg);
+
 }
 .orange{
   background-color: rgba(255, 255, 255, 0);
@@ -119,7 +130,9 @@ font-family: MyWebfont, Verdana, sans-serif;
   background-color: #F18A00;
 }
 .Tile4{
-  background-image: url(../../img/steen.jpg);
+
+  background-image: url(../img/steen.jpg);
+
 }
 .green{
   background-color: rgba(255, 255, 255, 0);
@@ -130,7 +143,8 @@ font-family: MyWebfont, Verdana, sans-serif;
   background-color: #4AA32C;
 }
 .Tile5{
-  background-image: url(../../img/station.jpg);
+  background-image: url(../img/station.jpg);
+
 }
 .blue{
   background-color: rgba(255, 255, 255, 0);
@@ -163,6 +177,9 @@ footer{
   width: 100%;
   height: 45px;
   padding-top: 12px;
+}
+.panel-body{
+    min-height: 76.8vh;
 }
 
 @media(max-width:767px)
