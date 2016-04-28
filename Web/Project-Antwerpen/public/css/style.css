@@ -70,7 +70,7 @@ font-family: MyWebfont, Verdana, sans-serif;
 }
 .navbar-right{
   margin-right: 30px;
-    
+
 }
 .allTiles{
   min-height: 83.1vh;
@@ -168,7 +168,9 @@ footer{
   height: 45px;
   padding-top: 12px;
 }
-
+.panel-body{
+    min-height: 76.8vh;
+}
 
 @media(max-width:767px)
 {
