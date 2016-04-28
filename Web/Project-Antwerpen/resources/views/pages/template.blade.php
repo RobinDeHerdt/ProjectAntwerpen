@@ -20,6 +20,8 @@
 <!-- Steps Progress and Details - START -->
 <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
     <div class="row">
+    <h1 style="text-align:center">Project aanmaken</h1>
+    <h1></h1>
         <div class="progress" id="progress1">
             <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
             </div>
