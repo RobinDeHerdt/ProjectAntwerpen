@@ -1,3 +1,5 @@
+<!-- Wordt niet meer gebruikt!   -->
+
 @extends('layout')
 
 @section('title')
