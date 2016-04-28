@@ -59,6 +59,10 @@ font-family: MyWebfont, Verdana, sans-serif;
   padding-top: 20px;
   padding-bottom: 30px;
   font-size:18px;
+
+}
+.navbar li a{
+    font-family: MyWebfont, Verdana, sans-serif;
 }
 .navbar li:hover a{
   background-color:#CF0039;
@@ -66,6 +70,7 @@ font-family: MyWebfont, Verdana, sans-serif;
 }
 .navbar-right{
   margin-right: 30px;
+    
 }
 .allTiles{
   min-height: 83.1vh;
@@ -163,6 +168,7 @@ footer{
   height: 45px;
   padding-top: 12px;
 }
+
 
 @media(max-width:767px)
 {
