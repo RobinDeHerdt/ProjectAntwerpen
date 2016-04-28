@@ -35,6 +35,11 @@ preload.prototype = {
         game.load.image("start-btn", "assets/images/start_button.png");
         game.load.image("help-btn", "assets/images/help_button.png");
 
+        //  37x45 is the size of each frame
+        //  There are 18 frames in the PNG - you can leave this value blank if the frames fill up the entire PNG, but in this case there are some
+        //  blank frames at the end, so we tell the loader how many to load
+        game.load.spritesheet('correct', 'assets/images/correct_spritesheet.png', 667, 375, 72);
+        game.load.spritesheet('fout', 'assets/images/fout_spritesheet.png', 667, 375, 72);
 
 
 
@@ -84,13 +89,19 @@ menu.prototype = {
     },
     startGame: function(){
         //destroy menu and go to next state
-        this.startbtn.destroy();
-        this.helpbtn.destroy();
+        //this.startbtn.destroy();
+        //this.helpbtn.destroy();
+        sprite = game.add.sprite(game.CENTER_X - 333, game.CENTER_Y-189, 'correct');
+        sprite.animations.add('correct_animation');
+        sprite.animations.play('correct_animation', 50, false);
     },
     //-----------------------------------------------------------------------
     startHelp: function(){
-      this.startbtn.destroy();
-      this.helpbtn.destroy();
+      //this.startbtn.destroy();
+      //this.helpbtn.destroy();
+      sprite = game.add.sprite(game.CENTER_X - 333, game.CENTER_Y-189, 'fout');
+      sprite.animations.add('fout_animation');
+      sprite.animations.play('fout_animation', 50, false);
     }
     //-----------------------------------------------------------------------
 }
