@@ -96,6 +96,16 @@ font-family: MyWebfont, Verdana, sans-serif;
 .red:hover{
   background-image: none;
   background-color: #DA291C;
+
+}
+.expand {
+   transition: all .3s ease-in-out; 
+}
+.expand:hover {
+  transform: scale(1.05,1.05);
+   -ms-transform: scale(1.05,1.05); /* IE 9 */
+    -webkit-transform: scale(1.05,1.05); /* Safari */
+  height:auto;
 }
 .Tile3{
   background-image: url(../../img/kathedraal.jpg);
