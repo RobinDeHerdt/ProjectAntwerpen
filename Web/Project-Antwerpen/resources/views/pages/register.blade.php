@@ -1,3 +1,6 @@
+<!-- Wordt niet meer gebruikt! -->
+
+
 @extends('layout')
 
 @section('title')
@@ -47,9 +50,8 @@
                             </div>
                             <div class="form-group">
                                 <select class="c-select form-control input-md" name="gender" alt="Duid je geslacht aan">
-                                    <option selected alt="Geslacht" >Geslacht</option>
-                                    <option value="1" alt="Man"     >Man</option>
-                                    <option value="2" alt="Vrouw"   >Vrouw</option>
+                                    <option value="1" alt="Man">Man</option>
+                                    <option value="2" alt="Vrouw">Vrouw</option>
                                 </select>
                             </div>
                             <div class="row">
