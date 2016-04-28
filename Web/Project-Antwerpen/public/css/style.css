@@ -76,11 +76,9 @@ font-family: MyWebfont, Verdana, sans-serif;
   background-size: cover;
 }
 .Tile1{
-<<<<<<< HEAD
+
   background-image: url(../img/mas.jpg);
-=======
-  background-image: url(../../img/mas.jpg);
->>>>>>> 152dc25deb06058448d8e0eb305bd5c2c219face
+
 }
 .purple{
   background-color: rgba(255, 255, 255, 0);
@@ -91,11 +89,9 @@ font-family: MyWebfont, Verdana, sans-serif;
   background-color: #840B55;
 }
 .Tile2{
-<<<<<<< HEAD
+
   background-image: url(../img/kaaien523d9eb14a7d9.jpg);
-=======
-  background-image: url(../../img/kaaien523d9eb14a7d9.jpg);
->>>>>>> 152dc25deb06058448d8e0eb305bd5c2c219face
+
 }
 .red{
   background-color: rgba(255, 255, 255, 0);
@@ -106,11 +102,9 @@ font-family: MyWebfont, Verdana, sans-serif;
   background-color: #DA291C;
 }
 .Tile3{
-<<<<<<< HEAD
+
   background-image: url(../img/kathedraal.jpg);
-=======
-  background-image: url(../../img/kathedraal.jpg);
->>>>>>> 152dc25deb06058448d8e0eb305bd5c2c219face
+
 }
 .orange{
   background-color: rgba(255, 255, 255, 0);
@@ -121,11 +115,9 @@ font-family: MyWebfont, Verdana, sans-serif;
   background-color: #F18A00;
 }
 .Tile4{
-<<<<<<< HEAD
+
   background-image: url(../img/steen.jpg);
-=======
-  background-image: url(../../img/steen.jpg);
->>>>>>> 152dc25deb06058448d8e0eb305bd5c2c219face
+
 }
 .green{
   background-color: rgba(255, 255, 255, 0);
@@ -136,11 +128,8 @@ font-family: MyWebfont, Verdana, sans-serif;
   background-color: #4AA32C;
 }
 .Tile5{
-<<<<<<< HEAD
   background-image: url(../img/station.jpg);
-=======
-  background-image: url(../../img/station.jpg);
->>>>>>> 152dc25deb06058448d8e0eb305bd5c2c219face
+
 }
 .blue{
   background-color: rgba(255, 255, 255, 0);
