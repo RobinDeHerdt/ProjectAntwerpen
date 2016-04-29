@@ -18,6 +18,7 @@ Route::get('register', 'PageController@register');
 Route::get('login', 'PageController@login');
 Route::get('template', 'PageController@template');
 Route::get('home', 'PageController@home');
+Route::get('uitleg', 'PageController@uitleg');
 
 
 

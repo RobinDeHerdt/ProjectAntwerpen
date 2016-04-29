@@ -30,5 +30,9 @@ class PageController extends Controller
 	{
 		return view('pages.template');
 	}
+	public function uitleg()
+	{
+		return view('pages.project-uitleg');
+	}
 
 }
