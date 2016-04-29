@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="stylesheet" href="../../css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/toggle-switch.css" />
     </head>
     <body>
       <div class="navbar">
