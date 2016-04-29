@@ -17,7 +17,7 @@
             <a href="#">
           <div class="tile purple">
             <h3 class="title">Mas vernieuwing</h3>
-            <p>De oude expotities worden verangen door gloednieuwe</p>
+
           </div>
           </a>
           </div>
@@ -27,7 +27,7 @@
             <a href="#">
           <div class="tile red">
             <h3 class="title">Parking kaaien</h3>
-            <p>Binnekort word de parking op de kaaien uitgebreid</p>
+
           </div>
           </a>
             </div>
@@ -37,7 +37,7 @@
             <a href="#">
           <div class="tile orange">
             <h3 class="title">Kathedraal renovatie</h3>
-            <p>Hello Orange, this is a colored tile.</p>
+
           </div>
           </a>
           </div>
@@ -50,7 +50,7 @@
             <a href="#">
           <div class="tile green">
             <h3 class="title">Steen rondleidng</h3>
-            <p>Binnekort zulen er gratis rondleiding zijn voor het steen</p>
+
           </div>
           </a>
           </div>
@@ -60,7 +60,7 @@
             <a href="#">
           <div class="tile blue">
             <h3 class="title">Nieuwe sporen</h3>
-            <p>Er komen 3 nieuwe sporen in centraal station</p>
+          
           </div>
         </div>
         </a>

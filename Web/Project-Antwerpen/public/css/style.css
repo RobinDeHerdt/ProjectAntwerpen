@@ -1,35 +1,67 @@
 @font-face {
-font-family: MyWebfont;
-src: url(../../public/font/SunAntwerpen_800.woff) format(”woff”);
+font-family: sunCd;
+src: url("../fonts/SunAntwerpenCd_700.woff") format("woff");
 }
 @font-face {
-font-family: MyWebfont;
-src: url(../../public/font/SunAntwerpen_800.eot);
+font-family: sunCd;
+src: url("../fonts/SunAntwerpenCd_700.eot");
 }
 @font-face {
-font-family: MyWebfont;
-src: url("../../public/font/SunAntwerpen_800.svg") format("svg");
+font-family: sunCd;
+src: url("../fonts/SunAntwerpenCd_700.svg") format("svg");
+}
+@font-face {
+font-family: sun500;
+src: url("../fonts/SunAntwerpen_500.woff") format("woff");
+}
+@font-face {
+font-family: sun500;
+src: url("../fonts/SunAntwerpen_500.eot");
+}
+@font-face {
+font-family: sun500;
+src: url("../fonts/SunAntwerpen_500.svg") format("svg");
+}
+@font-face {
+font-family: AntwerpREG;
+src: url("../fonts/Antwerpen-Regular.woff") format("woff");
+}
+@font-face {
+font-family: AntwerpREG;
+src: url("../fonts/Antwerpen-Regular.eot");
+}
+@font-face {
+font-family: AntwerpREG;
+src: url("../fonts/Antwerpen-Regular.svg") format("svg");
 }
 @font-face {
 font-family: AntwerpTall;
-src: url(../../public/font/AntwerpenTall-Tall.woff) format(”woff”);
+src: url("../fonts/AntwerpenTall-Tall.woff") format("woff");
 }
 @font-face {
 font-family: AntwerpTall;
-src: url(../../public/font/AntwerpenTall-Tall.eot);
+src: url("../fonts/AntwerpenTall-Tall.eot");
 }
 @font-face {
 font-family: AntwerpTall;
-src: url("../../public/font/AntwerpenTall-Tall.svg") format("svg");
+src: url("../fonts/AntwerpenTall-Tall.svg") format("svg");
 }
 
-.titelpage {
-font-family: MyWebfont, Verdana, sans-serif;
+.titelpage , .tile .title{
+font-family: AntwerpREG, Verdana, sans-serif;
 
 }
+ {
+font-family: sunCd, Verdana, sans-serif;
+
+}
+.navbar li a, .navbar li{
+    font-family: sun500, Verdana, sans-serif;
+}
+
+
 .titelpage:hover{
   text-decoration: none;
-  color: #BCE194;
 }
 
 .navbar{
@@ -43,6 +75,10 @@ font-family: MyWebfont, Verdana, sans-serif;
   padding-left: 5px;
   padding-right: 7px;
   border-right: 2px white solid;
+}
+#welcome{
+  margin-top: 15px;
+  margin-right: 20px;
 }
 
 .titelpage{
@@ -61,9 +97,7 @@ font-family: MyWebfont, Verdana, sans-serif;
   font-size:18px;
 
 }
-.navbar li a{
-    font-family: MyWebfont, Verdana, sans-serif;
-}
+
 .navbar li:hover a{
   background-color:#CF0039;
   border-bottom: 2px solid white;
@@ -86,7 +120,7 @@ font-family: MyWebfont, Verdana, sans-serif;
 
 }
 .purple{
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(85, 85, 85, 0.5);
   -webkit-transition: background-color 0.5s ease;
 }
 .purple:hover{
@@ -99,7 +133,7 @@ font-family: MyWebfont, Verdana, sans-serif;
 
 }
 .red{
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(85, 85, 85, 0.5);
   -webkit-transition: background-color 0.5s ease;
 }
 .red:hover{
@@ -108,7 +142,7 @@ font-family: MyWebfont, Verdana, sans-serif;
 
 }
 .expand {
-   transition: all .3s ease-in-out; 
+   transition: all .3s ease-in-out;
 }
 .expand:hover {
   transform: scale(1.05,1.05);
@@ -122,7 +156,7 @@ font-family: MyWebfont, Verdana, sans-serif;
 
 }
 .orange{
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(85, 85, 85, 0.5);
   -webkit-transition: background-color 0.5s ease;
 }
 .orange:hover{
@@ -135,7 +169,7 @@ font-family: MyWebfont, Verdana, sans-serif;
 
 }
 .green{
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(85, 85, 85, 0.5);
   -webkit-transition: background-color 0.5s ease;
 }
 .green:hover{
@@ -147,7 +181,7 @@ font-family: MyWebfont, Verdana, sans-serif;
 
 }
 .blue{
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(85, 85, 85, 0.5);
   -webkit-transition: background-color 0.5s ease;
 }
 .blue:hover{
@@ -162,21 +196,25 @@ font-family: MyWebfont, Verdana, sans-serif;
   padding-top: 9vh;
   margin-bottom: 30px;
 }
-.tile .title{
-  font-family: MyWebfont, Verdana, sans-serif;
-}
-.tile p {
-  width: 90%;
-  margin-left: 5%;
-}
+
 .imgtile a{
   text-decoration: none;
+}
+
+.tile h3 {
+  font-size: 30px;
+  margin-top: 5vh;
+
 }
 footer{
   background-color: black;
   width: 100%;
   height: 45px;
   padding-top: 12px;
+  text-align: center;
+}
+footer p {
+  color: rgb(190, 190, 190);
 }
 .panel-body{
     min-height: 76.8vh;
@@ -203,6 +241,7 @@ footer{
   .titelpage{
     font-size:20px;
     margin-left: 10px;
+
 
   }
   .container{

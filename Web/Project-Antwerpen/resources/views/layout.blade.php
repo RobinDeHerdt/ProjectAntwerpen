@@ -27,8 +27,8 @@
                   <li><a href="{{ url('/login') }}"><span class="fa fa-btn fa-sign-out" ></span> Login</a></li>
                   <li><a href="{{ url('/register') }}"><span class="fa fa-btn fa-pencil" ></span> Register</a></li>
               @else
-                <li>Welkom, {{ Auth::user()->firstname }}</li>
-                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                <li id="welcome">Welkom, {{ Auth::user()->firstname }}</li>
+                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
               @endif
             </ul>
         </div>
@@ -38,7 +38,7 @@
     @yield('content')
      <footer class="footer">
         <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
+        <p>&copy Antwerp copyright</p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
