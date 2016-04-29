@@ -41,17 +41,22 @@ preload.prototype = {
           //buttons
         game.load.image("start-btn", "assets/images/start-btn.png");
         game.load.image("website-btn", "assets/images/website-btn.png");
-        game.load.image("true", "assets/images/waar.png");
-        game.load.image("false", "assets/images/nietwaar.png");
-        game.load.image("back", "assets/images/back.png");
+        game.load.image("website-btn-small", "assets/images/website-btn-small.png");
+        game.load.image("true", "assets/images/waar2.png");
+        game.load.image("false", "assets/images/nietwaar2.png");
+        game.load.image("back", "assets/images/menu-btn-small.png");
         game.load.image("thumbsup", "assets/images/akkoord.png");
         game.load.image("thumbsdown", "assets/images/nietakkoord.png");
+        game.load.image("project-btn", "assets/images/project-btn.png");
+
         game.load.image("under-construction", "assets/images/under_construction_kek.png");
 
         //Spritesheet animations
-        game.load.spritesheet('correct', 'assets/images/correct_spritesheet.png', 667, 375, 72);
-        game.load.spritesheet('fout', 'assets/images/fout_spritesheet.png', 667, 375, 72);
-        game.load.spritesheet('intro', "assets/images/superdownscale.png", 305, 543, 76);
+        //game.load.spritesheet('correct', 'assets/images/correct_spritesheet48.png', 320, 180, 72);
+        game.load.spritesheet('correct', 'assets/images/correct2.png', 384, 216, 64);
+        //game.load.spritesheet('fout', 'assets/images/fout_spritesheet48.png', 320, 180, 72);
+        game.load.spritesheet('fout', 'assets/images/fout2.png', 384, 216, 64);
+        game.load.spritesheet('intro', "assets/images/superdownscale2.png", 195, 347, 76);
 
         // Define constant variables
         game.CENTER_X          = (game.width/2);
@@ -83,16 +88,16 @@ menu.prototype = {
         game.scale.forceOrientation(false, true);
 
         //init playbutton
-        this.startbtn = game.add.button(game.CENTER_X, game.CENTER_Y + 350, "start-btn", this.startGame, this);
+        this.startbtn = game.add.button(game.CENTER_X, game.CENTER_Y + 400, "start-btn", this.startGame, this);
         this.startbtn.anchor.set(0.5);
         this.startbtn.scale.setTo(2);
 
-        this.websitebtn = game.add.button(game.CENTER_X, game.CENTER_Y + 700, "website-btn", this.goToWebsite, this);
+        this.websitebtn = game.add.button(game.CENTER_X, game.CENTER_Y + 625, "website-btn", this.goToWebsite, this);
         this.websitebtn.anchor.set(0.5);
         this.websitebtn.scale.setTo(2);
 
         sprite = game.add.sprite(0, 0, "intro");
-        sprite.scale.setTo(3.55,3.55);
+        sprite.scale.setTo(5.555);
         sprite.animations.add("intro_animation");
         sprite.animations.play("intro_animation", 30, false);
 
@@ -117,7 +122,7 @@ play.prototype = {
     create: function () {
 
         if(counter%2 == 0 && counter != 0 && lastQuestionMening == false){
-          console.log("counter = 2!")
+          console.log("counter%2 = 0!")
           game.state.start("Mening");
         }
 
@@ -125,33 +130,40 @@ play.prototype = {
 
         this.background = game.add.sprite(0, 0, "game-background");
 
-        questionText = game.add.text(game.CENTER_X, 400, questions[counter][0], {"font":"bold 60pt Arial", "fill":"#ffffff"});
+        questionText = game.add.text(game.CENTER_X, 400, questions[counter][0], {"font":"60pt SunAntwerpen", "fill":"#ffffff"});
         questionText.anchor.set(0.5);
 
         //init true button
-        this.truebtn = game.add.button(game.CENTER_X-230, game.CENTER_Y + 350, "true", this.waarAnimation, this);
+        this.truebtn = game.add.button(game.CENTER_X + 230, game.CENTER_Y + 350, "true", this.waarAnimation, this);
         this.truebtn.anchor.set(0.5);
         this.truebtn.scale.setTo(0.60);
 
         //init false button
-        this.falsebtn = game.add.button(game.CENTER_X+230, game.CENTER_Y + 350, "false", this.nietwaarAnimation, this);
+        this.falsebtn = game.add.button(game.CENTER_X - 230, game.CENTER_Y + 350, "false", this.nietwaarAnimation, this);
         this.falsebtn.anchor.set(0.5);
         this.falsebtn.scale.setTo(0.60);
 
         //init back to menu button
-        this.backbtn = game.add.button(game.CENTER_X, game.CENTER_Y + 800, "back", this.backToMenu, this);
+        this.backbtn = game.add.button(game.CENTER_X + 230, game.CENTER_Y + 800, "back", this.backToMenu, this);
         this.backbtn.anchor.set(0.5);
         this.backbtn.scale.setTo(2);
+
+        //init website button
+        this.webbtn = game.add.button(game.CENTER_X - 230, game.CENTER_Y + +800, "website-btn-small", this.goToWebsite, this);
+        this.webbtn.anchor.set(0.5);
+        this.webbtn.scale.setTo(2);
 
 
     },
     waarAnimation: function (){
         if(questions[counter][1] == 1){
-          sprite = game.add.sprite(game.CENTER_X - 333, game.CENTER_Y-189, 'correct');
+          sprite = game.add.sprite(game.CENTER_X - 360, game.CENTER_Y-250, 'correct');
+          sprite.scale.setTo(2,2);
           sprite.animations.add('correct_animation');
           sprite.animations.play('correct_animation', 30, false);
         }else{
-          sprite = game.add.sprite(game.CENTER_X - 333, game.CENTER_Y-189, 'fout');
+          sprite = game.add.sprite(game.CENTER_X - 360, game.CENTER_Y-250, 'fout');
+          sprite.scale.setTo(2,2);
           sprite.animations.add('fout_animation');
           sprite.animations.play('fout_animation', 30, false);
         }
@@ -164,11 +176,13 @@ play.prototype = {
     },
     nietwaarAnimation: function (){
         if(questions[counter][1] == 0){
-          sprite = game.add.sprite(game.CENTER_X - 333, game.CENTER_Y-189, 'correct');
+          sprite = game.add.sprite(game.CENTER_X - 360, game.CENTER_Y-250, 'correct');
+          sprite.scale.setTo(2,2);
           sprite.animations.add('correct_animation');
           sprite.animations.play('correct_animation', 30, false);
         }else{
-          sprite = game.add.sprite(game.CENTER_X - 333, game.CENTER_Y-189, 'fout');
+          sprite = game.add.sprite(game.CENTER_X - 360, game.CENTER_Y-250, 'fout');
+          sprite.scale.setTo(2,2);
           sprite.animations.add('fout_animation');
           sprite.animations.play('fout_animation', 30, false);
         }
@@ -182,6 +196,9 @@ play.prototype = {
         game.state.start("Menu");
         meningCounter = 0;
         counter = 0;
+    },
+    goToWebsite: function(){
+        window.open("http://www.antwerpen.be", "_blank");
     }
 }
 
@@ -191,28 +208,33 @@ mening.prototype = {
 
         this.background = game.add.sprite(0, 0, "game-background");
 
-        questionText = game.add.text(game.CENTER_X, 400, meningQuestions[meningCounter], {"font":"bold 60pt Arial", "fill":"#ffffff"});
+        questionText = game.add.text(game.CENTER_X, 400, meningQuestions[meningCounter], {"font":"60pt SunAntwerpen", "fill":"#ffffff"});
         questionText.anchor.set(0.5);
 
         //init website button
-        this.websitebtn = game.add.button(game.CENTER_X, game.CENTER_Y-50, "website-btn", this.goToWebsite, this);
-        this.websitebtn.anchor.set(0.5);
-        this.websitebtn.scale.setTo(2);
+        this.projectbtn = game.add.button(game.CENTER_X, game.CENTER_Y-50, "project-btn", this.goToWebsite, this);
+        this.projectbtn.anchor.set(0.5);
+        this.projectbtn.scale.setTo(2);
 
         //init thumbsup button
-        this.thumbsupbtn = game.add.button(game.CENTER_X-230, game.CENTER_Y + 350, "thumbsup", this.thumbsUp, this);
+        this.thumbsupbtn = game.add.button(game.CENTER_X+230, game.CENTER_Y + 350, "thumbsup", this.thumbsUp, this);
         this.thumbsupbtn.anchor.set(0.5);
         this.thumbsupbtn.scale.setTo(0.60);
 
         //init thumbsdown button
-        this.thumbsdownbtn = game.add.button(game.CENTER_X+230, game.CENTER_Y + 350, "thumbsdown", this.thumbsDown, this);
+        this.thumbsdownbtn = game.add.button(game.CENTER_X-230, game.CENTER_Y + 350, "thumbsdown", this.thumbsDown, this);
         this.thumbsdownbtn.anchor.set(0.5);
         this.thumbsdownbtn.scale.setTo(0.60);
 
         //init back to menu button
-        this.backbtn = game.add.button(game.CENTER_X, game.CENTER_Y + 800, "back", this.backToMenu, this);
+        this.backbtn = game.add.button(game.CENTER_X + 230, game.CENTER_Y + 800, "back", this.backToMenu, this);
         this.backbtn.anchor.set(0.5);
         this.backbtn.scale.setTo(2);
+
+        //init website button
+        this.webbtn = game.add.button(game.CENTER_X - 230, game.CENTER_Y + +800, "website-btn-small", this.goToWebsite, this);
+        this.webbtn.anchor.set(0.5);
+        this.webbtn.scale.setTo(2);
     },
     thumbsUp: function() {
       //Will send data to online database
@@ -230,6 +252,11 @@ mening.prototype = {
     },
     goToWebsite: function(){
         window.open("http://www.antwerpen.be", "_blank");
+    },
+    backToMenu: function(){
+        game.state.start("Menu");
+        meningCounter = 0;
+        counter = 0;
     }
 }
 
