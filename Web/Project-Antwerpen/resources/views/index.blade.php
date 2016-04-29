@@ -7,16 +7,22 @@
 @section('content')
   <div class="container allTiles">
       <div class="row sortnav">
-        <div class="col-md-6">
-          <div class="sortTiles">
-            <h1>sort</h1>
-          </div>
+    <div class="col-md-12">
+      <fieldset>
+        <div class="switch-toggle switch-candy-blue switch-meterial-Holo">
+          <input id="week" name="view" type="radio" checked>
+          <label for="week" onclick="">Thema</label>
+
+          <input id="month" name="view" type="radio">
+          <label for="month" onclick="">Datum</label>
+
+
+          <a></a>
         </div>
-        <div class="col-md-6">
-          <div class="sortTiles">
-            <h1>sort</h1>
-          </div>
-        </div>
+      </fieldset>
+    </div>
+
+
       </div>
       <div class="row">
         <div class="col-sm-4">
