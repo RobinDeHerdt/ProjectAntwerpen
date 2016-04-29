@@ -6,9 +6,16 @@
 
 @section('content')
   <div class="container allTiles">
-      <div class="row">
-        <div class="col-md-12">
-          <h1><strong>Dit zijn project Tiles</strong></h1>
+      <div class="row sortnav">
+        <div class="col-md-6">
+          <div class="sortTiles">
+            <h1>sort</h1>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="sortTiles">
+            <h1>sort</h1>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -60,7 +67,7 @@
             <a href="#">
           <div class="tile blue">
             <h3 class="title">Nieuwe sporen</h3>
-          
+
           </div>
         </div>
         </a>

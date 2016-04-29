@@ -80,6 +80,23 @@ font-family: sunCd, Verdana, sans-serif;
   margin-top: 15px;
   margin-right: 20px;
 }
+.sortnav .col-md-6:first-child{
+  padding-right: 0px;
+}
+.sortnav .col-md-6:last-child{
+  padding-left: 0px;
+
+}
+.sortTiles{
+  background-color: #2C5697;
+  text-align: center;
+  color: white;
+  padding: 1px;
+  margin-bottom: 20px;
+}
+.sortnav .col-md-6:last-child .sortTiles  {
+      background-color: #F18A00;
+}
 
 .titelpage{
   padding-top: 32.5px;
@@ -204,7 +221,6 @@ font-family: sunCd, Verdana, sans-serif;
 .tile h3 {
   font-size: 30px;
   margin-top: 5vh;
-
 }
 footer{
   background-color: black;
