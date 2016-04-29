@@ -27,8 +27,8 @@
                   <li><a href="{{ url('/login') }}"><span class="fa fa-btn fa-sign-out" ></span> Login</a></li>
                   <li><a href="{{ url('/register') }}"><span class="fa fa-btn fa-pencil" ></span> Register</a></li>
               @else
-                <li>Welkom, {{ Auth::user()->firstname }}</li>
-                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                <li id="welcome">Welkom, {{ Auth::user()->firstname }}</li>
+                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
               @endif
             </ul>
         </div>

@@ -1,35 +1,34 @@
 @font-face {
 font-family: MyWebfont;
-src: url(../../public/font/SunAntwerpen_800.woff) format(”woff”);
+src: url("../fonts/SunAntwerpen_500.woff") format("woff");
 }
 @font-face {
 font-family: MyWebfont;
-src: url(../../public/font/SunAntwerpen_800.eot);
+src: url("../fonts/SunAntwerpen_500.eot");
 }
 @font-face {
 font-family: MyWebfont;
-src: url("../../public/font/SunAntwerpen_800.svg") format("svg");
+src: url("../fonts/SunAntwerpen_500.svg") format("svg");
 }
 @font-face {
 font-family: AntwerpTall;
-src: url(../../public/font/AntwerpenTall-Tall.woff) format(”woff”);
+src: url("../fonts/AntwerpenTall-Tall.woff") format("woff");
 }
 @font-face {
 font-family: AntwerpTall;
-src: url(../../public/font/AntwerpenTall-Tall.eot);
+src: url("../fonts/AntwerpenTall-Tall.eot");
 }
 @font-face {
 font-family: AntwerpTall;
-src: url("../../public/font/AntwerpenTall-Tall.svg") format("svg");
+src: url("../fonts/AntwerpenTall-Tall.svg") format("svg");
 }
 
 .titelpage {
-font-family: MyWebfont, Verdana, sans-serif;
+font-family: AntwerpTall, Verdana, sans-serif;
 
 }
 .titelpage:hover{
   text-decoration: none;
-  color: #BCE194;
 }
 
 .navbar{
@@ -43,6 +42,10 @@ font-family: MyWebfont, Verdana, sans-serif;
   padding-left: 5px;
   padding-right: 7px;
   border-right: 2px white solid;
+}
+#welcome{
+  margin-top: 15px;
+  margin-right: 20px;
 }
 
 .titelpage{
@@ -108,7 +111,7 @@ font-family: MyWebfont, Verdana, sans-serif;
 
 }
 .expand {
-   transition: all .3s ease-in-out; 
+   transition: all .3s ease-in-out;
 }
 .expand:hover {
   transform: scale(1.05,1.05);
@@ -165,12 +168,14 @@ font-family: MyWebfont, Verdana, sans-serif;
 .tile .title{
   font-family: MyWebfont, Verdana, sans-serif;
 }
-.tile p {
-  width: 90%;
-  margin-left: 5%;
-}
 .imgtile a{
   text-decoration: none;
+}
+
+.tile h3 {
+  font-size: 35px;
+  margin-top: 5vh;
+
 }
 footer{
   background-color: black;
@@ -203,6 +208,7 @@ footer{
   .titelpage{
     font-size:20px;
     margin-left: 10px;
+
 
   }
   .container{
