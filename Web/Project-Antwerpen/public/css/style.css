@@ -83,6 +83,7 @@ font-family: sunCd, Verdana, sans-serif;
 
 .switch-toggle {
   margin-bottom: 20px;
+  border: 2px solid #38A3D4;
 
 }
 .switch-toggle label {
