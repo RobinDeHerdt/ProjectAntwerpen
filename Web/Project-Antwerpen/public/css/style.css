@@ -83,12 +83,13 @@ font-family: sunCd, Verdana, sans-serif;
 
 .switch-toggle {
   margin-bottom: 20px;
-  border: 2px solid #38A3D4;
+  height: 50px;
 
 }
-.switch-toggle label {
-  outline-color: rgba(255, 255, 255, 0);
+.switch-toggle input:first-child{
+  color: white;
 }
+
 
 
 .titelpage{

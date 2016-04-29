@@ -9,14 +9,12 @@
       <div class="row sortnav">
     <div class="col-md-12">
       <fieldset>
-        <div class="switch-toggle switch-candy-blue switch-meterial-Holo">
-          <input id="week" name="view" type="radio" checked>
-          <label for="week" onclick="">Thema</label>
+        <div class="switch-toggle switch-candy-blue   switch-candy">
+          <input id="Datum" name="view" type="radio" checked>
+          <label for="Datum" onclick="">Datum</label>
 
-          <input id="month" name="view" type="radio">
-          <label for="month" onclick="">Datum</label>
-
-
+          <input id="thema" name="view" type="radio">
+          <label for="thema" onclick="">Thema</label>
           <a></a>
         </div>
       </fieldset>
