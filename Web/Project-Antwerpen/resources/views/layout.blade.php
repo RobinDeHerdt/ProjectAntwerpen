@@ -35,6 +35,8 @@
 
       </div>
 
+      @yield('navigation-layout')
+
     @yield('content')
      <footer class="footer">
         <div class="container">

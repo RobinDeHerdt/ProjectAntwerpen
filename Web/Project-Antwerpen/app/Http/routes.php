@@ -18,6 +18,11 @@ Route::get('register', 'PageController@register');
 Route::get('login', 'PageController@login');
 Route::get('template', 'PageController@template');
 Route::get('home', 'PageController@home');
+Route::get('uitleg', 'PageController@uitleg');
+Route::get('map', 'PageController@map');
+Route::get('stemmen', 'PageController@stemmen');
+Route::get('tijdlijn', 'PageController@tijdlijn');
+Route::get('comments', 'PageController@comments');
 
 
 
