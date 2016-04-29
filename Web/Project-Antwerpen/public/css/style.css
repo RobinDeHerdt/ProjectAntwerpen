@@ -1,14 +1,38 @@
 @font-face {
-font-family: MyWebfont;
+font-family: sunCd;
+src: url("../fonts/SunAntwerpenCd_700.woff") format("woff");
+}
+@font-face {
+font-family: sunCd;
+src: url("../fonts/SunAntwerpenCd_700.eot");
+}
+@font-face {
+font-family: sunCd;
+src: url("../fonts/SunAntwerpenCd_700.svg") format("svg");
+}
+@font-face {
+font-family: sun500;
 src: url("../fonts/SunAntwerpen_500.woff") format("woff");
 }
 @font-face {
-font-family: MyWebfont;
+font-family: sun500;
 src: url("../fonts/SunAntwerpen_500.eot");
 }
 @font-face {
-font-family: MyWebfont;
+font-family: sun500;
 src: url("../fonts/SunAntwerpen_500.svg") format("svg");
+}
+@font-face {
+font-family: AntwerpREG;
+src: url("../fonts/Antwerpen-Regular.woff") format("woff");
+}
+@font-face {
+font-family: AntwerpREG;
+src: url("../fonts/Antwerpen-Regular.eot");
+}
+@font-face {
+font-family: AntwerpREG;
+src: url("../fonts/Antwerpen-Regular.svg") format("svg");
 }
 @font-face {
 font-family: AntwerpTall;
@@ -24,9 +48,18 @@ src: url("../fonts/AntwerpenTall-Tall.svg") format("svg");
 }
 
 .titelpage {
-font-family: AntwerpTall, Verdana, sans-serif;
+font-family: AntwerpREG, Verdana, sans-serif;
 
 }
+.tile .title {
+font-family: sunCd, Verdana, sans-serif;
+
+}
+.navbar li a, .navbar li{
+    font-family: sun500, Verdana, sans-serif;
+}
+
+
 .titelpage:hover{
   text-decoration: none;
 }
@@ -64,9 +97,7 @@ font-family: AntwerpTall, Verdana, sans-serif;
   font-size:18px;
 
 }
-.navbar li a{
-    font-family: MyWebfont, Verdana, sans-serif;
-}
+
 .navbar li:hover a{
   background-color:#CF0039;
   border-bottom: 2px solid white;
@@ -165,15 +196,13 @@ font-family: AntwerpTall, Verdana, sans-serif;
   padding-top: 9vh;
   margin-bottom: 30px;
 }
-.tile .title{
-  font-family: MyWebfont, Verdana, sans-serif;
-}
+
 .imgtile a{
   text-decoration: none;
 }
 
 .tile h3 {
-  font-size: 35px;
+  font-size: 30px;
   margin-top: 5vh;
 
 }
