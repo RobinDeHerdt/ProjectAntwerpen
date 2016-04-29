@@ -132,10 +132,12 @@ font-family: sunCd, Verdana, sans-serif;
 .purple{
   background-color: rgba(85, 85, 85, 0.5);
   -webkit-transition: background-color 0.5s ease;
+
 }
 .purple:hover{
   background-image: none;
   background-color: #840B55;
+   opacity: 0.9;
 }
 .Tile2{
 
@@ -149,6 +151,7 @@ font-family: sunCd, Verdana, sans-serif;
 .red:hover{
   background-image: none;
   background-color: #DA291C;
+   opacity: 0.9;
 
 }
 .expand {
@@ -159,6 +162,7 @@ font-family: sunCd, Verdana, sans-serif;
    -ms-transform: scale(1.05,1.05); /* IE 9 */
     -webkit-transform: scale(1.05,1.05); /* Safari */
   height:auto;
+   opacity: 0.9;
 }
 .Tile3{
 
@@ -172,6 +176,7 @@ font-family: sunCd, Verdana, sans-serif;
 .orange:hover{
   background-image: none;
   background-color: #F18A00;
+   opacity: 0.9;
 }
 .Tile4{
 
@@ -185,6 +190,7 @@ font-family: sunCd, Verdana, sans-serif;
 .green:hover{
   background-image: none;
   background-color: #4AA32C;
+   opacity: 0.9;
 }
 .Tile5{
   background-image: url(../img/station.jpg);
@@ -196,6 +202,7 @@ font-family: sunCd, Verdana, sans-serif;
 }
 .blue:hover{
   background-color: #004851;
+   opacity: 0.9;
 }
 
 .tile{
