@@ -12,7 +12,11 @@ class CreateQuestionsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('questions', function (Blueprint $table) {
+            $table->increments('question_id');
+            $table->string('questionbody');
+            $table->boolean('correctanswer');
+        });
     }
 
     /**
@@ -22,6 +26,6 @@ class CreateQuestionsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('questions');
     }
 }
