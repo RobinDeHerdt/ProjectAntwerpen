@@ -26,7 +26,6 @@ Route::get('comments', 'PageController@comments');
 
 
 
-
 // Route::get('')
 Route::get('profile', 'HomeController@dashboard');
 Route::auth();
