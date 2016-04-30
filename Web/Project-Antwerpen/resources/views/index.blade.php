@@ -6,7 +6,7 @@
 
 @section('content')
   <div class="container allTiles">
-      <div class="row sortnav">
+      <div class="sortnav">
     <div class="col-md-12">
       <fieldset>
         <div class="switch-toggle switch-candy-blue   switch-candy">
