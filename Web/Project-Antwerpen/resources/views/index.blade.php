@@ -24,9 +24,9 @@
       </div>
       <div class="sortwrapper">
 
-      <div class="row">
 
-            <div class="col-sm-4 sort"  data-percentage="30">
+
+            <div class="col-sm-4 sort"  data-date="30" data-theme="sport">
               <div class="imgtile Tile1 expand">
                 <a href="{{ url('/tijdlijn') }}">
               <div class="tile purple">
@@ -38,7 +38,7 @@
             </div>
 
 
-            <div class="col-sm-4 sort" data-percentage="20">
+            <div class="col-sm-4 sort" data-date="20" data-theme="sport">
               <div class="imgtile Tile2 expand">
                 <a href="{{ url('/tijdlijn') }}">
               <div class="tile red">
@@ -51,7 +51,7 @@
 
 
 
-        <div class="col-sm-4 sort" data-percentage="10">
+        <div class="col-sm-4 sort" data-date="10" data-theme="cultuur">
           <div class="imgtile Tile3 expand">
             <a href="{{ url('/tijdlijn') }}">
           <div class="tile orange">
@@ -61,10 +61,10 @@
           </a>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-sm-4 sort " data-percentage="15">
+
+
+        <div class="col-sm-4 sort" data-date="25" data-theme="cultuur">
           <div class="imgtile Tile4 expand">
             <a href="{{ url('/tijdlijn') }}">
           <div class="tile green">
@@ -74,7 +74,7 @@
           </a>
           </div>
         </div>
-        <div class="col-sm-4 sort" data-percentage="20">
+        <div class="col-sm-4 sort" data-date="20" data-theme="politiek">
           <div class="imgtile Tile5 expand">
             <a href="{{ url('/tijdlijn') }}">
           <div class="tile blue">
@@ -85,6 +85,5 @@
         </a>
         </div>
       </div>
-    </div>
     </div>
 @stop

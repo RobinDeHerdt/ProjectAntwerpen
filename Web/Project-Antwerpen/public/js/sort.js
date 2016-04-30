@@ -4,16 +4,19 @@ $('#sort1').on('click', function () {
   var $wrapper = $('.sortwrapper');
 
   $wrapper.find('.sort').sort(function (a, b) {
-      return -a.dataset.percentage - -b.dataset.percentage;
+      return +a.dataset.date - +b.dataset.date;
   })
   .appendTo( $wrapper );
 });
 
 $('#sort').on('click', function () {
-    var $wrapper = $('.sortwrapper');
 
-    $wrapper.find('.sort').sort(function (a, b) {
-        return +a.dataset.percentage - +b.dataset.percentage;
-    })
-    .appendTo( $wrapper );
+  var $wrapper = $('.sortwrapper');
+
+  $wrapper.find('.sort').sort(function (a, b) {
+     return $(a).text() > $(b).text();
+  })
+  .appendTo( $wrapper );
+
+
 });
