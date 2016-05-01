@@ -15,17 +15,31 @@
           <div class="navbar-header">
             <a class="navbar-left" href="/overview"><img src="../../img/A_logo_RGB_123x123.jpg" alt="Logo antwerpen"/></a>
             <a class="navbar-left titelpage" href="/overview">Antwerpen Projecten</a>
+            <div class="nav navbar-btn navbar-right navbar-fixed-top navbar-toggle">
+
+                <!-- Authentication Links -->
+                @if (Auth::guest())
+                    <a id="loginicon" href="{{ url('/login') }}"><span class="fa fa-btn fa-sign-in icon-large" ></span></a>
+                  <a id="registericon" href="{{ url('/register') }}"><span class="fa fa-btn fa-pencil" ></span></a>
+                @else
+                  <a id="logouticon" href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> </a>
+                @endif
+
+            </div>
           </div>
 
          <!--  <ul class="nav navbar-nav navbar-right">
            <li><a href="/register"><span class="fa  fa-pencil "></span> Sign Up</a></li>
            <li><a href="/login"><span class="fa  fa-sign-in "></span> Login</a></li>
           </ul> -->
+
+
          <div class="collapse navbar-collapse" id="app-navbar-collapse">
+
             <ul class="nav navbar-nav navbar-right">
               <!-- Authentication Links -->
               @if (Auth::guest())
-                  <li><a href="{{ url('/login') }}"><span class="fa fa-btn fa-sign-out" ></span> Login</a></li>
+                  <li><a href="{{ url('/login') }}"><span class="fa fa-btn fa-sign-in" ></span> Login</a></li>
                   <li><a href="{{ url('/register') }}"><span class="fa fa-btn fa-pencil" ></span> Register</a></li>
               @else
                 <li id="welcome">Welkom, {{ Auth::user()->firstname }}</li>
