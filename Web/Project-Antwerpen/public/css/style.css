@@ -83,12 +83,13 @@ font-family: sunCd, Verdana, sans-serif;
 
 .switch-toggle {
   margin-bottom: 20px;
-  border: 2px solid #38A3D4;
+  height: 50px;
 
 }
-.switch-toggle label {
-  outline-color: rgba(255, 255, 255, 0);
+.switch-toggle input:first-child{
+  color: white;
 }
+
 
 
 .titelpage{
@@ -116,8 +117,15 @@ font-family: sunCd, Verdana, sans-serif;
   margin-right: 30px;
 
 }
+.projectnav li{
+  width:20%;
+  text-align: center;
+}
 .allTiles{
   min-height: 83.1vh;
+}
+.ContentDiv{
+    min-height: 78.8vh;
 }
 .imgtile{
   background-repeat: no-repeat;
@@ -235,32 +243,33 @@ footer p {
 .panel-body{
     min-height: 76.8vh;
 }
+.iconnavbar {
+display: block!important;
+}
+
 
 @media(max-width:767px)
 {
-  .navbar{
-    border: 0px;
-  }
-  .navbar li{
-    padding-top: 0px;
-    padding-bottom: 0px;
-    font-size:18px;
-    border-top: 1px solid white;
-  }
   .navbar-right{
     margin-right: 0px;
     margin-top: 0px;
     text-align: center;
-    background-color: #BCE194;
+    padding-top: 35px;
+  }
+
+
+  #loginicon, #registericon, #logouticon{
+    font-size: 20px;
+    margin-right: 15px;
+
+  }
+  #logouticon{
+    margin-right: 40px;
   }
 
   .titelpage{
-    font-size:20px;
-    margin-left: 10px;
-
-
+    padding-top: 33px;
+    position: absolute;
   }
-  .container{
-    margin-top: 80px;
-  }
+
 }
