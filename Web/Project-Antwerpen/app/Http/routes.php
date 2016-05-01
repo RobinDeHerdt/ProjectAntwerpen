@@ -23,8 +23,7 @@ Route::get('map', 'PageController@map');
 Route::get('stemmen', 'PageController@stemmen');
 Route::get('tijdlijn', 'PageController@tijdlijn');
 Route::get('comments', 'PageController@comments');
-
-
+Route::get('json', 'ApiController@getQuestions');
 
 // Route::get('')
 Route::get('profile', 'HomeController@dashboard');

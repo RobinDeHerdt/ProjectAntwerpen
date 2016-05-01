@@ -48,8 +48,6 @@
                                 <button type="submit" class="btn btn-primary col-md-4">
                                    Login
                                 </button>
-
-                                
                             </div>
                         </div>
                     </form>
