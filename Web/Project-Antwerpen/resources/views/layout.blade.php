@@ -52,7 +52,9 @@
 
       @yield('navigation-layout')
 
+    <div class="ContentDiv">
     @yield('content')
+    </div>
      <footer class="footer">
         <div class="container">
         <p>&copy Stad Antwerpen</p>

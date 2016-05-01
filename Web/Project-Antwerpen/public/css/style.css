@@ -117,8 +117,15 @@ font-family: sunCd, Verdana, sans-serif;
   margin-right: 30px;
 
 }
+.projectnav li{
+  width:20%;
+  text-align: center;
+}
 .allTiles{
   min-height: 83.1vh;
+}
+.ContentDiv{
+    min-height: 78.8vh;
 }
 .imgtile{
   background-repeat: no-repeat;
