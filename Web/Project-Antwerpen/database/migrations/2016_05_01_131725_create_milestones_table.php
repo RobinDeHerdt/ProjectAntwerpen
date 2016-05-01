@@ -34,6 +34,6 @@ class CreateMilestonesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('milestones');
+        
     }
 }
