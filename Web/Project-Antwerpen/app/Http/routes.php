@@ -16,7 +16,7 @@ Route::get('about', 'PageController@about');
 
 Route::get('register', 'PageController@register');
 Route::get('login', 'PageController@login');
-Route::get('template', 'PageController@template');
+Route::get('template', 'AdminController@template');
 Route::get('home', 'PageController@home');
 Route::get('uitleg', 'PageController@uitleg');
 Route::get('map', 'PageController@map');
