@@ -25,78 +25,73 @@
       <div class="sortwrapper">
           @foreach( $projects as $project)
 
-          <div class="col-sm-4 sort"  data-date="30" data-theme="sport">
-            <div class="imgtile Tile1 expand">
-              <a href="{{ url('/tijdlijn') }}">
-            <div class="tile purple">
-              <h3 class="title">{{$project->project_name}}</h3>
 
-            </div>
-            </a>
-            </div>
+          <div class="col-sm-4 sort" data-date="15" data-theme="Zumba">
+              <div class="col-sm-12 thumbnail text-center expand">
+                  <img alt="" class="img-responsive" src=
+                  "img/kathedraal.jpg">
+                  <a class="captionlink" href="{{ url('/tijdlijn') }}">
+                    <div class="caption purple">
+                        <h4>{{$project->project_name}}</h4>
+                    </div>
+                  </a>
+              </div>
           </div>
 
           @endforeach
 
 
-            <div class="col-sm-4 sort"  data-date="30" data-theme="sport">
-              <div class="imgtile Tile1 expand">
-                <a href="{{ url('/tijdlijn') }}">
-              <div class="tile purple">
-                <h3 class="title">Mas vernieuwing</h3>
 
+          <div class="col-sm-4 sort" data-date="10" data-theme="sport">
+              <div class="col-sm-12 thumbnail text-center expand">
+                  <img alt="" class="img-responsive" src=
+                  "img/kathedraal.jpg">
+                  <a class="captionlink" href="{{ url('/tijdlijn') }}">
+                    <div class="caption red">
+                        <h4>cooolio</h4>
+                    </div>
+                  </a>
               </div>
-              </a>
-              </div>
+          </div>
+          <div class="col-sm-4 sort" data-date="20" data-theme="a">
+            <div class="col-sm-12 thumbnail text-center expand">
+                <img alt="" class="img-responsive" src=
+                "img/kaaien.jpg">
+                <a class="captionlink" href="{{ url('/tijdlijn') }}">
+                  <div class="caption orange">
+                      <h4>badaboom</h4>
+                  </div>
+                </a>
             </div>
-
-
-            <div class="col-sm-4 sort" data-date="20" data-theme="sport">
-              <div class="imgtile Tile2 expand">
-                <a href="{{ url('/tijdlijn') }}">
-              <div class="tile red">
-                <h3 class="title">Parking kaaien</h3>
-
-              </div>
-              </a>
-                </div>
+        </div>
+          <div class="col-sm-4">
+            <div class="col-sm-12 thumbnail text-center expand">
+                <img alt="" class="img-responsive" src=
+                "img/kaaien.jpg">
+                <a class="captionlink" href="{{ url('/tijdlijn') }}">
+                  <div class="caption blue">
+                      <h4>pikachu</h4>
+                  </div>
+                </a>
             </div>
-
-
-
-        <div class="col-sm-4 sort" data-date="10" data-theme="cultuur">
-          <div class="imgtile Tile3 expand">
-            <a href="{{ url('/tijdlijn') }}">
-          <div class="tile orange">
-            <h3 class="title">Kathedraal renovatie</h3>
-
-          </div>
-          </a>
-          </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="col-sm-12 thumbnail text-center expand">
+                <img alt="" class="img-responsive" src=
+                "img/kaaien.jpg">
+                <a class="captionlink" href="{{ url('/tijdlijn') }}">
+                  <div class="caption green">
+                      <h4>Lorem ipsum dolor sit amet, consectetur</h4>
+                  </div>
+                </a>
+            </div>
         </div>
 
 
 
-        <div class="col-sm-4 sort" data-date="25" data-theme="cultuur">
-          <div class="imgtile Tile4 expand">
-            <a href="{{ url('/tijdlijn') }}">
-          <div class="tile green">
-            <h3 class="title">Steen rondleidng</h3>
 
-          </div>
-          </a>
-          </div>
-        </div>
-        <div class="col-sm-4 sort" data-date="20" data-theme="politiek">
-          <div class="imgtile Tile5 expand">
-            <a href="{{ url('/tijdlijn') }}">
-          <div class="tile blue">
-            <h3 class="title">Nieuwe sporen</h3>
 
-          </div>
-        </div>
-        </a>
-        </div>
+
       </div>
     </div>
 @stop
