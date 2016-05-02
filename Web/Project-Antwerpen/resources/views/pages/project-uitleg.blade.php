@@ -10,7 +10,8 @@
 
 <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
     <div class="row top-buffer" id="fase1">
-    <h1 style="text-align:center">Project uitleg</h1>
+    <details>
+    <summary style="text-align:center">Fase 1</summary>
     <div class="col-md-4 imgtile Tile1" style="height:250px"></div>
     <div class="col-md-8">
     <h2>Fase 1</h2>
@@ -20,10 +21,17 @@
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+    </details>
     </div>
+
+
+  
+  
     
 
     <div class="row top-buffer" id="fase2">
+    <details>
+    <summary style="text-align:center">Fase 2</summary>
     <div class="col-md-8">
     <h2>Fase 2</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -32,6 +40,7 @@
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
     <div class="col-md-4 imgtile Tile2" style="height:250px"></div>
+    </details>
     </div>
    
 
@@ -93,7 +102,7 @@
 	padding-bottom:40px;
 	border-bottom: 1px solid black;
 	}</style>
-    
+
 
 
 </body>
