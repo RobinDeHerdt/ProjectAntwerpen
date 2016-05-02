@@ -29,10 +29,6 @@ class PageController extends Controller
 	{
 		return view('pages.login');
 	}
-	public function template()
-	{
-		return view('pages.template');
-	}
 	public function uitleg()
 	{
 		return view('pages.project-uitleg');
