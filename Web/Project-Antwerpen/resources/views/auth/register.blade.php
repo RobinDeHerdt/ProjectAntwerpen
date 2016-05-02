@@ -88,6 +88,7 @@
 
                                 <div class="col-md-6">
                                     <select class="c-select form-control input-md" name="gender" alt="Duid je geslacht aan" value="{{old('gender')}}">
+                                        <option value="0" selected></option>
                                         <option value="1" alt="Man"     >Man</option>
                                         <option value="2" alt="Vrouw"   >Vrouw</option>
                                     </select>
@@ -134,7 +135,9 @@
                                     </button>
                                 </div>
                             </div>
+                            <p class="col-md-6 col-md-offset-4">Velden met een * zijn verplicht in te vullen.</p>
                         </form>
+
                     </div>
                 </div>
             </div>

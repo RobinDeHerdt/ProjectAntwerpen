@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRatingsTable extends Migration
+class CreateMilestonesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,17 @@ class CreateRatingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ratings', function (Blueprint $table) {
-            $table->increments('rating_id');
-            $table->integer('rating');
+        Schema::create('milestones', function (Blueprint $table) {
+            $table->increments('milestone_id');
+            $table->string('milestone_title');
+            $table->string('milestone_image');
+            $table->string('milestone_info');
+            $table->date('start_date');
+            $table->date('end_date');
         });   
 
-         Schema::table('ratings', function($table) {
-            $table->integer('user_id')->unsigned();
+         Schema::table('milestones', function($table) {
             $table->integer('project_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('project_id')->references('id')->on('projects');
         });
     }
