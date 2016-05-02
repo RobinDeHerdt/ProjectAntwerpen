@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\project;
+
 class PageController extends Controller
 {
 	public function welcome()
@@ -20,7 +22,8 @@ class PageController extends Controller
 
 	public function overview()
 	{
-		return view('index');
+		$projects = project::orderBy('id', 'asc')->get();
+		return view('index' , [ 'projects' => $projects ] );
 	}
 	public function login()
 	{
