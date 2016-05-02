@@ -19,9 +19,10 @@ class CreateProjectsTable extends Migration
             $table->string('info');
             $table->string('location');
             $table->string('postalcode');
-            $table->integer('xcoord');
-            $table->integer('ycoord');
+            $table->double('xcoord');
+            $table->double('ycoord');
             $table->string('thema');
+            $table->string('color');
             $table->date('start_date');
             $table->date('end_date');
             $table->timestamps();

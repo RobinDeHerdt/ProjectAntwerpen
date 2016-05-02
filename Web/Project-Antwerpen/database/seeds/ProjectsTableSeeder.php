@@ -23,6 +23,21 @@ class ProjectsTableSeeder extends Seeder
         	'thema' => 'Mobiliteit',
         	'start_date' => '2016-04-10',
         	'end_date' => '2016-07-23',
+        	'color' => 'purple',
+    	]);
+
+    	DB::table('projects')->insert([
+        	'project_name' => 'Vernieuwing MAS',
+        	'headerimage' => '../img/mas.jpg',
+        	'info' => 'Het Museum aan de Stroom zal vernieuwd worden.',
+        	'location' => 'Antwerpen',
+        	'postalcode' => '2000',
+        	'xcoord' => 51.216949,
+        	'ycoord' => 4.421207,
+        	'thema' => 'Architectuur',
+        	'start_date' => '2016-06-21',
+        	'end_date' => '2016-12-',
+        	'color' => 'yellow',
     	]);
     }
 }
