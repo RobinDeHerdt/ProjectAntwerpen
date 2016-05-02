@@ -25,13 +25,12 @@
       <div class="sortwrapper">
           @foreach( $projects as $project)
 
-
-          <div class="col-sm-4 sort" data-date="15" data-theme="Zumba">
+          <div class="col-sm-4 sort"  data-theme={{$project->thema}} data-date={{strtotime($project->headerimage)}}>
               <div class="col-sm-12 thumbnail text-center expand">
                   <img alt="" class="img-responsive" src=
-                  "img/kathedraal.jpg">
+                  {{$project->headerimage}}>
                   <a class="captionlink" href="{{ url('/tijdlijn') }}">
-                    <div class="caption purple">
+                    <div class="caption {{$project->color}}" >
                         <h4>{{$project->project_name}}</h4>
                     </div>
                   </a>
@@ -46,7 +45,7 @@
               <div class="col-sm-12 thumbnail text-center expand">
                   <img alt="" class="img-responsive" src=
                   "img/kathedraal.jpg">
-                  <a class="captionlink" href="{{ url('/tijdlijn') }}">
+                    <a class="captionlink" href="{{ url('/tijdlijn') }}">
                     <div class="caption red">
                         <h4>cooolio</h4>
                     </div>
