@@ -23,7 +23,20 @@
 
       </div>
       <div class="sortwrapper">
+          @foreach( $projects as $project)
 
+          <div class="col-sm-4 sort"  data-date="30" data-theme="sport">
+            <div class="imgtile Tile1 expand">
+              <a href="{{ url('/tijdlijn') }}">
+            <div class="tile purple">
+              <h3 class="title">{{$project->project_name}}</h3>
+
+            </div>
+            </a>
+            </div>
+          </div>
+
+          @endforeach
 
 
             <div class="col-sm-4 sort"  data-date="30" data-theme="sport">
