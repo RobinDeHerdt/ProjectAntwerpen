@@ -23,7 +23,9 @@ class PageController extends Controller
 	public function overview()
 	{
 		$projects = project::orderBy('id', 'asc')->get();
-		return view('index' , [ 'projects' => $projects ] );
+
+
+	return view('index' , [ 'projects' => $projects]  );
 	}
 	public function login()
 	{
