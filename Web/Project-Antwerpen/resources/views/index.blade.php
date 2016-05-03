@@ -23,9 +23,10 @@
 
       </div>
       <div class="sortwrapper">
+
           @foreach( $projects as $project)
 
-          <div class="col-sm-4 sort"  data-theme={{$project->thema}} data-date={{strtotime($project->headerimage)}}>
+          <div class="col-sm-4 sort"  data-theme="{{$project->thema}}" data-date="{{$project->start_date}}">
               <div class="col-sm-12 thumbnail text-center expand">
                   <img alt="" class="img-responsive" src=
                   {{$project->headerimage}}>
@@ -38,59 +39,6 @@
           </div>
 
           @endforeach
-
-
-
-          <div class="col-sm-4 sort" data-date="10" data-theme="sport">
-              <div class="col-sm-12 thumbnail text-center expand">
-                  <img alt="" class="img-responsive" src=
-                  "img/kathedraal.jpg">
-                    <a class="captionlink" href="{{ url('/tijdlijn') }}">
-                    <div class="caption red">
-                        <h4>cooolio</h4>
-                    </div>
-                  </a>
-              </div>
-          </div>
-          <div class="col-sm-4 sort" data-date="20" data-theme="a">
-            <div class="col-sm-12 thumbnail text-center expand">
-                <img alt="" class="img-responsive" src=
-                "img/kaaien.jpg">
-                <a class="captionlink" href="{{ url('/tijdlijn') }}">
-                  <div class="caption orange">
-                      <h4>badaboom</h4>
-                  </div>
-                </a>
-            </div>
-        </div>
-          <div class="col-sm-4">
-            <div class="col-sm-12 thumbnail text-center expand">
-                <img alt="" class="img-responsive" src=
-                "img/kaaien.jpg">
-                <a class="captionlink" href="{{ url('/tijdlijn') }}">
-                  <div class="caption blue">
-                      <h4>pikachu</h4>
-                  </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="col-sm-12 thumbnail text-center expand">
-                <img alt="" class="img-responsive" src=
-                "img/kaaien.jpg">
-                <a class="captionlink" href="{{ url('/tijdlijn') }}">
-                  <div class="caption green">
-                      <h4>Lorem ipsum dolor sit amet, consectetur</h4>
-                  </div>
-                </a>
-            </div>
-        </div>
-
-
-
-
-
-
       </div>
     </div>
 @stop
