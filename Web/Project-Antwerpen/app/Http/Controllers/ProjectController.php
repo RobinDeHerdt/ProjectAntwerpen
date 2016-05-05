@@ -34,4 +34,35 @@ class ProjectController extends Controller
 
         return redirect('/overview');
     }
+
+    // public function show($id)
+    // {   
+    //     $project = Project::find($id);
+
+    //     return view('pages.project-tijdlijn', compact($project));
+    // }
+
+    public function tijdlijn($id)
+    {
+        $project = Project::find($id);
+
+        return view('pages.project-tijdlijn', compact('project'));
+    }
+
+    public function info()
+    {
+        return view('pages.project-uitleg');
+    }
+    public function kaart()
+    {
+        return view('pages.project-map');
+    }
+    public function stemmen()
+    {
+        return view('pages.project-stemmen');
+    }
+    public function reacties()
+    {
+        return view('pages.project-comments');
+    }
 }
