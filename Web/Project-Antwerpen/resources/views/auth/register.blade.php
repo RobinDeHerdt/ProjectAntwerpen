@@ -15,7 +15,7 @@
                             {!! csrf_field() !!}
 
                             <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Voornaam</label>
+                                <label class="col-md-4 control-label">Voornaam*</label>
 
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="firstname" value="{{ old('firstname') }}">
@@ -29,7 +29,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Achternaam</label>
+                                <label class="col-md-4 control-label">Achternaam*</label>
 
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="lastname" value="{{ old('lastname') }}">
@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">E-Mail</label>
+                                <label class="col-md-4 control-label">E-Mail*</label>
 
                                 <div class="col-md-6">
                                     <input type="email" class="form-control" name="email" value="{{ old('email') }}">
@@ -88,6 +88,7 @@
 
                                 <div class="col-md-6">
                                     <select class="c-select form-control input-md" name="gender" alt="Duid je geslacht aan" value="{{old('gender')}}">
+                                        <option value="0" selected></option>
                                         <option value="1" alt="Man"     >Man</option>
                                         <option value="2" alt="Vrouw"   >Vrouw</option>
                                     </select>
@@ -100,7 +101,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Wachtwoord</label>
+                                <label class="col-md-4 control-label">Wachtwoord*</label>
 
                                 <div class="col-md-6">
                                     <input type="password" class="form-control" name="password">
@@ -114,7 +115,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Bevestig wachtwoord</label>
+                                <label class="col-md-4 control-label">Bevestig wachtwoord*</label>
 
                                 <div class="col-md-6">
                                     <input type="password" class="form-control" name="password_confirmation">
@@ -134,7 +135,9 @@
                                     </button>
                                 </div>
                             </div>
+                            <p class="col-md-6 col-md-offset-4">Velden met een * zijn verplicht in te vullen.</p>
                         </form>
+
                     </div>
                 </div>
             </div>

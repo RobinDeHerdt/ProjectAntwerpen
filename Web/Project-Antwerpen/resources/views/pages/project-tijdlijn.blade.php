@@ -27,9 +27,13 @@
 			</div> <!-- cd-timeline-img -->
 
 			<div class="cd-timeline-content">
-				<h2>Title of section 1</h2>
+				<h1>Fase 1</h1>
+				<h2>Titel van project</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-				<a href="#0" class="cd-read-more">Read more</a>
+				<div class="col-xs-6 imgtile Tile1" style="height:150px"></div>
+				<div class="col-xs-6 imgtile Tile2" style="height:150px"></div>
+				
+				<a href="{{ url('/uitleg') }}#fase1" class="cd-read-more top-buffer">Lees meer</a>
 				<span class="cd-date">Jan 14</span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
@@ -40,9 +44,10 @@
 			</div> <!-- cd-timeline-img -->
 
 			<div class="cd-timeline-content">
-				<h2>Title of section 2</h2>
+				<h1>Fase 2</h1>
+				<h2>Titel van project</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-				<a href="#0" class="cd-read-more">Read more</a>
+				<a href="{{ url('/uitleg') }}#fase2" class="cd-read-more top-buffer">Lees meer</a>
 				<span class="cd-date">Jan 18</span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
@@ -53,9 +58,10 @@
 			</div> <!-- cd-timeline-img -->
 
 			<div class="cd-timeline-content">
-				<h2>Title of section 3</h2>
+				<h1>Fase 3</h1>
+				<h2>Titel van project</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
-				<a href="#0" class="cd-read-more">Read more</a>
+				<a href="{{ url('/uitleg') }}#fase3" class="cd-read-more top-buffer">Lees meer</a>
 				<span class="cd-date">Jan 24</span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
@@ -66,9 +72,10 @@
 			</div> <!-- cd-timeline-img -->
 
 			<div class="cd-timeline-content">
-				<h2>Title of section 4</h2>
+				<h1>Fase 4</h1>
+				<h2>Titel van project</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-				<a href="#0" class="cd-read-more">Read more</a>
+				<a href="{{ url('/uitleg') }}#fase4" class="cd-read-more top-buffer">Lees meer</a>
 				<span class="cd-date">Feb 14</span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
@@ -79,9 +86,10 @@
 			</div> <!-- cd-timeline-img -->
 
 			<div class="cd-timeline-content">
-				<h2>Title of section 5</h2>
+				<h1>Fase 5</h1>
+				<h2>Titel van project</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
-				<a href="#0" class="cd-read-more">Read more</a>
+				<a href="{{ url('/uitleg') }}#fase5" class="cd-read-more top-buffer">Lees meer</a>
 				<span class="cd-date">Feb 18</span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
@@ -92,12 +100,22 @@
 			</div> <!-- cd-timeline-img -->
 
 			<div class="cd-timeline-content">
-				<h2>Final Section</h2>
+				<h1>Fase 6</h1>
+				<h2>Titel van project</h2>
 				<p>This is the content of the last section</p>
+				<a href="{{ url('/uitleg') }}#fase6" class="cd-read-more top-buffer">Lees meer</a>
 				<span class="cd-date">Feb 26</span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
 	</section> <!-- cd-timeline -->
+
+<style type="text/css">
+.top-buffer { 
+	margin-top:20px;
+	
+	
+	}</style>
+	<script type="text/javascript"> var $nav_home ;</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/timeline-main.js"></script> <!-- Resource jQuery -->
 </body>
