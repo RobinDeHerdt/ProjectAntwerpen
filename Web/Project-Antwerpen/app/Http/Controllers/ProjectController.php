@@ -17,6 +17,7 @@ class ProjectController extends Controller
             'project_location'  =>   'required',
             'project_postalcode'=>   'required',
             'project_color'     =>   'required',
+            'headerimage'       =>   'required|unique:projects',   
         ]);
 
         $project = new project;
@@ -29,18 +30,25 @@ class ProjectController extends Controller
         $project->color         = $request->project_color;
         $project->start_date    = $request->project_startdate;
         $project->end_date      = $request->project_enddate;
+            
+        if ($request->hasFile('headerimage') && $request->file('headerimage')->isValid()) 
+        {
+            $file       = $request->file('headerimage');
+            $fileName   = $file->getClientOriginalName();
 
-        $project->save();
+            $file->move(base_path() . '/public/img/', $fileName);
+
+            $project->headerimage   = '/img/' . $fileName;
+
+            $project->save();
+        }
+        else 
+        {
+            abort('404', 'Sad times :(');
+        }
 
         return redirect('/overview');
     }
-
-    // public function show($id)
-    // {   
-    //     $project = Project::find($id);
-
-    //     return view('pages.project-tijdlijn', compact($project));
-    // }
 
     public function tijdlijn($id)
     {
