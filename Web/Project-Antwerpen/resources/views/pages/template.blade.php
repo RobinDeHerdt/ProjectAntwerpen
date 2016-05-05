@@ -17,7 +17,8 @@
 <div class="container">
 
 
-
+<form role="form" method="POST" action="{{ url('/template') }}" novalidate="">
+{!! csrf_field() !!}
 <!-- Steps Progress and Details - START -->
 <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
     <div class="row">
@@ -30,15 +31,21 @@
             <span class="progress-completed">0%</span>
         </div>
     </div>
+    @if($errors->all())
+        @foreach ($errors->all() as $error)
+
+                <li>{{ $error }}</li>
+        @endforeach
+    @endif
     <div class="row">
         <div class="row step">
             <div id="div1" class="col-md-2 activestep" onclick="javascript: resetActive(event, 0, 'step-1');">
                 <span class="fa fa-pencil-square-o"></span>
-                <p>Project Titel</p>
+                <p>Projectnaam</p>
             </div>
             <div id="click2" class="col-md-2" onclick="javascript: resetActive(event, 20, 'step-2');">
                 <span class="fa fa-pencil"></span>
-                <p>Project Details</p>
+                <p>Details</p>
             </div>
             <div id="click3" class="col-md-2" onclick="javascript: resetActive(event, 40, 'step-3');">
                 <span class="fa fa-globe"></span>
@@ -46,29 +53,28 @@
             </div>
             <div id="click4" class="col-md-2" onclick="javascript: resetActive(event, 60, 'step-4');">
                 <span class="fa fa-arrows-h"></span>
-                <p>Tijdslijn</p>
+                <p>Tijdlijn</p>
             </div>
             <div id="click5" class="col-md-2" onclick="javascript: resetActive(event, 80, 'step-5');">
                 <span class="fa fa-camera"></span>
-                <p>Foto's</p>
+                <p>Afbeelding</p>
             </div>
             <div id="click6" class="col-md-2" onclick="javascript: resetActive(event, 100, 'step-6');">
                 <span class="fa fa-floppy-o"></span>
-                <p>Opslaan</p>
+                <p>Bevestigen</p>
             </div>
         </div>
     </div>
     <div class="row setup-content step activeStepInfo" id="step-1">
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
-                <h1>Project Titel</h1>
-                
-                
+                <h1>Projectnaam</h1>
+            
                 <div class="form-group">
-                    <input type="text" name="project-title" id="project-title" class="form-control input-md" placeholder="Project Titel" required alt="vul hier je project titel in">
+                    <input type="text" name="project_name" id="project_name" class="form-control input-md" placeholder="Projectnaam" required alt="Vul hier je projectnaam in" value="{{old('project_name')}}">
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(2);" alt="Volgende knop">
+                    <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(2);" alt="Volgende knop">
                </div>
 
             </div>
@@ -77,24 +83,64 @@
     <div class="row setup-content step hiddenStepInfo" id="step-2">
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
-                <h1>Project Details</h1>
+                <h1>Projectdetails</h1>
                 
                  <div class="form-group">
-                <textarea class="form-control input-md" rows="5" name="project-details" id="project-details" placeholder="Project Details" required alt="vul project details in"></textarea>
-            </div>
-            <div class="form-group">
-                    <input type="submit" value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(3);" alt="Volgende knop">
-            </div>
+                    <label class="control-label">Uitleg over het project</label>
+                    <textarea class="form-control input-md" rows="5" id="project_info" placeholder="Uitleg over het project" alt="Vul project details in" name="project_info">{{old('project_info')}}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Thema</label>
+                    <input type="text" name="project_thema" id="project_thema" class="form-control input-md" placeholder="Thema" alt="Vul hier het thema in." value="{{old('project_thema')}}">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Locatie</label>
+                    <input type="text" name="project_location" id="project_location" class="form-control input-md" placeholder="Locatie" alt="Vul hier de locatie van het project in." value="{{old('project_location')}}">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Postcode</label>
+                    <input type="text" name="project_postalcode" id="project_postalcode" class="form-control input-md" placeholder="2000" alt="Vul hier de postcode van de locatie in." value="{{old('project_postalcode')}}">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Startdatum</label>
+                    <input type="date" name="project_startdate" id="project_startdate" class="form-control input-md" alt="Vul hier de startdatum van het project in." value="{{old('project_startdate')}}">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Einddatum</label>
+                    <input type="date" name="project_enddate" id="project_enddate" class="form-control input-md" alt="Vul hier de einddatum van het project in." value="{{old('project_enddate')}}">
+                </div>
+
+                <div class="form-group">
+                    <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
+                    <label>Projectkleur</label>
+                    <select class="c-select form-control input-md" name="project_color" alt="Kies een kleur voor dit project" value="{{old('project_color')}}">
+                        <option selected disabled>Projectkleur</option>
+                        <option value="orange"  alt="Oranje">   Oranje  </option>
+                        <option value="purple"  alt="Paars">    Paars   </option>
+                        <option value="green"   alt="Groen">    Groen   </option>
+                        <option value="blue"    alt="Blauw">    Blauw   </option>
+                        <option value="red"     alt="Rood">     Rood    </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                        <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(3);" alt="Volgende knop">
+                </div>
             </div>
         </div>
     </div>
     <div class="row setup-content step hiddenStepInfo" id="step-3">
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
-                <h1>MAP (nog afwerken)</h1>
+                <h1>Map</h1>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.1022632989943!2d4.419058851572484!3d51.21719177948828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f703e7404c69%3A0x270b07bbe1f68aa6!2sAntwerpen-Centraal!5e0!3m2!1snl!2sbe!4v1461764810465" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 <div class="form-group">
-                    <input type="submit" value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(4);" alt="Volgende knop">
+                    <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(4);" alt="Volgende knop">
                </div>
             </div>
         </div>
@@ -107,7 +153,7 @@
                 tijdlijn met aparte points in time 
 
                 <div class="form-group">
-                    <input type="submit" value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
+                    <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
                </div>
             </div>
         </div>
@@ -117,10 +163,10 @@
             <div class="col-md-12 well text-center">
                 <h1>Foto's</h1>
                 
-                <input type="file" multiple=""/>
+                <input type="file" multiple="" name="file">
 
                 <div class="form-group">
-                    <input type="submit" value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(6);" alt="Volgende knop">
+                    <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(6);" alt="Volgende knop">
                </div>
             </div>
         </div>
@@ -129,15 +175,16 @@
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1>Opslaan</h1>
-                <h3 class="underline">Project Opslaan</h3>
-                Lees alles zeker na, kijk of er geen schrijffouten zijn, blablabla
+                <h3 class="underline">Project toevoegen</h3>
+                    Ben je zeker dat je dit project wil toevoegen?
 
                  <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-danger btn-lg" alt="Opslaan knop">
+                    <input type="submit" value="Bevestig" class="btn btn-danger btn-lg" alt="Opslaan knop">
                </div>
             </div>
         </div>
     </div>
+    </form>
 </div>
 
 <style>
