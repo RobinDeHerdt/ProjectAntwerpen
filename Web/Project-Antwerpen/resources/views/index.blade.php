@@ -30,15 +30,29 @@
               <div class="col-sm-12 thumbnail text-center expand">
                   <img alt="" class="img-responsive" src=
                   {{$project->headerimage}}>
-                  <a class="captionlink" href="{{ url('/tijdlijn') }}">
+                  <a class="captionlink" href="project/{{$project->id}}/tijdlijn">
                     <div class="caption {{$project->color}}" >
                         <h4>{{$project->project_name}}</h4>
                     </div>
                   </a>
               </div>
           </div>
-
           @endforeach
+
+
+          @if (Auth::user() && Auth::user()->isAdmin)
+          <div class="col-sm-4 sort"  data-theme="{{$project->thema}}" data-date="{{$project->start_date}}">
+              <div class="col-sm-12 thumbnail text-center expand">
+                  <img alt="" class="img-responsive" src="/img/grey_test.jpg">
+                  <a class="captionlink" href="{{ url('/template') }}">
+                    <div class="caption" >
+                        <h4>Voeg een project toe</h4>
+                    </div>
+                  </a>
+              </div>
+          </div>
+          @endif
+         
       </div>
     </div>
 @stop

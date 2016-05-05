@@ -31,25 +31,25 @@ class PageController extends Controller
 	{
 		return view('pages.login');
 	}
-	public function uitleg()
-	{
-		return view('pages.project-uitleg');
-	}
-	public function map()
-	{
-		return view('pages.project-map');
-	}
-	public function stemmen()
-	{
-		return view('pages.project-stemmen');
-	}
-	public function tijdlijn()
-	{
-		return view('pages.project-tijdlijn');
-	}
-	public function comments()
-	{
-		return view('pages.project-comments');
-	}
+	// public function uitleg()
+	// {
+	// 	return view('pages.project-uitleg');
+	// }
+	// public function map()
+	// {
+	// 	return view('pages.project-map');
+	// }
+	// public function stemmen()
+	// {
+	// 	return view('pages.project-stemmen');
+	// }
+	// public function tijdlijn()
+	// {
+	// 	return view('pages.project-tijdlijn');
+	// }
+	// public function comments()
+	// {
+	// 	return view('pages.project-comments');
+	// }
 
 }
