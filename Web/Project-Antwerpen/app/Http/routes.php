@@ -31,3 +31,4 @@ Route::auth();
 //Route::get('/home', 'HomeController@index');
 Route::get('/overview', 'PageController@overview');
 
+Route::post('/template', 'ProjectController@store');
