@@ -30,7 +30,7 @@
               <div class="col-sm-12 thumbnail text-center expand">
                   <img alt="" class="img-responsive" src=
                   {{$project->headerimage}}>
-                  <a class="captionlink" href="{{ url('/tijdlijn') }}">
+                  <a class="captionlink" href="project/{{$project->id}}/tijdlijn">
                     <div class="caption {{$project->color}}" >
                         <h4>{{$project->project_name}}</h4>
                     </div>
