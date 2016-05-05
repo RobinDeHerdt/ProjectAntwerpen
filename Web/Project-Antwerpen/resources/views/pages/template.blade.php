@@ -17,7 +17,7 @@
 <div class="container">
 
 
-<form role="form" method="POST" action="{{ url('/template') }}" novalidate="">
+<form role="form" method="POST" action="{{ url('/template') }}" novalidate="" enctype="multipart/form-data">
 {!! csrf_field() !!}
 <!-- Steps Progress and Details - START -->
 <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
@@ -33,7 +33,6 @@
     </div>
     @if($errors->all())
         @foreach ($errors->all() as $error)
-
                 <li>{{ $error }}</li>
         @endforeach
     @endif
@@ -163,7 +162,7 @@
             <div class="col-md-12 well text-center">
                 <h1>Foto's</h1>
                 
-                <input type="file" multiple="" name="file">
+                <input type="file" name="headerimage">
 
                 <div class="form-group">
                     <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(6);" alt="Volgende knop">
