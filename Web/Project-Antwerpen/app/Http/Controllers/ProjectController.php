@@ -30,6 +30,8 @@ class ProjectController extends Controller
         $project->color         = $request->project_color;
         $project->start_date    = $request->project_startdate;
         $project->end_date      = $request->project_enddate;
+        $project->xcoord        = $request->lat;
+        $project->ycoord        = $request->lng;
             
         if ($request->hasFile('headerimage') && $request->file('headerimage')->isValid()) 
         {

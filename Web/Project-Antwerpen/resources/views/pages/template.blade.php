@@ -12,6 +12,51 @@
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+function displayMap() 
+{
+    document.getElementById('googleMap').style.display="block";
+    initialize(); 
+}
+function initialize() {
+    var initLat = 51.220269043488635;
+    var initLng = 4.401529439178489;
+    var mapProp = {
+        center:new google.maps.LatLng(51.2240454,4.3982035),
+        zoom:12,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+  
+    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+    var marker = new google.maps.Marker({
+        position: {lat: initLat, lng: initLng},
+        map: map,
+        draggable: true,
+    });
+
+    
+
+    // Inital value
+    document.getElementById('lng').value = initLng;
+    document.getElementById('lat').value = initLat;
+
+    google.maps.event.addDomListener(window, "resize", function() {
+        var center = map.getCenter();
+        google.maps.event.trigger(map, "resize");
+        map.setCenter(center); 
+    });
+
+    google.maps.event.addListener(marker, "drag", function(event) {
+        var lat = event.latLng.lat();
+        var lng = event.latLng.lng();
+
+        document.getElementById('lng').value = lng;
+        document.getElementById('lat').value = lat;
+    });
+}
+</script>
 <body>
 
 <div class="container">
@@ -46,7 +91,7 @@
                 <span class="fa fa-pencil"></span>
                 <p>Details</p>
             </div>
-            <div id="click3" class="col-md-2" onclick="javascript: resetActive(event, 40, 'step-3');">
+            <div id="click3" class="col-md-2" onclick="javascript: resetActive(event, 40, 'step-3');displayMap();">
                 <span class="fa fa-globe"></span>
                 <p>Map</p>
             </div>
@@ -128,7 +173,7 @@
                 </div>
 
                 <div class="form-group">
-                        <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(3);" alt="Volgende knop">
+                        <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(3);displayMap();" alt="Volgende knop">
                 </div>
             </div>
         </div>
@@ -136,8 +181,14 @@
     <div class="row setup-content step hiddenStepInfo" id="step-3">
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
-                <h1>Map</h1>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.1022632989943!2d4.419058851572484!3d51.21719177948828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f703e7404c69%3A0x270b07bbe1f68aa6!2sAntwerpen-Centraal!5e0!3m2!1snl!2sbe!4v1461764810465" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <h1>Kaart</h1>
+               <!--  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.1022632989943!2d4.419058851572484!3d51.21719177948828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f703e7404c69%3A0x270b07bbe1f68aa6!2sAntwerpen-Centraal!5e0!3m2!1snl!2sbe!4v1461764810465" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+               <div id="googleMap"></div>
+               <p>Sleep de marker naar de projectlocatie</p>
+               <label>Lat:</label>
+               <input type="text" id="lat" name="lat"></input>
+               <label>Long:</label>
+               <input type="text" id="lng" name="lng"></input>
                 <div class="form-group">
                     <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(4);" alt="Volgende knop">
                </div>
@@ -187,6 +238,11 @@
 </div>
 
 <style>
+#googleMap {
+    width:100%;
+    height:450px;
+}
+
 .hiddenStepInfo {
     display: none;
 }
@@ -310,7 +366,18 @@
     }
    
 </script>
-
+<!-- <script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(51.508742,-0.120850),
+    zoom:5,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script> -->
 <!-- Steps Progress and Details - END -->
 
 </div>
