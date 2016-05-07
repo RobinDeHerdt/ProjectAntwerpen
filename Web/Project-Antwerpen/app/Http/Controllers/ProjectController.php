@@ -63,9 +63,11 @@ class ProjectController extends Controller
     {
         return view('pages.project-uitleg');
     }
-    public function kaart()
+    public function kaart($id)
     {
-        return view('pages.project-map');
+        $project = Project::find($id);
+
+        return view('pages.project-map', compact('project'));
     }
     public function stemmen()
     {
