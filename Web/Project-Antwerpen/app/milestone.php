@@ -8,6 +8,6 @@ class milestone extends Model
 {
      public function project()
     {
-        return $this->belongsTo('App\project');
+        return $this->belongsTo('App\project','project_id');
     }
 }
