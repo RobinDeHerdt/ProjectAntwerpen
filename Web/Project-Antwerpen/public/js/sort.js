@@ -43,7 +43,11 @@ $("#addMilestone").hide();
 $("#milestoneButtonTogle div:first-child").hide()
 $("#btn-button-milestone").click(function() { $("#addMilestone").toggle();});
 $('#btn-button-milestone').on('click', function(){
-    $(this).html() == "Formulier minimaliseren" ? $(this).html('Mijlpaal Toevoegen') : $(this).html('Formulier minimaliseren');
+    $(this).prop('value') == "Formulier minimaliseren" ? $(this).prop('value', 'Mijlpaal Toevoegen') : $(this).prop('value', 'Formulier minimaliseren');
+});
+$( "#btn-button-milestone" ).click(function() {
+  $( this ).toggleClass( "btn-success" );
+    $( this ).toggleClass( "btn-info" );
 });
 $('#btn-button-milestone').on('click', function(){
   if ($("#milestoneButtonTogle div:first-child").is(":visible")) {
