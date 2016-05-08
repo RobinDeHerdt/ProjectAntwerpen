@@ -38,3 +38,19 @@ $('#sort').on('click', function () {
   })
   .appendTo( $wrapper );
 });
+//show & hide form --> project aanmaken --> milestone toevoegen
+$("#addMilestone").hide();
+$("#milestoneButtonTogle div:first-child").hide()
+$("#btn-button-milestone").click(function() { $("#addMilestone").toggle();});
+$('#btn-button-milestone').on('click', function(){
+    $(this).html() == "Formulier minimaliseren" ? $(this).html('Mijlpaal Toevoegen') : $(this).html('Formulier minimaliseren');
+});
+$('#btn-button-milestone').on('click', function(){
+  if ($("#milestoneButtonTogle div:first-child").is(":visible")) {
+    $("#milestoneButtonTogle div:first-child").hide();
+    $("#milestoneButtonTogle div:last-child").show();
+  }else{
+    $("#milestoneButtonTogle div:first-child").show();
+    $("#milestoneButtonTogle div:last-child").hide();
+  }
+});

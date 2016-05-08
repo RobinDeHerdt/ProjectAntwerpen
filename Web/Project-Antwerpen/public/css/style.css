@@ -232,7 +232,16 @@ footer p {
 .iconnavbar {
 display: block!important;
 }
-
+.btn-button-milestone, .btn-button-milestone:link, .btn-button-milestone:visited {
+    background-color: transparent;
+    border-radius: 0;
+    color: #CF0039;
+    border: 2px solid #CF0039;
+}
+.btn-button-milestone:active, .btn-button-milestone:hover {
+    background-color: #CF0039;
+    color: #fff
+}
 
 @media(max-width:767px)
 {

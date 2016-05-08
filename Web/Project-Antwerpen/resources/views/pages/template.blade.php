@@ -200,12 +200,50 @@ function initialize() {
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1>Tijdlijn</h1>
-                <h3 class="underline">Tijdlijn nog maken</h3>
-                tijdlijn met aparte points in time
 
+
+              <div class="form-group">
+                <button type="button" class="btn btn-button-milestone btn-lg" id="btn-button-milestone">Mijlpaal toevoegen</button>
+              </div>
+
+              <div id="addMilestone" class="form-group">
+                <div class="form-group">
+                    <label class="control-label">Titel mijlpaal</label>
+                    <input type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de mijlpaal in." value="{{old('titel_mijlpaal')}}">
+                </div>
+                <div class="form-group">
+                    <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
+                    <label>Icon</label>
+                    <select class="c-select form-control input-md" name="project_color" alt="Kies een kleur voor dit project" value="{{old('project_color')}}">
+                        <option selected disabled>Mijlpaal Icoontje</option>
+                        <option value="/img/cd-icon-movie.svg"     alt="Camera">  Camera  </option>
+                        <option value="/img/cd-icon-location.svg"  alt="locatie"> locatie </option>
+                        <option value="/img/cd-icon-picture.svg"   alt="foto">    foto    </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Startdatum</label>
+                    <input type="date" name="milestone_startdate" id="milestone_startdate" class="form-control input-md" alt="Vul hier de startdatum van de mijlpaal in." value="{{old('milestone_startdate')}}">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">EindDatum</label>
+                    <input type="date" name="milestone_enddate" id="milestone_enddate" class="form-control input-md" alt="Vul hier de einddatum van de mijlpaal in." value="{{old('milestone_enddate')}}">
+                </div>
+                <div class="form-group">
+                   <label class="control-label">gedetailleerd uitleg over de mijlpaal</label>
+                   <textarea class="form-control input-md" rows="5" id="mijlpaal_info" placeholder="Uitleg over het mijlpaal" alt="Vul info over de mijlpaal in" name="mijlpaal_info">{{old('mijlpaal_info')}}</textarea>
+               </div>
+
+              </div>
+              <div id="milestoneButtonTogle">
+
+                <div class="form-group">
+                    <input value="Mijlpaal toevoegen" class="btn btn-danger btn-lg" onclick="" alt="Submit Milestone">
+               </div>
                 <div class="form-group">
                     <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
                </div>
+              </div>
             </div>
         </div>
     </div>
