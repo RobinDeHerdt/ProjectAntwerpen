@@ -14,10 +14,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
-function displayMap() 
+function displayMap()
 {
     document.getElementById('googleMap').style.display="block";
-    initialize(); 
+    initialize();
 }
 function initialize() {
     var initLat = 51.220269043488635;
@@ -27,7 +27,7 @@ function initialize() {
         zoom:12,
         mapTypeId:google.maps.MapTypeId.ROADMAP
     };
-  
+
     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
     var marker = new google.maps.Marker({
@@ -36,7 +36,7 @@ function initialize() {
         draggable: true,
     });
 
-    
+
 
     // Inital value
     document.getElementById('lng').value = initLng;
@@ -45,7 +45,7 @@ function initialize() {
     google.maps.event.addDomListener(window, "resize", function() {
         var center = map.getCenter();
         google.maps.event.trigger(map, "resize");
-        map.setCenter(center); 
+        map.setCenter(center);
     });
 
     google.maps.event.addListener(marker, "drag", function(event) {
@@ -59,7 +59,7 @@ function initialize() {
 </script>
 <body>
 
-<div class="container">
+<div class="container ProjectFrom">
 
 
 <form role="form" method="POST" action="{{ url('/template') }}" novalidate="" enctype="multipart/form-data">
@@ -72,7 +72,7 @@ function initialize() {
         <div class="progress" id="progress1">
             <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
             </div>
-            
+
             <span class="progress-completed">0%</span>
         </div>
     </div>
@@ -113,7 +113,7 @@ function initialize() {
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1>Projectnaam</h1>
-            
+
                 <div class="form-group">
                     <input type="text" name="project_name" id="project_name" class="form-control input-md" placeholder="Projectnaam" required alt="Vul hier je projectnaam in" value="{{old('project_name')}}">
                 </div>
@@ -128,7 +128,7 @@ function initialize() {
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1>Projectdetails</h1>
-                
+
                  <div class="form-group">
                     <label class="control-label">Uitleg over het project</label>
                     <textarea class="form-control input-md" rows="5" id="project_info" placeholder="Uitleg over het project" alt="Vul project details in" name="project_info">{{old('project_info')}}</textarea>
@@ -169,6 +169,7 @@ function initialize() {
                         <option value="green"   alt="Groen">    Groen   </option>
                         <option value="blue"    alt="Blauw">    Blauw   </option>
                         <option value="red"     alt="Rood">     Rood    </option>
+                        <option value="yellow"  alt="Geel">     Geel    </option>
                     </select>
                 </div>
 
@@ -200,7 +201,7 @@ function initialize() {
             <div class="col-md-12 well text-center">
                 <h1>Tijdlijn</h1>
                 <h3 class="underline">Tijdlijn nog maken</h3>
-                tijdlijn met aparte points in time 
+                tijdlijn met aparte points in time
 
                 <div class="form-group">
                     <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
@@ -212,7 +213,7 @@ function initialize() {
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1>Foto's</h1>
-                
+
                 <input type="file" name="headerimage">
 
                 <div class="form-group">
@@ -360,11 +361,11 @@ function initialize() {
         });
     }
 
-    function showCurrentStepInfo(step) {        
+    function showCurrentStepInfo(step) {
         var id = "#" + step;
         $(id).addClass("activeStepInfo");
     }
-   
+
 </script>
 <!-- <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
