@@ -145,9 +145,11 @@ font-family: AntwerpREG, Verdana, sans-serif;
   min-height: 83.1vh;
 }
 .ContentDiv{
-    min-height: 78.8vh;
+    min-height: 78.9vh;
 }
-
+.ProjectFrom{
+    min-height: 83.1vh;
+}
 .purple{
   background-color: rgba(85, 85, 85, 0.5);
   -webkit-transition: background-color 0.5s ease;
@@ -195,6 +197,14 @@ font-family: AntwerpREG, Verdana, sans-serif;
   background-color: #004851;
    opacity: 0.9;
 }
+.yellow{
+  background-color: rgba(85, 85, 85, 0.5);
+  -webkit-transition: background-color 0.5s ease;
+}
+.yellow:hover{
+  background-color: #FFD200;
+   opacity: 0.9;
+}
 .expand {
    transition: all .3s ease-in-out;
 }
@@ -217,7 +227,7 @@ footer p {
   color: rgb(190, 190, 190);
 }
 .panel-body{
-    min-height: 76.8vh;
+    min-height: 76.9vh;
 }
 .iconnavbar {
 display: block!important;
