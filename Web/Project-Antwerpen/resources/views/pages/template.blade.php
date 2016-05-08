@@ -202,7 +202,6 @@ function initialize() {
                 <h1>Tijdlijn</h1>
 
 
-
               <div class="form-group">
                   <input value="Mijlpaal toevoegen" class="btn btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal">
              </div>
