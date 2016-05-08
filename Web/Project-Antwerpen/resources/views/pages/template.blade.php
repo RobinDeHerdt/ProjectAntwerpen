@@ -202,9 +202,10 @@ function initialize() {
                 <h1>Tijdlijn</h1>
 
 
+
               <div class="form-group">
-                <button type="button" class="btn btn-button-milestone btn-lg" id="btn-button-milestone">Mijlpaal toevoegen</button>
-              </div>
+                  <input value="Mijlpaal toevoegen" class="btn btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal">
+             </div>
 
               <div id="addMilestone" class="form-group">
                 <div class="form-group">
@@ -238,7 +239,7 @@ function initialize() {
               <div id="milestoneButtonTogle">
 
                 <div class="form-group">
-                    <input value="Mijlpaal toevoegen" class="btn btn-danger btn-lg" onclick="" alt="Submit Milestone">
+                    <input value="Mijlpaal toevoegen" class="btn btn-success btn-lg" onclick="" alt="Submit mijlpaal">
                </div>
                 <div class="form-group">
                     <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
