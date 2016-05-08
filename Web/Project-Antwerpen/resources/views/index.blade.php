@@ -7,6 +7,23 @@
 @section('content')
   <div class="container allTiles">
       <div class="sortnav">
+      @if(Session::has('register'))
+    <div class="alert alert-success">
+        <p>{{ Session::get('register')}}</p>
+    </div>
+    @endif
+
+    @if(Session::has('login'))
+    <div class="alert alert-success">
+        <p>{{ Session::get('login')}}</p>
+    </div>
+    @endif
+
+    @if(Session::has('projectcreated'))
+    <div class="alert alert-success">
+        <p>{{ Session::get('projectcreated')}}</p>
+    </div>
+    @endif
     <div class="col-md-12">
       <fieldset>
         <div class="switch-toggle switch-candy-blue   switch-candy">

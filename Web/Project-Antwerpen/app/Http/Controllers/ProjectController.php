@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Http\Requests;
+use Session;
 
 class ProjectController extends Controller
 {
@@ -48,6 +49,8 @@ class ProjectController extends Controller
         {
             abort('404', 'Sad times :(');
         }
+
+        Session::flash('projectcreated', 'Je project is succesvol aangemaakt.');
 
         return redirect('/overview');
     }
