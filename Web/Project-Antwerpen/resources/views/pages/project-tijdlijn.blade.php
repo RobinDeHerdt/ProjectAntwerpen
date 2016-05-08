@@ -21,7 +21,7 @@
 <body>
 
 	<section id="cd-timeline" class="cd-container">
-		@foreach ($project->milestones as $milestone)
+		@foreach ($project->milestones as $key=>$milestone)
 		<div class="cd-timeline-block">
 			<div class="cd-timeline-img cd-movie">
 				<img src={{$milestone->milestone_image}} alt="Movie">
@@ -29,8 +29,8 @@
 
 			<div class="cd-timeline-content">
 				<h2>{{$milestone->milestone_title}}</h2>
-				<p>{{$milestone->milestone_info}}</p>
-				<a href="uitleg#fase2" class="cd-read-more top-buffer">Lees meer</a>
+				<p>{{ str_limit( $milestone->milestone_info, 25) }}</p>
+				<a href="info#fase{{$key+1}}" class="cd-read-more top-buffer">Lees meer</a>
 				<span class="cd-date">{{$milestone->start_date}}</span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
