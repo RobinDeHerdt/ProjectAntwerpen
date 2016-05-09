@@ -25,9 +25,9 @@
     </div>
 
 
-  
-  
-    
+
+
+
 
     <div class="row top-buffer" id="fase2">
     <details>
@@ -42,7 +42,7 @@
     <div class="col-md-4 imgtile Tile2" style="height:250px"></div>
     </details>
     </div>
-   
+
 
     <div class="row top-buffer" id="fase3">
     <div class="col-md-4 imgtile Tile3" style="height:250px"></div>
@@ -55,7 +55,7 @@
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
     </div>
-    
+
 
     <div class="row top-buffer" id="fase4" >
     <div class="col-md-8">
@@ -79,7 +79,7 @@
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
     </div>
-    
+
 
     <div class="row top-buffer" id="fase6" >
     <div class="col-md-8">
@@ -91,13 +91,13 @@
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
     <div class="col-md-4 imgtile Tile6" style="height:250px" ></div>
     </div>
-   
+
 
 
 </div>
 
 <style type="text/css">
-.top-buffer { 
+.top-buffer {
 	margin-bottom:40px;
 	padding-bottom:40px;
 	border-bottom: 1px solid black;

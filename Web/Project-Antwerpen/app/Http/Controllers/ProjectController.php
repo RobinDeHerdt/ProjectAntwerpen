@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Http\Requests;
+use Session;
 
 class ProjectController extends Controller
 {
@@ -30,6 +31,8 @@ class ProjectController extends Controller
         $project->color         = $request->project_color;
         $project->start_date    = $request->project_startdate;
         $project->end_date      = $request->project_enddate;
+        $project->xcoord        = $request->lat;
+        $project->ycoord        = $request->lng;
             
         if ($request->hasFile('headerimage') && $request->file('headerimage')->isValid()) 
         {
@@ -47,6 +50,8 @@ class ProjectController extends Controller
             abort('404', 'Sad times :(');
         }
 
+        Session::flash('projectcreated', 'Je project is succesvol aangemaakt.');
+
         return redirect('/overview');
     }
 
@@ -61,9 +66,11 @@ class ProjectController extends Controller
     {
         return view('pages.project-uitleg');
     }
-    public function kaart()
+    public function kaart($id)
     {
-        return view('pages.project-map');
+        $project = Project::find($id);
+
+        return view('pages.project-map', compact('project'));
     }
     public function stemmen()
     {

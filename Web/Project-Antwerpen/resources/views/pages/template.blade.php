@@ -12,9 +12,56 @@
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/tijdlijn.js"></script>
+<script>
+function displayMap()
+{
+    document.getElementById('googleMap').style.display="block";
+    initialize();
+}
+function initialize() {
+    var initLat = 51.220269043488635;
+    var initLng = 4.401529439178489;
+    var mapProp = {
+        center:new google.maps.LatLng(51.2240454,4.3982035),
+        zoom:12,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+
+    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+    var marker = new google.maps.Marker({
+        position: {lat: initLat, lng: initLng},
+        map: map,
+        draggable: true,
+    });
+
+
+
+    // Inital value
+    document.getElementById('lng').value = initLng;
+    document.getElementById('lat').value = initLat;
+
+    google.maps.event.addDomListener(window, "resize", function() {
+        var center = map.getCenter();
+        google.maps.event.trigger(map, "resize");
+        map.setCenter(center);
+    });
+
+    google.maps.event.addListener(marker, "drag", function(event) {
+        var lat = event.latLng.lat();
+        var lng = event.latLng.lng();
+
+        document.getElementById('lng').value = lng;
+        document.getElementById('lat').value = lat;
+    });
+}
+</script>
 <body>
 
-<div class="container">
+<div class="container ProjectFrom">
 
 
 <form role="form" method="POST" action="{{ url('/template') }}" novalidate="" enctype="multipart/form-data">
@@ -27,7 +74,7 @@
         <div class="progress" id="progress1">
             <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
             </div>
-            
+
             <span class="progress-completed">0%</span>
         </div>
     </div>
@@ -46,7 +93,7 @@
                 <span class="fa fa-pencil"></span>
                 <p>Details</p>
             </div>
-            <div id="click3" class="col-md-2" onclick="javascript: resetActive(event, 40, 'step-3');">
+            <div id="click3" class="col-md-2" onclick="javascript: resetActive(event, 40, 'step-3');displayMap();">
                 <span class="fa fa-globe"></span>
                 <p>Map</p>
             </div>
@@ -68,7 +115,7 @@
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1>Projectnaam</h1>
-            
+
                 <div class="form-group">
                     <input type="text" name="project_name" id="project_name" class="form-control input-md" placeholder="Projectnaam" required alt="Vul hier je projectnaam in" value="{{old('project_name')}}">
                 </div>
@@ -83,7 +130,7 @@
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1>Projectdetails</h1>
-                
+
                  <div class="form-group">
                     <label class="control-label">Uitleg over het project</label>
                     <textarea class="form-control input-md" rows="5" id="project_info" placeholder="Uitleg over het project" alt="Vul project details in" name="project_info">{{old('project_info')}}</textarea>
@@ -124,11 +171,12 @@
                         <option value="green"   alt="Groen">    Groen   </option>
                         <option value="blue"    alt="Blauw">    Blauw   </option>
                         <option value="red"     alt="Rood">     Rood    </option>
+                        <option value="yellow"  alt="Geel">     Geel    </option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                        <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(3);" alt="Volgende knop">
+                        <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(3);displayMap();" alt="Volgende knop">
                 </div>
             </div>
         </div>
@@ -136,24 +184,75 @@
     <div class="row setup-content step hiddenStepInfo" id="step-3">
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
-                <h1>Map</h1>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.1022632989943!2d4.419058851572484!3d51.21719177948828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f703e7404c69%3A0x270b07bbe1f68aa6!2sAntwerpen-Centraal!5e0!3m2!1snl!2sbe!4v1461764810465" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <h1>Kaart</h1>
+               <!--  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.1022632989943!2d4.419058851572484!3d51.21719177948828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f703e7404c69%3A0x270b07bbe1f68aa6!2sAntwerpen-Centraal!5e0!3m2!1snl!2sbe!4v1461764810465" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+               <div id="googleMap"></div>
+               <p>Sleep de marker naar de projectlocatie</p>
+               <label>Lat:</label>
+               <input type="text" id="lat" name="lat"></input>
+               <label>Long:</label>
+               <input type="text" id="lng" name="lng"></input>
                 <div class="form-group">
                     <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(4);" alt="Volgende knop">
                </div>
             </div>
         </div>
     </div>
-    <div class="row setup-content step hiddenStepInfo" id="step-4">
-        <div class="col-xs-12">
+    <div class="row setup-content step hiddenStepInfo" id="step-4" ng-app="FaseApp">
+        <div class="col-xs-12" ng-controller="FasenController as FaseCon">
             <div class="col-md-12 well text-center">
                 <h1>Tijdlijn</h1>
-                <h3 class="underline">Tijdlijn nog maken</h3>
-                tijdlijn met aparte points in time 
 
+
+              <div class="form-group">
+                    <a href="#milestoneButtonTogle" ><input type="button" value="Mijlpaal toevoegen" class="btn btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
+             </div
+
+             <form name="milestoneform">
+               <div ng-repeat="milestone in FaseCon.Fasen">
+                 <h2><%milestone.title%></h2>
+
+               </div>
+
+              <div id="addMilestone" class="form-group">
+                <div class="form-group">
+                    <label class="control-label">Titel mijlpaal</label>
+                    <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de mijlpaal in." value="{{old('titel_mijlpaal')}}">
+                </div>
+                <div class="form-group">
+                    <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
+                    <label>Icon</label>
+                    <select ng-model="milestone.icon" class="c-select form-control input-md" name="project_color" alt="Kies een kleur voor dit project" value="{{old('project_color')}}">
+                        <option selected disabled>Mijlpaal Icoontje</option>
+                        <option value="/img/cd-icon-movie.svg"     alt="Camera">  Camera  </option>
+                        <option value="/img/cd-icon-location.svg"  alt="locatie"> locatie </option>
+                        <option value="/img/cd-icon-picture.svg"   alt="foto">    foto    </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Startdatum</label>
+                    <input ng-model="milestone.startdate" type="date" name="milestone_startdate" id="milestone_startdate" class="form-control input-md" alt="Vul hier de startdatum van de mijlpaal in." value="{{old('milestone_startdate')}}">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">EindDatum</label>
+                    <input ng-model="milestone.enddate" type="date" name="milestone_enddate" id="milestone_enddate" class="form-control input-md" alt="Vul hier de einddatum van de mijlpaal in." value="{{old('milestone_enddate')}}">
+                </div>
+                <div class="form-group">
+                   <label class="control-label">gedetailleerd uitleg over de mijlpaal</label>
+                   <textarea ng-model="milestone.milestoneInfo" class="form-control input-md" rows="5" id="mijlpaal_info" placeholder="Uitleg over het mijlpaal" alt="Vul info over de mijlpaal in" name="mijlpaal_info">{{old('mijlpaal_info')}}</textarea>
+               </div>
+
+              </div>
+              <div id="milestoneButtonTogle">
+
+                <div class="form-group">
+                <input ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo )" value="Mijlpaal toevoegen" class="btn btn-success btn-lg"  alt="Submit mijlpaal">
+               </div>
+               </form>
                 <div class="form-group">
                     <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
                </div>
+              </div>
             </div>
         </div>
     </div>
@@ -161,7 +260,7 @@
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1>Foto's</h1>
-                
+
                 <input type="file" name="headerimage">
 
                 <div class="form-group">
@@ -187,6 +286,11 @@
 </div>
 
 <style>
+#googleMap {
+    width:100%;
+    height:450px;
+}
+
 .hiddenStepInfo {
     display: none;
 }
@@ -304,13 +408,24 @@
         });
     }
 
-    function showCurrentStepInfo(step) {        
+    function showCurrentStepInfo(step) {
         var id = "#" + step;
         $(id).addClass("activeStepInfo");
     }
-   
-</script>
 
+</script>
+<!-- <script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(51.508742,-0.120850),
+    zoom:5,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script> -->
 <!-- Steps Progress and Details - END -->
 
 </div>
