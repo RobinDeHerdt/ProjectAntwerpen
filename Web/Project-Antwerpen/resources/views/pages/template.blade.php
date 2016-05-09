@@ -13,6 +13,8 @@
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/tijdlijn.js"></script>
 <script>
 function displayMap()
 {
@@ -196,25 +198,31 @@ function initialize() {
             </div>
         </div>
     </div>
-    <div class="row setup-content step hiddenStepInfo" id="step-4">
-        <div class="col-xs-12">
+    <div class="row setup-content step hiddenStepInfo" id="step-4" ng-app="FaseApp">
+        <div class="col-xs-12" ng-controller="FasenController as FaseCon">
             <div class="col-md-12 well text-center">
                 <h1>Tijdlijn</h1>
 
 
               <div class="form-group">
-                    <a href="#milestoneButtonTogle" ><input value="Mijlpaal toevoegen" class="btn btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
-             </div>
+                    <a href="#milestoneButtonTogle" ><input type="button" value="Mijlpaal toevoegen" class="btn btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
+             </div
+
+             <form name="milestoneform">
+               <div ng-repeat="milestone in FaseCon.Fasen">
+                 <h2><%milestone.title%></h2>
+
+               </div>
 
               <div id="addMilestone" class="form-group">
                 <div class="form-group">
                     <label class="control-label">Titel mijlpaal</label>
-                    <input type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de mijlpaal in." value="{{old('titel_mijlpaal')}}">
+                    <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de mijlpaal in." value="{{old('titel_mijlpaal')}}">
                 </div>
                 <div class="form-group">
                     <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
                     <label>Icon</label>
-                    <select class="c-select form-control input-md" name="project_color" alt="Kies een kleur voor dit project" value="{{old('project_color')}}">
+                    <select ng-model="milestone.icon" class="c-select form-control input-md" name="project_color" alt="Kies een kleur voor dit project" value="{{old('project_color')}}">
                         <option selected disabled>Mijlpaal Icoontje</option>
                         <option value="/img/cd-icon-movie.svg"     alt="Camera">  Camera  </option>
                         <option value="/img/cd-icon-location.svg"  alt="locatie"> locatie </option>
@@ -223,23 +231,24 @@ function initialize() {
                 </div>
                 <div class="form-group">
                     <label class="control-label">Startdatum</label>
-                    <input type="date" name="milestone_startdate" id="milestone_startdate" class="form-control input-md" alt="Vul hier de startdatum van de mijlpaal in." value="{{old('milestone_startdate')}}">
+                    <input ng-model="milestone.startdate" type="date" name="milestone_startdate" id="milestone_startdate" class="form-control input-md" alt="Vul hier de startdatum van de mijlpaal in." value="{{old('milestone_startdate')}}">
                 </div>
                 <div class="form-group">
                     <label class="control-label">EindDatum</label>
-                    <input type="date" name="milestone_enddate" id="milestone_enddate" class="form-control input-md" alt="Vul hier de einddatum van de mijlpaal in." value="{{old('milestone_enddate')}}">
+                    <input ng-model="milestone.enddate" type="date" name="milestone_enddate" id="milestone_enddate" class="form-control input-md" alt="Vul hier de einddatum van de mijlpaal in." value="{{old('milestone_enddate')}}">
                 </div>
                 <div class="form-group">
                    <label class="control-label">gedetailleerd uitleg over de mijlpaal</label>
-                   <textarea class="form-control input-md" rows="5" id="mijlpaal_info" placeholder="Uitleg over het mijlpaal" alt="Vul info over de mijlpaal in" name="mijlpaal_info">{{old('mijlpaal_info')}}</textarea>
+                   <textarea ng-model="milestone.milestoneInfo" class="form-control input-md" rows="5" id="mijlpaal_info" placeholder="Uitleg over het mijlpaal" alt="Vul info over de mijlpaal in" name="mijlpaal_info">{{old('mijlpaal_info')}}</textarea>
                </div>
 
               </div>
               <div id="milestoneButtonTogle">
 
                 <div class="form-group">
-                <input value="Mijlpaal toevoegen" class="btn btn-success btn-lg" onclick="" alt="Submit mijlpaal">
+                <input ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo )" value="Mijlpaal toevoegen" class="btn btn-success btn-lg"  alt="Submit mijlpaal">
                </div>
+               </form>
                 <div class="form-group">
                     <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
                </div>
