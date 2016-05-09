@@ -5,36 +5,54 @@ $wrapper.find('.sort').sort(function (a, b) {
 })
 .appendTo( $wrapper );
 */
+sortByDate();
 
 $('#sort1').on('click', function () {
-  var $wrapper = $('.sortwrapper');
-
-  $wrapper.find('.sort').sort(function(a,b){
-    var date1  = $(a).data("date").toString();
-    date1 = date1.split('-');
-    date1 = date1[0] +date1[1] -1 + date1[2];
-    var date2  = $(b).data("date").toString();
-    date2= date2.split('-');
-    date2= date2[0] +date2[1] -1 + date2[2];
-    return date1 < date2 ? 1 : -1;
-  }).each(function(){
-      $wrapper.prepend(this);
-  });
-
+    sortByDate();
 });
+
+function sortByDate() {
+
+    $wrapper.find('.sort').sort(function(a,b){
+      var date1  = $(a).data("date");
+      date1 = date1.split('-');
+      date1 = date1[0] +date1[1] -1 + date1[2];
+      var date2  = $(b).data("date");
+      date2= date2.split('-');
+      date2= date2[0] +date2[1] -1 + date2[2];
+      return date1 < date2 ? 1 : -1;
+    }).each(function(){
+        $wrapper.prepend(this);
+    });
+
+
+}
+
 
 $('#sort').on('click', function () {
 
-  var $wrapper = $('.sortwrapper');
-
   $wrapper.find('.sort').sort(function (a, b) {
-    var va = $(a).data('theme').toString().charCodeAt(0);
-    var vb = $(b).data('theme').toString().charCodeAt(0);
-    if (va < 'a'.charCodeAt(0)) va += 100; // Add weight if it's a number
-    if (vb < 'a'.charCodeAt(0)) vb += 100; // Add weight if it's a number
-    return vb < va ? 1 : -1;
+    var textA = $(a).data('theme').toString().charCodeAt(0);
+    var textB = $(b).data('theme').toString().charCodeAt(0);
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
   })
   .appendTo( $wrapper );
-
-
 });
+//show & hide form --> project aanmaken --> milestone toevoegen
+$("#addMilestone").hide();
+$("#milestoneButtonTogle div:first-child").hide();
+function TogleForm() {
+  $("#addMilestone").toggle();
+  $("#btn-button-milestone" ).toggleClass( "btn-success" );
+  $("#btn-button-milestone" ).toggleClass( "btn-info" );
+  $("#btn-button-milestone").prop('value') == "Formulier minimaliseren" ? $("#btn-button-milestone").prop('value', 'Mijlpaal Toevoegen') : $("#btn-button-milestone").prop('value', 'Formulier minimaliseren');
+  if ($("#milestoneButtonTogle div:first-child").is(":visible")) {
+    $("#milestoneButtonTogle div:first-child").hide();
+    $("#milestoneButtonTogle div:last-child").show();
+  }else{
+    $("#milestoneButtonTogle div:first-child").show();
+    $("#milestoneButtonTogle div:last-child").hide();
+  }
+}
+$("#btn-button-milestone").click(function() {  TogleForm() });
+$('#milestoneButtonTogle div:first-child').on('click', function(){  TogleForm() });

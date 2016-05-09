@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Session;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -65,6 +65,8 @@ class AuthController extends Controller
 
     protected function create(array $data)
     {
+        Session::flash('register', 'Je bent nu geregistreerd. Welkom!');
+
         return User::create([
             'firstname'             => $data['firstname'],
             'lastname'              => $data['lastname'],
@@ -75,4 +77,18 @@ class AuthController extends Controller
             'password'              => bcrypt($data['password']),
         ]);
     }
+
+    public function authenticated()
+    {
+        Session::flash('login', 'Je bent nu ingelogd. Welkom!');
+
+        return redirect('/overview');
+    }
+
+    // public function getLogout()
+    // {
+        
+        
+    //     return redirect('/');
+    // }
 }

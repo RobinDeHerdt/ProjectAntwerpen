@@ -7,6 +7,23 @@
 @section('content')
   <div class="container allTiles">
       <div class="sortnav">
+      @if(Session::has('register'))
+    <div class="alert alert-success">
+        <p>{{ Session::get('register')}}</p>
+    </div>
+    @endif
+
+    @if(Session::has('login'))
+    <div class="alert alert-success">
+        <p>{{ Session::get('login')}}</p>
+    </div>
+    @endif
+
+    @if(Session::has('projectcreated'))
+    <div class="alert alert-success">
+        <p>{{ Session::get('projectcreated')}}</p>
+    </div>
+    @endif
     <div class="col-md-12">
       <fieldset>
         <div class="switch-toggle switch-candy-blue   switch-candy">
@@ -41,7 +58,7 @@
 
 
           @if (Auth::user() && Auth::user()->isAdmin)
-          <div class="col-sm-4 sort"  data-theme="{{$project->thema}}" data-date="{{$project->start_date}}">
+          <div class="col-sm-4 sort"  data-theme="ZZZ" data-date="9999-99-99">
               <div class="col-sm-12 thumbnail text-center expand">
                   <img alt="" class="img-responsive" src="/img/grey_test.jpg">
                   <a class="captionlink" href="{{ url('/template') }}">
@@ -52,7 +69,7 @@
               </div>
           </div>
           @endif
-         
+
       </div>
     </div>
 @stop

@@ -8,6 +8,6 @@ class project extends Model
 {
 	public function milestones()
     {
-     	return $this->hasMany('App\milestone', 'milestone_id');   
+     	return $this->hasMany('App\milestone', 'project_id');   
     }
 }

@@ -4,9 +4,10 @@ var menu;
 var mening;
 var lastQuestionMening = false;
 var meningQuestions = ["meningvraag1", "meningvraag2"];
-var questions = [["De antwerpse zoo is\nde oudste dierentuin\nin België.", 1], ["Oorspronkelijk keek\nhet standbeeld van\nRubens op de\ngroenplaats naar\nhet noorden.", 0], ["vraag3", 1], ["vraag4", 0], ["vraag5", 1]];
+var questions = [["De antwerpse zoo is de oudste dierentuin in België.", 1], ["Oorspronkelijk keek het standbeeld van Rubens op de groenplaats naar het noorden.", 0], ["vraag3", 1], ["vraag4", 0], ["vraag5", 1]];
 var counter = 0;
 var meningCounter = 0;
+var questionsJSON;
 
 
 window.onload = function () {
@@ -57,6 +58,11 @@ preload.prototype = {
         //game.load.spritesheet('fout', 'assets/images/fout_spritesheet48.png', 320, 180, 72);
         game.load.spritesheet('fout', 'assets/images/fout2.png', 384, 216, 64);
         game.load.spritesheet('intro', "assets/images/superdownscale2.png", 195, 347, 76);
+
+        questionText = game.add.text(-1000, -1000, "", {"font":"1pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"1"});
+
+        //get JSON file
+        game.load.json("questions", "http://antwerpen.local/json");
 
         // Define constant variables
         game.CENTER_X          = (game.width/2);
@@ -121,6 +127,9 @@ play = function(game) {};
 play.prototype = {
     create: function () {
 
+        questionsJSON = game.cache.getJSON("questions");
+        console.log(questionsJSON[0].questionbody);
+
         if(counter%2 == 0 && counter != 0 && lastQuestionMening == false){
           console.log("counter%2 = 0!")
           game.state.start("Mening");
@@ -130,7 +139,7 @@ play.prototype = {
 
         this.background = game.add.sprite(0, 0, "game-background");
 
-        questionText = game.add.text(game.CENTER_X, 400, questions[counter][0], {"font":"60pt SunAntwerpen", "fill":"#ffffff"});
+        questionText = game.add.text(game.CENTER_X, 400, questionsJSON[counter].questionbody, {"font":"60pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"800"});
         questionText.anchor.set(0.5);
 
         //init true button
@@ -149,14 +158,14 @@ play.prototype = {
         this.backbtn.scale.setTo(2);
 
         //init website button
-        this.webbtn = game.add.button(game.CENTER_X - 230, game.CENTER_Y + +800, "website-btn-small", this.goToWebsite, this);
+        this.webbtn = game.add.button(game.CENTER_X - 230, game.CENTER_Y +800, "website-btn-small", this.goToWebsite, this);
         this.webbtn.anchor.set(0.5);
         this.webbtn.scale.setTo(2);
 
 
     },
     waarAnimation: function (){
-        if(questions[counter][1] == 1){
+        if(questionsJSON[counter].correctanswer == 1){
           sprite = game.add.sprite(game.CENTER_X - 360, game.CENTER_Y-250, 'correct');
           sprite.scale.setTo(2,2);
           sprite.animations.add('correct_animation');
@@ -175,7 +184,7 @@ play.prototype = {
 
     },
     nietwaarAnimation: function (){
-        if(questions[counter][1] == 0){
+        if(questionsJSON[counter].correctanswer == 0){
           sprite = game.add.sprite(game.CENTER_X - 360, game.CENTER_Y-250, 'correct');
           sprite.scale.setTo(2,2);
           sprite.animations.add('correct_animation');
@@ -208,7 +217,7 @@ mening.prototype = {
 
         this.background = game.add.sprite(0, 0, "game-background");
 
-        questionText = game.add.text(game.CENTER_X, 400, meningQuestions[meningCounter], {"font":"60pt SunAntwerpen", "fill":"#ffffff"});
+        questionText = game.add.text(game.CENTER_X, 400, meningQuestions[meningCounter], {"font":"60pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"800"});
         questionText.anchor.set(0.5);
 
         //init website button
