@@ -42,9 +42,12 @@
       <div class="sortwrapper">
 
           @foreach( $projects as $project)
+         
+       
 
-          <div class="col-sm-4 sort"  data-theme="{{$project->thema}}" data-date="{{$project->start_date}}">
-              <div class="col-sm-12 thumbnail text-center expand">
+          <div class="col-sm-4 sort "  data-theme="{{$project->thema}}" data-date="{{$project->start_date}}">
+              <div class="col-sm-12 thumbnail text-center expand wrapper">
+              <div class="ribbon-wrapper-green"><div class="ribbon-green">THEMA</div></div>
                   <img alt="" class="img-responsive" src=
                   {{$project->headerimage}}>
                   <a class="captionlink" href="project/{{$project->id}}/tijdlijn">
@@ -54,6 +57,7 @@
                   </a>
               </div>
           </div>
+          
           @endforeach
 
 
