@@ -3,6 +3,9 @@
 Primary style
 
 -------------------------------- */
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 .cd-timeline-content * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,9 +25,8 @@ Primary style
 }
 
 a {
-  color: #acb7c0;
-  text-decoration: none;
-  font-family: "Open Sans", sans-serif;
+  color: #337ab7;
+    text-decoration: none;
 }
 
 img {
@@ -35,6 +37,22 @@ h1, h2 {
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
 }
+
+.top-buffer {
+  margin-top:20px;
+
+
+  }
+  .nav-tabs>li.active>a {
+    background-color: rgb(207, 0, 57);
+    color:white;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+ .nav-tabs>li>a:hover {
+    background-color: rgb(207, 0, 57);
+    color:white;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
 
 /* -------------------------------- 
 

@@ -120,13 +120,13 @@
 		</div>  -->
 	</section>
 
-<style type="text/css">
-.top-buffer {
-	margin-top:20px;
+<script type="text/javascript">
+	
+var d = document.getElementById("tijdlijn");
+d.className += " active";
 
-
-	}</style>
-	<script type="text/javascript"> var $nav_home ;</script>
+</script>
+<script type="text/javascript"> var $nav_home ;</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="\js/timeline-main.js"></script> <!-- Resource jQuery -->
 </body>
