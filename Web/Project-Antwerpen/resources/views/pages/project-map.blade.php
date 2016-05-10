@@ -10,6 +10,12 @@
 
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
+
+	
+var d = document.getElementById("kaart");
+d.className += " active";
+
+
 function initialize() {
 	var LatLng = new google.maps.LatLng({{$project->xcoord}},{{$project->ycoord}});
 	console.log(LatLng);

@@ -5,7 +5,7 @@
 @stop
 @extends('navigation-layout')
 @section('content')
-
+<link rel="stylesheet" type="text/css" href="/css/uitleg.css">
 <body>
 
 <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
@@ -96,13 +96,12 @@
 
 </div>
 
-<style type="text/css">
-.top-buffer {
-	margin-bottom:40px;
-	padding-bottom:40px;
-	border-bottom: 1px solid black;
-	}</style>
+<script type="text/javascript">
+    
+var d = document.getElementById("info");
+d.className += " active";
 
+</script>
 
 
 </body>
