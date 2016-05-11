@@ -28,7 +28,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/overview';
+    protected $redirectTo = '/overzicht';
 
     /**
      * Create a new authentication controller instance.
@@ -82,7 +82,7 @@ class AuthController extends Controller
     {
         Session::flash('login', 'Je bent nu ingelogd. Welkom!');
 
-        return redirect('/overview');
+        return redirect('/overzicht');
     }
 
     // public function getLogout()

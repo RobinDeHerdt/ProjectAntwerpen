@@ -22,9 +22,6 @@
     }
   });
 
-
-
-
   var Milestonefases = [
     {
       title: 'Opbouw',
