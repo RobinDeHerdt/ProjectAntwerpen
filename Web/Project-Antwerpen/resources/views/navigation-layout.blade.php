@@ -3,7 +3,7 @@
     <li id="tijdlijn"><a href="tijdlijn">Tijdlijn</a></li>
     <li id="info"><a href="info">Info</a></li>
     <li id="kaart"><a href="kaart">Kaart</a></li>
-    <li id="stemmen"><a href="stemmen">Stemmen</a></li>
+    <li id="meningen"><a href="meningen">Meningen</a></li>
     <li id="reacties"><a href="reacties">Reacties</a></li>
   </ul>
  @stop
