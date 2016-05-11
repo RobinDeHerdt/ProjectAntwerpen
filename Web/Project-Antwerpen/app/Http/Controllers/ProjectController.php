@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use App\milestone;
 use App\Http\Requests;
 use Session;
 
@@ -50,9 +51,19 @@ class ProjectController extends Controller
             abort('404', 'Sad times :(');
         }
 
+        $milestone = new milestone;
+
+        $milestone->milestone_title = "Testmijlpaal";
+        $milestone->milestone_info = "Testmijlpaalinfo";
+        $milestone->milestone_image = "/img/cd-icon-picture.svg";
+        $milestone->start_date = "2016-04-20";
+        $milestone->end_date = "2016-06-05";
+        $milestone->project()->associate($project);
+        $milestone->save();
+
         Session::flash('projectcreated', 'Je project is succesvol aangemaakt.');
 
-        return redirect('/overview');
+        return redirect('/overzicht');
     }
 
     public function tijdlijn($id)
@@ -72,12 +83,12 @@ class ProjectController extends Controller
 
         return view('pages.project-map', compact('project'));
     }
-    public function stemmen()
+    public function meningen()
     {
-        return view('pages.project-stemmen');
+        return view('pages.project-meningen');
     }
     public function reacties()
     {
-        return view('pages.project-comments');
+        return view('pages.project-reacties');
     }
 }
