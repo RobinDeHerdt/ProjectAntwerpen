@@ -40,7 +40,6 @@
 
       </div>
       <div class="sortwrapper">
-
           @foreach( $projects as $project)
          
        
@@ -65,7 +64,7 @@
           <div class="col-sm-4 sort"  data-theme="ZZZ" data-date="9999-99-99">
               <div class="col-sm-12 thumbnail text-center expand">
                   <img alt="" class="img-responsive" src="/img/grey_test.jpg">
-                  <a class="captionlink" href="{{ url('/template') }}">
+                  <a class="captionlink" href="{{ url('/nieuwproject') }}">
                     <div class="caption" >
                         <h4>Voeg een project toe</h4>
                     </div>

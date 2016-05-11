@@ -62,6 +62,10 @@ preload.prototype = {
         game.load.spritesheet('fout', 'assets/images/fout2.png', 384, 216, 64);
         game.load.spritesheet('intro', "assets/images/superdownscale2.png", 195, 347, 76);
 
+        // Preload audio
+        game.load.audio("correct_sound", "assets/sounds/correct.mp3");
+        game.load.audio("incorrect_sound", "assets/sounds/incorrect.mp3");
+
         //text fix
         questionText = game.add.text(-1000, -1000, "", {"font":"1pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"1"});
 
@@ -178,6 +182,10 @@ play.prototype = {
         this.webbtn.anchor.set(0.5);
         this.webbtn.scale.setTo(2);
 
+        //add sound
+        this.correct = game.add.audio("correct_sound");
+        this.incorrect = game.add.audio("incorrect_sound");
+
 
     },
     waarAnimation: function (){
@@ -191,6 +199,7 @@ play.prototype = {
           sprite = game.add.sprite(game.CENTER_X - 360, game.CENTER_Y-250, 'correct');
           sprite.scale.setTo(2,2);
           sprite.animations.add('correct_animation');
+          this.correct.play();
           sprite.animations.play('correct_animation', 30, false);
         }
         //incorrect
@@ -198,6 +207,7 @@ play.prototype = {
           sprite = game.add.sprite(game.CENTER_X - 360, game.CENTER_Y-250, 'fout');
           sprite.scale.setTo(2,2);
           sprite.animations.add('fout_animation');
+          this.incorrect.play();
           sprite.animations.play('fout_animation', 30, false);
         }
         //question counter +1
@@ -227,6 +237,7 @@ play.prototype = {
           sprite = game.add.sprite(game.CENTER_X - 360, game.CENTER_Y-250, 'correct');
           sprite.scale.setTo(2,2);
           sprite.animations.add('correct_animation');
+          this.correct.play();
           sprite.animations.play('correct_animation', 30, false);
         }
         //incorrect
@@ -234,6 +245,7 @@ play.prototype = {
           sprite = game.add.sprite(game.CENTER_X - 360, game.CENTER_Y-250, 'fout');
           sprite.scale.setTo(2,2);
           sprite.animations.add('fout_animation');
+          this.incorrect.play();
           sprite.animations.play('fout_animation', 30, false);
         }
         //question counter +1
