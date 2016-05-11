@@ -30,11 +30,12 @@
 			<div class="cd-timeline-content">
 				<h2>{{$milestone->milestone_title}}</h2>
 				<p>{{ str_limit( $milestone->milestone_info, 25) }}</p>
-				<a href="info#fase{{$key+1}}" class="cd-read-more top-buffer">Lees meer</a>
+				<a href="info#fase{{$key+1}}" class="cd-read-more top-buffer" >Lees meer</a>
 				<span class="cd-date">{{$milestone->start_date}}</span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
 		@endforeach
+
 
 		<!-- Img's:
 			cd-icon-location.svg
