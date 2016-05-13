@@ -4,12 +4,13 @@ var menu;
 var mening;
 var lastQuestionMening = false;
   //hardcoded test array
-var meningQuestions = ["meningvraag1", "meningvraag2"];
+//var meningQuestions = ["meningvraag1", "meningvraag2"];
   //hardcoded test array
 //var questions = [["De antwerpse zoo is de oudste dierentuin in België.", 1], ["Oorspronkelijk keek het standbeeld van Rubens op de groenplaats naar het noorden.", 0], ["vraag3", 1], ["vraag4", 0], ["vraag5", 1]];
 var counter = 0;
 var meningCounter = 0;
 var questionsJSON;
+var opinionQuestionsJSON;
 
 
 window.onload = function () {
@@ -72,7 +73,8 @@ preload.prototype = {
         questionText = game.add.text(-1000, -1000, "", {"font":"1pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"1"});
 
         //get JSON file
-        game.load.json("questions", "http://antwerpen.local/json");
+        game.load.json("questions", "http://antwerpen.local/questions_json");
+        game.load.json("opinionQuestions", "http://antwerpen.local/opinionquestions_json");
 
         //Define constant variables
         game.CENTER_X          = (game.width/2);
@@ -154,42 +156,43 @@ play.prototype = {
             //test debug
           console.log("counter%2 = 0!")
           game.state.start("Mening");
+        }else{
+
+          //last question wasn't an opinion
+          lastQuestionMening = false;
+
+          //init background
+          this.background = game.add.sprite(0, 0, "game-background");
+
+          //init question text
+          questionText = game.add.text(game.CENTER_X, 400, questionsJSON[counter].questionbody, {"font":"60pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"800"});
+          questionText.anchor.set(0.5);
+
+          //init true button
+          this.truebtn = game.add.button(game.CENTER_X + 230, game.CENTER_Y + 350, "true", this.waarAnimation, this);
+          this.truebtn.anchor.set(0.5);
+          this.truebtn.scale.setTo(0.60);
+
+          //init false button
+          this.falsebtn = game.add.button(game.CENTER_X - 230, game.CENTER_Y + 350, "false", this.nietwaarAnimation, this);
+          this.falsebtn.anchor.set(0.5);
+          this.falsebtn.scale.setTo(0.60);
+
+          //init back to menu button
+          this.backbtn = game.add.button(game.CENTER_X + 230, game.CENTER_Y + 800, "back", this.backToMenu, this);
+          this.backbtn.anchor.set(0.5);
+          this.backbtn.scale.setTo(2);
+
+          //init website button
+          this.webbtn = game.add.button(game.CENTER_X - 230, game.CENTER_Y +800, "website-btn-small", this.goToWebsite, this);
+          this.webbtn.anchor.set(0.5);
+          this.webbtn.scale.setTo(2);
+
+          //add sound
+          this.correct = game.add.audio("correct_sound");
+          this.incorrect = game.add.audio("incorrect_sound");
+
         }
-
-        //last question wasn't an opinion
-        lastQuestionMening = false;
-
-        //init background
-        this.background = game.add.sprite(0, 0, "game-background");
-
-        //init question text
-        questionText = game.add.text(game.CENTER_X, 400, questionsJSON[counter].questionbody, {"font":"60pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"800"});
-        questionText.anchor.set(0.5);
-
-        //init true button
-        this.truebtn = game.add.button(game.CENTER_X + 230, game.CENTER_Y + 350, "true", this.waarAnimation, this);
-        this.truebtn.anchor.set(0.5);
-        this.truebtn.scale.setTo(0.60);
-
-        //init false button
-        this.falsebtn = game.add.button(game.CENTER_X - 230, game.CENTER_Y + 350, "false", this.nietwaarAnimation, this);
-        this.falsebtn.anchor.set(0.5);
-        this.falsebtn.scale.setTo(0.60);
-
-        //init back to menu button
-        this.backbtn = game.add.button(game.CENTER_X + 230, game.CENTER_Y + 800, "back", this.backToMenu, this);
-        this.backbtn.anchor.set(0.5);
-        this.backbtn.scale.setTo(2);
-
-        //init website button
-        this.webbtn = game.add.button(game.CENTER_X - 230, game.CENTER_Y +800, "website-btn-small", this.goToWebsite, this);
-        this.webbtn.anchor.set(0.5);
-        this.webbtn.scale.setTo(2);
-
-        //add sound
-        this.correct = game.add.audio("correct_sound");
-        this.incorrect = game.add.audio("incorrect_sound");
-
 
     },
     waarAnimation: function (){
@@ -292,12 +295,13 @@ mening.prototype = {
 
       sprite.events.onAnimationComplete.add(function(){
 
+        opinionQuestionsJSON = game.cache.getJSON("opinionQuestions");
 
         //init background
         this.background = game.add.sprite(0, 0, "game-background");
 
         //init question text
-        questionText = game.add.text(game.CENTER_X, 400, meningQuestions[meningCounter], {"font":"60pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"800"});
+        questionText = game.add.text(game.CENTER_X, 400, opinionQuestionsJSON[meningCounter].opinionquestionbody, {"font":"60pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"800"});
         questionText.anchor.set(0.5);
 
         //init website button
@@ -351,7 +355,7 @@ mening.prototype = {
     goToProject: function(){
         //go to project page
           //antwerpen placeholder**********************************************
-        window.open("http://www.antwerpen.be", "_blank");
+        window.open(opinionQuestionsJSON[meningCounter].project_link, "_blank");
     },
     goToWebsite: function(){
         //go to project page
