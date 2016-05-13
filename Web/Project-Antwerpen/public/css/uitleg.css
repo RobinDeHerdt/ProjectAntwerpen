@@ -6,9 +6,12 @@
 .container {
 	margin-top: 25px;
 }
-.imgTile {
-	height:250px;
-	width:350px;
+.imgtile>img{
+	height:240px;
+	width:auto;
+}
+.fasetab {
+	border: 1px solid black;
 }
 /*.fasetab {
 	background-image: url('http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg');
