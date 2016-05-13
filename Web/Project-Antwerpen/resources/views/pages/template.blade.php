@@ -120,7 +120,7 @@ function initialize() {
                     <input type="text" name="project_name" id="project_name" class="form-control input-md" placeholder="Projectnaam" required alt="Vul hier je projectnaam in" value="{{old('project_name')}}">
                 </div>
                 <div class="form-group">
-                    <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(2);" alt="Volgende knop">
+                    <input value="Volgende" type="button" class="btn  btn-width btn-danger btn-lg" onclick="triggerClick(2);" alt="Volgende knop">
                </div>
 
             </div>
@@ -176,7 +176,7 @@ function initialize() {
                 </div>
 
                 <div class="form-group">
-                        <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(3);displayMap();" alt="Volgende knop">
+                        <input value="Volgende" type="button" class="btn btn-width btn-danger btn-lg" onclick="triggerClick(3);displayMap();" alt="Volgende knop">
                 </div>
             </div>
         </div>
@@ -193,7 +193,7 @@ function initialize() {
                <label>Long:</label>
                <input type="text" id="lng" name="lng"></input>
                 <div class="form-group">
-                    <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(4);" alt="Volgende knop">
+                    <input value="Volgende" type="button" class="btn  btn-width btn-danger btn-lg" onclick="triggerClick(4);" alt="Volgende knop">
                </div>
             </div>
         </div>
@@ -205,18 +205,23 @@ function initialize() {
 
 
               <div class="form-group">
-                    <a href="#milestoneButtonTogle" ><input type="button" value="Mijlpaal toevoegen" class="btn btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
+                    <a href="#milestoneButtonTogle" ><input type="button" value="Mijlpaal toevoegen" class="btn btn-width btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
              </div
 
              <form name="milestoneform" >
                <div ng-repeat="milestone in FaseCon.Fasen" class="CreatedMilestones">
                  <h2  class="inline"><%milestone.title%></h2>
-                 <button  ng-click="FaseCon.deletemilestone($event)" class="btn btn-danger btn-xs" type="button" name="button" ><span class="fa fa-btn fa-trash" data="<%$index%>"></span</button>
+                 <button  ng-click="FaseCon.deletemilestone($event)" class="btn  btn-danger btn-xs" type="button" name="button" ><span class="fa fa-btn fa-trash" data="<%$index%>"></span</button>
 
 
                </div>
 
               <div id="addMilestone" class="form-group">
+                <div class="form-group hidden" id="error">
+                  <p class="alert alert-danger">
+                    Er is een Input veld niet ingevuld
+                  </p>
+                </div>
                 <div class="form-group">
                     <label class="control-label">Titel mijlpaal</label>
                     <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de mijlpaal in." value="{{old('titel_mijlpaal')}}" required>
@@ -224,7 +229,7 @@ function initialize() {
                 <div class="form-group">
                     <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
                     <label>Icon</label>
-                    <select ng-model="milestone.icon" class="c-select form-control input-md" name="milestone_image" alt="Kies een icoon voor deze milestone" value="{{old('milestone_image')}}">
+                    <select ng-model="milestone.icon" class="c-select form-control input-md" id="milestone_image" name="milestone_image" alt="Kies een icoon voor deze milestone" value="{{old('milestone_image')}}">
                         <option selected disabled>Mijlpaal Icoontje</option>
                         <option value="/img/cd-icon-movie.svg"     alt="Camera">  Camera  </option>
                         <option value="/img/cd-icon-location.svg"  alt="locatie"> locatie </option>
@@ -250,11 +255,11 @@ function initialize() {
               <div id="milestoneButtonTogle">
 
                 <div class="form-group">
-                <input ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo )" value="Mijlpaal toevoegen" class="btn btn-success btn-lg"  alt="Submit mijlpaal">
+                <input ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo )" value="Mijlpaal toevoegen" class="btn btn-width btn-success btn-lg"  alt="Submit mijlpaal">
                </div>
                </form>
                 <div class="form-group">
-                    <input ng-click="FaseCon.MilestoneToJson()" value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
+                    <input ng-click="FaseCon.MilestoneToJson()" type="button" value="Volgende" class="btn btn-width btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
                </div>
               </div>
             </div>
@@ -268,7 +273,7 @@ function initialize() {
                 <input type="file" name="headerimage">
 
                 <div class="form-group">
-                    <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(6);" alt="Volgende knop">
+                    <input value="Volgende" class="btn btn-width btn-danger btn-lg" type="button" onclick="triggerClick(6);" alt="Volgende knop">
                </div>
             </div>
         </div>
@@ -281,7 +286,7 @@ function initialize() {
                     Ben je zeker dat je dit project wil toevoegen?
 
                  <div class="form-group">
-                    <input type="submit" value="Bevestig" class="btn btn-danger btn-lg" alt="Opslaan knop">
+                    <input type="submit" value="Bevestig" class="btn btn-width btn-danger btn-lg" alt="Opslaan knop">
                </div>
             </div>
         </div>
@@ -418,6 +423,7 @@ function initialize() {
     }
 
 </script>
+
 <!-- <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
 function initialize() {
