@@ -24,4 +24,14 @@ class ApiController extends Controller
 
     	return response()->json($questions);
     }
+
+    public function getOpinionQuestions()
+    {
+        $opinionquestions = DB::table('opinion_questions')->get();
+        json_encode($opinionquestions);
+
+        return response()->json($opinionquestions);
+    }
+
+    
 }

@@ -1,3 +1,7 @@
+<?php
+  //set headers to NOT cache a page
+  header("Content-Type: application/json");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +12,6 @@
 @stop
 
 @section('content')
-
-    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="js/tijdlijn.js"></script>
@@ -208,16 +208,18 @@ function initialize() {
                     <a href="#milestoneButtonTogle" ><input type="button" value="Mijlpaal toevoegen" class="btn btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
              </div
 
-             <form name="milestoneform">
-               <div ng-repeat="milestone in FaseCon.Fasen">
-                 <h2><%milestone.title%></h2>
+             <form name="milestoneform" >
+               <div ng-repeat="milestone in FaseCon.Fasen" class="CreatedMilestones">
+                 <h2  class="inline"><%milestone.title%></h2>
+                 <button  ng-click="FaseCon.deletemilestone($event)" class="btn btn-danger btn-xs" type="button" name="button" ><span class="fa fa-btn fa-trash" data="<%$index%>"></span</button>
+
 
                </div>
 
               <div id="addMilestone" class="form-group">
                 <div class="form-group">
                     <label class="control-label">Titel mijlpaal</label>
-                    <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de mijlpaal in." value="{{old('titel_mijlpaal')}}">
+                    <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de mijlpaal in." value="{{old('titel_mijlpaal')}}" required>
                 </div>
                 <div class="form-group">
                     <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
@@ -243,6 +245,8 @@ function initialize() {
                </div>
 
               </div>
+              <input type="text" name="milestone_json" id="milestone_json" class="form-control input-md hidden" alt="Vul hier de einddatum van de mijlpaal in." value="<% FaseCon.fases %>">
+
               <div id="milestoneButtonTogle">
 
                 <div class="form-group">
@@ -250,7 +254,7 @@ function initialize() {
                </div>
                </form>
                 <div class="form-group">
-                    <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
+                    <input ng-click="FaseCon.MilestoneToJson()" value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
                </div>
               </div>
             </div>

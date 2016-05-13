@@ -1,5 +1,5 @@
 @section('navigation-layout')
-<ul class="projectnav nav nav-tabs" style="width:100%">
+<ul class="projectnav nav nav-tabs">
     <li id="tijdlijn"><a href="tijdlijn">Tijdlijn</a></li>
     <li id="info"><a href="info">Info</a></li>
     <li id="kaart"><a href="kaart">Kaart</a></li>
