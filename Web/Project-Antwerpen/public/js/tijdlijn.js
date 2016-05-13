@@ -46,23 +46,22 @@
 
   });
 
-
-
-
   var Milestonefases = [
     {
       title: 'Opbouw',
-
+      icon: '/img/cd-icon-picture.svg',
+        startdate:'2015-05-17',
+        enddate:'2015-06-30',
+        info:'Opbouw info'
 
 
     }, {
-      title: 'Verbouwings werken',
-
-    }, {
-      title: 'Nazorg',
-      
+      title: 'Verbouwingswerken',
+        icon: '/img/cd-icon-movie.svg',
+        startdate:'2015-08-02',
+        enddate:'2015-09-30',
+        info:'Verbouwingswerken info'
     }
+
   ];
-
-
 })();
