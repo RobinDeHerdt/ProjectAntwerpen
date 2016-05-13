@@ -208,16 +208,18 @@ function initialize() {
                     <a href="#milestoneButtonTogle" ><input type="button" value="Mijlpaal toevoegen" class="btn btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
              </div
 
-             <form name="milestoneform">
-               <div ng-repeat="milestone in FaseCon.Fasen">
-                 <h2><%milestone.title%></h2>
+             <form name="milestoneform" >
+               <div ng-repeat="milestone in FaseCon.Fasen" class="CreatedMilestones">
+                 <h2  class="inline"><%milestone.title%></h2>
+                 <button  ng-click="FaseCon.deletemilestone($event)" class="btn btn-danger btn-xs" type="button" name="button" ><span class="fa fa-btn fa-trash" data="<%$index%>"></span</button>
+
 
                </div>
 
               <div id="addMilestone" class="form-group">
                 <div class="form-group">
                     <label class="control-label">Titel mijlpaal</label>
-                    <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de mijlpaal in." value="{{old('titel_mijlpaal')}}">
+                    <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de mijlpaal in." value="{{old('titel_mijlpaal')}}" required>
                 </div>
                 <div class="form-group">
                     <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
