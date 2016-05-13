@@ -245,6 +245,8 @@ function initialize() {
                </div>
 
               </div>
+              <input type="text" name="milestone_json" id="milestone_json" class="form-control input-md hidden" alt="Vul hier de einddatum van de mijlpaal in." value="<% FaseCon.fases %>">
+
               <div id="milestoneButtonTogle">
 
                 <div class="form-group">
@@ -252,7 +254,7 @@ function initialize() {
                </div>
                </form>
                 <div class="form-group">
-                    <input value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
+                    <input ng-click="FaseCon.MilestoneToJson()" value="Volgende" class="btn btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
                </div>
               </div>
             </div>

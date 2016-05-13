@@ -197,11 +197,11 @@ background-position: 79.5px 0;
   top: 15px;
   width: 120px;
   background-color: #BFDC7A;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45)); 
-  background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45); 
-  background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45); 
-  background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45); 
-  background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45); 
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+  background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45);
   color: #6a6340;
   -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
   -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
@@ -210,7 +210,7 @@ background-position: 79.5px 0;
 
 .ribbon-green:before, .ribbon-green:after {
   content: "";
-  border-top:   3px solid #6e8900;   
+  border-top:   3px solid #6e8900;
   border-left:  3px solid transparent;
   border-right: 3px solid transparent;
   position:absolute;
@@ -225,11 +225,22 @@ background-position: 79.5px 0;
 }
 .fasetab {
 
+<<<<<<< HEAD
+border:1px solid black;
+text-decoration:none;
+color:black;
+text-align:center;
+margin-top:25px
+
+
+
+=======
 border:1px solid black; 
 text-decoration:none; 
 color:black; 
 text-align:center; 
 margin-top:25px 
+>>>>>>> upstream/master
 }
 
 .thumbnail {
@@ -358,6 +369,9 @@ display: block!important;
 .CreatedMilestones button .fa.fa-btn{
   padding:5px;
   font-size: 20px;
+}
+.hidden{
+  height: 0px;
 }
 
 @media(max-width:767px)
