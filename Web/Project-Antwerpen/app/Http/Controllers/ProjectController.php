@@ -50,16 +50,24 @@ class ProjectController extends Controller
         {
             abort('404', 'Sad times :(');
         }
-
-        $milestone = new milestone;
-
-        $milestone->milestone_title = "Testmijlpaal";
-        $milestone->milestone_info = "Testmijlpaalinfo";
-        $milestone->milestone_image = "/img/cd-icon-picture.svg";
-        $milestone->start_date = "2016-04-20";
-        $milestone->end_date = "2016-06-05";
-        $milestone->project()->associate($project);
-        $milestone->save();
+        $jsonArray = json_decode($request->milestone_json, true);
+        var_dump($jsonArray);
+        
+        
+        // name: milestone_json
+        
+        for ($i = 0; $i < count($jsonArray); $i++) { 
+            $milestone = new milestone;
+            
+            $milestone->milestone_title = $jsonArray[$i]['title'];
+            $milestone->milestone_info  = $jsonArray[$i]['info'];
+            $milestone->milestone_image = $jsonArray[$i]['icon'];
+            $milestone->start_date      = $jsonArray[$i]['startdate'];
+            $milestone->end_date        = $jsonArray[$i]['enddate'];
+            $milestone->project()->associate($project);
+            $milestone->save();
+        }
+        
 
         Session::flash('projectcreated', 'Je project is succesvol aangemaakt.');
 
