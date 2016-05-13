@@ -235,11 +235,11 @@ margin-top:25px
 
 
 =======
-border:1px solid black; 
-text-decoration:none; 
-color:black; 
-text-align:center; 
-margin-top:25px 
+border:1px solid black;
+text-decoration:none;
+color:black;
+text-align:center;
+margin-top:25px
 >>>>>>> upstream/master
 }
 
@@ -249,7 +249,7 @@ margin-top:25px
     margin:0;
     padding:0;
     margin-bottom: 30px;
-    
+
 }
 .thumbnail img{
   object-fit: cover;
@@ -372,6 +372,12 @@ display: block!important;
 }
 .hidden{
   height: 0px;
+}
+#error p{
+  text-align: left;
+}
+.btn-width{
+  width: 220px;
 }
 
 @media(max-width:767px)
