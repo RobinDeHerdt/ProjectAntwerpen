@@ -48,12 +48,12 @@ src: url("../fonts/AntwerpenTall-Tall.svg") format("svg");
 }
 
 .nav-tabs>li.active>a {
-    background-color: rgb(207, 0, 57);
+    background-color: #909090;
     color:white;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 .nav-tabs>li.active>a:hover {
-    background-color: rgb(207, 0, 57);
+    background-color: #909090;
     color:white;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   }
