@@ -2,5 +2,14 @@
 .top-buffer {
 	margin-bottom:40px;
 	padding-bottom:40px;
-	
 	}
+.container {
+	margin-top: 25px;
+}
+.imgTile {
+	height:250px;
+	width:350px;
+}
+/*.fasetab {
+	background-image: url('http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg');
+}*/
