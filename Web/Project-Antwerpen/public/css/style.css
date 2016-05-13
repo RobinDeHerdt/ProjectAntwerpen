@@ -97,11 +97,10 @@ font-family: AntwerpREG, Verdana, sans-serif;
 .switch-toggle {
   margin-bottom: 20px;
   height: 50px;
-
 }
 .switch-toggle input:first-child{
   color: white;
-}
+  }
 .titelpage{
   padding-top: 32.5px;
   padding-bottom: 32.5px;
@@ -146,7 +145,42 @@ font-family: AntwerpREG, Verdana, sans-serif;
   top: -3px;
   right: -3px;
   z-index:10000;
+  pointer-events: none;
 }
+.divbtn {
+  width: 305px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: 5px;
+  z-index:10000;
+  display:none;
+}
+.edit {
+display:block;
+height:50px;
+width: 79.5px;
+background-image: url(/img/editSprite.png);
+float:left;
+}
+.edit:hover {
+background-image: url(/img/editSprite.png);
+background-position: 79.5px 0;
+}
+.delete {
+display:block;
+height:50px;
+width: 79.5px;
+background-image: url(/img/deleteSprite.png);
+float:right;
+right:25px;
+}
+.delete:hover {
+background-image: url(/img/deleteSprite.png);
+background-position: 79.5px 0;
+
+}
+
 
 .ribbon-green {
   font: bold 15px Sans-Serif;
@@ -196,16 +230,15 @@ text-decoration:none;
 color:black; 
 text-align:center; 
 margin-top:25px 
-
-
-
 }
+
 .thumbnail {
     border: 0 none;
     box-shadow: none;
     margin:0;
     padding:0;
     margin-bottom: 30px;
+    
 }
 .thumbnail img{
   object-fit: cover;
