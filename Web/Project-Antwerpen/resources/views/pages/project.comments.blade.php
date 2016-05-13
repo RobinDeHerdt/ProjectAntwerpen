@@ -8,7 +8,7 @@
 
 <script type="text/javascript">
 	
-var d = document.getElementById("comments");
+var d = document.getElementById("meningen");
 d.className += " active";
 
 </script>

@@ -9,7 +9,7 @@
 
 
 <script type="text/javascript">
-var d = document.getElementById("stemmen");
+var d = document.getElementById("reacties");
 d.className += " active";
 </script>
 
