@@ -39,8 +39,9 @@ preload.prototype = {
 
         // Preload images
           //bg's
-        game.load.image("a-background", "assets/images/staticbg.png");
+        game.load.image("a-background", "assets/images/staticbg2.png");
         game.load.image("game-background", "assets/images/temp_bg.png");
+        game.load.image("meningbg", "assets/images/meningend.png");
           //buttons
         game.load.image("start-btn", "assets/images/start-btn.png");
         game.load.image("website-btn", "assets/images/website-btn.png");
@@ -48,8 +49,8 @@ preload.prototype = {
         game.load.image("true", "assets/images/waar2.png");
         game.load.image("false", "assets/images/nietwaar2.png");
         game.load.image("back", "assets/images/menu-btn-small.png");
-        game.load.image("thumbsup", "assets/images/akkoord.png");
-        game.load.image("thumbsdown", "assets/images/nietakkoord.png");
+        game.load.image("thumbsup", "assets/images/akkoordoutlined.png");
+        game.load.image("thumbsdown", "assets/images/nietakkoordoutlined.png");
         game.load.image("project-btn", "assets/images/project-btn.png");
 
           //temp files
@@ -60,11 +61,12 @@ preload.prototype = {
         game.load.spritesheet('correct', 'assets/images/correct2.png', 384, 216, 64);
         //game.load.spritesheet('fout', 'assets/images/fout_spritesheet48.png', 320, 180, 72);
         game.load.spritesheet('fout', 'assets/images/fout2.png', 384, 216, 64);
-        game.load.spritesheet('intro', "assets/images/superdownscale2.png", 195, 347, 76);
+        game.load.spritesheet('intro', "assets/images/intro-animation.png", 360, 640, 61);
+        game.load.spritesheet("mening", "assets/images/meningan2.png", 360, 640, 60);
 
         // Preload audio
-        game.load.audio("correct_sound", "assets/sounds/correct.mp3");
-        game.load.audio("incorrect_sound", "assets/sounds/incorrect.mp3");
+        game.load.audio("correct_sound", ["assets/sounds/correct.mp3", "assets/sounds/correct.ogg"]);
+        game.load.audio("incorrect_sound", ["assets/sounds/incorrect.mp3", "assets/sounds/incorrect.ogg"]);
 
         //text fix
         questionText = game.add.text(-1000, -1000, "", {"font":"1pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"1"});
@@ -92,6 +94,7 @@ menu.prototype = {
 
         //add bg sprite
         this.background     = game.add.sprite(0, 0, "a-background");
+        this.background.scale.setTo(3);
 
         //scale
         game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -113,9 +116,10 @@ menu.prototype = {
 
         //startscreen animation
         sprite = game.add.sprite(0, 0, "intro");
-        sprite.scale.setTo(5.555);
+        sprite.scale.setTo(3);
         sprite.animations.add("intro_animation");
         sprite.animations.play("intro_animation", 30, false);
+
 
     },
     startGame: function(){
@@ -215,7 +219,7 @@ play.prototype = {
         //start "completed" state when reached last question
         if(counter == questionsJSON.length){
           sprite.events.onAnimationComplete.add(function(){
-            game.state.start("MemeMachine")
+            game.state.start("Menu")
           },this);
         }
         //else start new question
@@ -253,7 +257,7 @@ play.prototype = {
         //start "completed" state when reached last question
         if(counter == questionsJSON.length){
           sprite.events.onAnimationComplete.add(function(){
-            game.state.start("MemeMachine")
+            game.state.start("Menu")
           },this);
         }
         //else start new question
@@ -279,6 +283,15 @@ play.prototype = {
 mening = function(game) {};
 mening.prototype = {
     create: function () {
+
+      //startscreen animation
+      sprite = game.add.sprite(0, 0, "mening");
+      sprite.scale.setTo(3);
+      sprite.animations.add("mening_animation");
+      sprite.animations.play("mening_animation", 29, false);
+
+      sprite.events.onAnimationComplete.add(function(){
+
 
         //init background
         this.background = game.add.sprite(0, 0, "game-background");
@@ -311,6 +324,15 @@ mening.prototype = {
         this.webbtn = game.add.button(game.CENTER_X - 230, game.CENTER_Y + +800, "website-btn-small", this.goToWebsite, this);
         this.webbtn.anchor.set(0.5);
         this.webbtn.scale.setTo(2);
+
+        sprite = game.add.sprite(0, 0, "meningbg");
+        sprite.scale.setTo(3);
+
+        game.add.tween(sprite).to({alpha: 0}, 1000, "Linear", true);
+
+
+      },this);
+
     },
     thumbsUp: function() {
       //Will send data to online database
