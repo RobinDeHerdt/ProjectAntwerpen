@@ -9,7 +9,7 @@
 
 
 <script type="text/javascript">
-var d = document.getElementById("comments");
+var d = document.getElementById("reacties");
 d.className += " active";
 </script>
 	Reacties

@@ -77,27 +77,6 @@ Modules - reusable parts of our design
 Main components 
 
 -------------------------------- */
-header {
-  height: 200px;
-  line-height: 200px;
-  text-align: center;
-  background: #303e49;
-}
-header h1 {
-  color: white;
-  font-size: 18px;
-  font-size: 1.125rem;
-}
-@media only screen and (min-width: 1170px) {
-  header {
-    height: 300px;
-    line-height: 300px;
-  }
-  header h1 {
-    font-size: 24px;
-    font-size: 1.5rem;
-  }
-}
 
 #cd-timeline {
   position: relative;
@@ -313,16 +292,16 @@ header h1 {
 }
 @media only screen and (min-width: 768px) {
   .cd-timeline-content h2 {
-    font-size: 20px;
-    font-size: 1.25rem;
+    font-size: 25px;
+    /*font-size: 1.25rem;*/
   }
   .cd-timeline-content p {
     font-size: 16px;
-    font-size: 1rem;
+    /*font-size: 1rem;*/
   }
   .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
     font-size: 14px;
-    font-size: 0.875rem;
+    /*font-size: 0.875rem;*/
   }
 }
 @media only screen and (min-width: 1170px) {
@@ -346,7 +325,7 @@ header h1 {
     left: 122%;
     top: 6px;
     font-size: 16px;
-    font-size: 1rem;
+    /*font-size: 1rem;*/
   }
   .cd-timeline-block:nth-child(even) .cd-timeline-content {
     float: right;
