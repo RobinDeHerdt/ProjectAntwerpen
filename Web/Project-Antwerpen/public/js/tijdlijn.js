@@ -9,6 +9,7 @@
 
     this.deletemilestone =function(obj) {
       var index = obj.target.getAttribute("data");
+
        Milestonefases.splice(index, 1);
     }
     this.pushmilestone = function(Fasetitle, FaseIcon, FaseStart, FaseEnd, FaseInfo ) {
@@ -19,8 +20,9 @@
         enddate:FaseEnd,
         info:FaseInfo
       };
-
-      Milestonefases.push(this.NewStone);
+      if(Fasetitle != null && FaseIcon != null && FaseInfo != null){
+        Milestonefases.push(this.NewStone);
+      }
     }
   });
 
