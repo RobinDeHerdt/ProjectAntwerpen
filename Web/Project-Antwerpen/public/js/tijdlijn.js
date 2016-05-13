@@ -33,10 +33,7 @@
 
 
   });
-
-
-
-
+  
   var Milestonefases = [
     {
       title: 'Opbouw',
@@ -59,6 +56,4 @@
         info:'Nazorg info'
     } 
   ];
-
-
 })();
