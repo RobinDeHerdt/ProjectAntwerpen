@@ -51,14 +51,10 @@ class ProjectController extends Controller
             abort('404', 'Sad times :(');
         }
         $jsonArray = json_decode($request->milestone_json, true);
-        var_dump($jsonArray);
-        
-        
-        // name: milestone_json
         
         for ($i = 0; $i < count($jsonArray); $i++) { 
             $milestone = new milestone;
-            
+
             $milestone->milestone_title = $jsonArray[$i]['title'];
             $milestone->milestone_info  = $jsonArray[$i]['info'];
             $milestone->milestone_image = $jsonArray[$i]['icon'];
@@ -77,7 +73,7 @@ class ProjectController extends Controller
     public function tijdlijn($id)
     {
         $project = Project::find($id);
-
+        // dd($project->milestones);
         return view('pages.project-tijdlijn', compact('project'));
     }
 
@@ -87,6 +83,7 @@ class ProjectController extends Controller
     }
     public function kaart($id)
     {
+
         $project = Project::find($id);
 
         return view('pages.project-map', compact('project'));
@@ -95,8 +92,11 @@ class ProjectController extends Controller
     {
         return view('pages.project-meningen');
     }
-    public function reacties()
+    public function reacties($id)
     {
-        return view('pages.project-reacties');
+        $project = Project::find($id);
+        
+         // dd($project->comments); 
+        return view('pages.project-reacties', compact('project'));
     }
 }
