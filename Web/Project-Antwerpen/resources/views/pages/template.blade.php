@@ -1,3 +1,7 @@
+<?php
+  //set headers to NOT cache a page
+  header("Content-Type: application/json");
+?>
 <!DOCTYPE html>
 <html>
 <head>
