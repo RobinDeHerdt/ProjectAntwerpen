@@ -1,5 +1,5 @@
 @extends('layout')
-
+<p
 @section('title')
   Home
 @stop
@@ -29,6 +29,16 @@ function initialize() {
 	});
 
 	marker.setMap(map);
+
+
+
+	var infowindow = new google.maps.InfoWindow({
+        content:"<h4>{{$project->project_name}}</h4><p>{{$project->info}}</p>" //<img style=max-width:100%;max-height:100%; src={{$project->headerimage}}>
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map,marker);
+    });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
