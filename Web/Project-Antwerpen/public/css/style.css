@@ -309,6 +309,23 @@ footer p {
 .iconnavbar {
 display: block!important;
 }
+.inline{
+  display: inline;
+}
+.CreatedMilestones{
+ margin-bottom: 20px;
+}
+
+.CreatedMilestones button{
+  margin-left: 20px;
+  margin-bottom: 10px;
+
+
+}
+.CreatedMilestones button .fa.fa-btn{
+  padding:5px;
+  font-size: 20px;
+}
 
 @media(max-width:767px)
 {
