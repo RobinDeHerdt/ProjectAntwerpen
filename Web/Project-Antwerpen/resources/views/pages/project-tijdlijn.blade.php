@@ -7,11 +7,7 @@
 @section('content')
 <html lang="en" class="no-js">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
-
+	
 	<link rel="stylesheet" href="\css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="\css/timeline-style.css"> <!-- Resource style -->
 	<script src="\js/timeline-modernizr.js"></script> <!-- Modernizr -->
@@ -122,11 +118,10 @@
 	</section>
 
 <script type="text/javascript">
-	
 var d = document.getElementById("tijdlijn");
 d.className += " active";
-
 </script>
+
 <script type="text/javascript"> var $nav_home ;</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="\js/timeline-main.js"></script> <!-- Resource jQuery -->

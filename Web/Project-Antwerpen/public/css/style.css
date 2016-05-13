@@ -369,7 +369,6 @@ display: block!important;
     padding-top: 35px;
   }
 
-
   #loginicon, #registericon, #logouticon{
     font-size: 20px;
     margin-right: 15px;
@@ -382,6 +381,34 @@ display: block!important;
   .titelpage{
     padding-top: 33px;
     position: absolute;
+    vertical-align: center;
   }
 
+}
+@media(max-width:500px)
+{
+  .titelpage{
+    padding-top: 38px;
+    font-size:1.5em;
+  }
+}
+@media(max-width:440px)
+{
+  .titelpage{
+    padding-top: 42px;
+    font-size:1em;
+  }
+  .nav-tabs>li>a {
+    font-size: 12px;
+  }
+}
+@media(max-width:370px)
+{
+  .titelpage{
+    padding-top:45px;
+    font-size:0.8em;
+  }
+  .nav-tabs>li>a {
+    font-size: 8px;
+  }
 }
