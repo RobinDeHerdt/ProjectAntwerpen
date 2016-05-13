@@ -20,11 +20,22 @@
         enddate:FaseEnd,
         info:FaseInfo
       };
+
       if(Fasetitle != null && FaseIcon != null && FaseInfo != null){
         Milestonefases.push(this.NewStone);
       }
     }
+    this.fases;
+
+    this.MilestoneToJson = function () {
+      this.fases = JSON.stringify(Milestonefases);
+    }
+
+
   });
+
+
+
 
   var Milestonefases = [
     {
@@ -39,4 +50,6 @@
 
     }
   ];
+
+
 })();
