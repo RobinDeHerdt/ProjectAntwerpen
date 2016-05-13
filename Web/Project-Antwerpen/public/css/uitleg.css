@@ -9,6 +9,7 @@
 .imgtile>img{
 	height:240px;
 	width:auto;
+	margin-top:5px;
 }
 .fasetab {
 	border: 1px solid black;
