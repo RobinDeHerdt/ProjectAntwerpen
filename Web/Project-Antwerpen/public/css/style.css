@@ -227,23 +227,12 @@ background-position: 79.5px 0;
   right: 0;
 }
 .fasetab {
-
-<<<<<<< HEAD
-border:1px solid black;
-text-decoration:none;
-color:black;
-text-align:center;
-margin-top:25px
-
-
-
-=======
 border:1px solid black; 
 text-decoration:none; 
 color:black; 
 text-align:center; 
 margin-top:25px 
->>>>>>> upstream/master
+
 }
 
 .thumbnail {
