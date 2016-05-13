@@ -12,29 +12,18 @@
 */
 
 Route::get('/', 'PageController@welcome');
-Route::get('about', 'PageController@about');
-
 Route::get('register', 'PageController@register');
 Route::get('login', 'PageController@login');
-Route::get('template', 'AdminController@template');
+Route::get('nieuwproject', 'AdminController@template');
 Route::get('home', 'PageController@home');
-//Route::get('uitleg', 'PageController@uitleg');
-//Route::get('map', 'PageController@map');
-//Route::get('stemmen', 'PageController@stemmen');
-//Route::get('tijdlijn', 'PageController@tijdlijn');
-//Route::get('comments', 'PageController@comments');
 Route::get('json', 'ApiController@getQuestions');
-
-// Route::get('')
-Route::get('profile', 'HomeController@dashboard');
-Route::auth();
-//Route::get('/home', 'HomeController@index');
-Route::get('/overview', 'PageController@overview');
-
-Route::post('/template', 'ProjectController@store');
-//Route::get('/project/{id}', 'ProjectController@show');
+Route::get('profiel', 'HomeController@dashboard');
+Route::get('/overzicht', 'PageController@overview');
 Route::get('/project/{id}/tijdlijn', 'ProjectController@tijdlijn');
 Route::get('/project/{id}/reacties', 'ProjectController@reacties');
 Route::get('/project/{id}/info', 'ProjectController@info');
 Route::get('/project/{id}/kaart', 'ProjectController@kaart');
-Route::get('/project/{id}/stemmen', 'ProjectController@stemmen');
+Route::get('/project/{id}/meningen', 'ProjectController@meningen');
+
+Route::post('/nieuwproject', 'ProjectController@store');
+Route::auth();

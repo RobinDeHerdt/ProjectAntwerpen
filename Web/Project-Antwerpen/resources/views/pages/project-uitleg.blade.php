@@ -5,14 +5,15 @@
 @stop
 @extends('navigation-layout')
 @section('content')
-
+<link rel="stylesheet" type="text/css" href="/css/uitleg.css">
 <body>
 
 <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
-    <div class="row top-buffer" id="fase1">
-    <details>
-    <summary style="text-align:center">Fase 1</summary>
-    <div class="col-md-4 imgtile Tile1" style="height:250px"></div>
+
+    <div class="row top-buffer" id="fase1"> 
+    <a href="#fase1"><div class="fasetab1 fasetab"><i class="fa fa-arrow-down" aria-hidden="true"><h2>Fase 1</h2></i></div></a>
+    <div class="fase fase1 row"> 
+    <div class="col-md-4 imgtile Tile1 " style="height:250px"><img src="http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg" style="width:350px"></div>
     <div class="col-md-8">
     <h2>Fase 1</h2>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -21,31 +22,29 @@
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-    </details>
+    </div>
     </div>
 
-
-
-
-
-
-    <div class="row top-buffer" id="fase2">
-    <details>
-    <summary style="text-align:center">Fase 2</summary>
+    <div class="row top-buffer" id="fase2"> 
+    <a href="#fase2"><div class="fasetab2 fasetab"><i class="fa fa-arrow-down" aria-hidden="true"><h2>Fase 2</h2></i></div></a>
+    <div class="fase fase2 row"> 
     <div class="col-md-8">
-    <h2>Fase 2</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    <h2>Fase 2</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-    <div class="col-md-4 imgtile Tile2" style="height:250px"></div>
-    </details>
+    <div class="col-md-4 imgtile Tile1 " style="height:250px"><img src="http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg" style="width:350px"></div>
+    </div>
     </div>
 
 
-    <div class="row top-buffer" id="fase3">
-    <div class="col-md-4 imgtile Tile3" style="height:250px"></div>
+    <div class="row top-buffer" id="fase3"> 
+    <a href="#fase3"><div class="fasetab3 fasetab"><i class="fa fa-arrow-down" aria-hidden="true"><h2>Fase 3</h2></i></div></a>
+    <div class="fase fase3 row"> 
+    <div class="col-md-4 imgtile Tile1 " style="height:250px"><img src="http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg" style="width:350px"></div>
     <div class="col-md-8">
     <h2>Fase 3</h2>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -55,21 +54,27 @@
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
     </div>
+    </div>
 
-
-    <div class="row top-buffer" id="fase4" >
+    <div class="row top-buffer" id="fase4"> 
+    <a href="#fase4"><div class="fasetab4 fasetab"><i class="fa fa-arrow-down" aria-hidden="true"><h2>Fase 4</h2></i></div></a>
+    <div class="fase fase4 row"> 
     <div class="col-md-8">
-    <h2>Fase 4</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    <h2>Fase 4</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-    <div class="col-md-4 imgtile Tile4" style="height:250px" id="fase4"></div>
+    <div class="col-md-4 imgtile Tile1 " style="height:250px"><img src="http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg" style="width:350px"></div>
+    </div>
     </div>
 
-    <div class="row top-buffer" id="fase5">
-    <div class="col-md-4 imgtile Tile5" style="height:250px"></div>
+    <div class="row top-buffer" id="fase5"> 
+    <a href="#fase5"><div class="fasetab5 fasetab"><i class="fa fa-arrow-down" aria-hidden="true"><h2>Fase 5</h2></i></div></a>
+    <div class="fase fase5 row"> 
+    <div class="col-md-4 imgtile Tile1 " style="height:250px"><img src="http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg" style="width:350px"></div>
     <div class="col-md-8">
     <h2>Fase 5</h2>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -79,30 +84,35 @@
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
     </div>
+    </div>
 
-
-    <div class="row top-buffer" id="fase6" >
+    <div class="row top-buffer" id="fase6"> 
+    <a href="#fase6"><div class="fasetab6 fasetab"><i class="fa fa-arrow-down" aria-hidden="true"><h2>Fase 6</h2></i></div></a>
+    <div class="fase fase6 row"> 
     <div class="col-md-8">
-    <h2>Fase 6</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    <h2>Fase 6</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-    <div class="col-md-4 imgtile Tile6" style="height:250px" ></div>
+    <div class="col-md-4 imgtile Tile1 " style="height:250px"><img src="http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg" style="width:350px"></div>
     </div>
+    </div>
+
+    
 
 
 
 </div>
 
-<style type="text/css">
-.top-buffer {
-	margin-bottom:40px;
-	padding-bottom:40px;
-	border-bottom: 1px solid black;
-	}</style>
+<script type="text/javascript">
+    
+var d = document.getElementById("info");
+d.className += " active";
 
+</script>
 
 
 </body>

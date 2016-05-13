@@ -6,6 +6,11 @@
 @extends('navigation-layout')
 @section('content')
 
+<script type="text/javascript">
+	
+var d = document.getElementById("comments");
+d.className += " active";
 
+</script>
 COMMENTS
 @stop

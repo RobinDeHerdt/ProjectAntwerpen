@@ -7,10 +7,9 @@
 @section('content')
 <script type="text/javascript">
 	
-var d = document.getElementById("reacties");
+var d = document.getElementById("stemmen");
 d.className += " active";
 
 </script>
-
-COMMENTS
+	Meningen
 @stop
