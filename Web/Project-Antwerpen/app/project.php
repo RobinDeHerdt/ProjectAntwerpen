@@ -10,4 +10,9 @@ class project extends Model
     {
      	return $this->hasMany('App\milestone', 'project_id');   
     }
+
+    public function comments()
+    {
+     	return $this->hasMany('App\comment', 'project_id');   
+    }
 }
