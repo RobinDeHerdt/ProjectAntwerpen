@@ -1,5 +1,4 @@
 @extends('layout')
-<p
 @section('title')
   Home
 @stop
