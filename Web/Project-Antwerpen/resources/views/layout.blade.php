@@ -13,8 +13,8 @@
     <body>
       <div class="navbar">
           <div class="navbar-header">
-            <a class="navbar-left" href="/overview"><img src="../../img/A_logo_RGB_123x123.jpg" alt="Logo antwerpen"/></a>
-            <a class="navbar-left titelpage" href="/overview">Antwerpen Projecten</a>
+            <a class="navbar-left" href="/overzicht"><img src="../../img/A_logo_RGB_123x123.jpg" alt="Logo antwerpen"/></a>
+            <a class="navbar-left titelpage" href="/overzicht">Antwerpen Projecten</a>
             <div class="nav navbar-btn navbar-right navbar-fixed-top navbar-toggle">
 
                 <!-- Authentication Links -->
@@ -63,6 +63,7 @@
     <script src="../../js/sort.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="\js/style.js"></script>
     </body>
 </footer>
 </html>

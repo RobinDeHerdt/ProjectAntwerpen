@@ -18,7 +18,7 @@
                 <div class="panel-heading">Welkom</div>
 
                 <div class="panel-body">
-                    Welkom op de site! Ga naar het <a href="/overview">overview van alle projecten</a>
+                    Welkom op de site! Ga naar het <a href="/overzicht">overview van alle projecten</a>
                 </div>
             </div>
         </div>

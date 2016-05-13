@@ -30,11 +30,12 @@
 			<div class="cd-timeline-content">
 				<h2>{{$milestone->milestone_title}}</h2>
 				<p>{{ str_limit( $milestone->milestone_info, 25) }}</p>
-				<a href="info#fase{{$key+1}}" class="cd-read-more top-buffer">Lees meer</a>
+				<a href="info#fase{{$key+1}}" class="cd-read-more top-buffer" >Lees meer</a>
 				<span class="cd-date">{{$milestone->start_date}}</span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
 		@endforeach
+
 
 		<!-- Img's:
 			cd-icon-location.svg
@@ -120,13 +121,13 @@
 		</div>  -->
 	</section>
 
-<style type="text/css">
-.top-buffer {
-	margin-top:20px;
+<script type="text/javascript">
+	
+var d = document.getElementById("tijdlijn");
+d.className += " active";
 
-
-	}</style>
-	<script type="text/javascript"> var $nav_home ;</script>
+</script>
+<script type="text/javascript"> var $nav_home ;</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="\js/timeline-main.js"></script> <!-- Resource jQuery -->
 </body>

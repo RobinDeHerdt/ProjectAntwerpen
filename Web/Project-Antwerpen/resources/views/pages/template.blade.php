@@ -64,7 +64,7 @@ function initialize() {
 <div class="container ProjectFrom">
 
 
-<form role="form" method="POST" action="{{ url('/template') }}" novalidate="" enctype="multipart/form-data">
+<form role="form" method="POST" action="{{ url('/nieuwproject') }}" novalidate="" enctype="multipart/form-data">
 {!! csrf_field() !!}
 <!-- Steps Progress and Details - START -->
 <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
@@ -224,7 +224,7 @@ function initialize() {
                 <div class="form-group">
                     <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
                     <label>Icon</label>
-                    <select ng-model="milestone.icon" class="c-select form-control input-md" name="project_color" alt="Kies een kleur voor dit project" value="{{old('project_color')}}">
+                    <select ng-model="milestone.icon" class="c-select form-control input-md" name="milestone_image" alt="Kies een icoon voor deze milestone" value="{{old('milestone_image')}}">
                         <option selected disabled>Mijlpaal Icoontje</option>
                         <option value="/img/cd-icon-movie.svg"     alt="Camera">  Camera  </option>
                         <option value="/img/cd-icon-location.svg"  alt="locatie"> locatie </option>
