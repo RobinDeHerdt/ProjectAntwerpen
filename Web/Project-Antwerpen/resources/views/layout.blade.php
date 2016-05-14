@@ -21,9 +21,9 @@
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <a id="loginicon" href="{{ url('/login') }}"><span class="fa fa-btn fa-sign-in icon-large" ></span></a>
-                  <a id="registericon" href="{{ url('/register') }}"><span class="fa fa-btn fa-pencil" ></span></a>
+                    <a id="registericon" href="{{ url('/register') }}"><span class="fa fa-btn fa-pencil" ></span></a>
                 @else
-                  <a id="logouticon" href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> </a>
+                    <a id="logouticon" href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> </a>
                 @endif
 
             </div>
@@ -41,7 +41,7 @@
               <!-- Authentication Links -->
               @if (Auth::guest())
                   <li><a href="{{ url('/login') }}"><span class="fa fa-btn fa-sign-in" ></span> Login</a></li>
-                  <li><a href="{{ url('/register') }}"><span class="fa fa-btn fa-pencil" ></span> Register</a></li>
+                  <li><a href="{{ url('/register') }}"><span class="fa fa-btn fa-pencil" ></span> Registreren</a></li>
               @else
                 <li id="welcome">Welkom, {{ Auth::user()->firstname }}</li>
                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>

@@ -92,11 +92,4 @@ class ProjectController extends Controller
     {
         return view('pages.project-meningen');
     }
-    public function reacties($id)
-    {
-        $project = Project::find($id);
-        
-         // dd($project->comments); 
-        return view('pages.project-reacties', compact('project'));
-    }
 }
