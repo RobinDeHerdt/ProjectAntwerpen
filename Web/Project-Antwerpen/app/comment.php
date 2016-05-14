@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class comment extends Model
 {
+	public $timestamps = false;
+	public $primaryKey = 'comment_id';
     public function project()
     {
         return $this->belongsTo('App\project','project_id');
