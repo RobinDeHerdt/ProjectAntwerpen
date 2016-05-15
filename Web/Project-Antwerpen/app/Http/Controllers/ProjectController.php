@@ -43,13 +43,14 @@ class ProjectController extends Controller
             $file->move(base_path() . '/public/img/', $fileName);
 
             $project->headerimage   = '/img/' . $fileName;
-
-            $project->save();
         }
         else 
         {
             abort('404', 'Sad times :(');
         }
+
+        $project->save();
+        
         $jsonArray = json_decode($request->milestone_json, true);
         
         for ($i = 0; $i < count($jsonArray); $i++) { 
@@ -63,7 +64,6 @@ class ProjectController extends Controller
             $milestone->project()->associate($project);
             $milestone->save();
         }
-        
 
         Session::flash('projectcreated', 'Je project is succesvol aangemaakt.');
 
@@ -106,6 +106,26 @@ class ProjectController extends Controller
         
         $project->save();  
 
+        $milestones = milestone::where('project_id', $id)->get();
+        
+        for ($i = 0; $i < count($milestones); $i++) { 
+            $milestones[$i]->delete();
+        }
+
+        $jsonArray = json_decode($request->milestone_json, true);
+        
+        for ($i = 0; $i < count($jsonArray); $i++) { 
+            $milestone = new milestone;
+
+            $milestone->milestone_title = $jsonArray[$i]['title'];
+            $milestone->milestone_info  = $jsonArray[$i]['info'];
+            $milestone->milestone_image = $jsonArray[$i]['icon'];
+            $milestone->start_date      = $jsonArray[$i]['startdate'];
+            $milestone->end_date        = $jsonArray[$i]['enddate'];
+            $milestone->project()->associate($project);
+            $milestone->save();
+        }
+
         Session::flash('projectedited', 'Je project is succesvol bewerkt.');
 
         return redirect('/overzicht');
@@ -124,7 +144,6 @@ class ProjectController extends Controller
     }
     public function kaart($id)
     {
-
         $project = Project::find($id);
 
         return view('pages.project-map', compact('project'));

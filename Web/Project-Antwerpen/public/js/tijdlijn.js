@@ -3,7 +3,7 @@
       $interpolateProvider.startSymbol('<%');
      $interpolateProvider.endSymbol('%>');
   });
-
+  
   app.controller('FasenController', function($filter){
     this.Fasen = Milestonefases;
 
@@ -28,40 +28,34 @@
     this.fases;
 
     this.MilestoneToJson = function () {
+      if (Milestonefases.length >= 2)
+      {
+        Milestonefases.sort(function(a,b){
+          var date1 = $filter('date')(new Date(a["startdate"]), 'yyyy-MM-dd');
+          date1 = date1.split('-');
+          date1 = date1[0] +date1[1] -1 + date1[2];
+          var date2  = $filter('date')(new Date(b["startdate"]), 'yyyy-MM-dd');
+          date2= date2.split('-');
+          date2= date2[0] +date2[1] -1 + date2[2];
+          return date1 > date2 ? 1 : -1;
+        })
 
-
-      Milestonefases.sort(function(a,b){
-        var date1 = $filter('date')(new Date(a["startdate"]), 'yyyy-MM-dd');
-        date1 = date1.split('-');
-        date1 = date1[0] +date1[1] -1 + date1[2];
-        var date2  = $filter('date')(new Date(b["startdate"]), 'yyyy-MM-dd')
-        date2= date2.split('-');
-        date2= date2[0] +date2[1] -1 + date2[2];
-        return date1 > date2 ? 1 : -1;
-      })
-
+        
+      }
       this.fases = JSON.stringify(Milestonefases);
     };
-
-
   });
 
-  var Milestonefases = [
-    {
-      title: 'Opbouw',
-      icon: '/img/cd-icon-picture.svg',
-        startdate:'2015-05-17',
-        enddate:'2015-06-30',
-        info:'Opbouw info'
+  var Milestonefases = [];
+  var json = document.getElementById('existingMilestones').value;
+  var parsedJson = JSON.parse(json);
 
-
-    }, {
-      title: 'Verbouwingswerken',
-        icon: '/img/cd-icon-movie.svg',
-        startdate:'2015-08-02',
-        enddate:'2015-09-30',
-        info:'Verbouwingswerken info'
-    }
-
-  ];
+  for (var i = 0; i < parsedJson.length; i++) {
+      Milestonefases[i] = {};
+      Milestonefases[i]['title']      = parsedJson[i].milestone_title;
+      Milestonefases[i]['info']       = parsedJson[i].milestone_info
+      Milestonefases[i]['icon']       = parsedJson[i].milestone_image
+      Milestonefases[i]['startdate']  = parsedJson[i].start_date
+      Milestonefases[i]['enddate']    = parsedJson[i].end_date;
+  }
 })();
