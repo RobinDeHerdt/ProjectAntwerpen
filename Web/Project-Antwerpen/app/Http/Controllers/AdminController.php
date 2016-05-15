@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\project;
+use App\milestone;
 
 class AdminController extends Controller
 {
@@ -21,8 +22,12 @@ class AdminController extends Controller
 
 	public function editproject($id)
 	{
-		$project = Project::find($id);
+		$project = project::find($id);
+		$projectid = $project->id;
 
-		return view('pages.editproject', compact('project'));
+        $milestones = milestone::where('project_id', $projectid)->get();
+        json_encode($milestones);
+
+		return view('pages.editproject', compact('project', 'milestones'));
 	}
 }

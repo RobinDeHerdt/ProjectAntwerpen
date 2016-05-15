@@ -14,7 +14,7 @@
 @section('content')
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    <script src="\js/tijdlijn.js"></script>
+    
 <script>
 function displayMap()
 {
@@ -248,8 +248,8 @@ function initialize() {
                </div>
 
               </div>
-              <input type="text" name="milestone_json" id="milestone_json" class="form-control input-md hidden" alt="Vul hier de einddatum van de mijlpaal in." value="<% FaseCon.fases %>">
-
+              <input type="text" name="existingMilestones" id="existingMilestones" class="form-control input-md hidden" alt="" value="{{$milestones}}">
+              <input type="text" name="milestone_json" id="milestone_json" class="form-control input-md hidden" alt="" value="<% FaseCon.fases %>">
               <div id="milestoneButtonTogle">
 
                 <div class="form-group">
@@ -424,7 +424,7 @@ function initialize() {
     }
 </script>
 </div>
-
+<script src="\js/tijdlijn.js"></script>
 </body>
 </html>
 @stop
