@@ -24,6 +24,13 @@
         <p>{{ Session::get('projectcreated')}}</p>
     </div>
     @endif
+
+     @if(Session::has('projectedited'))
+    <div class="alert alert-success">
+        <p>{{ Session::get('projectedited')}}</p>
+    </div>
+    @endif
+
     <div class="col-md-12">
       <fieldset>
         <div class="switch-toggle switch-candy-blue   switch-candy">
@@ -45,6 +52,9 @@
        
 
           <div class="col-sm-4 sort "  data-theme="{{$project->thema}}" data-date="{{$project->start_date}}">
+          @if (Auth::user() && Auth::user()->isAdmin)
+            <a href="bewerkproject/{{$project->id}}">Bewerken</a>
+          @endif
               <div class="col-sm-12 thumbnail text-center expand wrapper">
               <div class="ribbon-wrapper-green"><div class="ribbon-green">THEMA</div></div>
                   <img alt="" class="img-responsive" src=
