@@ -70,6 +70,47 @@ class ProjectController extends Controller
         return redirect('/overzicht');
     }
 
+    protected function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'project_name'      =>   'required',
+            'project_info'      =>   'required',
+            'project_thema'     =>   'required',
+            'project_location'  =>   'required',
+            'project_postalcode'=>   'required',
+            'project_color'     =>   'required',   
+        ]);
+
+        $project = project::find($id);
+
+        $project->project_name  = $request->project_name;
+        $project->info          = $request->project_info;
+        $project->thema         = $request->project_thema;
+        $project->location      = $request->project_location;
+        $project->postalcode    = $request->project_postalcode;
+        $project->color         = $request->project_color;
+        $project->start_date    = $request->project_startdate;
+        $project->end_date      = $request->project_enddate;
+        $project->xcoord        = $request->lat;
+        $project->ycoord        = $request->lng;
+            
+        if ($request->hasFile('headerimage') && $request->file('headerimage')->isValid()) 
+        {
+            $file       = $request->file('headerimage');
+            $fileName   = $file->getClientOriginalName();
+
+            $file->move(base_path() . '/public/img/', $fileName);
+
+            $project->headerimage   = '/img/' . $fileName;
+        }      
+        
+        $project->save();  
+
+        Session::flash('projectedited', 'Je project is succesvol bewerkt.');
+
+        return redirect('/overzicht');
+    }
+
     public function tijdlijn($id)
     {
         $project = Project::find($id);
