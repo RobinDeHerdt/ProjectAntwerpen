@@ -11,13 +11,16 @@
     </div>
     @endif
 
-	<div class="col-md-12 col-md-offset-3" style="position:relative; padding: 2em, 0; margin-top:2em; margin-bottom: 2em; width:90%; margin:0,auto" >
+	<div class="col-md-12 col-md-offset-3" style="position:relative; padding: 2em, 0; margin-top:2em; margin-bottom: 2em; width:70%; margin:0,auto" >
 	<div class="col-md-8 " style=" margin-top:0; position:relative; margin:2em,0;">
-	<div class="col-md-8 " style="position:relative; margin-left:60px; border-radius:0.25em;padding:1em" >
+
 
 
 
 		@foreach ($project->comments as $key=>$comment)
+    <div class="User_comment">
+
+
     <div class="Profile_img">
       	<img src="https://www.maptive.com/wp-content/uploads/2015/02/profile_female.png" >
     </div>
@@ -37,14 +40,16 @@
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder deze comment">
 				</form>
-        	<hr style="	border-top:1px solid #a7bad4; padding-top:-20px">
 			@endif
+      	<hr style="	border-top:1px solid #a7bad4; padding-top:-20px">
+        </div>
 		</div>
+
 
 
 
 		@endforeach
-		</div>
+
 
 		<div class="col-md-8">
 		@if (Auth::guest())
