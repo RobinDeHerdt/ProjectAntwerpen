@@ -58,7 +58,7 @@ src: url("../fonts/AntwerpenTall-Tall.svg") format("svg");
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   }
   .nav-tabs>li>a:hover {
-    
+
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 
@@ -92,7 +92,36 @@ font-family: AntwerpREG, Verdana, sans-serif;
   margin-top: 15px;
   margin-right: 20px;
 }
+.Profile_img{
+  top:0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.09);
+  float: left;
+  background:#c03b44;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.Profile_img img{
 
+    width: 28px;
+    margin-left: 6px;
+    margin-top: 4px;
+  /*
+  width: 28px;
+  height: 28px;
+  overflow:hidden;
+  position: relative;
+  left: 45%;
+  top: 45%;
+  margin-left: -12px;
+  margin-top: -12px;*/
+}
+.comment_body{
+  display: inline-block;
+  width: 32vw;
+}
 .switch-toggle {
   margin-bottom: 20px;
   height: 50px;
@@ -136,6 +165,9 @@ font-family: AntwerpREG, Verdana, sans-serif;
       position: absolute;
       background-color: rgba(85, 85, 85, 0.5);
   }
+.captionlink:hover{
+  text-decoration: none;
+}
 .ribbon-wrapper-green {
   width: 85px;
   height: 88px;
@@ -245,11 +277,11 @@ text-align:center;
 margin-top:25px
 >>>>>>> upstream/master
 =======
-border:1px solid black; 
-text-decoration:none; 
-color:black; 
-text-align:center; 
-margin-top:25px 
+border:1px solid black;
+text-decoration:none;
+color:black;
+text-align:center;
+margin-top:25px
 
 >>>>>>> upstream/master
 }
@@ -374,12 +406,18 @@ display: block!important;
 .CreatedMilestones button{
   margin-left: 20px;
   margin-bottom: 10px;
-
-
 }
+
 .CreatedMilestones button .fa.fa-btn{
   padding:5px;
   font-size: 20px;
+}
+.EditTile{
+  color: white;
+  text-decoration: none;
+  bottom: 10px;
+  right: 10px;
+  position: absolute;
 }
 .hidden{
   height: 0px;
@@ -416,6 +454,7 @@ display: block!important;
   }
 
 }
+
 @media(max-width:500px)
 {
   .titelpage{
