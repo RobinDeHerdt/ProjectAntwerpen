@@ -13,7 +13,7 @@
     @endif
 
 	<div class="col-md-12 col-md-offset-3 reactieContainer" >
-	<div class="col-md-8 reactieBody">
+	<div class="col-md-10 reactieBody">
 		@foreach ($project->comments as $key=>$comment)
     <div class="User_comment">
 

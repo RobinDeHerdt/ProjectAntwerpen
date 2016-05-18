@@ -100,8 +100,8 @@ font-family: AntwerpREG, Verdana, sans-serif;
   box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.09);
   float: left;
   background:#c03b44;
-  margin-right: 20px;
-  margin-top: 20px;
+  margin-right: 38px;
+ 
 }
 .Profile_img img{
 
@@ -120,7 +120,7 @@ font-family: AntwerpREG, Verdana, sans-serif;
 }
 .comment_body{
   display: inline-block;
-  width: 32vw;
+  width: 45vw;
 }
 .switch-toggle {
   margin-bottom: 20px;

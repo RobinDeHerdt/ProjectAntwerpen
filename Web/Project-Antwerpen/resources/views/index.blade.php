@@ -54,7 +54,7 @@
           <div class="col-sm-4 sort "  data-theme="{{$project->thema}}" data-date="{{$project->start_date}}" style="position:relative;">
           
               <div class="col-sm-12 thumbnail text-center expand wrapper">
-             <span class="fa fa-coffee fa-3x banner"></span>
+             <span class="fa fa-coffee fa-2x banner"></span>
               <!--{{$project->thema}}-->
 
                   <img alt="" class="img-responsive" src=
