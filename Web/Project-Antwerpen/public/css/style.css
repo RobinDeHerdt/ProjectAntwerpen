@@ -385,10 +385,13 @@ footer{
   width: 100%;
   height: 45px;
   padding-top: 12px;
-  text-align: center;
+  clear:both;
+  position:relative
+  margin-top:-45px;
 }
 footer p {
   color: rgb(190, 190, 190);
+  text-align: center;
 }
 .panel-body{
     min-height: 76.9vh;
@@ -427,6 +430,13 @@ display: block!important;
 }
 .btn-width{
   width: 220px;
+}
+.banner
+{
+   bottom:5px; left:5px; 
+   position:absolute; 
+   z-index:1; 
+   color:white;
 }
 
 @media(max-width:767px)
