@@ -92,7 +92,35 @@ font-family: AntwerpREG, Verdana, sans-serif;
   margin-top: 15px;
   margin-right: 20px;
 }
+.Profile_img{
+  top:0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.09);
+  float: left;
+  background:#c03b44;
+  margin-right: 20px;
+}
+.Profile_img img{
 
+    width: 28px;
+    margin-left: 6px;
+    margin-top: 4px;
+  /*
+  width: 28px;
+  height: 28px;
+  overflow:hidden;
+  position: relative;
+  left: 45%;
+  top: 45%;
+  margin-left: -12px;
+  margin-top: -12px;*/
+}
+.comment_body{
+  display: inline-block;
+  width: 630px
+}
 .switch-toggle {
   margin-bottom: 20px;
   height: 50px;
