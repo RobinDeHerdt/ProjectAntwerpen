@@ -58,7 +58,7 @@ src: url("../fonts/AntwerpenTall-Tall.svg") format("svg");
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   }
   .nav-tabs>li>a:hover {
-    
+
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 
@@ -245,11 +245,11 @@ text-align:center;
 margin-top:25px
 >>>>>>> upstream/master
 =======
-border:1px solid black; 
-text-decoration:none; 
-color:black; 
-text-align:center; 
-margin-top:25px 
+border:1px solid black;
+text-decoration:none;
+color:black;
+text-align:center;
+margin-top:25px
 
 >>>>>>> upstream/master
 }
@@ -374,12 +374,18 @@ display: block!important;
 .CreatedMilestones button{
   margin-left: 20px;
   margin-bottom: 10px;
-
-
 }
+
 .CreatedMilestones button .fa.fa-btn{
   padding:5px;
   font-size: 20px;
+}
+.EditTile{
+  color: white;
+  text-decoration: none;
+  bottom: 10px;
+  right: 10px;
+  position: absolute;
 }
 .hidden{
   height: 0px;
