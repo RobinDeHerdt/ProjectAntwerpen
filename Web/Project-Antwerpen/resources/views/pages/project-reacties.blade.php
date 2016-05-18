@@ -51,12 +51,12 @@
 	   	 	<form role="form" method="POST" action="reacties">
 		        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		        <div class="form-group">
-		        	<div class="col-md-8 banner"><img src="\img/reactie.png"></div>
+		        	<div class="col-md-10 bannerReactie"><img src="\img/reactie.png"></div>
 		            <input type="number" name="reactie" id="sterren" class="form-control input-md" placeholder="Sterren" required alt="Vul hier een reactie in op dit project">
 		            <input type="text" name="reactie" id="onderwerp" class="form-control input-md" placeholder="Onderwerp" required alt="Vul hier een reactie in op dit project">
 		            <textarea type="text" name="reactie" id="mening" class="form-control input-md" placeholder="Mening plaatsen" required alt="Vul hier een reactie in op dit project"></textarea>
 		        </div>
-		        <input type="submit" value="Reageer" class="btn btn-danger  input-md col-md-offset-11" alt="Bevestig uw reactie">
+		        <input type="submit" value="Reageer" class="btn btn-danger  input-md col-md-offset-11 btn-reageer" alt="Bevestig uw reactie">
 	    	</form>
 	   	@endif
 	   	</div>
