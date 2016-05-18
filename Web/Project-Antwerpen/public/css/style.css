@@ -101,6 +101,7 @@ font-family: AntwerpREG, Verdana, sans-serif;
   float: left;
   background:#c03b44;
   margin-right: 20px;
+  margin-top: 20px;
 }
 .Profile_img img{
 
@@ -119,7 +120,7 @@ font-family: AntwerpREG, Verdana, sans-serif;
 }
 .comment_body{
   display: inline-block;
-  width: 630px
+  width: 32vw;
 }
 .switch-toggle {
   margin-bottom: 20px;
@@ -453,6 +454,7 @@ display: block!important;
   }
 
 }
+
 @media(max-width:500px)
 {
   .titelpage{
