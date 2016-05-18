@@ -38,14 +38,17 @@ hr {
 	border-top:1px solid #a7bad4; 
 	padding-top:-20px;
 }
-.banner {
+.bannerReactie {
 	text-align:center;
 	width:100%; 
 	margin-top: 4em;
 }
-.banner img {
+.bannerReactie img {
 	margin-bottom:15px;
 	width:50%;
+}
+.btn-reageer {
+	margin-bottom: 2em;
 }
 #sterren {
 	 margin:1em; 
@@ -57,5 +60,5 @@ hr {
 }
 #mening {
 	 margin:1em; 
-	 height:50px;
+	 height:150px;
 }
