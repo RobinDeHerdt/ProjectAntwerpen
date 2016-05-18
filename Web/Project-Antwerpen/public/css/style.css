@@ -136,6 +136,9 @@ font-family: AntwerpREG, Verdana, sans-serif;
       position: absolute;
       background-color: rgba(85, 85, 85, 0.5);
   }
+.captionlink:hover{
+  text-decoration: none;
+}
 .ribbon-wrapper-green {
   width: 85px;
   height: 88px;
