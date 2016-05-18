@@ -1,0 +1,61 @@
+.reactieContainer {
+	 position:relative; 
+	 padding: 2em, 0;
+	 margin-top:2em; 
+	 margin-bottom: 2em; 
+	 width:70%; 
+	 float:none;
+	 margin:0,auto;
+
+}
+.reactieBody {
+	 margin-top:0; 
+	 position:relative; 
+	 margin:2em,0;"
+}
+.comment_body h3 {
+	font-family: Open Sans; 
+	font-weight: bold; 
+	font-size:30px;
+}
+.comment_body p {
+	font-family: Droid Serif, serif;
+    color: #7f8c97;
+    font-size:15px;
+}
+.comment_body h5 {
+	font-family: Droid Serif, serif;
+    color: #a7bad4; 
+    margin-top:20px;
+}
+ .comment_body h6 {
+ 	
+   font-family: Droid Serif, serif;
+    color: #a7bad4; 
+    margin-top:10px;
+}
+hr {
+	border-top:1px solid #a7bad4; 
+	padding-top:-20px;
+}
+.banner {
+	text-align:center;
+	width:100%; 
+	margin-top: 4em;
+}
+.banner img {
+	margin-bottom:15px;
+	width:50%;
+}
+#sterren {
+	 margin:1em; 
+	 height:50px;
+}
+#onderwerp {
+	 margin:1em; 
+	 height:50px;
+}
+#mening {
+	 margin:1em; 
+	 height:50px;
+}

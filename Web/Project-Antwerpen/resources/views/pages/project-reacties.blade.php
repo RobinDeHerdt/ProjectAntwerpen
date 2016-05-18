@@ -5,18 +5,15 @@
 @stop
 @extends('navigation-layout')
 @section('content')
+<link rel="stylesheet" href="\css/reacties.css">
 	@if(Session::has('commented'))
     <div class="alert alert-success">
         <p>{{ Session::get('commented')}}</p>
     </div>
     @endif
 
-	<div class="col-md-12 col-md-offset-3" style="position:relative; padding: 2em, 0; margin-top:2em; margin-bottom: 2em; width:70%; margin:0,auto" >
-	<div class="col-md-8 " style=" margin-top:0; position:relative; margin:2em,0;">
-
-
-
-
+	<div class="col-md-12 col-md-offset-3 reactieContainer" >
+	<div class="col-md-8 reactieBody">
 		@foreach ($project->comments as $key=>$comment)
     <div class="User_comment">
 
@@ -25,14 +22,11 @@
       	<img src="https://www.maptive.com/wp-content/uploads/2015/02/profile_female.png" >
     </div>
 		<div class="comment_body">
-			<h3 style="font-family: Open Sans; font-weight: bold; font-size:30px">{{ $comment->user->firstname }}</h3>
+			<h3>{{ $comment->user->firstname }}</h3>
 
-			<p style="font-family: Droid Serif, serif;
-    color: #7f8c97;font-size:15px">{{ $comment->comment_body }}</p>
-    <h6 style=" font-family: Droid Serif, serif;
-    color: #a7bad4; margin-top:30px;	">26/06/2016</h6>
-    <h6 style=" font-family: Droid Serif, serif;
-    color: #a7bad4; margin-top:20px;	">Gepost door: Dieter Vercammen</h6>
+			<p>{{ $comment->comment_body }}</p>
+    <h5>26/06/2016</h5>
+    <h6>Gepost door: Dieter Vercammen</h6>
 
 
 			@if (Auth::user() && Auth::user()->isAdmin)
@@ -41,29 +35,28 @@
 					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder deze comment">
 				</form>
 			@endif
-      	<hr style="	border-top:1px solid #a7bad4; padding-top:-20px">
+      	<hr>
         </div>
 		</div>
-
-
-
-
 		@endforeach
 
 
-		<div class="col-md-8">
+		<div class="col-md-12">
 		@if (Auth::guest())
 			<strong>Je moet ingelogd zijn om een reactie te geven. Je kan <a href="\login">hier</a> inloggen.</strong>
 			<br />
 			<strong>Heb je nog geen account? Registreren kan <a href="\register">hier</a>.</strong>
 	   	@else
-	   		<strong>Laat ons hier weten wat je van dit project vindt, {{ Auth::user()->firstname }}!</strong>
+	   		<!--<strong>Laat ons hier weten wat je van dit project vindt, {{ Auth::user()->firstname }}!</strong>-->
 	   	 	<form role="form" method="POST" action="reacties">
 		        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		        <div class="form-group">
-		            <input type="text" name="reactie" id="reactie" class="form-control input-md" placeholder="Schrijf een reactie" required alt="Vul hier een reactie in op dit project">
+		        	<div class="col-md-8 banner"><img src="\img/reactie.png"></div>
+		            <input type="number" name="reactie" id="sterren" class="form-control input-md" placeholder="Sterren" required alt="Vul hier een reactie in op dit project">
+		            <input type="text" name="reactie" id="onderwerp" class="form-control input-md" placeholder="Onderwerp" required alt="Vul hier een reactie in op dit project">
+		            <textarea type="text" name="reactie" id="mening" class="form-control input-md" placeholder="Mening plaatsen" required alt="Vul hier een reactie in op dit project"></textarea>
 		        </div>
-		        <input type="submit" value="Reageer" class="btn btn-danger btn-block" alt="Bevestig uw reactie">
+		        <input type="submit" value="Reageer" class="btn btn-danger  input-md col-md-offset-11" alt="Bevestig uw reactie">
 	    	</form>
 	   	@endif
 	   	</div>
