@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-  Home
+  Login
 @stop
 
 @section('content')
@@ -44,7 +44,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Wachtwoord vergeten?</a>
+                                <!-- <a class="btn btn-link" href="{{ url('/password/reset') }}">Wachtwoord vergeten?</a> -->
                                 <button type="submit" class="btn btn-primary col-md-4">
                                    Login
                                 </button>

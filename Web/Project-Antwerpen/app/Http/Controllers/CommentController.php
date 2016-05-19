@@ -46,6 +46,8 @@ class CommentController extends Controller
     	$comment = comment::find($commentid);
 		$comment->delete();
 
+		Session::flash('commentdeleted', 'De reactie werd succesvol verwijderd.');
+
 		return back();
     }
 }

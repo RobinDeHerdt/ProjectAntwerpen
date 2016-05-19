@@ -19,6 +19,8 @@ class ProjectController extends Controller
             'project_location'  =>   'required',
             'project_postalcode'=>   'required',
             'project_color'     =>   'required',
+            'project_startdate' =>   'required',
+            'project_enddate'   =>   'required',
             'headerimage'       =>   'required|unique:projects',   
         ]);
 

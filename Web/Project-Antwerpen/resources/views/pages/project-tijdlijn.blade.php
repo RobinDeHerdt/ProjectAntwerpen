@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-  Home
+  Projecttijdlijn
 @stop
 @extends('navigation-layout')
 @section('content')
