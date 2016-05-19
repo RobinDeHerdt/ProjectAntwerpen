@@ -1,18 +1,18 @@
 @extends('layout')
 
 @section('title')
-  Home
+  Reacties
 @stop
 @extends('navigation-layout')
 @section('content')
 <link rel="stylesheet" href="\css/reacties.css">
 	@if(Session::has('commented'))
-    <div class="alert alert-success">
+    <div class="alert alert-success col-md-8 col-md-offset-2">
         <p>{{ Session::get('commented')}}</p>
     </div>
     @endif
     @if(Session::has('commentdeleted'))
-    <div class="alert alert-success">
+    <div class="alert alert-success col-md-8 col-md-offset-2">
         <p>{{ Session::get('commentdeleted')}}</p>
     </div>
     @endif
