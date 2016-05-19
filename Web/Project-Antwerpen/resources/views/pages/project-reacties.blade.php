@@ -30,52 +30,7 @@
 </div>
     <h5>26/06/2016</h5>
     <h6>Gepost door: Dieter Vercammen</h6>
-
-    <style type="text/css">
-    .rating {
-  
-  width:180px;
-  float:right;
-  margin-top:25px;
-
-}
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 0.8em;
-  font-size: 30px;
-  color:#ffd203;
-  float:right;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-}
-.input-field {
-
-height:50px;
-display:inline-block;
-margin:1em;
-padding:0;
-
-
-
-}
-#rating {
-
-float:none;
-margin:auto;
-display:block;
-margin-top:0;
-}
-#rating > span {
-	font-size:40px;
-}
-
-</style>
-
-
+    
 			@if (Auth::user() && Auth::user()->isAdmin)
 				<form role="form" method="POST" action="reacties/{{$comment->comment_id}}">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
