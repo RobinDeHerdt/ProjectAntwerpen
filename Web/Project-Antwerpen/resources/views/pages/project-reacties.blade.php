@@ -25,8 +25,55 @@
 			<h3>{{ $comment->user->firstname }}</h3>
 
 			<p>{{ $comment->comment_body }}</p>
+			<div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
     <h5>26/06/2016</h5>
     <h6>Gepost door: Dieter Vercammen</h6>
+
+    <style type="text/css">
+    .rating {
+  
+  width:180px;
+  float:right;
+  margin-top:25px;
+
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 0.8em;
+  font-size: 30px;
+  color:#ffd203;
+  float:right;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+.input-field {
+
+height:50px;
+display:inline-block;
+margin:1em;
+padding:0;
+
+
+
+}
+#rating {
+
+float:none;
+margin:auto;
+display:block;
+margin-top:0;
+}
+#rating > span {
+	font-size:40px;
+}
+
+</style>
 
 
 			@if (Auth::user() && Auth::user()->isAdmin)
@@ -52,7 +99,10 @@
 		        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		        <div class="form-group">
 		        	<div class="col-md-10 bannerReactie"><img src="\img/reactie.png"></div>
-		            <input type="number" name="reactie" id="sterren" class="form-control input-md" placeholder="Sterren" required alt="Vul hier een reactie in op dit project">
+		           <!-- <input type="number" name="reactie" id="sterren" class="form-control input-md" placeholder="Sterren" required alt="Vul hier een reactie in op dit project">-->
+		           <div class="input-field form-control">	<div class="rating" id="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div></div>
 		            <input type="text" name="reactie" id="onderwerp" class="form-control input-md" placeholder="Onderwerp" required alt="Vul hier een reactie in op dit project">
 		            <textarea type="text" name="reactie" id="mening" class="form-control input-md" placeholder="Mening plaatsen" required alt="Vul hier een reactie in op dit project"></textarea>
 		        </div>
