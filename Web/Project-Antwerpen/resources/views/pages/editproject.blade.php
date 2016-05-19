@@ -8,7 +8,7 @@
    @extends('layout')
 
 @section('title')
-  Home
+  Bewerk project
 @stop
 
 @section('content')
@@ -78,11 +78,59 @@ function initialize() {
             <span class="progress-completed">0%</span>
         </div>
     </div>
-    @if($errors->all())
-        @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-        @endforeach
+        <!-- Start validation messages -->
+    @if ($errors->all())
+        <strong>Het project is nog niet helemaal af. Volgende zaken zijn nog niet helemaal in orde: </strong>
     @endif
+    <ul>
+    @if ($errors->has('project_name'))
+        <li>
+            <strong>Je hebt nog geen naam aan het project gegeven.</strong>
+        </li>
+    @endif
+    @if ($errors->has('project_info'))
+        <li>
+            <strong>Je hebt nog geen uitleg over het project gegeven. </strong>
+        </li>
+    @endif 
+    @if ($errors->has('project_thema'))
+        <li>
+            <strong>Je hebt nog geen thema voor het project gekozen.</strong>
+        </li>
+    @endif
+    @if ($errors->has('project_location'))
+        <li>
+            <strong>Je hebt de locatie van het project nog niet opgegeven.</strong>
+        </li>
+    @endif
+    @if ($errors->has('project_postalcode'))
+        <li>
+            <strong>Je hebt de postcode nog niet ingegeven.</strong>
+        </li>
+    @endif
+    @if ($errors->has('project_startdate'))
+        <li>
+            <strong>Je hebt nog geen startdatum voor het project ingesteld.</strong>
+        </li>
+    @endif
+    @if ($errors->has('project_enddate'))
+        <li>
+            <strong>Je hebt nog geen einddatum voor het project ingesteld.</strong>
+        </li>
+    @endif
+    @if ($errors->has('project_color'))
+        <li>
+            <strong>Je hebt het project nog geen kleur toegekend.</strong>
+        </li>
+    @endif
+    @if ($errors->has('headerimage'))
+        <li>
+            <strong>Je hebt nog geen headerimage geupload.</strong>
+        </li>
+    @endif
+    </ul>
+
+    <!-- End validation messages -->
     <div class="row">
         <div class="row step">
             <div id="div1" class="col-md-2 activestep" onclick="javascript: resetActive(event, 0, 'step-1');">
@@ -185,11 +233,10 @@ function initialize() {
             <div class="col-md-12 well text-center">
                 <h1>Kaart</h1>
                <div id="googleMap"></div>
-               <p>Sleep de marker naar de projectlocatie</p>
-               <label>Lat:</label>
-               <input type="text" id="lat" name="lat"></input>
-               <label>Long:</label>
-               <input type="text" id="lng" name="lng"></input>
+               <strong>Sleep de marker naar de projectlocatie</strong>
+               
+               <input type="hidden" id="lat" name="lat"></input>
+               <input type="hidden" id="lng" name="lng"></input>
                 <div class="form-group">
                     <input value="Volgende" type="button" class="btn  btn-width btn-danger btn-lg" onclick="triggerClick(4);" alt="Volgende knop">
                </div>

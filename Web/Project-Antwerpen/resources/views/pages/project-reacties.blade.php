@@ -25,12 +25,10 @@
 			<h3>{{ $comment->user->firstname }}</h3>
 
 			<p>{{ $comment->comment_body }}</p>
-			<div class="rating">
-<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-</div>
     <h5>26/06/2016</h5>
     <h6>Gepost door: Dieter Vercammen</h6>
-    
+
+
 			@if (Auth::user() && Auth::user()->isAdmin)
 				<form role="form" method="POST" action="reacties/{{$comment->comment_id}}">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -54,10 +52,7 @@
 		        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		        <div class="form-group">
 		        	<div class="col-md-10 bannerReactie"><img src="\img/reactie.png"></div>
-		           <!-- <input type="number" name="reactie" id="sterren" class="form-control input-md" placeholder="Sterren" required alt="Vul hier een reactie in op dit project">-->
-		           <div class="input-field form-control">	<div class="rating" id="rating">
-<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-</div></div>
+		            <input type="number" name="reactie" id="sterren" class="form-control input-md" placeholder="Sterren" required alt="Vul hier een reactie in op dit project">
 		            <input type="text" name="reactie" id="onderwerp" class="form-control input-md" placeholder="Onderwerp" required alt="Vul hier een reactie in op dit project">
 		            <textarea type="text" name="reactie" id="mening" class="form-control input-md" placeholder="Mening plaatsen" required alt="Vul hier een reactie in op dit project"></textarea>
 		        </div>

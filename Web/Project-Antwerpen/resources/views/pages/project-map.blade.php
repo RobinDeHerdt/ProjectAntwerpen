@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title')
-  Home
+  Projectlocatie
 @stop
 @extends('navigation-layout')
 @section('content')

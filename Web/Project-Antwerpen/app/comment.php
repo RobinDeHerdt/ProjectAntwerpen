@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class comment extends Model
 {
-	public $timestamps = false;
+	//public $timestamps = false;
 	public $primaryKey = 'comment_id';
     public function project()
     {

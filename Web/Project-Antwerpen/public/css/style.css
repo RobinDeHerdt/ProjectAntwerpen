@@ -439,6 +439,10 @@ display: block!important;
    color:white;
 }
 
+.validationerror {
+  color: darkred;
+}
+
 @media(max-width:767px)
 {
   .navbar-right{
