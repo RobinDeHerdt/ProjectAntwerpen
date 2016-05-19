@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-  Home
+  Project - Meningen
 @stop
 @extends('navigation-layout')
 @section('content')

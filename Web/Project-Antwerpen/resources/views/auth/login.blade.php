@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-  Home
+  Login
 @stop
 
 @section('content')

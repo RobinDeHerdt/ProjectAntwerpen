@@ -8,7 +8,7 @@
    @extends('layout')
 
 @section('title')
-  Home
+  Bewerk project
 @stop
 
 @section('content')
@@ -233,11 +233,10 @@ function initialize() {
             <div class="col-md-12 well text-center">
                 <h1>Kaart</h1>
                <div id="googleMap"></div>
-               <p>Sleep de marker naar de projectlocatie</p>
-               <label>Lat:</label>
-               <input type="text" id="lat" name="lat"></input>
-               <label>Long:</label>
-               <input type="text" id="lng" name="lng"></input>
+               <strong>Sleep de marker naar de projectlocatie</strong>
+               
+               <input type="hidden" id="lat" name="lat"></input>
+               <input type="hidden" id="lng" name="lng"></input>
                 <div class="form-group">
                     <input value="Volgende" type="button" class="btn  btn-width btn-danger btn-lg" onclick="triggerClick(4);" alt="Volgende knop">
                </div>
