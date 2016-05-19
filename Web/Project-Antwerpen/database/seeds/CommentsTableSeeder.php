@@ -15,54 +15,63 @@ class CommentsTableSeeder extends Seeder
         	'comment_body' => 'Join the dark side!',
         	'user_id' => 1,
         	'project_id' => 1,
+            'created_at' => '2016-07-06',
     	]);
 
         DB::table('comments')->insert([
             'comment_body' => 'Lel',
             'user_id' => 1,
             'project_id' => 1,
+            'created_at' => '2016-07-06',
         ]);
 
         DB::table('comments')->insert([
             'comment_body' => 'Lol',
             'user_id' => 1,
             'project_id' => 2,
+            'created_at' => '2016-07-06',
         ]);
 
     	DB::table('comments')->insert([
         	'comment_body' => 'Dees project is awesome.',
         	'user_id' => 2,
         	'project_id' => 1,
+            'created_at' => '2016-07-06',
     	]);
 
     	DB::table('comments')->insert([
         	'comment_body' => 'Cool project.',
         	'user_id' => 3,
         	'project_id' => 3,
+            'created_at' => '2016-07-06',
     	]);
 
         DB::table('comments')->insert([
             'comment_body' => 'Dees project is awesome.',
             'user_id' => 2,
             'project_id' => 2,
+            'created_at' => '2016-07-06',
         ]);
 
         DB::table('comments')->insert([
             'comment_body' => 'Cool project.',
             'user_id' => 3,
             'project_id' => 4,
+            'created_at' => '2016-07-06',
         ]);
 
         DB::table('comments')->insert([
             'comment_body' => 'Dees project is awesome.',
             'user_id' => 2,
             'project_id' => 5,
+            'created_at' => '2016-07-06',
         ]);
 
         DB::table('comments')->insert([
             'comment_body' => 'Cool project.',
             'user_id' => 3,
             'project_id' => 5,
+            'created_at' => '2016-07-06',
         ]);
     }
 }

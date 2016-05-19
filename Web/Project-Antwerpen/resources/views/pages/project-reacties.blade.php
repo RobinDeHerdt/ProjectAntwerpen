@@ -11,6 +11,11 @@
         <p>{{ Session::get('commented')}}</p>
     </div>
     @endif
+    @if(Session::has('commentdeleted'))
+    <div class="alert alert-success">
+        <p>{{ Session::get('commentdeleted')}}</p>
+    </div>
+    @endif
 
 	<div class="col-md-12 col-md-offset-3 reactieContainer" >
 	<div class="col-md-10 reactieBody">
@@ -25,8 +30,8 @@
 			<h3>{{ $comment->user->firstname }}</h3>
 
 			<p>{{ $comment->comment_body }}</p>
-    <h5>26/06/2016</h5>
-    <h6>Gepost door: Dieter Vercammen</h6>
+    		<h5>Gepost op: {{ $comment->created_at }}</h5>
+    <!-- <h6>Gepost door: Dieter Vercammen</h6> -->
 
 
 			@if (Auth::user() && Auth::user()->isAdmin)
@@ -52,8 +57,8 @@
 		        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		        <div class="form-group">
 		        	<div class="col-md-10 bannerReactie"><img src="\img/reactie.png"></div>
-		            <input type="number" name="reactie" id="sterren" class="form-control input-md" placeholder="Sterren" required alt="Vul hier een reactie in op dit project">
-		            <input type="text" name="reactie" id="onderwerp" class="form-control input-md" placeholder="Onderwerp" required alt="Vul hier een reactie in op dit project">
+		            <!-- <input type="number" name="reactie" id="sterren" class="form-control input-md" placeholder="Sterren" required alt="Vul hier een reactie in op dit project"> -->
+		            <!-- <input type="text" name="reactie" id="onderwerp" class="form-control input-md" placeholder="Onderwerp" required alt="Vul hier een reactie in op dit project"> -->
 		            <textarea type="text" name="reactie" id="mening" class="form-control input-md" placeholder="Mening plaatsen" required alt="Vul hier een reactie in op dit project"></textarea>
 		        </div>
 		        <input type="submit" value="Reageer" class="btn btn-danger  input-md col-md-offset-11 btn-reageer" alt="Bevestig uw reactie">

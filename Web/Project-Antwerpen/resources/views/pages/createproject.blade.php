@@ -78,11 +78,59 @@ function initialize() {
             <span class="progress-completed">0%</span>
         </div>
     </div>
-    @if($errors->all())
-        @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-        @endforeach
+    <!-- Start validation messages -->
+    @if ($errors->all())
+        <strong>Het project is nog niet helemaal af. Volgende zaken zijn nog niet helemaal in orde: </strong>
     @endif
+    <ul>
+    @if ($errors->has('project_name'))
+        <li>
+            <strong>Je hebt nog geen naam aan het project gegeven.</strong>
+        </li>
+    @endif
+    @if ($errors->has('project_info'))
+        <li>
+            <strong>Je hebt nog geen uitleg over het project gegeven. </strong>
+        </li>
+    @endif 
+    @if ($errors->has('project_thema'))
+        <li>
+            <strong>Je hebt nog geen thema voor het project gekozen.</strong>
+        </li>
+    @endif
+    @if ($errors->has('project_location'))
+        <li>
+            <strong>Je hebt de locatie van het project nog niet opgegeven.</strong>
+        </li>
+    @endif
+    @if ($errors->has('project_postalcode'))
+        <li>
+            <strong>Je hebt de postcode nog niet ingegeven.</strong>
+        </li>
+    @endif
+    @if ($errors->has('project_startdate'))
+        <li>
+            <strong>Je hebt nog geen startdatum voor het project ingesteld.</strong>
+        </li>
+    @endif
+    @if ($errors->has('project_enddate'))
+        <li>
+            <strong>Je hebt nog geen einddatum voor het project ingesteld.</strong>
+        </li>
+    @endif
+    @if ($errors->has('project_color'))
+        <li>
+            <strong>Je hebt het project nog geen kleur toegekend.</strong>
+        </li>
+    @endif
+    @if ($errors->has('headerimage'))
+        <li>
+            <strong>Je hebt nog geen headerimage geupload.</strong>
+        </li>
+    @endif
+    </ul>
+
+    <!-- End validation messages -->
     <div class="row">
         <div class="row step">
             <div id="div1" class="col-md-2 activestep" onclick="javascript: resetActive(event, 0, 'step-1');">
@@ -115,7 +163,11 @@ function initialize() {
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1>Projectnaam</h1>
-
+                @if ($errors->has('project_name'))
+                    <span class="help-block validationerror">
+                        <strong>{{ $errors->first('project_name') }}</strong>
+                    </span>
+                @endif 
                 <div class="form-group">
                     <input type="text" name="project_name" id="project_name" class="form-control input-md" placeholder="Projectnaam" required alt="Vul hier je projectnaam in" value="{{old('project_name')}}">
                 </div>
@@ -133,37 +185,68 @@ function initialize() {
 
                  <div class="form-group">
                     <label class="control-label">Uitleg over het project</label>
+                    @if ($errors->has('project_info'))
+                        <span class="help-block validationerror">
+                            <strong>{{ $errors->first('project_info') }}</strong>
+                        </span>
+                    @endif
                     <textarea class="form-control input-md" rows="5" id="project_info" placeholder="Uitleg over het project" alt="Vul project details in" name="project_info">{{old('project_info')}}</textarea>
                 </div>
-
                 <div class="form-group">
                     <label class="control-label">Thema</label>
+                    @if ($errors->has('project_thema'))
+                        <span class="help-block validationerror">
+                            <strong>{{ $errors->first('project_thema') }}</strong>
+                        </span>
+                    @endif
                     <input type="text" name="project_thema" id="project_thema" class="form-control input-md" placeholder="Thema" alt="Vul hier het thema in." value="{{old('project_thema')}}">
                 </div>
-
                 <div class="form-group">
                     <label class="control-label">Locatie</label>
+                     @if ($errors->has('project_location'))
+                        <span class="help-block validationerror">
+                            <strong>{{ $errors->first('project_location') }}</strong>
+                        </span>
+                    @endif
                     <input type="text" name="project_location" id="project_location" class="form-control input-md" placeholder="Locatie" alt="Vul hier de locatie van het project in." value="{{old('project_location')}}">
                 </div>
-
+               
                 <div class="form-group">
                     <label class="control-label">Postcode</label>
+                    @if ($errors->has('project_postalcode'))
+                        <span class="help-block validationerror">
+                            <strong>{{ $errors->first('project_postalcode') }}</strong>
+                        </span>
+                    @endif
                     <input type="text" name="project_postalcode" id="project_postalcode" class="form-control input-md" placeholder="2000" alt="Vul hier de postcode van de locatie in." value="{{old('project_postalcode')}}">
                 </div>
-
                 <div class="form-group">
                     <label class="control-label">Startdatum</label>
+                    @if ($errors->has('project_startdate'))
+                        <span class="help-block validationerror">
+                            <strong>{{ $errors->first('project_startdate') }}</strong>
+                        </span>
+                    @endif
                     <input type="date" name="project_startdate" id="project_startdate" class="form-control input-md" alt="Vul hier de startdatum van het project in." value="{{old('project_startdate')}}">
                 </div>
-
                 <div class="form-group">
                     <label class="control-label">Einddatum</label>
+                    @if ($errors->has('project_enddate'))
+                        <span class="help-block validationerror">
+                            <strong>{{ $errors->first('project_enddate') }}</strong>
+                        </span>
+                    @endif
                     <input type="date" name="project_enddate" id="project_enddate" class="form-control input-md" alt="Vul hier de einddatum van het project in." value="{{old('project_enddate')}}">
                 </div>
-
+                
                 <div class="form-group">
                     <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
                     <label>Projectkleur</label>
+                    @if ($errors->has('project_color'))
+                        <span class="help-block validationerror">
+                            <strong>{{ $errors->first('project_color') }}</strong>
+                        </span>
+                    @endif
                     <select class="c-select form-control input-md" name="project_color" alt="Kies een kleur voor dit project" value="{{old('project_color')}}">
                         <option selected disabled>Projectkleur</option>
                         <option value="orange"  alt="Oranje">   Oranje  </option>
@@ -174,7 +257,7 @@ function initialize() {
                         <option value="yellow"  alt="Geel">     Geel    </option>
                     </select>
                 </div>
-
+                
                 <div class="form-group">
                         <input value="Volgende" type="button" class="btn btn-width btn-danger btn-lg" onclick="triggerClick(3);displayMap();" alt="Volgende knop">
                 </div>
@@ -219,18 +302,18 @@ function initialize() {
               <div id="addMilestone" class="form-group">
                 <div class="form-group hidden" id="error">
                   <p class="alert alert-danger">
-                    Er is een Input veld niet ingevuld
+                    Er is een inputveld niet ingevuld.
                   </p>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Titel mijlpaal</label>
+                    <label class="control-label">Titel van de projectfase</label>
                     <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de mijlpaal in." value="{{old('titel_mijlpaal')}}" required>
                 </div>
                 <div class="form-group">
                     <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
                     <label>Icon</label>
                     <select ng-model="milestone.icon" class="c-select form-control input-md" id="milestone_image" name="milestone_image" alt="Kies een icoon voor deze milestone" value="{{old('milestone_image')}}">
-                        <option selected disabled>Mijlpaal Icoontje</option>
+                        <option selected disabled>Icoontje</option>
                         <option value="/img/cd-icon-movie.svg"     alt="Camera">  Camera  </option>
                         <option value="/img/cd-icon-location.svg"  alt="locatie"> locatie </option>
                         <option value="/img/cd-icon-picture.svg"   alt="foto">    foto    </option>
@@ -245,7 +328,7 @@ function initialize() {
                     <input ng-model="milestone.enddate" type="date" name="milestone_enddate" id="milestone_enddate" class="form-control input-md" alt="Vul hier de einddatum van de mijlpaal in." value="{{old('milestone_enddate')}}">
                 </div>
                 <div class="form-group">
-                   <label class="control-label">gedetailleerd uitleg over de mijlpaal</label>
+                   <label class="control-label">Gedetailleerd uitleg over deze projectfase</label>
                    <textarea ng-model="milestone.milestoneInfo" class="form-control input-md" rows="5" id="mijlpaal_info" placeholder="Uitleg over het mijlpaal" alt="Vul info over de mijlpaal in" name="mijlpaal_info">{{old('mijlpaal_info')}}</textarea>
                </div>
 
@@ -271,7 +354,11 @@ function initialize() {
                 <h1>Foto's</h1>
 
                 <input type="file" name="headerimage">
-
+                @if ($errors->has('headerimage'))
+                    <span class="help-block validationerror">
+                        <strong>{{ $errors->first('headerimage') }}</strong>
+                    </span>
+                @endif
                 <div class="form-group">
                     <input value="Volgende" class="btn btn-width btn-danger btn-lg" type="button" onclick="triggerClick(6);" alt="Volgende knop">
                </div>
