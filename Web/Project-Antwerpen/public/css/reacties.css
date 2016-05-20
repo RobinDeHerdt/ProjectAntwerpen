@@ -3,7 +3,6 @@
 	 padding: 2em, 0;
 	 margin-top:2em; 
 	 margin-bottom: 2em; 
-	 width:70%; 
 	 float:none;
 	 margin:0,auto;
 
@@ -11,7 +10,8 @@
 .reactieBody {
 	 margin-top:0; 
 	 position:relative; 
-	 margin:2em,0;"
+	 margin:2em,0;
+	 margin-left:5%;
 }
 .comment_body h3 {
 	font-family: Open Sans; 
@@ -37,6 +37,7 @@
 hr {
 	border-top:1px solid #a7bad4; 
 	padding-top:-20px;
+	width:100%;
 }
 .bannerReactie {
 	text-align:center;
@@ -62,14 +63,11 @@ hr {
 	 margin:1em; 
 	 height:150px;
 }
-
-
-
 .rating {
   
-  width:180px;
-  float:right;
-  margin-top:25px;
+  
+  /*float:right;*/
+  /*margin-top:25px;*/
 
 }
 .rating > span {
