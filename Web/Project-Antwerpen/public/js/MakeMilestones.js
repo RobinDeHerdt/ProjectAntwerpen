@@ -5,7 +5,7 @@ function TogleForm() {
   $("#addMilestone").toggle();
   $("#btn-button-milestone" ).toggleClass( "btn-success" );
   $("#btn-button-milestone" ).toggleClass( "btn-info" );
-  $("#btn-button-milestone").prop('value') == "Formulier minimaliseren" ? $("#btn-button-milestone").prop('value', 'Mijlpaal Toevoegen') : $("#btn-button-milestone").prop('value', 'Formulier minimaliseren');
+  $("#btn-button-milestone").prop('value') == "Formulier minimaliseren" ? $("#btn-button-milestone").prop('value', 'Projectfase Toevoegen') : $("#btn-button-milestone").prop('value', 'Formulier minimaliseren');
   if ($("#milestoneButtonTogle div:first-child").is(":visible")) {
     $("#milestoneButtonTogle div:first-child").hide();
     $("#milestoneButtonTogle div:last-child").show();

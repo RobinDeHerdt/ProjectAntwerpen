@@ -52,19 +52,21 @@
 
 
           <div class="col-sm-4 sort "  data-theme="{{$project->thema}}" data-date="{{$project->start_date}}" style="position:relative;">
-          
+
               <div class="col-sm-12 thumbnail text-center expand wrapper">
-             <span class="fa fa-coffee fa-2x banner"></span>
+
               <!--{{$project->thema}}-->
 
                   <img alt="" class="img-responsive" src=
                   {{$project->headerimage}}>
                   <a class="captionlink" href="project/{{$project->id}}/tijdlijn">
                     <div class="caption {{$project->color}}" >
+                      <span class="fa fa-coffee fa-2x banner"></span>
                         <h4>{{$project->project_name}}</h4>
+
                         @if (Auth::user() && Auth::user()->isAdmin)
-                          <a class="EditTile" href="bewerkproject/{{$project->id}}"> <span class="fa fa-btn fa-pencil"></span>  Bewerken</a>
-                          <a href="verwijderproject/{{$project->id}}">Verwijderen</a>
+                          <a class="EditTile" href="bewerkproject/{{$project->id}}"> <span class="fa fa-btn fa-pencil editicon"></span>  Bewerken</a>
+                          <a class="deleteTile" href="verwijderproject/{{$project->id}}">Verwijderen <span class="fa fa-btn fa-close"></span> </a>
                         @endif
                     </div>
                   </a>
