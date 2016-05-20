@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Project;
+use App\project;
 use App\milestone;
 use App\comment;
 use App\rating;
 use App\Http\Requests;
 use Session;
+
 
 class ProjectController extends Controller
 {

@@ -28,12 +28,13 @@
     </div>
 		<div class="comment_body">
 			<h3>{{ $comment->user->firstname }}</h3>
-<div class="rating">
-			<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-			</div>
-			<p>{{ $comment->comment_body }}</p>
 
+			<p>{{ $comment->comment_body }}</p>
+			
     		<h5>Gepost op: {{ $comment->created_at }}</h5>
+    		<div class="rating">
+			<span id="5">☆</span><span id="4">☆</span><span id="3">☆</span><span id="2">☆</span><span id="1">☆</span>
+			</div>
     <!-- <h6>Gepost door: Dieter Vercammen</h6> -->
 
 
@@ -43,40 +44,47 @@
 					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder deze comment">
 				</form>
 			@endif
+		
       	<hr>
         </div>
 		</div>
 		@endforeach
 
 
-
+		<div class="col-md-12">
+		@if (Auth::guest())
+			<strong>Je moet ingelogd zijn om een reactie te geven. Je kan <a href="\login">hier</a> inloggen.</strong>
+			<br />
+			<strong>Heb je nog geen account? Registreren kan <a href="\register">hier</a>.</strong>
+	   	@else
+	   		<!--<strong>Laat ons hier weten wat je van dit project vindt, {{ Auth::user()->firstname }}!</strong>-->
+	   	 	<form role="form" method="POST" action="reacties">
+		        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+		        <div class="form-group">
+		        	<div class="col-md-10 bannerReactie"><img src="\img/reactie.png"></div>
+		            <!-- <input type="number" name="reactie" id="sterren" class="form-control input-md" placeholder="Sterren" required alt="Vul hier een reactie in op dit project"> -->
+		            <!-- <input type="text" name="reactie" id="onderwerp" class="form-control input-md" placeholder="Onderwerp" required alt="Vul hier een reactie in op dit project"> -->
+		            <div class="input-field form-control">	
+		            <div class="rating" id="rating">
+					<span id="5">☆</span><span id="4">☆</span><span id="3">☆</span><span id="2">☆</span><span id="1">☆</span>
+					</div></div>
+		            <textarea type="text" name="reactie" id="mening" class="form-control input-md" placeholder="Mening plaatsen" required alt="Vul hier een reactie in op dit project"></textarea>
+		        </div>
+		        <input type="submit" value="Reageer" class="btn btn-danger  input-md col-md-offset-11 btn-reageer" alt="Bevestig uw reactie">
+	    	</form>
+	   	@endif
+	   	</div>
     </div>
-    <div class="col-md-10 ReactiePlaatsen">
-    @if (Auth::guest())
-      <strong>Je moet ingelogd zijn om een reactie te geven. Je kan <a href="\login">hier</a> inloggen.</strong>
-      <br />
-      <strong>Heb je nog geen account? Registreren kan <a href="\register">hier</a>.</strong>
-      @else
-        <!--<strong>Laat ons hier weten wat je van dit project vindt, {{ Auth::user()->firstname }}!</strong>-->
-        <form role="form" method="POST" action="reacties">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div class="form-group">
-              <div class="col-md-10 bannerReactie"><img src="\img/reactie.png"></div>
-                <!-- <input type="number" name="reactie" id="sterren" class="form-control input-md" placeholder="Sterren" required alt="Vul hier een reactie in op dit project"> -->
-                <!-- <input type="text" name="reactie" id="onderwerp" class="form-control input-md" placeholder="Onderwerp" required alt="Vul hier een reactie in op dit project"> -->
-                <div class="input-field form-control">
-                <div class="rating" id="rating">
-          <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-          </div></div>
-                <textarea type="text" name="reactie" id="mening" class="form-control input-md" placeholder="Mening plaatsen" required alt="Vul hier een reactie in op dit project"></textarea>
-            </div>
-            <input type="submit" value="Reageer" class="btn btn-danger  input-md col-md-offset-11 btn-reageer" alt="Bevestig uw reactie">
-        </form>
-      @endif
-      </div>
    </div>
 <script type="text/javascript">
 var d = document.getElementById("reacties");
 d.className += " active";
 </script>
+<script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
+			<script type="text/javascript"> 
+			$(document).ready(function() {
+    			$("span").click(function(event) {
+        		//get value here
+    			});
+			});</script>
 @stop
