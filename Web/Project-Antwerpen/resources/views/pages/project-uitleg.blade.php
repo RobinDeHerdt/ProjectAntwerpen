@@ -9,6 +9,20 @@
 <body>
 
 <div class="container">
+
+<div class="row top-buffer" id="fase1">
+    
+    <div class="col-md-12" style="text-align: center;">
+    <h2>Project Uitleg</h2>
+    <h6>begindatum: 06/06/2016</h6>
+    <h6>einddatum: 08/06/2016</h6>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+    </div>
     
     <div class="row top-buffer" id="fase1">
     <div class="col-md-4 imgtile Tile3"><img src="http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg"></div>
