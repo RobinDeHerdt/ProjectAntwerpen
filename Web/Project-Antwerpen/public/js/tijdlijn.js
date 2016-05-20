@@ -25,7 +25,7 @@
         Milestonefases.push(this.NewStone);
       }
     }
-    this.fases;
+    this.fases = JSON.stringify(Milestonefases);
 
     this.MilestoneToJson = function () {
       if (Milestonefases.length >= 2)
@@ -39,8 +39,6 @@
           date2= date2[0] +date2[1] -1 + date2[2];
           return date1 > date2 ? 1 : -1;
         })
-
-        
       }
       this.fases = JSON.stringify(Milestonefases);
     };
