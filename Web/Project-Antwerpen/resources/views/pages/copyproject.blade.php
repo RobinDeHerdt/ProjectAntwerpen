@@ -64,12 +64,12 @@ function initialize() {
 <div class="container ProjectFrom">
 
 
-<form role="form" method="POST" action="/bewerkproject/{{$project->id}}" novalidate="" enctype="multipart/form-data">
+<form role="form" method="POST" action="/kopiërenproject/{{$project->id}}" novalidate="" enctype="multipart/form-data">
 {!! csrf_field() !!}
 <!-- Steps Progress and Details - START -->
 <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
     <div class="row">
-    <h1 style="text-align:center">Project bewerken</h1>
+    <h1 style="text-align:center">Project kopiëren</h1>
     <h1></h1>
         <div class="progress" id="progress1">
             <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
@@ -304,13 +304,13 @@ function initialize() {
                     <input ng-model="milestone.enddate" type="date" name="milestone_enddate" id="milestone_enddate" class="form-control input-md" alt="Vul hier de einddatum van de mijlpaal in." value="{{old('milestone_enddate')}}">
                 </div>
                 <div class="form-group">
-                   <label class="control-label">gedetailleerd uitleg over de mijlpaal</label>
+                   <label class="control-label">Gedetailleerde uitleg over de mijlpaal</label>
                    <textarea ng-model="milestone.milestoneInfo" class="form-control input-md" rows="5" id="mijlpaal_info" placeholder="Uitleg over het mijlpaal" alt="Vul info over de mijlpaal in" name="mijlpaal_info">{{old('mijlpaal_info')}}</textarea>
                </div>
 
               </div>
-              <input type="text" name="existingMilestones" id="existingMilestones" class="form-control input-md hidden" alt="" value="{{$milestones}}">
-              <input type="text" name="milestone_json" id="milestone_json" class="form-control input-md hidden" alt="" value="<% FaseCon.fases %>">
+              <input type="hidden" name="existingMilestones" id="existingMilestones" class="form-control input-md " alt="" value="{{$milestones}}">
+              <input type="hidden" name="milestone_json" id="milestone_json" class="form-control input-md " alt="" value="<% FaseCon.fases %>">
               <div id="milestoneButtonTogle">
 
                 <div class="form-group">
@@ -342,9 +342,9 @@ function initialize() {
     <div class="row setup-content step hiddenStepInfo" id="step-6">
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
-                <h1>Veranderingen opslaan</h1>
-                <h3 class="underline">Project bewerken</h3>
-                    Ben je zeker dat je dit project wil bewerken?
+                <h1>Opslaan</h1>
+                <h3 class="underline">Project kopiëren</h3>
+                    Project opslaan?
 
                  <div class="form-group">
                     <input type="submit" value="Bevestig" class="btn btn-width btn-danger btn-lg" alt="Opslaan knop">

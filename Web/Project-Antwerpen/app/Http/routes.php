@@ -34,9 +34,9 @@ Route::get('opinionquestions_json', 'ApiController@getOpinionQuestions');
 
 // Post requests
 Route::post('/nieuwproject', 'ProjectController@store');
-Route::post('/bewerkproject/{id}', 'ProjectController@store');
+Route::post('/bewerkproject/{id}', 'ProjectController@update');
 Route::post('/verwijderproject/{id}', 'ProjectController@deleteproject');
-Route::post('/kopiërenproject/{id}', 'ProjectController@update');
+Route::post('/kopiërenproject/{id}', 'ProjectController@copy');
 Route::post('/project/{id}/reacties', 'CommentController@store');
 
 // Delete requests
