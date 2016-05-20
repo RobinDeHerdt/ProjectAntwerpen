@@ -62,14 +62,11 @@ hr {
 	 margin:1em; 
 	 height:150px;
 }
-
-
-
 .rating {
   
   width:180px;
   float:right;
-  margin-top:25px;
+  /*margin-top:25px;*/
 
 }
 .rating > span {
