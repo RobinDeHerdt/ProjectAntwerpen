@@ -97,7 +97,7 @@ padding:0;
 
 float:none;
 margin:auto;
-display:block;
+display:table;
 margin-top:0;
 }
 #rating > span {
