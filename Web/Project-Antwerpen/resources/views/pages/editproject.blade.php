@@ -186,7 +186,21 @@ function initialize() {
 
                 <div class="form-group">
                     <label class="control-label">Thema</label>
-                    <input type="text" name="project_thema" id="project_thema" class="form-control input-md" placeholder="Thema" alt="Vul hier het thema in." value="{{$project->thema}}">
+                    <select class="c-select form-control input-md" id="project_thema" name="project_thema" alt="Kies een thema voor dit project" value="{{$project->thema}}">
+                        <!-- <option selected disabled>Thema</option> -->
+                        <option value="fa-car"              alt="Mobiliteit">   Mobiliteit   </option>
+                        <option value="fa-futbol-o"         alt="Sport">        Sport        </option>
+                        <option value="fa-plane"            alt="Toerisme">     Toerisme     </option>
+                        <option value="fa-puzzle-piece"     alt="Recreatie">    Recreatie    </option>
+                        <option value="fa-industry"         alt="Industrie">    Industrie    </option>
+                        <option value="fa-recycle"          alt="Milieu">       Milieu       </option>
+                        <option value="fa-tree"             alt="Natuur">       Natuur       </option>
+                        <option value="fa-bank"             alt="Architectuur"> Architectuur </option>
+                        <option value="fa-users"            alt="Sociaal">      Sociaal      </option>
+                        <option value="fa-graduation-cap"   alt="Educatie">     Educatie     </option>
+                        <option value="fa-music"            alt="Cultuur">      Cultuur      </option>
+
+                    </select>
                 </div>
 
                 <div class="form-group">
