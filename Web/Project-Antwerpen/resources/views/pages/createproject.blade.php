@@ -80,7 +80,7 @@ function initialize() {
     </div>
     <!-- Start validation messages -->
     @if ($errors->all())
-        <strong>Het project is nog niet helemaal af. Volgende zaken zijn nog niet helemaal in orde: </strong>
+        <h4>Het project is niet helemaal af. Volgende zaken zijn nog niet in orde: </h4>
     @endif
     <ul>
     @if ($errors->has('project_name'))
@@ -92,7 +92,7 @@ function initialize() {
         <li>
             <strong>Je hebt nog geen uitleg over het project gegeven. </strong>
         </li>
-    @endif 
+    @endif
     @if ($errors->has('project_thema'))
         <li>
             <strong>Je hebt nog geen thema voor het project gekozen.</strong>
@@ -167,7 +167,7 @@ function initialize() {
                     <span class="help-block validationerror">
                         <strong>{{ $errors->first('project_name') }}</strong>
                     </span>
-                @endif 
+                @endif
                 <div class="form-group">
                     <input type="text" name="project_name" id="project_name" class="form-control input-md" placeholder="Projectnaam" required alt="Vul hier je projectnaam in" value="{{old('project_name')}}">
                 </div>
@@ -210,7 +210,7 @@ function initialize() {
                     @endif
                     <input type="text" name="project_location" id="project_location" class="form-control input-md" placeholder="Locatie" alt="Vul hier de locatie van het project in." value="{{old('project_location')}}">
                 </div>
-               
+
                 <div class="form-group">
                     <label class="control-label">Postcode</label>
                     @if ($errors->has('project_postalcode'))
@@ -238,7 +238,7 @@ function initialize() {
                     @endif
                     <input type="date" name="project_enddate" id="project_enddate" class="form-control input-md" alt="Vul hier de einddatum van het project in." value="{{old('project_enddate')}}">
                 </div>
-                
+
                 <div class="form-group">
                     <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
                     <label>Projectkleur</label>
@@ -257,7 +257,7 @@ function initialize() {
                         <option value="yellow"  alt="Geel">     Geel    </option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
                         <input value="Volgende" type="button" class="btn btn-width btn-danger btn-lg" onclick="triggerClick(3);displayMap();" alt="Volgende knop">
                 </div>
@@ -285,7 +285,7 @@ function initialize() {
 
 
               <div class="form-group">
-                    <a href="#milestoneButtonTogle" ><input type="button" value="Mijlpaal toevoegen" class="btn btn-width btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
+                    <a href="#milestoneButtonTogle" ><input type="button" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
              </div
 
              <form name="milestoneform" >
@@ -335,7 +335,7 @@ function initialize() {
               <div id="milestoneButtonTogle">
 
                 <div class="form-group">
-                <input ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo )" value="Mijlpaal toevoegen" class="btn btn-width btn-success btn-lg"  alt="Submit mijlpaal">
+                <input ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo )" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg"  alt="Submit mijlpaal">
                </div>
                </form>
                 <div class="form-group">

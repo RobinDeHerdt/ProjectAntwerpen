@@ -14,7 +14,7 @@
 @section('content')
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    
+
 <script>
 function displayMap()
 {
@@ -80,7 +80,7 @@ function initialize() {
     </div>
         <!-- Start validation messages -->
     @if ($errors->all())
-        <strong>Het project is nog niet helemaal af. Volgende zaken zijn nog niet helemaal in orde: </strong>
+        <h4>Het project is niet helemaal af. Volgende zaken zijn nog niet in orde: </h4>
     @endif
     <ul>
     @if ($errors->has('project_name'))
@@ -92,7 +92,7 @@ function initialize() {
         <li>
             <strong>Je hebt nog geen uitleg over het project gegeven. </strong>
         </li>
-    @endif 
+    @endif
     @if ($errors->has('project_thema'))
         <li>
             <strong>Je hebt nog geen thema voor het project gekozen.</strong>
@@ -234,7 +234,7 @@ function initialize() {
                 <h1>Kaart</h1>
                <div id="googleMap"></div>
                <strong>Sleep de marker naar de projectlocatie</strong>
-               
+
                <input type="hidden" id="lat" name="lat"></input>
                <input type="hidden" id="lng" name="lng"></input>
                 <div class="form-group">
@@ -250,7 +250,7 @@ function initialize() {
 
 
               <div class="form-group">
-                    <a href="#milestoneButtonTogle" ><input type="button" value="Mijlpaal toevoegen" class="btn btn-width btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
+                    <a href="#milestoneButtonTogle" ><input type="button" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
              </div
 
              <form name="milestoneform" >
@@ -300,7 +300,7 @@ function initialize() {
               <div id="milestoneButtonTogle">
 
                 <div class="form-group">
-                <input ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo)" value="Mijlpaal toevoegen" class="btn btn-width btn-success btn-lg"  alt="Submit mijlpaal">
+                <input ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo)" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg"  alt="Submit mijlpaal">
                </div>
                </form>
                 <div class="form-group">
@@ -315,7 +315,7 @@ function initialize() {
             <div class="col-md-12 well text-center">
                 <h1>Foto's</h1>
                 <strong>Dit is je huidige projectafbeelding: </strong>
-                <img src="{{$project->headerimage}}" style="width:100%;height:auto">    
+                <img src="{{$project->headerimage}}" style="width:100%;height:auto">
                 <strong>Je huidige afbeelding wordt behouden indien je geen andere afbeelding upload.</strong>
                 <input type="file" name="headerimage">
 
