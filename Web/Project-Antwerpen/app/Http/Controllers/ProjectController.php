@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use App\milestone;
+use App\comment;
+use App\rating;
 use App\Http\Requests;
 use Session;
 
@@ -133,10 +135,43 @@ class ProjectController extends Controller
         return redirect('/overzicht');
     }
 
+    public function deleteproject($id)
+    {
+        $milestones = milestone::where('project_id', $id)->get();
+        
+        for ($i = 0; $i < count($milestones); $i++) { 
+            $milestones[$i]->delete();
+        }
+
+        $comments = comment::where('project_id', $id)->get();
+        
+        for ($i = 0; $i < count($comments); $i++) { 
+            $comments[$i]->delete();
+        }
+
+        $ratings = rating::where('project_id', $id)->get();
+        
+        for ($i = 0; $i < count($ratings); $i++) { 
+            $ratings[$i]->delete();
+        }
+
+        $project = Project::find($id);
+        $project->delete();
+
+        return redirect('/overzicht');
+    }
+
+    public function deletepage($id)
+    {
+        $project = Project::find($id);
+
+        return view('pages.deleteproject', compact('project'));
+    }
+
     public function tijdlijn($id)
     {
         $project = Project::find($id);
-        // dd($project->milestones);
+
         return view('pages.project-tijdlijn', compact('project'));
     }
 

@@ -80,7 +80,7 @@ function initialize() {
     </div>
         <!-- Start validation messages -->
     @if ($errors->all())
-        <strong>Het project is nog niet helemaal af. Volgende zaken zijn nog niet helemaal in orde: </strong>
+        <h4>Het project is niet helemaal af. Volgende zaken zijn nog niet in orde: </h4>
     @endif
     <ul>
     @if ($errors->has('project_name'))

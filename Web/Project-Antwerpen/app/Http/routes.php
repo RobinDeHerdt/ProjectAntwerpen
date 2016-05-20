@@ -18,6 +18,7 @@ Route::get('/register', 'PageController@register');
 Route::get('/login', 'PageController@login');
 Route::get('/nieuwproject', 'AdminController@newproject');
 Route::get('/bewerkproject/{id}', 'AdminController@editproject');
+Route::get('/verwijderproject/{id}', 'ProjectController@deletepage');
 Route::get('/home', 'PageController@home');
 Route::get('/overzicht', 'PageController@overview');
 Route::get('/project/{id}/tijdlijn', 'ProjectController@tijdlijn');
@@ -33,6 +34,7 @@ Route::get('opinionquestions_json', 'ApiController@getOpinionQuestions');
 // Post requests
 Route::post('/nieuwproject', 'ProjectController@store');
 Route::post('/bewerkproject/{id}', 'ProjectController@update');
+Route::post('/verwijderproject/{id}', 'ProjectController@deleteproject');
 Route::post('/project/{id}/reacties', 'CommentController@store');
 
 // Delete requests
