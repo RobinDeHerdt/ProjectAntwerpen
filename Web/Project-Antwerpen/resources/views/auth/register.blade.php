@@ -11,7 +11,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Registratie</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}" enctype="multipart/form-data">
                             {!! csrf_field() !!}
 
                             <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
@@ -95,6 +95,19 @@
                                     @if ($errors->has('gender'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('gender') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Profielfoto</label>
+
+                                <div class="col-md-6">
+                                    <input type="file" name="profileimage">
+                                    @if ($errors->has('profileimage'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('profileimage') }}</strong>
                                         </span>
                                     @endif
                                 </div>

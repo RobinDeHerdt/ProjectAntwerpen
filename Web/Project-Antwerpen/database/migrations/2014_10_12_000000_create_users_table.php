@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('points');
             $table->boolean('isAdmin');
+            $table->string('profileimage');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -20,6 +20,7 @@ class UsersTableSeeder extends Seeder
         	'postalcode' => 2220,
         	'email' => 'anakinskywalker@gmail.com',
         	'password' => bcrypt('darthvader'),
+            'profileimage' => '/img/A_logo_485_RGB_NEG_123X123.jpg',
     	]);
 
     	DB::table('users')->insert([
@@ -30,6 +31,7 @@ class UsersTableSeeder extends Seeder
         	'postalcode' => 2220,
         	'email' => 'rdh_robin@gmail.com',
         	'password' => bcrypt('123456'),
+            'profileimage' => '/img/A_logo_RGB_123x123.jpg'
     	]);
 
     	DB::table('users')->insert([
@@ -40,6 +42,7 @@ class UsersTableSeeder extends Seeder
         	'postalcode' => 2220,
         	'email' => 'natalieportman@gmail.com',
         	'password' => bcrypt('123456'),
+            'profileimage' => '/img/A_logo_485_RGB_POS_123X123.jpg'
     	]);
 
     	DB::table('users')->insert([
@@ -47,6 +50,7 @@ class UsersTableSeeder extends Seeder
         	'lastname' => 'Antwerpen',
         	'email' => 'administrator@antwerpen.com',
         	'password' => bcrypt('antwerpen'),
+            'profileimage' => '/img/A_logo_485_RGB_NEG_123X123.jpg',
         	'isAdmin' => true,
     	]);
 	}
