@@ -412,6 +412,9 @@ display: block!important;
 .CreatedMilestones{
  margin-bottom: 20px;
 }
+.deletepage{
+  min-height: 83.1vh;
+}
 
 .CreatedMilestones button{
   margin-left: 20px;
@@ -422,24 +425,31 @@ display: block!important;
   padding:5px;
   font-size: 20px;
 }
-.deleteTile,.EditTile{
+.deleteTile,.EditTile,.CopyTile{
   text-decoration: none;
   color: white;
   position: absolute;
+  font-size: 17px;
 }
-.deleteTile:hover,.EditTile:hover{
+.deleteTile:hover,.EditTile:hover,.CopyTile:hover{
   text-decoration: none;
   color: white;
 }
 .deleteTile:hover > .fa-close{
-  color: #DA291C;
+  color: #81001F;
 }
 .EditTile:hover  > .editicon{
-  color: #2C5697;
+  color: #008C95;
+}
+.CopyTile:hover  > .fa-copy{
+  color: #6CC24A;
 }
 .EditTile{
   bottom: 10px;
   right: 10px;
+}
+.CopyTile{
+  left:10px;
 }
 .deleteTile{
   right: 10px;
