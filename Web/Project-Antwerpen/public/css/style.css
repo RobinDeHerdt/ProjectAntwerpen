@@ -470,7 +470,9 @@ display: block!important;
    z-index:1;
    color:white;
 }
-
+.imgtile img{
+    width: 100%;
+}
 .validationerror {
   color: darkred;
 }
@@ -501,13 +503,14 @@ display: block!important;
   }
 
   .titelpage{
+    display: none;
     padding-top: 33px;
     position: absolute;
     vertical-align: center;
   }
 
 }
-
+/*
 @media(max-width:500px)
 {
   .titelpage{
@@ -534,4 +537,4 @@ display: block!important;
   .nav-tabs>li>a {
     font-size: 8px;
   }
-}
+}*/
