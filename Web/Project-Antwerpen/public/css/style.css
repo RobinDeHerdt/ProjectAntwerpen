@@ -480,12 +480,11 @@ display: block!important;
 .ReactiePlaatsen{
   margin-left: 50px;
 }
-.reactieBody{
-  margin-left: 100px;
-}
+
 
 @media(max-width:767px)
 {
+
   .navbar-right{
     margin-right: 0px;
     margin-top: 0px;

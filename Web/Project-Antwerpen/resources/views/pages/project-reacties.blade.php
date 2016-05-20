@@ -17,7 +17,7 @@
     </div>
     @endif
 
-	<div class="col-md-12 col-md-offset-3 reactieContainer" >
+	<div class="col-md-12 col-md-offset-2 reactieContainer" >
 	<div class="col-md-10 reactieBody">
 		@foreach ($project->comments as $key=>$comment)
     <div class="User_comment">
@@ -30,10 +30,11 @@
 			<h3>{{ $comment->user->firstname }}</h3>
 
 			<p>{{ $comment->comment_body }}</p>
-			<div class="rating">
+			
+    		<h5>Gepost op: {{ $comment->created_at }}</h5>
+    		<div class="rating">
 			<span id="5">☆</span><span id="4">☆</span><span id="3">☆</span><span id="2">☆</span><span id="1">☆</span>
 			</div>
-    		<h5>Gepost op: {{ $comment->created_at }}</h5>
     <!-- <h6>Gepost door: Dieter Vercammen</h6> -->
 
 
@@ -43,6 +44,7 @@
 					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder deze comment">
 				</form>
 			@endif
+		
       	<hr>
         </div>
 		</div>
