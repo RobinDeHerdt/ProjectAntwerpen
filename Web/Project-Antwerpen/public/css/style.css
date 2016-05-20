@@ -101,13 +101,13 @@ font-family: AntwerpREG, Verdana, sans-serif;
   float: left;
   background:#c03b44;
   margin-right: 38px;
+  overflow:hidden;
 
 }
 .Profile_img img{
 
-    width: 28px;
-    margin-left: 6px;
-    margin-top: 4px;
+    width: 41px;
+    margin:0;
   /*
   width: 28px;
   height: 28px;
