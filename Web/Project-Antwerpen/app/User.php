@@ -28,4 +28,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\comment', 'comment_id');   
     }
+
+    public function ratings()
+    {
+        return $this->hasMany('App\rating', 'rating_id');   
+    }
 }

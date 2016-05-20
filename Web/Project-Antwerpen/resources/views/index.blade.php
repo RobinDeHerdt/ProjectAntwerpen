@@ -64,6 +64,7 @@
                         <h4>{{$project->project_name}}</h4>
                         @if (Auth::user() && Auth::user()->isAdmin)
                           <a class="EditTile" href="bewerkproject/{{$project->id}}"> <span class="fa fa-btn fa-pencil"></span>  Bewerken</a>
+                          <a href="verwijderproject/{{$project->id}}">Verwijderen</a>
                         @endif
                     </div>
                   </a>

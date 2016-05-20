@@ -15,23 +15,25 @@
 
 </head>
 <body>
-
+	@if(!$project->milestones->isEmpty())
 	<section id="cd-timeline" class="cd-container">
-		@foreach ($project->milestones as $key=>$milestone)
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-movie">
-				<img src={{$milestone->milestone_image}} alt="Movie">
-			</div> <!-- cd-timeline-img -->
 
-			<div class="cd-timeline-content">
-				<h2>{{$milestone->milestone_title}}</h2>
-				<p>{{ str_limit( $milestone->milestone_info, 25) }}</p>
-				<a href="info#fase{{$key+1}}" class="cd-read-more top-buffer" >Lees meer</a>
-				<span class="cd-date">{{$milestone->start_date}}</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-		@endforeach
+		
+			@foreach ($project->milestones as $key=>$milestone)
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img cd-movie">
+					<img src={{$milestone->milestone_image}} alt="Movie">
+				</div>
 
+				<div class="cd-timeline-content">
+					<h2>{{$milestone->milestone_title}}</h2>
+					<p>{{ str_limit( $milestone->milestone_info, 25) }}</p>
+					<a href="info#fase{{$key+1}}" class="cd-read-more top-buffer" >Lees meer</a>
+					<span class="cd-date">{{$milestone->start_date}}</span>
+				</div>
+			</div>
+			@endforeach
+	
 
 		<!-- Img's:
 			cd-icon-location.svg
@@ -116,7 +118,11 @@
 			</div>
 		</div>  -->
 	</section>
-
+	@else
+		<div class="col-md-6 col-md-offset-4">
+			<h3>Er is nog geen tijdlijn aangemaakt voor dit project.</h3>
+		</div>
+	@endif
 <script type="text/javascript">
 var d = document.getElementById("tijdlijn");
 d.className += " active";
