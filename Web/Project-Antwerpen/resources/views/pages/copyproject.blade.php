@@ -187,7 +187,6 @@ function initialize() {
                 <div class="form-group">
                     <label class="control-label">Thema</label>
                     <select class="c-select form-control input-md" id="project_thema" name="project_thema" alt="Kies een thema voor dit project" value="{{$project->thema}}">
-                        <!-- <option selected disabled>Thema</option> -->
                         <option value="fa-car"              alt="Mobiliteit">   Mobiliteit   </option>
                         <option value="fa-futbol-o"         alt="Sport">        Sport        </option>
                         <option value="fa-plane"            alt="Toerisme">     Toerisme     </option>
@@ -202,7 +201,6 @@ function initialize() {
 
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label class="control-label">Locatie</label>
                     <input type="text" name="project_location" id="project_location" class="form-control input-md" placeholder="Locatie" alt="Vul hier de locatie van het project in." value="{{$project->location}}">
@@ -226,7 +224,6 @@ function initialize() {
                 <div class="form-group">
                     <label>Projectkleur</label>
                     <select class="c-select form-control input-md" id="project_color" name="project_color" alt="Kies een kleur voor dit project" value="{{$project->color}}">
-                        <!-- <option selected disabled>Projectkleur</option> -->
                         <option value="orange"  alt="Oranje">   Oranje  </option>
                         <option value="purple"  alt="Paars">    Paars   </option>
                         <option value="green"   alt="Groen">    Groen   </option>
