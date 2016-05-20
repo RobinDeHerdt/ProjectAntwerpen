@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
+    <div class="row centered-form">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Registratie</div>
@@ -68,8 +68,8 @@
                                     @endif
                                 </div>
                             </div>
-                                    
-                                    
+
+
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Postcode</label>
 
@@ -81,8 +81,8 @@
                                     @endif
                                 </div>
                             </div>
-                                    
-                                
+
+
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Geslacht</label>
 
