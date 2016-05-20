@@ -24,7 +24,7 @@
 
 
     <div class="Profile_img">
-      	<img src="https://www.maptive.com/wp-content/uploads/2015/02/profile_female.png" >
+      	<img src="{{ $comment->user->profileimage }}" >
     </div>
 		<div class="comment_body">
 			<h3>{{ $comment->user->firstname }}</h3>
