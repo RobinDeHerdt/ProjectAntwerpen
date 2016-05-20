@@ -7,7 +7,7 @@
 @section('content')
 <html lang="en" class="no-js">
 <head>
-	
+
 	<link rel="stylesheet" href="\css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="\css/timeline-style.css"> <!-- Resource style -->
 	<script src="\js/timeline-modernizr.js"></script> <!-- Modernizr -->
@@ -18,7 +18,7 @@
 	@if(!$project->milestones->isEmpty())
 	<section id="cd-timeline" class="cd-container">
 
-		
+
 			@foreach ($project->milestones as $key=>$milestone)
 			<div class="cd-timeline-block">
 				<div class="cd-timeline-img cd-movie">
@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			@endforeach
-	
+
 
 		<!-- Img's:
 			cd-icon-location.svg

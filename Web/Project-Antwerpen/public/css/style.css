@@ -101,7 +101,7 @@ font-family: AntwerpREG, Verdana, sans-serif;
   float: left;
   background:#c03b44;
   margin-right: 38px;
- 
+
 }
 .Profile_img img{
 
@@ -303,6 +303,13 @@ margin-top:25px
   padding-top: 12.5vh;
   color: white;
   font-size: 25px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  height: 32.5vh;
+
 }
 
 .allTiles{
@@ -393,8 +400,8 @@ footer p {
   color: rgb(190, 190, 190);
   text-align: center;
 }
-.panel-body{
-    min-height: 76.9vh;
+.centered-form{
+  min-height: 83.1vh;
 }
 .iconnavbar {
 display: block!important;
@@ -415,12 +422,27 @@ display: block!important;
   padding:5px;
   font-size: 20px;
 }
-.EditTile{
-  color: white;
+.deleteTile,.EditTile{
   text-decoration: none;
+  color: white;
+  position: absolute;
+}
+.deleteTile:hover,.EditTile:hover{
+  text-decoration: none;
+  color: white;
+}
+.deleteTile:hover > .fa-close{
+  color: #DA291C;
+}
+.EditTile:hover  > .editicon{
+  color: #2C5697;
+}
+.EditTile{
   bottom: 10px;
   right: 10px;
-  position: absolute;
+}
+.deleteTile{
+  right: 10px;
 }
 .hidden{
   height: 0px;
@@ -433,14 +455,21 @@ display: block!important;
 }
 .banner
 {
-   bottom:5px; left:5px; 
-   position:absolute; 
-   z-index:1; 
+   bottom:5px; left:5px;
+   position:absolute;
+   z-index:1;
    color:white;
 }
 
 .validationerror {
   color: darkred;
+}
+
+.ReactiePlaatsen{
+  margin-left: 50px;
+}
+.reactieBody{
+  margin-left: 100px;
 }
 
 @media(max-width:767px)
