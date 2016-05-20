@@ -61,7 +61,7 @@
                   {{$project->headerimage}}>
                   <a class="captionlink" href="project/{{$project->id}}/tijdlijn">
                     <div class="caption {{$project->color}}" >
-                      <span class="fa fa-coffee fa-2x banner"></span>
+                      <span class="fa {{$project->thema}} fa-2x banner"></span>
                         <h4>{{$project->project_name}}</h4>
 
                         @if (Auth::user() && Auth::user()->isAdmin)
@@ -77,7 +77,7 @@
 
 
           @if (Auth::user() && Auth::user()->isAdmin)
-          <div class="col-sm-4 sort"  data-theme="ZZZ" data-date="9999-99-99">
+          <div class="col-sm-4 sort"  data-theme="fa-zzzzz" data-date="9999-99-99">
               <div class="col-sm-12 thumbnail text-center expand">
                   <img alt="" class="img-responsive" src="/img/grey_test.jpg">
                   <a class="captionlink" href="{{ url('/nieuwproject') }}">

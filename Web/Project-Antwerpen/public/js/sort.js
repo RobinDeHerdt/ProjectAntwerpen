@@ -30,8 +30,8 @@ function sortByDate() {
 $('#sort').on('click', function () {
 
   $wrapper.find('.sort').sort(function (a, b) {
-    var textA = $(a).data('theme').toString().charCodeAt(0);
-    var textB = $(b).data('theme').toString().charCodeAt(0);
+    var textA = $(a).data('theme').toString().charCodeAt(3);
+    var textB = $(b).data('theme').toString().charCodeAt(3);
     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
   })
   .appendTo( $wrapper );
