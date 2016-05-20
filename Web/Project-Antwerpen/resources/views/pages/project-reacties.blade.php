@@ -82,7 +82,7 @@ d.className += " active";
 			<script type="text/javascript"> 
 			$(document).ready(function() {
     			$("span").click(function(event) {
-        		alert(event.target.id);
+        		//get value here
     			});
 			});</script>
 @stop
