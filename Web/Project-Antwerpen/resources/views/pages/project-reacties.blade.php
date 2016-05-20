@@ -18,7 +18,7 @@
     @endif
 
 	<div class="col-md-12 col-md-offset-2 reactieContainer" >
-	<div class="col-md-10 reactieBody">
+	<div class="col-md-10 col-md-offset-2 reactieBody">
 		@foreach ($project->comments as $key=>$comment)
     <div class="User_comment">
 
@@ -44,14 +44,14 @@
 					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder deze comment">
 				</form>
 			@endif
-		
+
       	<hr>
         </div>
 		</div>
 		@endforeach
 
 
-		<div class="col-md-12">
+		<div class="col-md-7" style="margin-left:5%">
 		@if (Auth::guest())
 			<strong>Je moet ingelogd zijn om een reactie te geven. Je kan <a href="\login">hier</a> inloggen.</strong>
 			<br />
