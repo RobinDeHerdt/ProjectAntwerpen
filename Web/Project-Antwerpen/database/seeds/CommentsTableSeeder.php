@@ -19,21 +19,21 @@ class CommentsTableSeeder extends Seeder
     	]);
 
         DB::table('comments')->insert([
-            'comment_body' => 'Lel',
+            'comment_body' => 'Tof project',
             'user_id' => 1,
             'project_id' => 1,
             'created_at' => '2016-07-06',
         ]);
 
         DB::table('comments')->insert([
-            'comment_body' => 'Lol',
+            'comment_body' => 'Ik ben niet zo tevreden met dit project.',
             'user_id' => 1,
             'project_id' => 2,
             'created_at' => '2016-07-06',
         ]);
 
     	DB::table('comments')->insert([
-        	'comment_body' => 'Dees project is awesome.',
+        	'comment_body' => 'Dit project is geweldig.',
         	'user_id' => 2,
         	'project_id' => 1,
             'created_at' => '2016-07-06',
@@ -47,7 +47,7 @@ class CommentsTableSeeder extends Seeder
     	]);
 
         DB::table('comments')->insert([
-            'comment_body' => 'Dees project is awesome.',
+            'comment_body' => 'Dit project is geweldig.',
             'user_id' => 2,
             'project_id' => 2,
             'created_at' => '2016-07-06',
@@ -61,7 +61,7 @@ class CommentsTableSeeder extends Seeder
         ]);
 
         DB::table('comments')->insert([
-            'comment_body' => 'Dees project is awesome.',
+            'comment_body' => 'Dit project is geweldig.',
             'user_id' => 2,
             'project_id' => 5,
             'created_at' => '2016-07-06',
