@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-	<div class="col-md-6 col-md-offset-3">
+	<div class="col-md-6 col-md-offset-3 deletepage">
 		<h3>Je staat op het punt het project '{{$project->project_name}}' te verwijderen.</h3>
 		<h4>Ben je zeker dat je dit project wil verwijderen?</h4>
 		<br />
@@ -16,5 +16,5 @@
 
 		<h3><a href="/overzicht">Annuleren</a></h3>
 	</div>
-	
+
 @stop
