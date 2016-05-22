@@ -105,25 +105,11 @@ font-family: AntwerpREG, Verdana, sans-serif;
 
 }
 .Profile_img img{
-<<<<<<< HEAD
   border-radius: 50%;
-    width: 37px;
+    width: 38px;
     margin-left: 1px;
     margin-top: 1px;
-=======
 
-    width: 41px;
-    margin:0;
->>>>>>> upstream/master
-  /*
-  width: 28px;
-  height: 28px;
-  overflow:hidden;
-  position: relative;
-  left: 45%;
-  top: 45%;
-  margin-left: -12px;
-  margin-top: -12px;*/
 }
 .comment_body{
   display: inline-block;
