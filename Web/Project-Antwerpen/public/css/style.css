@@ -101,13 +101,20 @@ font-family: AntwerpREG, Verdana, sans-serif;
   float: left;
   background:#c03b44;
   margin-right: 38px;
+  overflow:hidden;
 
 }
 .Profile_img img{
+<<<<<<< HEAD
   border-radius: 50%;
     width: 37px;
     margin-left: 1px;
     margin-top: 1px;
+=======
+
+    width: 41px;
+    margin:0;
+>>>>>>> upstream/master
   /*
   width: 28px;
   height: 28px;
@@ -478,15 +485,20 @@ display: block!important;
 .ReactiePlaatsen{
   margin-left: 50px;
 }
+<<<<<<< HEAD
 .reactieBody{
   margin-left: 100px;
 }
 .titelpagemobile{
   display: none;
 }
+=======
+
+>>>>>>> upstream/master
 
 @media(max-width:767px)
 {
+
   .navbar-right{
     margin-right: 0px;
     margin-top: 0px;
