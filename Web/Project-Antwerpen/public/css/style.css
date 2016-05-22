@@ -127,12 +127,15 @@ font-family: AntwerpREG, Verdana, sans-serif;
 .comment_body{
   float: left;
   text-align: left;
-  width: 45vw;
+    width: 74%;
 }
 .switch-toggle {
   margin-bottom: 20px;
   height: 50px;
 }
+
+
+
 .switch-toggle input:first-child{
   color: white;
   }
@@ -533,6 +536,11 @@ display: block!important;
   }
 
 
+}
+@media (max-width: 992px){
+  .comment_body{
+    width: 83%;
+  }
 }
 /*
 @media(max-width:500px)

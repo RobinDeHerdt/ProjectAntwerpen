@@ -30,7 +30,7 @@
 			<h3>{{ $comment->user->firstname }}</h3>
 
 			<p>{{ $comment->comment_body }}</p>
-			
+
     		<h5>Gepost op: {{ $comment->created_at }}</h5>
     		<div class="rating">
 			<span id="5">☆</span><span id="4">☆</span><span id="3">☆</span><span id="2">☆</span><span id="1">☆</span>
@@ -51,7 +51,7 @@
 		@endforeach
 
 
-		<div class="col-md-7" style="margin-left:5%">
+		<div class="col-md-9" style="margin-left:5%">
 		@if (Auth::guest())
 			<strong>Je moet ingelogd zijn om een reactie te geven. Je kan <a href="\login">hier</a> inloggen.</strong>
 			<br />
@@ -64,7 +64,7 @@
 		        	<div class="col-md-10 bannerReactie"><img src="\img/reactie.png"></div>
 		            <!-- <input type="number" name="reactie" id="sterren" class="form-control input-md" placeholder="Sterren" required alt="Vul hier een reactie in op dit project"> -->
 		            <!-- <input type="text" name="reactie" id="onderwerp" class="form-control input-md" placeholder="Onderwerp" required alt="Vul hier een reactie in op dit project"> -->
-		            <div class="input-field form-control">	
+		            <div class="input-field form-control">
 		            <div class="rating" id="rating">
 					<span id="5">☆</span><span id="4">☆</span><span id="3">☆</span><span id="2">☆</span><span id="1">☆</span>
 					</div></div>
@@ -81,7 +81,7 @@ var d = document.getElementById("reacties");
 d.className += " active";
 </script>
 <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
-			<script type="text/javascript"> 
+			<script type="text/javascript">
 			$(document).ready(function() {
     			$("span").click(function(event) {
         		//get value here

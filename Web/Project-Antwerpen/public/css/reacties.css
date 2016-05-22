@@ -1,21 +1,22 @@
 .reactieContainer {
-	 position:relative; 
+	 position:relative;
 	 padding: 2em, 0;
-	 margin-top:2em; 
-	 margin-bottom: 2em; 
+	 margin-top:2em;
+	 margin-bottom: 2em;
 	 float:none;
 	 margin:0,auto;
+	 width: 82%;
 
 }
 .reactieBody {
-	 margin-top:0; 
-	 position:relative; 
+	 margin-top:0;
+	 position:relative;
 	 margin:2em,0;
 	 margin-left:5%;
 }
 .comment_body h3 {
-	font-family: Open Sans; 
-	font-weight: bold; 
+	font-family: Open Sans;
+	font-weight: bold;
 	font-size:30px;
 }
 .comment_body p {
@@ -25,23 +26,23 @@
 }
 .comment_body h5 {
 	font-family: Droid Serif, serif;
-    color: #a7bad4; 
+    color: #a7bad4;
     margin-top:20px;
 }
  .comment_body h6 {
- 	
+
    font-family: Droid Serif, serif;
-    color: #a7bad4; 
+    color: #a7bad4;
     margin-top:10px;
 }
 hr {
-	border-top:1px solid #a7bad4; 
+	border-top:1px solid #a7bad4;
 	padding-top:-20px;
 	width:100%;
 }
 .bannerReactie {
 	text-align:center;
-	width:100%; 
+	width:100%;
 	margin-top: 4em;
 }
 .bannerReactie img {
@@ -52,20 +53,20 @@ hr {
 	margin-bottom: 2em;
 }
 #sterren {
-	 margin:1em; 
+	 margin:1em;
 	 height:50px;
 }
 #onderwerp {
-	 margin:1em; 
+	 margin:1em;
 	 height:50px;
 }
 #mening {
-	 margin:1em; 
+	 margin:1em;
 	 height:150px;
 }
 .rating {
-  
-  
+
+
   /*float:right;*/
   /*margin-top:25px;*/
 
