@@ -46,7 +46,20 @@ src: url("../fonts/AntwerpenTall-Tall.eot");
 font-family: AntwerpTall;
 src: url("../fonts/AntwerpenTall-Tall.svg") format("svg");
 }
+body{
+  text-align: center;
 
+}
+html, body{
+  height: 100%;
+}
+.ContentDiv{
+    min-height: 82.6%;
+    width: 100%;
+}
+.ContentDiv, footer {
+  display: inline-block;
+}
 .nav-tabs>li.active>a {
     background-color: #909090;
     color:white;
@@ -112,7 +125,8 @@ font-family: AntwerpREG, Verdana, sans-serif;
 
 }
 .comment_body{
-  display: inline-block;
+  float: left;
+  text-align: left;
   width: 45vw;
 }
 .switch-toggle {
@@ -140,8 +154,13 @@ font-family: AntwerpREG, Verdana, sans-serif;
 }
 
 .navbar li:hover a{
-  background-color:#CF0039;
-  border-bottom: 2px solid white;
+  background-color: rgba(255, 255, 255, 0);
+}
+.registericon:hover, .loginicon:hover, .loginicon:hover, #account:hover{
+    border-bottom: 2px solid white;
+}
+#account {
+  display: inline;
 }
 .navbar-right{
   margin-right: 30px;
@@ -308,9 +327,7 @@ margin-top:25px
 .allTiles{
   min-height: 83.1vh;
 }
-.ContentDiv{
-    min-height: 78.9vh;
-}
+
 .ProjectFrom{
     min-height: 83.1vh;
 }
@@ -386,8 +403,7 @@ footer{
   height: 45px;
   padding-top: 12px;
   clear:both;
-  position:relative
-  margin-top:-45px;
+  position:relative;
 }
 footer p {
   color: rgb(190, 190, 190);
@@ -471,16 +487,17 @@ display: block!important;
 .ReactiePlaatsen{
   margin-left: 50px;
 }
-<<<<<<< HEAD
+#leftfix{
+  float:left!important;
+}
+
 .reactieBody{
   margin-left: 100px;
 }
 .titelpagemobile{
   display: none;
 }
-=======
 
->>>>>>> upstream/master
 
 @media(max-width:767px)
 {
@@ -509,7 +526,9 @@ display: block!important;
   }
 
   .titelpagemobile{
-    display: inline;
+    display: inline-block;
+    float: left;
+    position: relative;
     margin-left: 6%;
   }
 
