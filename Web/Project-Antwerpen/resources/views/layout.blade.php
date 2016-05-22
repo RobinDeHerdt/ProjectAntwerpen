@@ -16,6 +16,7 @@
           <div class="navbar-header">
             <a class="navbar-left" href="/overzicht"><img src="../../img/A_logo_RGB_123x123.jpg" alt="Logo antwerpen"/></a>
             <a class="navbar-left titelpage" href="/overzicht">Antwerpen Projecten</a>
+            <a class="navbar-left titelpagemobile" href="/overzicht">Projecten</a>
             <div class="nav navbar-btn navbar-right navbar-fixed-top navbar-toggle">
 
                 <!-- Authentication Links -->
