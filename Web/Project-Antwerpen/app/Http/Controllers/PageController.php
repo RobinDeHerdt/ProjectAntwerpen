@@ -30,6 +30,10 @@ class PageController extends Controller
 	{
 		return view('pages.login');
 	}
+	public function user()
+	{
+		return view('pages.user');
+	}
 	// public function uitleg()
 	// {
 	// 	return view('pages.project-uitleg');

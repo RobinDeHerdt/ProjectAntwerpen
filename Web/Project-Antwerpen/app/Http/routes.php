@@ -16,6 +16,7 @@
 Route::get('/', 'PageController@welcome');
 Route::get('/register', 'PageController@register');
 Route::get('/login', 'PageController@login');
+Route::get('/user', 'PageController@user');
 Route::get('/nieuwproject', 'AdminController@newproject');
 Route::get('/bewerkproject/{id}', 'AdminController@editproject');
 Route::get('/kopiërenproject/{id}', 'AdminController@copyproject');
