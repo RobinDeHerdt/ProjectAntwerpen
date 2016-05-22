@@ -62,7 +62,7 @@ src: url("../fonts/AntwerpenTall-Tall.svg") format("svg");
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 
-.titelpage , .thumbnail h4{
+.titelpage , .thumbnail h4, .titelpagemobile{
 font-family: AntwerpREG, Verdana, sans-serif;
 
 }
@@ -105,9 +105,16 @@ font-family: AntwerpREG, Verdana, sans-serif;
 
 }
 .Profile_img img{
+<<<<<<< HEAD
+  border-radius: 50%;
+    width: 37px;
+    margin-left: 1px;
+    margin-top: 1px;
+=======
 
     width: 41px;
     margin:0;
+>>>>>>> upstream/master
   /*
   width: 28px;
   height: 28px;
@@ -129,7 +136,7 @@ font-family: AntwerpREG, Verdana, sans-serif;
 .switch-toggle input:first-child{
   color: white;
   }
-.titelpage{
+.titelpage, .titelpagemobile{
   padding-top: 32.5px;
   padding-bottom: 32.5px;
   font-size:25px;
@@ -470,9 +477,7 @@ display: block!important;
    z-index:1;
    color:white;
 }
-.imgtile img{
-    width: 100%;
-}
+
 .validationerror {
   color: darkred;
 }
@@ -480,7 +485,16 @@ display: block!important;
 .ReactiePlaatsen{
   margin-left: 50px;
 }
+<<<<<<< HEAD
+.reactieBody{
+  margin-left: 100px;
+}
+.titelpagemobile{
+  display: none;
+}
+=======
 
+>>>>>>> upstream/master
 
 @media(max-width:767px)
 {
@@ -501,12 +515,18 @@ display: block!important;
     margin-right: 40px;
   }
 
-  .titelpage{
+  .titelpage, .titelpagemobile{
     display: none;
     padding-top: 33px;
     position: absolute;
     vertical-align: center;
   }
+
+  .titelpagemobile{
+    display: inline;
+    margin-left: 6%;
+  }
+
 
 }
 /*

@@ -3,7 +3,7 @@
       $interpolateProvider.startSymbol('<%');
      $interpolateProvider.endSymbol('%>');
   });
-  
+
   app.controller('FasenController', function($filter){
     this.Fasen = Milestonefases;
 
