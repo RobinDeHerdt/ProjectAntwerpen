@@ -16,7 +16,8 @@
 Route::get('/', 'PageController@welcome');
 Route::get('/register', 'PageController@register');
 Route::get('/login', 'PageController@login');
-Route::get('/user', 'PageController@user');
+Route::get('/profiel', 'UserController@show');
+Route::get('/bewerkprofiel', 'UserController@edit');
 Route::get('/nieuwproject', 'AdminController@newproject');
 Route::get('/bewerkproject/{id}', 'AdminController@editproject');
 Route::get('/kopiërenproject/{id}', 'AdminController@copyproject');
@@ -28,6 +29,7 @@ Route::get('/project/{id}/reacties', 'CommentController@reacties');
 Route::get('/project/{id}/info', 'ProjectController@info');
 Route::get('/project/{id}/kaart', 'ProjectController@kaart');
 Route::get('/project/{id}/meningen', 'ProjectController@meningen');
+
 
 // Api requests
 Route::get('questions_json', 'ApiController@getQuestions');
