@@ -10,6 +10,7 @@
 <div>
 	<h3>{{ $user->firstname }} {{  $user->lastname  }}</h3>
 	<img src="{{$user->profileimage}}">
+	<h1>{{ $user->points }} punten</h1>
 	<h5>Jouw gegevens:</h5>
 	<p>Voornaam: {{ $user->firstname }}</p>
 	<p>Achternaam: {{  $user->lastname  }}</p>

@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
         	'postalcode' => 2220,
         	'email' => 'rdh_robin@gmail.com',
         	'password' => bcrypt('123456'),
-            'profileimage' => '/img/A_logo_RGB_123x123.jpg'
+            'profileimage' => '/img/vader.PNG'
     	]);
 
     	DB::table('users')->insert([
