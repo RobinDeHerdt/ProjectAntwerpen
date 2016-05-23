@@ -36,7 +36,6 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('ratings');
         Schema::drop('comments');
         Schema::drop('milestones');
         Schema::drop('projects');
