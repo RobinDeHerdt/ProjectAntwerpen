@@ -15,8 +15,12 @@ class CreateOpinonQuestionsTable extends Migration
         Schema::create('opinion_questions', function (Blueprint $table) {
             $table->increments('opinionquestion_id');
             $table->string('opinionquestionbody');
-            $table->string('project_link');
-            $table->integer('rating');
+            // $table->string('project_link');
+        });
+
+         Schema::table('opinion_questions', function($table) {
+            $table->integer('project_id')->unsigned();
+            $table->foreign('project_id')->references('id')->on('projects');
         });
     }
 
@@ -27,6 +31,7 @@ class CreateOpinonQuestionsTable extends Migration
      */
     public function down()
     {
+        Schema::drop('votes');
         Schema::drop('opinion_questions');
     }
 }

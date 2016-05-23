@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\project;
 use App\milestone;
 use Session;
+use App\comment;
+use App\rating;
 
 class AdminController extends Controller
 {
