@@ -69,7 +69,7 @@
                       <span class="fa {{$project->thema}} fa-2x banner"></span>
                         <h4>{{$project->project_name}}</h4>
 
-                        @if (Auth::user() && Auth::user()->isAdmin)
+                        @if ($user && $user->isAdmin)
                           <a class="EditTile" href="bewerkproject/{{$project->id}}"> <span class="fa fa-btn fa-pencil editicon"></span>  Bewerken</a>
                             <a class="CopyTile" href="kopiërenproject/{{$project->id}}"> <span class="fa fa-btn fa-copy editicon"></span>  Kopiëren project</a>
                           <a class="deleteTile" href="verwijderproject/{{$project->id}}">Verwijderen <span class="fa fa-btn fa-close"></span> </a>
@@ -82,7 +82,7 @@
           @endforeach
 
 
-          @if (Auth::user() && Auth::user()->isAdmin)
+          @if ($user && $user->isAdmin)
           <div class="col-sm-4 sort"  data-theme="fa-zzzzz" data-date="9999-99-99">
               <div class="col-sm-12 thumbnail text-center expand">
                   <img alt="" class="img-responsive" src="/img/grey_test.jpg">
