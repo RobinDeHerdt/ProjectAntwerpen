@@ -31,6 +31,11 @@
     </div>
     @endif
 
+     @if(Session::has('projectdeleted'))
+    <div class="alert alert-success">
+        <p>{{ Session::get('projectdeleted')}}</p>
+    </div>
+    @endif
     <div class="col-md-12">
       <fieldset>
         <div class="switch-toggle switch-candy-blue   switch-candy">

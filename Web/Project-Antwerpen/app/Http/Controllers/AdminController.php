@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\project;
 use App\milestone;
+use App\opinion_question;
 use Session;
+use App\comment;
 
 class AdminController extends Controller
 {
@@ -228,7 +230,7 @@ class AdminController extends Controller
             $milestone->save();
         }
 
-        Session::flash('projectedited', 'Je project is succesvol bewerkt.');
+        Session::flash('projectedited', 'Het project is succesvol bewerkt.');
 
         return redirect('/overzicht');
     }
@@ -247,14 +249,16 @@ class AdminController extends Controller
             $comments[$i]->delete();
         }
 
-        $ratings = rating::where('project_id', $id)->get();
+        $opinionquestions = opinion_question::where('project_id', $id)->get();
         
-        for ($i = 0; $i < count($ratings); $i++) { 
-            $ratings[$i]->delete();
+        for ($i = 0; $i < count($opinionquestions); $i++) { 
+            $opinionquestions[$i]->delete();
         }
 
         $project = Project::find($id);
         $project->delete();
+
+        Session::flash('projectdeleted', 'Het project is succesvol verwijderd.');
 
         return redirect('/overzicht');
     }
