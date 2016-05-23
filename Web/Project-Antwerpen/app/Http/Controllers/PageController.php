@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use Auth;
 use App\project;
 
 class PageController extends Controller
@@ -23,32 +23,17 @@ class PageController extends Controller
 	public function overview()
 	{
 		$projects = project::orderBy('id', 'asc')->get();
+		$user = null;
+		
+		if(Auth::user())
+		{
+			$user = Auth::user();
+		}
 
-		return view('index' , [ 'projects' => $projects]  );
+		return view('index' , compact('projects', 'user'));
 	}
 	public function login()
 	{
 		return view('pages.login');
 	}
-	// public function uitleg()
-	// {
-	// 	return view('pages.project-uitleg');
-	// }
-	// public function map()
-	// {
-	// 	return view('pages.project-map');
-	// }
-	// public function stemmen()
-	// {
-	// 	return view('pages.project-stemmen');
-	// }
-	// public function tijdlijn()
-	// {
-	// 	return view('pages.project-tijdlijn');
-	// }
-	// public function comments()
-	// {
-	// 	return view('pages.project-comments');
-	// }
-
 }
