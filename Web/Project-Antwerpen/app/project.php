@@ -16,8 +16,8 @@ class project extends Model
      	return $this->hasMany('App\comment', 'project_id');   
     }
 
-    public function ratings()
+    public function opinion_questions()
     {
-     	return $this->hasMany('App\rating', 'rating_id');   
+     	return $this->hasMany('App\opinion_question', 'opinionquestion_id');   
     }
 }
