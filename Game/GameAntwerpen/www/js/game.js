@@ -9,8 +9,8 @@ var opinionQuestions = ["meningvraag1", "meningvraag2"];
 var questions = [["De antwerpse zoo is de oudste dierentuin in België.", 1], ["Oorspronkelijk keek het standbeeld van Rubens op de groenplaats naar het noorden.", 0], ["vraag3", 1], ["vraag4", 0], ["vraag5", 1]];
 var counter = 0;
 var meningCounter = 0;
-//var questionsJSON;
-//var opinionQuestionsJSON;
+var questionsJSON;
+var opinionQuestionsJSON;
 
 
 window.onload = function () {
@@ -75,6 +75,34 @@ preload.prototype = {
         //game.load.json("questions", "http://antwerpen.local/questions_json");
         //game.load.json("opinionQuestions", "http://antwerpen.local/opinionquestions_json");
 
+        function receive(json){
+          console.log(json);
+          questionsJSON = json;
+        };
+
+        $.ajax({
+          dataType:"jsonp",
+          type: "GET",
+          crossDomain: true,
+          cache: false,
+          jsonp: false,
+          jsonpCallback: "receive",
+          url: "http://www.exiles.multimediatechnology.be/questions_json?callback=receive?"
+        });
+
+        receive();
+        console.log(questionsJSON);
+
+        $.ajax({
+          url:"http://www.exiles.multimediatechnology.be/opinionquestions_json",
+          dataType:"jsop",
+          succes: function(json){
+            opnionionQuestionsJSON = json;
+          }
+        });
+
+        console.log(opinionQuestionsJSON);
+
         //Define constant variables
         game.CENTER_X          = (game.width/2);
         game.CENTER_Y          = (game.height/2);
@@ -103,6 +131,7 @@ menu.prototype = {
 
         //init title
         var title = game.add.sprite(game.CENTER_X, 75, "title-tween");
+        title.scale.setTo(0.85);
         title.anchor.set(0.5);
         title.alpha = 0;
 
@@ -154,7 +183,8 @@ menu.prototype = {
     goToWebsite: function(){
         //open website homepage
           //antwerpen placeholder*********************************************************
-        window.open("http://www.antwerpen.be", "_blank");
+        //window.open("http://www.antwerpen.be", "_blank");
+        window.open("http://www.exiles.multimediatechnology.be", "_blank");
     }
 }
 
@@ -184,7 +214,7 @@ play.prototype = {
           this.background.scale.setTo(0.334);
 
           //init question text
-          questionText = game.add.text(game.CENTER_X + 4, 130, questions[counter][0], {"font":"20pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"310"});
+          questionText = game.add.text(game.CENTER_X + 4, 130, questionsJSON[counter].questionbody, {"font":"20pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"280"});
           questionText.anchor.set(0.5);
 
           //init true button
@@ -221,7 +251,7 @@ play.prototype = {
         this.truebtn.input.enabled = false;
 
         //correct
-        if(questions[counter][1] == 1){
+        if(questionsJSON[counter].correctanswer == 1){
           sprite = game.add.sprite(game.CENTER_X+3, game.CENTER_Y-15, 'correct');
           sprite.anchor.set(0.5);
           sprite.scale.setTo(0.75);
@@ -241,7 +271,7 @@ play.prototype = {
         //question counter +1
         counter += 1;
         //start "completed" state when reached last question
-        if(counter == questions.length && meningCounter == opinionQuestions.length){
+        if(counter == questionsJSON.length && meningCounter == opinionQuestionsJSON.length){
           sprite.events.onAnimationComplete.add(function(){
             counter = 0;
             meningCounter = 0;
@@ -263,7 +293,7 @@ play.prototype = {
         this.truebtn.input.enabled = false;
 
         //correct
-        if(questions[counter][1] == 0){
+        if(questionsJSON[counter].correctanswer == 0){
           sprite = game.add.sprite(game.CENTER_X+3, game.CENTER_Y-15, 'correct');
           sprite.anchor.set(0.5);
           sprite.scale.setTo(0.75);
@@ -283,7 +313,7 @@ play.prototype = {
         //question counter +1
         counter += 1;
         //start "completed" state when reached last question
-        if(counter == questions.length && meningCounter == opinionQuestions.length){
+        if(counter == questionsJSON.length && meningCounter == opinionQuestionsJSON.length){
           sprite.events.onAnimationComplete.add(function(){
             counter = 0;
             meningCounter = 0;
@@ -306,7 +336,7 @@ play.prototype = {
     goToWebsite: function(){
         //go to website
           //antwerpen placeholder********************************************
-        window.open("http://www.antwerpen.be", "_blank");
+        window.open("http://www.exiles.multimediatechnology.be", "_blank");
     }
 }
 
@@ -330,7 +360,7 @@ mening.prototype = {
         this.background.scale.setTo(0.334);
 
         //init question text
-        questionText = game.add.text(game.CENTER_X + 4, 130, opinionQuestions[meningCounter], {"font":"20pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"310"});
+        questionText = game.add.text(game.CENTER_X + 4, 130, opinionQuestionsJSON[meningCounter].opinionquestionbody, {"font":"20pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"280"});
         questionText.anchor.set(0.5);
 
         //init project button
@@ -378,7 +408,7 @@ mening.prototype = {
       console.log(meningCounter);
       console.log(opinionQuestions.length);
 
-      if(counter == questions.length || meningCounter == opinionQuestions.length){
+      if(counter == questionsJSON.length || meningCounter == opinionQuestionsJSON.length){
           counter = 0;
           meningCounter = 0;
           this.background.destroy();
@@ -433,7 +463,7 @@ mening.prototype = {
       meningCounter +=1;
       lastQuestionMening = true;
 
-      if(counter == questions.length || meningCounter == opinionQuestions.length){
+      if(counter == questionsJSON.length || meningCounter == opinionQuestionsJSON.length){
           counter = 0;
           meningCounter =0;
 
@@ -485,12 +515,12 @@ mening.prototype = {
     },
     goToProject: function(){
         //go to project page
-        window.open("http://www.antwerpen.be", "_blank");
+        window.open("http://www.exiles.multimediatechnology.be", "_blank");
     },
     goToWebsite: function(){
         //go to project page
           //antwerpen placeholder**********************************************
-        window.open("http://www.antwerpen.be", "_blank");
+        window.open("http://www.exiles.multimediatechnology.be", "_blank");
     },
     backToMenu: function(){
         game.state.start("Menu");
