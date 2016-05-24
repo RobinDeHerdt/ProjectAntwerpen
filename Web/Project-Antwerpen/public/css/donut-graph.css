@@ -7,14 +7,17 @@ body {
 }
 .chart-wrapper {
 	width: 99.1%;
-	height: 50%;
+	height: 70%;
 	background-color: $primColor;
 	position: absolute;
 }
 .pieChart{
   width: 99.1%;
 	height: 100%;
+  margin-top: -50px;
 }
+
+
 
 path {
 	stroke: $primColor;
@@ -41,7 +44,6 @@ polyline {
 }
 button {
   top: 20px;
-  left: 20px;
   text-transform: uppercase;
   padding: 5px 10px;
   outline: none;
@@ -60,6 +62,13 @@ button {
 		opacity: 0.5;
 	}
 }
-.lines{
-
+.prevbutton, .nextbutton{
+	position: absolute;
+	top: 250px;
+}
+.nextbutton{
+	right:10px;
+}
+.prevbutton{
+	left:20px;
 }
