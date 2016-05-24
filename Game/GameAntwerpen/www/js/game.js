@@ -39,16 +39,20 @@ preload.prototype = {
 
         // Preload images
           //bg
-        game.load.image("game-background", "assets/images/temp_bg.png");
+        game.load.image("game-background", "assets/images/temp_bg2.png");
           //tween image for opinion animation ending
         game.load.image("meningbg", "assets/images/meningend.png");
           //buttons
-        game.load.image("start-btn", "assets/images/start-btn.png");
-        game.load.image("website-btn", "assets/images/website-btn.png");
-        game.load.image("website-btn-small", "assets/images/website-btn-small.png");
+
+        game.load.spritesheet("startsheet", "assets/images/new-start-sheet.png", 308, 98, 2);
+        game.load.spritesheet("websitesheet", "assets/images/new-website-sheet.png", 308, 110, 2);
+
+        game.load.image("start-btn", "assets/images/new-start-btn.png");
+        game.load.image("website-btn", "assets/images/new-website-btn.png");
+        game.load.image("website-btn-small", "assets/images/small-website-idle.png");
         game.load.image("true", "assets/images/waar2.png");
         game.load.image("false", "assets/images/nietwaar2.png");
-        game.load.image("back", "assets/images/menu-btn-small.png");
+        game.load.image("back", "assets/images/small-menu-idle.png");
         game.load.image("thumbsup", "assets/images/akkoordoutlined.png");
         game.load.image("thumbsdown", "assets/images/nietakkoordoutlined.png");
         game.load.image("project-btn", "assets/images/project-btn.png");
@@ -144,13 +148,13 @@ menu.prototype = {
         game.scale.forceOrientation(false, true);
 
         //init playbutton
-        this.startbtn = game.add.button(game.CENTER_X, game.CENTER_Y + 120, "start-btn", this.startGame, this);
+        this.startbtn = game.add.button(game.CENTER_X, game.CENTER_Y + 110, "startsheet", this.startGame, this, 1, 0);
         this.startbtn.anchor.set(0.5);
         this.startbtn.scale.setTo(0.75);
         this.startbtn.alpha = 0;
 
          //init website button
-        this.websitebtn = game.add.button(game.CENTER_X, game.CENTER_Y + 200, "website-btn", this.goToWebsite, this);
+        this.websitebtn = game.add.button(game.CENTER_X, game.CENTER_Y + 200, "websitesheet", this.goToWebsite, this, 1, 0);
         this.websitebtn.anchor.set(0.5);
         this.websitebtn.scale.setTo(0.75);
         this.websitebtn.alpha = 0;
@@ -214,7 +218,12 @@ play.prototype = {
           this.background.scale.setTo(0.334);
 
           //init question text
-          questionText = game.add.text(game.CENTER_X + 4, 130, questionsJSON[counter].questionbody, {"font":"20pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"280"});
+          //questionText = game.add.text(game.CENTER_X + 4, 130, questionsJSON[counter].questionbody, {"font":"20pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"280"});
+          questionText = game.add.text(
+              game.CENTER_X + 4, 140,
+             "dit is test tekst om de tekst van het tekstvak te testen, en dit is nog meer tekst om te testen",
+             {"font":"20pt SunAntwerpen", "fill":"#000000", "align":"center", "wordWrap":"true", "wordWrapWidth":"280"}
+          );
           questionText.anchor.set(0.5);
 
           //init true button
