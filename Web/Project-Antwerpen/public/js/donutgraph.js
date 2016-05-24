@@ -15,11 +15,13 @@ let width = document.querySelector('.chart-wrapper').offsetWidth,
   secIndividualdelay = 150,
   radius
 
+  var targetWidth = window.innerWidth;
+
 // calculate minimum of width and height to set chart radius
-if (minOfWH > 200) {
-  radius = 200
+if (targetWidth < 1000) {
+  radius = 100
 } else {
-  radius = minOfWH
+  radius = targetWidth/10
 }
 
 // append svg
@@ -128,6 +130,8 @@ let draw = function() {
       return [arc.centroid(d), outerArc.centroid(d), pos]
     })
     .attr('stroke',(d, i) => colors[i])
+
+
 }
 
 draw()
@@ -137,9 +141,88 @@ let button = document.querySelector('button');
 let replay = () => {
 
   d3.selectAll('.slices').transition().ease('back').duration(500).delay(0).style('opacity', 0).attr('transform', 'translate(0, 250)').remove()
-  d3.selectAll('.lines').transition().ease('back').duration(500).delay(100).style('opacity', 0).attr('transform', 'translate(0, 250)').remove()
+  d3.selectAll('.lines').transition().ease('back').duration(500).delay(10).style('opacity', 0).attr('transform', 'translate(0, 250)').remove()
   d3.selectAll('.labels').transition().ease('back').duration(500).delay(200).style('opacity', 0).attr('transform', 'translate(0, 250)').remove()
 
   setTimeout(draw, 800)
 
+
+
 }
+setTimeout(scaleGraph, 100);
+setTimeout(Scaling, 4400);
+
+
+
+
+  var aspect = width / height,
+      chart = d3.select('.pieChart');
+  d3.select(window)
+    .on("resize",function () {
+      Scaling();
+      scaleGraph();
+    });
+
+
+
+
+
+  function scaleGraph() {
+    var targetWidth = chart.node().getBoundingClientRect().width;
+    var slice1 = svg.select('.slices path');
+    var slice2 = svg.select('.slices path:last-child');
+    svg.attr("transform", `translate(${targetWidth / 2}, ${height / 2})`);
+    var radius = 0;
+    if (targetWidth < 1000) {
+      radius = 100
+    }else {
+      radius = targetWidth/10;
+    }
+
+    if (targetWidth<1500) {
+
+        arc = d3.svg.arc()
+        .outerRadius(radius * 0.6)
+        .innerRadius(radius * 0.45)
+
+            slice1.attr('d', arc );
+            slice2.attr('d', arc );
+
+
+  }
+}
+
+  function Scaling() {
+    var targetWidth = window.innerWidth;
+      var text = svg.select(".labels").selectAll("text")
+      var polyline = svg.select(".lines").selectAll("polyline")
+      var midAngle = d => d.startAngle + (d.endAngle - d.startAngle) / 2
+      var radius= 0;
+      if (targetWidth < 1000) {
+        radius = 85
+      }else {
+        radius = targetWidth/10;
+      }
+        //targetWidth / aspect == height
+
+        if (targetWidth<1500) {
+          arc = d3.svg.arc()
+          .outerRadius(radius * 0.6)
+          .innerRadius(radius * 0.45)
+
+              text.attr('transform', d => {
+                  // calculate outerArc centroid for 'this' slice
+                  let pos = outerArc.centroid(d)
+                  // define left and right alignment of text labels
+                  pos[0] = radius * (midAngle(d) < Math.PI ? 1 : -1)
+                  return `translate(${pos})`
+                })
+              polyline.attr('points', d => {
+                  let pos = outerArc.centroid(d)
+                  pos[0] = radius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1)
+                  return [arc.centroid(d), outerArc.centroid(d), pos]
+                })
+        }
+
+
+    }
