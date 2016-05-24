@@ -9,8 +9,9 @@
 
     this.deletemilestone =function(obj) {
       var index = obj.target.getAttribute("data");
+      Milestonefases.splice(index, 1);
 
-       Milestonefases.splice(index, 1);
+      this.MilestoneToJson();
     }
     this.pushmilestone = function(Fasetitle, FaseIcon, FaseStart, FaseEnd, FaseInfo ) {
       this.NewStone = {
@@ -24,10 +25,13 @@
       if(Fasetitle != null && FaseIcon != null && FaseInfo != null){
         Milestonefases.push(this.NewStone);
       }
+      this.MilestoneToJson();
     }
-    this.fases;
+    this.fases = JSON.stringify(Milestonefases);
 
     this.MilestoneToJson = function () {
+      console.log('Milestones set to JSON');
+
       if (Milestonefases.length >= 2)
       {
         Milestonefases.sort(function(a,b){
