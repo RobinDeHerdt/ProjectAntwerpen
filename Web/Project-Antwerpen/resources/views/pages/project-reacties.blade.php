@@ -35,13 +35,18 @@
     		<div class="rating">
 			<span id="5">☆</span><span id="4">☆</span><span id="3">☆</span><span id="2">☆</span><span id="1">☆</span>
 			</div>
-    <!-- <h6>Gepost door: Dieter Vercammen</h6> -->
 
-
-			@if (Auth::user() && Auth::user()->isAdmin)
+			@if ($loggedInUser && $loggedInUser->isAdmin)
 				<form role="form" method="POST" action="reacties/{{$comment->comment_id}}">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
-					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder deze comment">
+					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder deze reactie">
+				</form>
+			@endif
+
+			@if ($loggedInUser && $loggedInUser->id == $comment->user_id)
+				<form role="form" method="POST" action="reacties/{{$comment->comment_id}}">
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder je reactie">
 				</form>
 			@endif
 
@@ -77,8 +82,8 @@
     </div>
    </div>
 <script type="text/javascript">
-var d = document.getElementById("reacties");
-d.className += " active";
+	var d = document.getElementById("reacties");
+	d.className += " active";
 </script>
 <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
 			<script type="text/javascript">
