@@ -39,11 +39,11 @@ Route::get('opinionquestions_json', 'ApiController@getOpinionQuestions');
 Route::post('/nieuwproject', 'AdminController@store');
 Route::post('/bewerkproject/{id}', 'AdminController@update');
 Route::post('/bewerkprofiel', 'UserController@update');
-Route::post('/verwijderproject/{id}', 'AdminController@deleteproject');
 Route::post('/kopiërenproject/{id}', 'AdminController@copy');
 Route::post('/project/{id}/reacties', 'CommentController@store');
 
 // Delete requests
 Route::post('/project/{id}/reacties/{comment}', 'CommentController@delete');
+Route::post('/verwijderproject/{id}', 'AdminController@deleteproject');
 
 Route::auth();

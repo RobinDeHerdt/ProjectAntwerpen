@@ -39,7 +39,9 @@ class CommentController extends Controller
         $project = Project::find($id);
         $comments = Comment::all();
 
-        return view('pages.project-reacties', compact('project', 'comments'));
+        $loggedInUser = Auth::user();
+
+        return view('pages.project-reacties', compact('project', 'comments', 'loggedInUser'));
     }
 
     public function delete($id, $commentid)
