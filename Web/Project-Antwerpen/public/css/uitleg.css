@@ -4,6 +4,9 @@
 	padding-bottom:40px;
 	border-bottom: 1px solid black;
 	}
+.top-buffer:last-child{
+		border-bottom: none;
+}
 
 .imgtile>img{
 	width: 100%;

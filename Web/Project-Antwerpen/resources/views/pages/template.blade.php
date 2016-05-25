@@ -185,13 +185,12 @@ function initialize() {
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1>Kaart</h1>
-               <!--  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.1022632989943!2d4.419058851572484!3d51.21719177948828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f703e7404c69%3A0x270b07bbe1f68aa6!2sAntwerpen-Centraal!5e0!3m2!1snl!2sbe!4v1461764810465" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
                <div id="googleMap"></div>
                <p>Sleep de marker naar de projectlocatie</p>
                <label>Lat:</label>
-               <input type="text" id="lat" name="lat"></input>
+               <input type="text" id="lat" name="lat" value="51"></input>
                <label>Long:</label>
-               <input type="text" id="lng" name="lng"></input>
+               <input type="text" id="lng" name="lng" value="4"></input>
                 <div class="form-group">
                     <input value="Volgende" type="button" class="btn  btn-width btn-danger btn-lg" onclick="triggerClick(4);" alt="Volgende knop">
                </div>
@@ -211,7 +210,7 @@ function initialize() {
              <form name="milestoneform" >
                <div ng-repeat="milestone in FaseCon.Fasen" class="CreatedMilestones">
                  <h2  class="inline"><%milestone.title%></h2>
-                 <button  ng-click="FaseCon.deletemilestone($event)" class="btn  btn-danger btn-xs" type="button" name="button" ><span class="fa fa-btn fa-trash" data="<%$index%>"></span</button>
+                 <button  ng-click="FaseCon.deletemilestone($event)" class="btn  btn-danger btn-xs" type="button" name="button" ><span class="fa fa-btn fa-trash" data="<%$index%>"></span></button>
 
 
                </div>
@@ -227,7 +226,6 @@ function initialize() {
                     <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de mijlpaal in." value="{{old('titel_mijlpaal')}}" required>
                 </div>
                 <div class="form-group">
-                    <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
                     <label>Icon</label>
                     <select ng-model="milestone.icon" class="c-select form-control input-md" id="milestone_image" name="milestone_image" alt="Kies een icoon voor deze milestone" value="{{old('milestone_image')}}">
                         <option selected disabled>Mijlpaal Icoontje</option>
@@ -423,23 +421,7 @@ function initialize() {
     }
 
 </script>
-
-<!-- <script src="http://maps.googleapis.com/maps/api/js"></script>
-<script>
-function initialize() {
-  var mapProp = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script> -->
-<!-- Steps Progress and Details - END -->
-
 </div>
-
 </body>
 </html>
 @stop

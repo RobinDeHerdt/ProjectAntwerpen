@@ -87,8 +87,8 @@
                                 <label class="col-md-4 control-label">Geslacht</label>
 
                                 <div class="col-md-6">
-                                    <select class="c-select form-control input-md" name="gender" alt="Duid je geslacht aan" value="{{ $user->gender_1male_2female }}">
-                                        <!-- <option value="0" selected></option> -->
+                                    <select class="c-select form-control input-md" name="gender" id="gender" alt="Duid je geslacht aan" value="{{ $user->gender_1male_2female }}">
+                                        <option value="0"></option>
                                         <option value="1" alt="Man">Man</option>
                                         <option value="2" alt="Vrouw">Vrouw</option>
                                     </select>
@@ -160,4 +160,7 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    document.getElementById("gender").value = "{{$user->gender_1male_2female}}";
+</script>
 @endsection

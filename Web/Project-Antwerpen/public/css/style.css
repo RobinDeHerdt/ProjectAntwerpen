@@ -54,8 +54,10 @@ html, body{
   height: 100%;
 }
 .ContentDiv{
-    min-height: 82.6%;
+    min-height: 100%;
     width: 100%;
+    padding-bottom: 30px;
+    margin-bottom: -45px;
 }
 .ContentDiv, footer {
   display: inline-block;
@@ -119,16 +121,17 @@ font-family: AntwerpREG, Verdana, sans-serif;
 }
 .Profile_img img{
   border-radius: 50%;
-    width: 38px;
-    margin-left: 1px;
-    margin-top: 1px;
+  width: 42px;
+  margin-left: -1px;
+  margin-top: -1px;
 
 }
 .comment_body{
   float: left;
   text-align: left;
-    width: 74%;
+  width: 90%;
 }
+
 .switch-toggle {
   margin-bottom: 20px;
   height: 50px;
@@ -533,12 +536,20 @@ display: block!important;
     position: relative;
     margin-left: 6%;
   }
-
+  .reactieimg{
+    float: left;
+    margin-left: 25%;
+  }
 
 }
-@media (max-width: 992px){
+@media (max-width: 1370px){
   .comment_body{
     width: 83%;
+  }
+}
+@media (max-width: 682px){
+  .comment_body{
+    width: 100%;
   }
 }
 /*

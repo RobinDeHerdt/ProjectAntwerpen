@@ -26,6 +26,17 @@ class UserController extends Controller
 	public function update(Request $request)
 	{
 		$user = Auth::user();
+		
+		$this->validate($request, [
+            'firstname'      	=>   'required|max:255',
+            'lastname'      	=>   'required|max:255',
+            'email'     		=>   'required|email|max:255|unique:users,email,'.$user->id,
+            'postalcode'  		=>   'integer',
+            'age'				=>   'integer',
+           	'profileimage'		=>   'image',
+        ]);
+		
+		
 
 		if (Input::hasFile('profileimage') && Input::file('profileimage')->isValid()) {
 	        $destinationPath = '/public/img';

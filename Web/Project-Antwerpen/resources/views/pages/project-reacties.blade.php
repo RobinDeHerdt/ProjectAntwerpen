@@ -18,7 +18,7 @@
     @endif
 
 	<div class="col-md-12 col-md-offset-2 reactieContainer" >
-	<div class="col-md-10 col-md-offset-2 reactieBody">
+	<div class="col-md-9 col-md-offset-2 reactieBody">
 		@foreach ($project->comments as $key=>$comment)
     <div class="User_comment">
 
@@ -26,7 +26,7 @@
     <div class="Profile_img">
       	<img src="{{ $comment->user->profileimage }}" >
     </div>
-		<div class="comment_body">
+		<div class=" container comment_body">
 			<h3>{{ $comment->user->firstname }}</h3>
 
 			<p>{{ $comment->comment_body }}</p>
@@ -35,13 +35,16 @@
     		<div class="rating">
 			<span id="5">☆</span><span id="4">☆</span><span id="3">☆</span><span id="2">☆</span><span id="1">☆</span>
 			</div>
-    <!-- <h6>Gepost door: Dieter Vercammen</h6> -->
 
-
-			@if (Auth::user() && Auth::user()->isAdmin)
+			@if ($loggedInUser && $loggedInUser->isAdmin)
 				<form role="form" method="POST" action="reacties/{{$comment->comment_id}}">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
-					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder deze comment">
+					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder deze reactie">
+				</form>
+			@elseif ($loggedInUser && $loggedInUser->id == $comment->user_id)
+				<form role="form" method="POST" action="reacties/{{$comment->comment_id}}">
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder je reactie">
 				</form>
 			@endif
 
@@ -51,7 +54,7 @@
 		@endforeach
 
 
-		<div class="col-md-9" style="margin-left:5%">
+		<div class=" col-md-11" style="margin-left:5%">
 		@if (Auth::guest())
 			<strong>Je moet ingelogd zijn om een reactie te geven. Je kan <a href="\login">hier</a> inloggen.</strong>
 			<br />
@@ -61,7 +64,7 @@
 	   	 	<form role="form" method="POST" action="reacties">
 		        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		        <div class="form-group">
-		        	<div class="col-md-10 bannerReactie"><img src="\img/reactie.png"></div>
+		        	<div class="col-md-10 bannerReactie"><img class="reactieimg" src="\img/reactie.png"></div>
 		            <!-- <input type="number" name="reactie" id="sterren" class="form-control input-md" placeholder="Sterren" required alt="Vul hier een reactie in op dit project"> -->
 		            <!-- <input type="text" name="reactie" id="onderwerp" class="form-control input-md" placeholder="Onderwerp" required alt="Vul hier een reactie in op dit project"> -->
 		            <div class="input-field form-control">
@@ -77,8 +80,8 @@
     </div>
    </div>
 <script type="text/javascript">
-var d = document.getElementById("reacties");
-d.className += " active";
+	var d = document.getElementById("reacties");
+	d.className += " active";
 </script>
 <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
 			<script type="text/javascript">
