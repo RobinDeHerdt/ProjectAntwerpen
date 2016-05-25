@@ -1,4 +1,8 @@
-let dataset = [1, 5]
+var var1 = JSON.parse(document.getElementById('Graphdata').value);
+document.getElementById('meningvraag').innerHTML = var1[0].opinionquestionbody;
+console.log(var1[0].down_vote);
+
+let dataset = [var1[0].down_vote, var1[0].up_vote]
 
 // let colors = ['#8dd3c7', '#ffffb3', '#bebada', '#fb8072', '#80b1d3', '#fdb462', '#b3de69', '#fccde5', '#d9d9d9', '#bc80bd'];
 // let colors = ['#67001f', '#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#e0e0e0', '#bababa', '#878787', '#4d4d4d', '#1a1a1a'];
@@ -149,6 +153,8 @@ let replay = () => {
 
 
 }
+
+
 setTimeout(scaleGraph, 100);
 setTimeout(Scaling, 4400);
 

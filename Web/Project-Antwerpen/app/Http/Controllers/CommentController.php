@@ -28,7 +28,7 @@ class CommentController extends Controller
         $comment->project()->associate($project);
         $comment->user()->associate($user);
         $comment->save();
-        
+
         Session::flash('commented', 'Bedankt voor je reactie!');
 
         return back();
