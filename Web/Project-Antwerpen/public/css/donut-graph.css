@@ -1,3 +1,28 @@
+@font-face {
+font-family: sun500;
+src: url("../fonts/SunAntwerpen_500.woff") format("woff");
+}
+@font-face {
+font-family: sun500;
+src: url("../fonts/SunAntwerpen_500.eot");
+}
+@font-face {
+font-family: sun500;
+src: url("../fonts/SunAntwerpen_500.svg") format("svg");
+}
+@font-face {
+font-family: AntwerpTall;
+src: url("../fonts/AntwerpenTall-Tall.woff") format("woff");
+}
+@font-face {
+font-family: AntwerpTall;
+src: url("../fonts/AntwerpenTall-Tall.eot");
+}
+@font-face {
+font-family: AntwerpTall;
+src: url("../fonts/AntwerpenTall-Tall.svg") format("svg");
+}
+
 $primColor: #0d0d0d;
 $secColor: #fff;
 
@@ -45,18 +70,16 @@ polyline {
 button {
   top: 20px;
   text-transform: uppercase;
-  padding: 5px 10px;
   outline: none;
-  font-size: .6em;
+  font-size: 2em;
   background-color: transparent;
-  color: $secColor;
-  border: 1px solid $secColor;
+	border: none;
+	color: $secColor;
 	letter-spacing: 1px;
 	transition: all 250ms;
 	&:hover {
 		background-color: $secColor;
 		color: $primColor;
-		box-shadow: 0 0 2px $secColor;
 	}
 	&:active {
 		opacity: 0.5;
@@ -65,12 +88,18 @@ button {
 .prevbutton, .nextbutton{
 	position: absolute;
 	top: 250px;
+	font-family: sun500;
+}
+h1{
+	font-family: AntwerpTall;
 }
 .nextbutton{
 	right:10px;
+	color:#CF0139;
 }
 .prevbutton{
 	left:20px;
+	color: #019882;
 }
 #Graphdata{
 	display: none;
