@@ -59,7 +59,6 @@ let pie = d3.layout.pie()
 
 let draw = function() {
 
-  console.log(dataset);
 
   svg.append("g").attr("class", "lines")
   svg.append("g").attr("class", "slices")
@@ -211,7 +210,7 @@ setTimeout(Scaling, 4400);
       radius = targetWidth/10;
     }
 
-    if (targetWidth<1500) {
+
 
         arc = d3.svg.arc()
         .outerRadius(radius * 0.6)
@@ -221,7 +220,7 @@ setTimeout(Scaling, 4400);
             slice2.attr('d', arc );
 
 
-  }
+  
 }
 
   function Scaling() {
@@ -237,10 +236,14 @@ setTimeout(Scaling, 4400);
       }
         //targetWidth / aspect == height
 
-        if (targetWidth<1500) {
+
           arc = d3.svg.arc()
           .outerRadius(radius * 0.6)
           .innerRadius(radius * 0.45)
+          let outerArc = d3.svg.arc()
+          .innerRadius(radius * 0.85)
+          .outerRadius(radius * 0.85)
+
 
               text.attr('transform', d => {
                   // calculate outerArc centroid for 'this' slice
@@ -250,11 +253,13 @@ setTimeout(Scaling, 4400);
                   return `translate(${pos})`
                 })
               polyline.attr('points', d => {
+
+
                   let pos = outerArc.centroid(d)
                   pos[0] = radius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1)
                   return [arc.centroid(d), outerArc.centroid(d), pos]
                 })
-        }
+
 
 
     }
