@@ -41,9 +41,7 @@
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder deze reactie">
 				</form>
-			@endif
-
-			@if ($loggedInUser && $loggedInUser->id == $comment->user_id)
+			@elseif ($loggedInUser && $loggedInUser->id == $comment->user_id)
 				<form role="form" method="POST" action="reacties/{{$comment->comment_id}}">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder je reactie">
@@ -54,7 +52,6 @@
         </div>
 		</div>
 		@endforeach
-
 
 		<div class=" col-md-11 commentform" style="margin-left:5%">
 		@if (Auth::guest())

@@ -445,6 +445,7 @@ function initialize() {
 
 <script type="text/javascript">
     document.getElementById("project_color").value = "{{$project->color}}";
+    document.getElementById("project_thema").value = "{{$project->thema}}";
 
     function triggerClick(number){
         $('#click'+number).click();

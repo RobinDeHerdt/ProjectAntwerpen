@@ -185,23 +185,6 @@ function initialize() {
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label">Thema</label>
-                    <select class="c-select form-control input-md" id="project_thema" name="project_thema" alt="Kies een thema voor dit project" value="{{$project->thema}}">
-                        <option value="fa-car"              alt="Mobiliteit">   Mobiliteit   </option>
-                        <option value="fa-futbol-o"         alt="Sport">        Sport        </option>
-                        <option value="fa-plane"            alt="Toerisme">     Toerisme     </option>
-                        <option value="fa-puzzle-piece"     alt="Recreatie">    Recreatie    </option>
-                        <option value="fa-industry"         alt="Industrie">    Industrie    </option>
-                        <option value="fa-recycle"          alt="Milieu">       Milieu       </option>
-                        <option value="fa-tree"             alt="Natuur">       Natuur       </option>
-                        <option value="fa-bank"             alt="Architectuur"> Architectuur </option>
-                        <option value="fa-users"            alt="Sociaal">      Sociaal      </option>
-                        <option value="fa-graduation-cap"   alt="Educatie">     Educatie     </option>
-                        <option value="fa-music"            alt="Cultuur">      Cultuur      </option>
-
-                    </select>
-                </div>
-                <div class="form-group">
                     <label class="control-label">Locatie</label>
                     <input type="text" name="project_location" id="project_location" class="form-control input-md" placeholder="Locatie" alt="Vul hier de locatie van het project in." value="{{$project->location}}">
                 </div>
@@ -222,8 +205,26 @@ function initialize() {
                 </div>
 
                 <div class="form-group">
+                    <label class="control-label">Thema</label>
+                    <select class="c-select form-control input-md" id="project_thema" name="project_thema" alt="Kies een thema voor dit project">
+                        <option value="fa-car"              alt="Mobiliteit">   Mobiliteit   </option>
+                        <option value="fa-futbol-o"         alt="Sport">        Sport        </option>
+                        <option value="fa-plane"            alt="Toerisme">     Toerisme     </option>
+                        <option value="fa-puzzle-piece"     alt="Recreatie">    Recreatie    </option>
+                        <option value="fa-industry"         alt="Industrie">    Industrie    </option>
+                        <option value="fa-recycle"          alt="Milieu">       Milieu       </option>
+                        <option value="fa-tree"             alt="Natuur">       Natuur       </option>
+                        <option value="fa-bank"             alt="Architectuur"> Architectuur </option>
+                        <option value="fa-users"            alt="Sociaal">      Sociaal      </option>
+                        <option value="fa-graduation-cap"   alt="Educatie">     Educatie     </option>
+                        <option value="fa-music"            alt="Cultuur">      Cultuur      </option>
+
+                    </select>
+                </div>
+                
+                <div class="form-group">
                     <label>Projectkleur</label>
-                    <select class="c-select form-control input-md" id="project_color" name="project_color" alt="Kies een kleur voor dit project" value="{{$project->color}}">
+                    <select class="c-select form-control input-md" id="project_color" name="project_color" alt="Kies een kleur voor dit project" >
                         <option value="orange"  alt="Oranje">   Oranje  </option>
                         <option value="purple"  alt="Paars">    Paars   </option>
                         <option value="green"   alt="Groen">    Groen   </option>
@@ -442,6 +443,7 @@ function initialize() {
 
 <script type="text/javascript">
     document.getElementById("project_color").value = "{{$project->color}}";
+    document.getElementById("project_thema").value = "{{$project->thema}}";
 
     function triggerClick(number){
         $('#click'+number).click();
