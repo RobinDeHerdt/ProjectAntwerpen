@@ -38,7 +38,7 @@ return [
     'email'                => 'Dit is geen correct emailadres.',
     'exists'               => 'The selected :attribute is invalid.',
     'filled'               => 'The :attribute field is required.',
-    'image'                => 'The :attribute must be an image.',
+    'image'                => 'Het bestand dat je hebt geselecteerd is geen afbeelding.',
     'in'                   => 'The selected :attribute is invalid.',
     'in_array'             => 'The :attribute field does not exist in :other.',
     'integer'              => 'The :attribute must be an integer.',
@@ -77,7 +77,7 @@ return [
     ],
     'string'               => 'The :attribute must be a string.',
     'timezone'             => 'The :attribute must be a valid zone.',
-    'unique'               => 'The :attribute has already been taken.',
+    'unique'               => 'Dit emailadres is al in gebruik.',
     'url'                  => 'The :attribute format is invalid.',
 
     /*

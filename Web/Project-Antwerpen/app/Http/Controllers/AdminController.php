@@ -38,7 +38,7 @@ class AdminController extends Controller
   	{
     	$project = project::find($id);
     	$projectid = $project->id;
-
+        
         $milestones = milestone::where('project_id', $projectid)->get();
         $milestones = json_encode($milestones);
 
@@ -52,11 +52,11 @@ class AdminController extends Controller
             'project_info'      =>   'required',
             'project_thema'     =>   'required',
             'project_location'  =>   'required',
-            'project_postalcode'=>   'required',
+            'project_postalcode'=>   'required|integer',
             'project_color'     =>   'required',
             'project_startdate' =>   'required',
             'project_enddate'   =>   'required',
-            'headerimage'       =>   'required|unique:projects',   
+            'headerimage'       =>   'required|image',   
         ]);
 
         $project = new project;
