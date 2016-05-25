@@ -54,8 +54,9 @@ html, body{
   height: 100%;
 }
 .ContentDiv{
-    min-height: 82.6%;
+    min-height: 100%;
     width: 100%;
+    margin-bottom: -50px;
 }
 .ContentDiv, footer {
   display: inline-block;
@@ -127,7 +128,10 @@ font-family: AntwerpREG, Verdana, sans-serif;
 .comment_body{
   float: left;
   text-align: left;
-    width: 74%;
+    width: 90%;
+}
+.commentform{
+  margin-bottom: 40px;
 }
 .switch-toggle {
   margin-bottom: 20px;
@@ -534,12 +538,20 @@ display: block!important;
     position: relative;
     margin-left: 6%;
   }
-
+  .reactieimg{
+    float: left;
+    margin-left: 25%;
+  }
 
 }
-@media (max-width: 992px){
+@media (max-width: 1370px){
   .comment_body{
     width: 83%;
+  }
+}
+@media (max-width: 682px){
+  .comment_body{
+    width: 100%;
   }
 }
 /*

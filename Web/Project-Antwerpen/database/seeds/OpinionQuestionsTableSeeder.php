@@ -18,7 +18,7 @@ class OpinionQuestionsTableSeeder extends Seeder
             'down_vote' => 1,
     	]);
       DB::table('opinion_questions')->insert([
-        'opinionquestionbody' => 'Vind je dat het centraal station in Antwerpen meer sporen nodig heeft?',
+        'opinionquestionbody' => 'Vind je van Het uiterlijk van het station?',
           'project_id' => 1,
           'up_vote' => 2,
           'down_vote' => 2,
