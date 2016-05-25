@@ -56,7 +56,7 @@ html, body{
 .ContentDiv{
     min-height: 100%;
     width: 100%;
-    margin-bottom: -50px;
+    margin-bottom: -45px;
 }
 .ContentDiv, footer {
   display: inline-block;
