@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\project;
 use App\milestone;
+use App\opinion_question;
 use App\comment;
 use App\rating;
 use App\Http\Requests;
 use Session;
-use DB;
+// use DB;
 
 
 class ProjectController extends Controller
@@ -33,10 +34,10 @@ class ProjectController extends Controller
     }
     public function meningen($id)
     {
-        $questions = DB::table('projects')->join('opinion_questions', 'projects.id' , '=', 'opinion_questions.project_id')->where('projects.id', '=', $id)->select('opinionquestionbody', 'up_vote', 'down_vote')->get();
-        json_encode($questions);
+        // $questions = DB::table('projects')->join('opinion_questions', 'projects.id' , '=', 'opinion_questions.project_id')->where('projects.id', '=', $id)->select('opinionquestionbody', 'up_vote', 'down_vote')->get();
+        $questions = opinion_question::where('project_id', $id)->get();
+        //json_encode($questions);
 
         return view('pages.project-meningen', compact('questions'));
-
     }
 }
