@@ -72,3 +72,6 @@ button {
 .prevbutton{
 	left:20px;
 }
+#Graphdata{
+	display: none;
+}
