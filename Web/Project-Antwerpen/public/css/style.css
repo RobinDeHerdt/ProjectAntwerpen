@@ -46,7 +46,20 @@ src: url("../fonts/AntwerpenTall-Tall.eot");
 font-family: AntwerpTall;
 src: url("../fonts/AntwerpenTall-Tall.svg") format("svg");
 }
+body{
+  text-align: center;
 
+}
+html, body{
+  height: 100%;
+}
+.ContentDiv{
+    min-height: 82.6%;
+    width: 100%;
+}
+.ContentDiv, footer {
+  display: inline-block;
+}
 .nav-tabs>li.active>a {
     background-color: #909090;
     color:white;
@@ -62,7 +75,7 @@ src: url("../fonts/AntwerpenTall-Tall.svg") format("svg");
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 
-.titelpage , .thumbnail h4{
+.titelpage , .thumbnail h4, .titelpagemobile{
 font-family: AntwerpREG, Verdana, sans-serif;
 
 }
@@ -105,31 +118,28 @@ font-family: AntwerpREG, Verdana, sans-serif;
 
 }
 .Profile_img img{
+  border-radius: 50%;
+    width: 38px;
+    margin-left: 1px;
+    margin-top: 1px;
 
-    width: 41px;
-    margin:0;
-  /*
-  width: 28px;
-  height: 28px;
-  overflow:hidden;
-  position: relative;
-  left: 45%;
-  top: 45%;
-  margin-left: -12px;
-  margin-top: -12px;*/
 }
 .comment_body{
-  display: inline-block;
-  width: 45vw;
+  float: left;
+  text-align: left;
+    width: 74%;
 }
 .switch-toggle {
   margin-bottom: 20px;
   height: 50px;
 }
+
+
+
 .switch-toggle input:first-child{
   color: white;
   }
-.titelpage{
+.titelpage, .titelpagemobile{
   padding-top: 32.5px;
   padding-bottom: 32.5px;
   font-size:25px;
@@ -147,8 +157,13 @@ font-family: AntwerpREG, Verdana, sans-serif;
 }
 
 .navbar li:hover a{
-  background-color:#CF0039;
-  border-bottom: 2px solid white;
+  background-color: rgba(255, 255, 255, 0);
+}
+.registericon:hover, .loginicon:hover, .loginicon:hover, #account:hover{
+    border-bottom: 2px solid white;
+}
+#account {
+  display: inline;
 }
 .navbar-right{
   margin-right: 30px;
@@ -315,9 +330,7 @@ margin-top:25px
 .allTiles{
   min-height: 83.1vh;
 }
-.ContentDiv{
-    min-height: 78.9vh;
-}
+
 .ProjectFrom{
     min-height: 83.1vh;
 }
@@ -393,8 +406,7 @@ footer{
   height: 45px;
   padding-top: 12px;
   clear:both;
-  position:relative
-  margin-top:-45px;
+  position:relative;
 }
 footer p {
   color: rgb(190, 190, 190);
@@ -470,14 +482,22 @@ display: block!important;
    z-index:1;
    color:white;
 }
-.imgtile img{
-    width: 100%;
-}
+
 .validationerror {
   color: darkred;
 }
 .ReactiePlaatsen{
   margin-left: 50px;
+}
+#leftfix{
+  float:left!important;
+}
+
+.reactieBody{
+  margin-left: 100px;
+}
+.titelpagemobile{
+  display: none;
 }
 
 
@@ -500,13 +520,26 @@ display: block!important;
     margin-right: 40px;
   }
 
-  .titelpage{
+  .titelpage, .titelpagemobile{
     display: none;
     padding-top: 33px;
     position: absolute;
     vertical-align: center;
   }
 
+  .titelpagemobile{
+    display: inline-block;
+    float: left;
+    position: relative;
+    margin-left: 6%;
+  }
+
+
+}
+@media (max-width: 992px){
+  .comment_body{
+    width: 83%;
+  }
 }
 /*
 @media(max-width:500px)

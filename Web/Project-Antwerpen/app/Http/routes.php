@@ -16,6 +16,8 @@
 Route::get('/', 'PageController@welcome');
 Route::get('/register', 'PageController@register');
 Route::get('/login', 'PageController@login');
+Route::get('/profiel', 'UserController@show');
+Route::get('/bewerkprofiel', 'UserController@edit');
 Route::get('/nieuwproject', 'AdminController@newproject');
 Route::get('/bewerkproject/{id}', 'AdminController@editproject');
 Route::get('/kopiërenproject/{id}', 'AdminController@copyproject');
@@ -28,6 +30,7 @@ Route::get('/project/{id}/info', 'ProjectController@info');
 Route::get('/project/{id}/kaart', 'ProjectController@kaart');
 Route::get('/project/{id}/meningen', 'ProjectController@meningen');
 
+
 // Api requests
 Route::get('questions_json', 'ApiController@getQuestions');
 Route::get('opinionquestions_json', 'ApiController@getOpinionQuestions');
@@ -35,6 +38,7 @@ Route::get('opinionquestions_json', 'ApiController@getOpinionQuestions');
 // Post requests
 Route::post('/nieuwproject', 'AdminController@store');
 Route::post('/bewerkproject/{id}', 'AdminController@update');
+Route::post('/bewerkprofiel', 'UserController@update');
 Route::post('/verwijderproject/{id}', 'AdminController@deleteproject');
 Route::post('/kopiërenproject/{id}', 'AdminController@copy');
 Route::post('/project/{id}/reacties', 'CommentController@store');
