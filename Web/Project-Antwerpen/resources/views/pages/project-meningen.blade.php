@@ -10,8 +10,8 @@
 <h1 id="meningvraag"></h1>
 
 <div class="chart-wrapper">
-  <button onclick='prev();replay();' class="prevbutton" type="button" name="button"><img src="/img/previous.png" alt="" />Vorige</button>
-<button onclick='next();replay();' class="nextbutton" type="button" name="button" href="questions_json">Volgende<img src="/img/next.png" alt="" /></button>
+  <button onclick='prev();replay();' class="prevbutton" type="button" name="button"><img src="/img/previous.png" alt="" /><span class="hidebutton">Vorige</span></button>
+<button onclick='next();replay();' class="nextbutton" type="button" name="button" href="questions_json"><span class="hidebutton">Volgende</span><img src="/img/next.png" alt="" /></button>
 <input type="button" id="Graphdata" name="Graphdata" value="{{json_encode($questions)}}">
 
 
