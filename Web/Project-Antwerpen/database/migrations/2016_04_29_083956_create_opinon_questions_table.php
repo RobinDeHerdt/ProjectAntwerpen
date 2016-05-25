@@ -15,6 +15,8 @@ class CreateOpinonQuestionsTable extends Migration
         Schema::create('opinion_questions', function (Blueprint $table) {
             $table->increments('opinionquestion_id');
             $table->string('opinionquestionbody');
+            $table->integer('up_vote');
+            $table->integer('down_vote');
             // $table->string('project_link');
         });
 

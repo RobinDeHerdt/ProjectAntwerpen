@@ -13,6 +13,7 @@
 
     </head>
     <body>
+      <div class="ContentDiv">
       <div class="navbar">
           <div class="navbar-header">
             <a class="navbar-left" id="leftfix" href="/overzicht"><img src="../../img/A_logo_RGB_123x123.jpg" alt="Logo antwerpen"/></a>
@@ -55,7 +56,7 @@
 
       @yield('navigation-layout')
 
-    <div class="ContentDiv">
+
     @yield('content')
     </div>
      <footer class="footer">

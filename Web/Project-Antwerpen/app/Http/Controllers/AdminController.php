@@ -33,16 +33,17 @@ class AdminController extends Controller
 
 		return view('pages.editproject', compact('project', 'milestones'));
 	}
-  public function copyproject($id)
-  {
-    $project = project::find($id);
-    $projectid = $project->id;
 
+  	public function copyproject($id)
+  	{
+    	$project = project::find($id);
+    	$projectid = $project->id;
+        
         $milestones = milestone::where('project_id', $projectid)->get();
-        json_encode($milestones);
+        $milestones = json_encode($milestones);
 
-    return view('pages.copyproject', compact('project', 'milestones'));
-  }
+    	return view('pages.copyproject', compact('project', 'milestones'));
+  	}
 
   protected function store(Request $request)
     {
@@ -51,11 +52,11 @@ class AdminController extends Controller
             'project_info'      =>   'required',
             'project_thema'     =>   'required',
             'project_location'  =>   'required',
-            'project_postalcode'=>   'required',
+            'project_postalcode'=>   'required|integer',
             'project_color'     =>   'required',
             'project_startdate' =>   'required',
             'project_enddate'   =>   'required',
-            'headerimage'       =>   'required|unique:projects',   
+            'headerimage'       =>   'required|image',   
         ]);
 
         $project = new project;
