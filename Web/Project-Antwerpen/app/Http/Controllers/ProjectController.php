@@ -38,7 +38,7 @@ class ProjectController extends Controller
         // $questions = DB::table('projects')->join('opinion_questions', 'projects.id' , '=', 'opinion_questions.project_id')->where('projects.id', '=', $id)->select('opinionquestionbody', 'up_vote', 'down_vote')->get();
         $questions = opinion_question::where('project_id', $id)->get();
 
-        $projectts = project::orderBy('id', 'asc')->get();
-        return view('pages.project-meningen', compact('questions', 'user' ));
+        // $projectts = project::orderBy('id', 'asc')->get();
+        return view('pages.project-meningen', compact('questions', 'user'));
     }
 }
