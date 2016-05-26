@@ -38,7 +38,7 @@ class AdminController extends Controller
   	{
     	$project = project::find($id);
     	$projectid = $project->id;
-        
+
         $milestones = milestone::where('project_id', $projectid)->get();
         $milestones = json_encode($milestones);
 
@@ -56,7 +56,7 @@ class AdminController extends Controller
             'project_color'     =>   'required',
             'project_startdate' =>   'required',
             'project_enddate'   =>   'required',
-            'headerimage'       =>   'required|image',   
+            'headerimage'       =>   'required|image',
         ]);
 
         $project = new project;
@@ -71,8 +71,8 @@ class AdminController extends Controller
         $project->end_date      = $request->project_enddate;
         $project->xcoord        = $request->lat;
         $project->ycoord        = $request->lng;
-            
-        if ($request->hasFile('headerimage') && $request->file('headerimage')->isValid()) 
+
+        if ($request->hasFile('headerimage') && $request->file('headerimage')->isValid())
         {
             $file       = $request->file('headerimage');
             $fileName   = $file->getClientOriginalName();
@@ -81,16 +81,16 @@ class AdminController extends Controller
 
             $project->headerimage   = '/img/' . $fileName;
         }
-        else 
+        else
         {
             abort('404', 'Sad times :(');
         }
 
         $project->save();
-        
+
         $jsonArray = json_decode($request->milestone_json, true);
-        
-        for ($i = 0; $i < count($jsonArray); $i++) { 
+
+        for ($i = 0; $i < count($jsonArray); $i++) {
             $milestone = new milestone;
 
             $milestone->milestone_title = $jsonArray[$i]['title'];
@@ -119,7 +119,7 @@ class AdminController extends Controller
             'project_postalcode'=>   'required',
             'project_color'     =>   'required',
             'project_startdate' =>   'required',
-            'project_enddate'   =>   'required', 
+            'project_enddate'   =>   'required',
         ]);
 
         $project = new project;
@@ -135,8 +135,8 @@ class AdminController extends Controller
         $project->xcoord        = $request->lat;
         $project->ycoord        = $request->lng;
 
-        
-        if ($request->hasFile('headerimage') && $request->file('headerimage')->isValid()) 
+
+        if ($request->hasFile('headerimage') && $request->file('headerimage')->isValid())
         {
                 $file       = $request->file('headerimage');
                 $fileName   = $file->getClientOriginalName();
@@ -144,21 +144,21 @@ class AdminController extends Controller
                 $file->move(base_path() . '/public/img/', $fileName);
 
                 $project->headerimage   = '/img/' . $fileName;
-        }   
-        else 
+        }
+        else
         {
                 $project->headerimage   = $projectToCopy->headerimage;
-        } 
+        }
 
-        
+
 
         $project->save();
-        
-        
+
+
         $jsonArray = json_decode($request->milestone_json, true);
-        
+
         // dd($jsonArray);
-        for ($i = 0; $i < count($jsonArray); $i++) { 
+        for ($i = 0; $i < count($jsonArray); $i++) {
             $milestone = new milestone;
 
             $milestone->milestone_title = $jsonArray[$i]['title'];
@@ -183,7 +183,7 @@ class AdminController extends Controller
             'project_thema'     =>   'required',
             'project_location'  =>   'required',
             'project_postalcode'=>   'required',
-            'project_color'     =>   'required',   
+            'project_color'     =>   'required',
         ]);
 
         $project = project::find($id);
@@ -198,8 +198,8 @@ class AdminController extends Controller
         $project->end_date      = $request->project_enddate;
         $project->xcoord        = $request->lat;
         $project->ycoord        = $request->lng;
-            
-        if ($request->hasFile('headerimage') && $request->file('headerimage')->isValid()) 
+
+        if ($request->hasFile('headerimage') && $request->file('headerimage')->isValid())
         {
             $file       = $request->file('headerimage');
             $fileName   = $file->getClientOriginalName();
@@ -207,19 +207,19 @@ class AdminController extends Controller
             $file->move(base_path() . '/public/img/', $fileName);
 
             $project->headerimage   = '/img/' . $fileName;
-        }      
-        
-        $project->save();  
+        }
+
+        $project->save();
 
         $milestones = milestone::where('project_id', $id)->get();
-        
-        for ($i = 0; $i < count($milestones); $i++) { 
+
+        for ($i = 0; $i < count($milestones); $i++) {
             $milestones[$i]->delete();
         }
 
         $jsonArray = json_decode($request->milestone_json, true);
-        
-        for ($i = 0; $i < count($jsonArray); $i++) { 
+
+        for ($i = 0; $i < count($jsonArray); $i++) {
             $milestone = new milestone;
 
             $milestone->milestone_title = $jsonArray[$i]['title'];
@@ -239,20 +239,20 @@ class AdminController extends Controller
     public function deleteproject($id)
     {
         $milestones = milestone::where('project_id', $id)->get();
-        
-        for ($i = 0; $i < count($milestones); $i++) { 
+
+        for ($i = 0; $i < count($milestones); $i++) {
             $milestones[$i]->delete();
         }
 
         $comments = comment::where('project_id', $id)->get();
-        
-        for ($i = 0; $i < count($comments); $i++) { 
+
+        for ($i = 0; $i < count($comments); $i++) {
             $comments[$i]->delete();
         }
 
         $opinionquestions = opinion_question::where('project_id', $id)->get();
-        
-        for ($i = 0; $i < count($opinionquestions); $i++) { 
+
+        for ($i = 0; $i < count($opinionquestions); $i++) {
             $opinionquestions[$i]->delete();
         }
 
@@ -271,11 +271,12 @@ class AdminController extends Controller
         return view('pages.deleteproject', compact('project'));
     }
 
-    public function opinionquestion($id)
+    public function opinionquestion()
     {
-        $project = Project::find($id);
+      $projects = project::orderBy('id', 'asc')->get();
+        // $project = Project::find($id);
 
-        return view('pages.NewOpinionQuestion', compact('project'));
+        return view('pages.NewOpinionQuestion', compact('projects'));
     }
 
     public function addopinionquestion(Request $request, $id)
