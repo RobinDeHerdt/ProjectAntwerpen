@@ -202,26 +202,39 @@ setTimeout(Scaling, 4400);
     var targetWidth = chart.node().getBoundingClientRect().width;
     var slice1 = svg.select('.slices path');
     var slice2 = svg.select('.slices path:last-child');
-    svg.attr("transform", `translate(${targetWidth / 2}, ${height / 2})`);
     var radius = 0;
-    if (targetWidth < 1000) {
-      radius = 100
-    }else {
-      radius = targetWidth/10;
+
+    if (targetWidth < 1000) 
+    {
+        radius = 100;
+    }
+    else 
+    {
+        radius = targetWidth / 10;
     }
 
+    if (targetWidth < 900 && targetWidth > 700) 
+    {
+       margintop = 800;
+    }
+    else if (targetWidth < 700) 
+    {
+       margintop = 500;
+    }
+    else 
+    {
+       margintop = 1000;
+    }
 
+     svg.attr("transform", `translate(${targetWidth / 2}, ${margintop / 3})`);
 
-        arc = d3.svg.arc()
-        .outerRadius(radius * 0.6)
-        .innerRadius(radius * 0.45)
+    arc = d3.svg.arc()
+      .outerRadius(radius * 0.6)
+      .innerRadius(radius * 0.45)
 
-            slice1.attr('d', arc );
-            slice2.attr('d', arc );
-
-
-  
-}
+    slice1.attr('d', arc );
+    slice2.attr('d', arc );
+  }
 
   function Scaling() {
     var targetWidth = window.innerWidth;
