@@ -13,6 +13,14 @@ var questionsJSON;
 var opinionQuestionsJSON;
 
 
+if( !JSON.parse(localStorage.getItem("opinionCheck")) ){
+  var opinionCheck = [];
+}else{
+  var opinionCheck = JSON.parse(localStorage.getItem("opinionCheck")) ;
+}
+
+
+
 window.onload = function () {
 
     var wWidth  = document.body.offsetWidth;
@@ -43,16 +51,17 @@ preload.prototype = {
           //tween image for opinion animation ending
         game.load.image("meningbg", "assets/images/meningend.png");
           //buttons
-
         game.load.spritesheet("startsheet", "assets/images/new-start-sheet.png", 308, 98, 2);
         game.load.spritesheet("websitesheet", "assets/images/new-website-sheet.png", 308, 110, 2);
-
-        game.load.image("start-btn", "assets/images/new-start-btn.png");
-        game.load.image("website-btn", "assets/images/new-website-btn.png");
-        game.load.image("website-btn-small", "assets/images/small-website-idle.png");
+        game.load.spritesheet("smallwebsitesheet", "assets/images/small-website-sheet.png", 181, 67, 2);
+        game.load.spritesheet("smallmenusheet", "assets/images/small-menu-sheet.png", 181, 67, 2);
+        game.load.spritesheet("projectsheet", "assets/images/project-sheet.png", 263, 101, 2);
+        //game.load.image("start-btn", "assets/images/new-start-btn.png");
+        //game.load.image("website-btn", "assets/images/new-website-btn.png");
+        //game.load.image("website-btn-small", "assets/images/small-website-idle.png");
+        //game.load.image("back", "assets/images/small-menu-idle.png");
         game.load.image("true", "assets/images/waar2.png");
         game.load.image("false", "assets/images/nietwaar2.png");
-        game.load.image("back", "assets/images/small-menu-idle.png");
         game.load.image("thumbsup", "assets/images/akkoordoutlined.png");
         game.load.image("thumbsdown", "assets/images/nietakkoordoutlined.png");
         game.load.image("project-btn", "assets/images/project-btn.png");
@@ -99,13 +108,23 @@ preload.prototype = {
 
         $.ajax({
           url:"http://www.exiles.multimediatechnology.be/opinionquestions_json",
-          dataType:"jsop",
+          dataType:"json",
           succes: function(json){
             opnionionQuestionsJSON = json;
           }
         });
 
         console.log(opinionQuestionsJSON);
+
+
+        //opinionCheck.push("a");
+        //opinionCheck.push("b");
+        //localStorage.setItem("opinionCheck", JSON.stringify(opinionCheck));
+        //console.log(opinionCheck);
+        //console.log(localStorage.getItem("opinionCheck"));
+
+
+
 
         //Define constant variables
         game.CENTER_X          = (game.width/2);
@@ -237,12 +256,12 @@ play.prototype = {
           this.falsebtn.scale.setTo(0.205);
 
           //init back to menu button
-          this.backbtn = game.add.button(game.CENTER_X + 75, game.CENTER_Y + 250, "back", this.backToMenu, this);
+          this.backbtn = game.add.button(game.CENTER_X + 75, game.CENTER_Y + 250, "smallmenusheet", this.backToMenu, this, 1, 0);
           this.backbtn.anchor.set(0.5);
           this.backbtn.scale.setTo(0.75);
 
           //init website button
-          this.webbtn = game.add.button(game.CENTER_X - 75, game.CENTER_Y + 250, "website-btn-small", this.goToWebsite, this);
+          this.webbtn = game.add.button(game.CENTER_X - 75, game.CENTER_Y + 250, "smallwebsitesheet", this.goToWebsite, this, 1, 0);
           this.webbtn.anchor.set(0.5);
           this.webbtn.scale.setTo(0.75);
 
@@ -373,7 +392,7 @@ mening.prototype = {
         questionText.anchor.set(0.5);
 
         //init project button
-        this.projectbtn = game.add.button(game.CENTER_X, game.CENTER_Y-15, "project-btn", this.goToProject, this);
+        this.projectbtn = game.add.button(game.CENTER_X, game.CENTER_Y-15, "projectsheet", this.goToProject, this, 1, 0);
         this.projectbtn.anchor.set(0.5);
         this.projectbtn.scale.setTo(0.75);
 
@@ -408,6 +427,18 @@ mening.prototype = {
     },
     thumbsUp: function() {
       //Will send data to online database
+
+      if(arrayContains(parseInt(opinionQuestionsJSON[meningCounter].opinionquestion_id))){
+        opinionCheck.push(opinionQuestionsJSON[meningCounter].opinionquestion_id);
+        localStorage.setItem("opinionCheck", JSON.stringify(opinionCheck));
+      }else{
+        $.ajax({
+          url:"http://www.exiles.multimediatechnology.be/getvote.php",
+          type:"POST",
+          data:"upvote"
+        })
+      }
+
       //window.alert("Jij bent akkoord!");
       meningCounter += 1;
       lastQuestionMening = true;
@@ -416,6 +447,8 @@ mening.prototype = {
       console.log(questions.length);
       console.log(meningCounter);
       console.log(opinionQuestions.length);
+
+
 
       if(counter == questionsJSON.length || meningCounter == opinionQuestionsJSON.length){
           counter = 0;
@@ -441,7 +474,7 @@ mening.prototype = {
           alleVragen.anchor.set(0.5);
           alleVragen.alpha = 0;
 
-          //startscreen animation
+          //endscreen animation
           firstTween = game.add.tween(proficiat.scale).to({ x: 1, y:1 }, 1000, Phaser.Easing.Quadratic.InOut);
           secondTween = game.add.tween(proficiat).to({ y: 100 }, 750, Phaser.Easing.Quadratic.InOut);
           thirdTween = game.add.tween(alleVragen).to({ alpha: 1}, 750, Phaser.Easing.Quadratic.InOut);
@@ -468,6 +501,18 @@ mening.prototype = {
     },
     thumbsDown: function() {
       //will send data to online database
+
+      if(arrayContains(opninionCheck, parseInt(opinionQuestionsJSON[meningCounter].opinionquestion_id))){
+        opinionCheck.push(opinionQuestionsJSON[meningCounter].opinionquestion_id);
+        localStorage.setItem("opinionCheck", JSON.stringify(opinionCheck));
+      }else{
+        $.ajax({
+          url:"http://www.exiles.multimediatechnology.be/getvote.php",
+          type:"POST",
+          data:"downvote"
+        })
+      }
+
       //window.alert("Jij bent niet akkoord!")
       meningCounter +=1;
       lastQuestionMening = true;
@@ -497,7 +542,7 @@ mening.prototype = {
           alleVragen.anchor.set(0.5);
           alleVragen.alpha = 0;
 
-          //startscreen animation
+          //endscreen animation
           firstTween = game.add.tween(proficiat.scale).to({ x: 1, y:1 }, 1000, Phaser.Easing.Quadratic.InOut);
           secondTween = game.add.tween(proficiat).to({ y: 100 }, 750, Phaser.Easing.Quadratic.InOut);
           thirdTween = game.add.tween(alleVragen).to({ alpha: 1}, 750, Phaser.Easing.Quadratic.InOut);
@@ -535,5 +580,8 @@ mening.prototype = {
         game.state.start("Menu");
         meningCounter = 0;
         counter = 0;
+    },
+    arrayContains: function(arr, id){
+        return (arr.indexOf(id) != -1);
     }
 }
