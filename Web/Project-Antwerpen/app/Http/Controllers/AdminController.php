@@ -278,6 +278,27 @@ class AdminController extends Controller
 
         return view('pages.NewOpinionQuestion', compact('projects'));
     }
+    public function deleteopinionquestionpage()
+    {
+        $projects = project::orderBy('id', 'asc')->get();
+        $questions = opinion_question::orderBy('opinionquestion_id', 'asc')->get();
+        // $project = Project::find($id);
+
+        return view('pages.deleteopinionquestion', compact('projects', 'questions'));
+    }
+    public function deleteopinionquestion($id)
+    {
+
+      $opinionquestions = opinion_question::where('opinionquestion_id', $id)->get();
+
+      $opinionquestions->delete();
+
+      Session::flash('opinionQuestiondeleted', 'De meningvraag succesvol verwijderd.');
+
+      return redirect('/deleteopinionquestion');
+    }
+
+
 
     public function addopinionquestion(Request $request)
     {

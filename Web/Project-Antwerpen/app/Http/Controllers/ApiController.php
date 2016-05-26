@@ -33,5 +33,5 @@ class ApiController extends Controller
         return response()->json($opinionquestions);
     }
 
-    
+
 }
