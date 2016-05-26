@@ -271,8 +271,26 @@ class AdminController extends Controller
         return view('pages.deleteproject', compact('project'));
     }
 
-    public function opinionquestion()
+    public function opinionquestion($id)
     {
-        return view('pages.NewOpinionQuestion');
+        $project = Project::find($id);
+
+        return view('pages.NewOpinionQuestion', compact('project'));
+    }
+
+    public function addopinionquestion(Request $request, $id)
+    {
+        $project = Project::find($id);
+
+        $opinionquestion = new opinion_question;
+
+        $opinionquestion->opinionquestionbody = $request->opinionquestionbody;
+
+        $opinionquestion->project()->associate($project);
+        $opinionquestion->save();
+
+        Session::flash('opinionquestionadded', 'De meningvraag werd succesvol toegevoegd.');
+
+        return redirect('/project/'.$id.'/meningen');
     }
 }
