@@ -273,25 +273,24 @@ class AdminController extends Controller
 
     public function opinionquestion()
     {
-      $projects = project::orderBy('id', 'asc')->get();
+        $projects = project::orderBy('id', 'asc')->get();
         // $project = Project::find($id);
 
         return view('pages.NewOpinionQuestion', compact('projects'));
     }
 
-    public function addopinionquestion(Request $request, $id)
+    public function addopinionquestion(Request $request)
     {
-        $project = Project::find($id);
+        $selectedProject = $request->projectname;
+        $project = Project::find($selectedProject);
 
         $opinionquestion = new opinion_question;
-
         $opinionquestion->opinionquestionbody = $request->opinionquestionbody;
-
         $opinionquestion->project()->associate($project);
         $opinionquestion->save();
 
         Session::flash('opinionquestionadded', 'De meningvraag werd succesvol toegevoegd.');
 
-        return redirect('/project/'.$id.'/meningen');
+        return redirect('/project/'.$selectedProject.'/meningen');
     }
 }

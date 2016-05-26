@@ -14,6 +14,7 @@
 
 
 <h1 id="meningvraag"></h1>
+
 <div class="wrapper">
 	<div class="chart-wrapper">
 	  	<button onclick='prev();replay();' class="prevbutton" type="button" name="button"><img src="/img/previous.png" alt="" /><span class="hidebutton">Vorige</span></button>

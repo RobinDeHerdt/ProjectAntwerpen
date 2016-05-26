@@ -41,7 +41,7 @@ Route::post('/bewerkproject/{id}', 'AdminController@update');
 Route::post('/bewerkprofiel', 'UserController@update');
 Route::post('/kopiërenproject/{id}', 'AdminController@copy');
 Route::post('/project/{id}/reacties', 'CommentController@store');
-Route::post('/project/{id}/nieuwemeningvraag', 'AdminController@addopinionquestion');
+Route::post('/nieuwemeningvraag', 'AdminController@addopinionquestion');
 
 // Delete requests
 Route::post('/project/{id}/reacties/{comment}', 'CommentController@delete');
