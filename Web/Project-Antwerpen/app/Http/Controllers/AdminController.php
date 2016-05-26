@@ -270,4 +270,9 @@ class AdminController extends Controller
 
         return view('pages.deleteproject', compact('project'));
     }
+
+    public function opinionquestion()
+    {
+        return view('pages.NewOpinionQuestion');
+    }
 }
