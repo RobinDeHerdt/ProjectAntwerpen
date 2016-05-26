@@ -58,6 +58,9 @@ let pie = d3.layout.pie()
   .value(d => d)
 
 let draw = function() {
+  if (color[1]!=0 && color[0]!=0) {
+
+
 
 
   svg.append("g").attr("class", "lines")
@@ -159,6 +162,7 @@ function prev() {
   }else {
     canAnimate = false;
   }
+    }
 }
 
 draw()
@@ -204,24 +208,24 @@ setTimeout(Scaling, 4400);
     var slice2 = svg.select('.slices path:last-child');
     var radius = 0;
 
-    if (targetWidth < 1000) 
+    if (targetWidth < 1000)
     {
         radius = 100;
     }
-    else 
+    else
     {
         radius = targetWidth / 10;
     }
 
-    if (targetWidth < 900 && targetWidth > 700) 
+    if (targetWidth < 900 && targetWidth > 700)
     {
        margintop = 800;
     }
-    else if (targetWidth < 700) 
+    else if (targetWidth < 700)
     {
        margintop = 500;
     }
-    else 
+    else
     {
        margintop = 1000;
     }

@@ -9,7 +9,7 @@
  <div class="col-md-offset-3 col-md-6">
    <div ng-app="questionapp">
      <div ng-controller="questionController as Qcont">
-     	<form method="post" action="" class="OpninionQuestionFrom">
+     	<form method="post" ng-submit="Qcont.submitme()" class="OpninionQuestionFrom">
 
     		{!! csrf_field() !!}
     	    <label for="Project_names">Kies u project: </label>
@@ -20,8 +20,12 @@
 
     	    </select>
           <div ng-repeat="projectquestion in Qcont.projectquestions" ng-if="projectquestion.id == Qcont.projectID">
-            <li  data="<%projectquestion.id%>"><%projectquestion.body%></li>
-            <a href="deleteopinionquestion/<%projectquestion.id%>" class="btn btn-danger">delete</a>
+
+              <li  data="<%projectquestion.id%>"  ><%projectquestion.body%></li>
+              <input type="input" ng-model="questionID" value="<%projectquestion.Qid%>">
+             <!--  <a href="/verwijdermeningvraag/<% $index + 1 %>" class="btn btn-danger">delete</a> -->
+              <input type="submit" value="verwijderen">
+
 
           </div>
 
