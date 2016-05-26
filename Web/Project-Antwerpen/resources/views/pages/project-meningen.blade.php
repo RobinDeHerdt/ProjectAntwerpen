@@ -5,7 +5,13 @@
 @stop
 @extends('navigation-layout')
 @section('content')
+	@if(Session::has('opinionquestionadded'))
+	    <div class="alert alert-success col-md-8 col-md-offset-2">
+	        <p>{{ Session::get('opinionquestionadded')}}</p>
+	    </div>
+    @endif
 <link rel="stylesheet" href="/css/donut-graph.css">
+
 
 <h1 id="meningvraag"></h1>
 <div class="wrapper">
@@ -17,7 +23,7 @@
 </div>
 
 @if ($user && $user->isAdmin)
-	<a href="/nieuwemeningvraag" class="btn btn-success meningbutton">Meningvraag toevoegen</a>
+	<a href="nieuwemeningvraag" class="btn btn-success meningbutton">Meningvraag toevoegen</a>
 @endif
 
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>

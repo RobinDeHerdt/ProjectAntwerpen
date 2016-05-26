@@ -137,7 +137,18 @@ font-family: AntwerpREG, Verdana, sans-serif;
   height: 50px;
 }
 
+#addOpinionQuestion
+{
+  margin-top: 50px;
+  padding: 5px;
+  width: 100%;
+}
 
+#btnAddOpinionQuestion 
+{
+  margin-top: -30px;
+  width: 100%;
+}
 
 .switch-toggle input:first-child{
   color: white;
@@ -276,32 +287,11 @@ background-position: 79.5px 0;
   right: 0;
 }
 .fasetab {
-<<<<<<< HEAD
-
-<<<<<<< HEAD
 border:1px solid black;
 text-decoration:none;
 color:black;
 text-align:center;
 margin-top:25px
-
-
-
-=======
-border:1px solid black;
-text-decoration:none;
-color:black;
-text-align:center;
-margin-top:25px
->>>>>>> upstream/master
-=======
-border:1px solid black;
-text-decoration:none;
-color:black;
-text-align:center;
-margin-top:25px
-
->>>>>>> upstream/master
 }
 
 .thumbnail {
