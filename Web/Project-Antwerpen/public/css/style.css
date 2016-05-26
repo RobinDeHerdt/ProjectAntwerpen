@@ -137,14 +137,17 @@ font-family: AntwerpREG, Verdana, sans-serif;
   height: 50px;
 }
 
+.OpninionQuestionFrom label{
+margin-top: 50px;
+}
+
 #addOpinionQuestion
 {
-  margin-top: 50px;
   padding: 5px;
   width: 100%;
 }
 
-#btnAddOpinionQuestion 
+#btnAddOpinionQuestion
 {
   margin-top: -30px;
   width: 100%;
