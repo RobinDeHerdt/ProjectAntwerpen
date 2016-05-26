@@ -23,7 +23,7 @@
 </div>
 
 @if ($user && $user->isAdmin)
-	<a href="nieuwemeningvraag" class="btn btn-success meningbutton">Meningvraag toevoegen</a>
+	<a href="/nieuwemeningvraag" class="btn btn-success meningbutton">Meningvraag toevoegen</a>
 @endif
 
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
