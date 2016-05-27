@@ -95,6 +95,8 @@ font-family: AntwerpREG, Verdana, sans-serif;
   background-color:#CF0039; /* #DA291C; */
   border-radius: 0px;
   height: 100px;
+  margin-bottom:0px;
+  line-height:0;
 }
 
 .navbar img{
