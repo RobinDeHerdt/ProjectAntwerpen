@@ -34,7 +34,7 @@
     		<h5>Gepost op: {{ $comment->created_at }}</h5>
     		<div class="rating">
     		@for ($i = 0; $i < $comment->rating; $i++)
-    			<img src="/img/stars.png">
+    			<img src="/img/star-rating.png">
 			@endfor
 			<!-- <span id="5">☆</span><span id="4">☆</span><span id="3">☆</span><span id="2">☆</span><span id="1">☆</span> -->
 			</div>
@@ -158,7 +158,7 @@
 		  top: 0;
 		  left: 0;
 		  height: 30px;
-		  background: url("http://project-antwerpen.local/img/stars.png") repeat-x 0 -60px;
+		  background: url("/../img/stars.png") repeat-x 0 -60px;
 		  -webkit-transition: -webkit-width 0.5s;
 		  -moz-transition: -moz-width 0.5s;
 		  -ms-transition: -ms-width 0.5s;
