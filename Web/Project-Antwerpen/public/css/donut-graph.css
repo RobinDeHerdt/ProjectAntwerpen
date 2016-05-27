@@ -47,12 +47,16 @@ body {
  	height: 60vh;
  	min-height: 500px;
  }
-  
+
  .meningbutton{
  	position:relative;
  	top: 50px;
  	margin-bottom: 100px;
+
  }
+#meningvraag{
+		 margin-top: 90px;
+}
 
 path {
 	stroke: $primColor;
@@ -118,4 +122,13 @@ h1{
   .hidebutton{
     display: none;
   }
+
+}
+@media (max-width: 700px){
+  .hidebutton{
+    display: none;
+  }
+	text {
+		font-size: 0.7em;
+	}
 }

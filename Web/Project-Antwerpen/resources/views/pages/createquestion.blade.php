@@ -12,16 +12,19 @@
         <p>{{ Session::get('questionadded')}}</p>
     </div>
     @endif
- 	<form method="post" action="" class="OpninionQuestionFrom">
-		{!! csrf_field() !!}
 		<h5>Alle quizvragen die nu gebruikt worden: </h5>
 		<ul>
 			@foreach($questions as $question)
 				<li>{{$question->questionbody}}</li>
 			@endforeach
 		</ul>
-      <label for="questionbody">Vul hier een quizvraag in voor dit project:</label>
+	<form method="post" action="" class="OpninionQuestionFrom">
+		{!! csrf_field() !!}
+      	<label for="questionbody">Vul hier een quizvraag in voor dit project:</label>
 		<input type="text" name="questionbody" id="addOpinionQuestion">
+		<label for="questionbody">Juiste antwoord:</label>
+		<input type="radio" name="correctanswer" value="1"> Correct<br>
+  		<input type="radio" name="correctanswer" value="0"> Fout<br>
 		<input type="submit" value="Toevoegen" class="btn btn-success meningbutton" id="btnAddOpinionQuestion">
 	</form>
 </div>
