@@ -298,14 +298,13 @@ class AdminController extends Controller
     }
     public function deleteopinionquestion($id)
     {
+      $opinionquestion = opinion_question::where('opinionquestion_id', $id)->first();
 
-      $opinionquestions = opinion_question::where('opinionquestion_id', $id)->get();
-
-      $opinionquestions->delete();
+      $opinionquestion->delete();
 
       Session::flash('opinionQuestiondeleted', 'De meningvraag succesvol verwijderd.');
 
-      return redirect('/deleteopinionquestion');
+      return redirect('/verwijdermeningvraag');
     }
 
 

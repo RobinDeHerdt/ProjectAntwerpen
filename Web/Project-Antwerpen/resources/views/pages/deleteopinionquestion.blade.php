@@ -24,7 +24,7 @@
               <li  data="<%projectquestion.id%>"  ><%projectquestion.body%></li>
 
              <!--  <a href="/verwijdermeningvraag/<% $index + 1 %>" class="btn btn-danger">delete</a> -->
-              <input type="submit" value="verwijderen" ng-click="Qcont.submitme(projectquestion.Qid)">
+              <button ng-click="Qcont.submitme(projectquestion.Qid)">Verwijderen</button>
 
 
           </div>
