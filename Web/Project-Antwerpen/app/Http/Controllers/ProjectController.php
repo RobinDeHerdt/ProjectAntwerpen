@@ -21,13 +21,9 @@ class ProjectController extends Controller
         return view('pages.project-tijdlijn', compact('project'));
     }
 
-    public function info($id)
+    public function info()
     {
-        $project = Project::find($id);
-        $projectfases = milestone::where('project_id', $id)->get();
-
-
-        return view('pages.project-uitleg', compact('project', 'projectfases'));
+        return view('pages.project-uitleg');
     }
     public function kaart($id)
     {
@@ -42,7 +38,7 @@ class ProjectController extends Controller
         // $questions = DB::table('projects')->join('opinion_questions', 'projects.id' , '=', 'opinion_questions.project_id')->where('projects.id', '=', $id)->select('opinionquestionbody', 'up_vote', 'down_vote')->get();
         $questions = opinion_question::where('project_id', $id)->get();
 
-        // $projectts = project::orderBy('id', 'asc')->get();
-        return view('pages.project-meningen', compact('questions', 'user'));
+
+        return view('pages.project-meningen', compact('questions', 'user' ));
     }
 }

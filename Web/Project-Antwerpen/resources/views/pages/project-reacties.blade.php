@@ -6,6 +6,7 @@
 @extends('navigation-layout')
 @section('content')
 <link rel="stylesheet" href="\css/reacties.css">
+<div class="projectdiv">
 	@if(Session::has('commented'))
     <div class="alert alert-success col-md-8 col-md-offset-2">
         <p>{{ Session::get('commented')}}</p>
@@ -70,7 +71,7 @@
 		        	<div class="col-md-10 bannerReactie"><img class="reactieimg" src="\img/reactie.png"></div>
 		            <div class="input-field form-control">
 		            <div class="rating" id="rating">
-					
+
 					<div class="stars">
 				        <input type="radio" name="rating" class="star-1" id="star-1" value="1"/>
 				        <label class="star-1" for="star-1">1</label>
@@ -93,13 +94,15 @@
 	   	</div>
     </div>
    </div>
+ </div>
+
    <style type="text/css">
    		form .stars {
 		  background: url("/../img/stars.png") repeat-x 0 0;
 		  width: 150px;
 		  margin: 0 auto;
 		}
-		 
+
 		form .stars input[type="radio"] {
 		  position: absolute;
 		  opacity: 0;
@@ -166,6 +169,7 @@
 		  transition: width 0.5s;
 }
  </style>
+
 <script type="text/javascript">
 	var d = document.getElementById("reacties");
 	d.className += "active";

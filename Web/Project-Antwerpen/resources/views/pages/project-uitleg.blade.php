@@ -9,7 +9,7 @@
 <body>
 
 <style type="text/css">
-    
+
     h2 {    font-family: Open Sans;
     font-weight: bold;
     font-size: 30px;}
@@ -25,6 +25,7 @@
     color: #7f8c97;
     font-size: 15px;
     }
+
     .fase-text {
         margin-top:50px;
     }
@@ -34,12 +35,13 @@
         margin-left: -381px;
     margin-right: -381px;}
 
+
     .imgtile>img {width:65%; margin:3em;}
 
     .bg-fase {
     position:relative;
     min-height:320px !important;
-    
+
 }
 
     .bg-fase:after {
@@ -61,18 +63,19 @@
     z-index:10;
 }
 .bg-fase:last-child {
-    
+
      margin-bottom:50px;
 }
 .bg-fase:last-child:after {
-    
+
      display: none;;
 }
 .project-info {
     min-height:50vh;
 }
 
-</style> 
+</style>
+<div class="projectdiv">
 <div class="container">
 
     <div class="row ">
@@ -85,8 +88,8 @@
 Postcode:   {{  $project->postalcode    }}</h5>
 
             <br>
-            
-            <span>{{ $project->info }}</span>   
+
+            <span>{{ $project->info }}</span>
         </div>
     </div>
 
@@ -102,8 +105,8 @@ Postcode:   {{  $project->postalcode    }}</h5>
         </div>
     @endforeach
 </div>
-
-<script type="text/javascript">    
+</div>
+<script type="text/javascript">
 var d = document.getElementById("info");
 d.className += " active";
 </script>
