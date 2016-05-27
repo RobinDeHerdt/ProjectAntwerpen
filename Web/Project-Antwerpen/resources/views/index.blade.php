@@ -18,7 +18,11 @@
         <p>{{ Session::get('login')}}</p>
     </div>
     @endif
-
+    @if(Session::has('logout'))
+    <div class="alert alert-success">
+        <p>{{ Session::get('logout')}}</p>
+    </div>
+    @endif
     @if(Session::has('projectcreated'))
     <div class="alert alert-success">
         <p>{{ Session::get('projectcreated')}}</p>

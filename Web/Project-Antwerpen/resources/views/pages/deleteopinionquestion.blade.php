@@ -8,7 +8,7 @@
  <link rel="stylesheet" href="/css/donut-graph.css">
  <div class="col-md-offset-3 col-md-6">
    <div ng-app="questionapp">
-     <div ng-controller="questionController as Qcont">
+     <div ng-controller="questionController as Qcont" ng-cloak>
      	<form method="post"  class="OpninionQuestionFrom">
 
     		{!! csrf_field() !!}

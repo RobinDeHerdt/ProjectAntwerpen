@@ -5,6 +5,7 @@ use Session;
 use App\User;
 use Illuminate\Support\Facades\Input;
 use Validator;
+use Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -104,6 +105,13 @@ class AuthController extends Controller
         Session::flash('login', 'Je bent nu ingelogd. Welkom!');
 
         return redirect('/overzicht');
+    }
+
+    public function logout()
+    {
+        Auth::guard($this->getGuard())->logout();
+        Session::flash('logout', 'Je bent nu uitgelogd. Tot de volgende keer!');
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/overzicht');
     }
 
     // public function getLogout()
