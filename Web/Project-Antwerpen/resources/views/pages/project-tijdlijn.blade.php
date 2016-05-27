@@ -15,6 +15,7 @@
 
 </head>
 <body>
+  <div class="projectdiv">
 	@if(!$project->milestones->isEmpty())
 	<section id="cd-timeline" class="cd-container">
 
@@ -123,6 +124,7 @@
 			<h3>Er is nog geen tijdlijn aangemaakt voor dit project.</h3>
 		</div>
 	@endif
+</div>
 <script type="text/javascript">
 var d = document.getElementById("tijdlijn");
 d.className += " active";

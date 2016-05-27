@@ -9,7 +9,7 @@
 <body>
 
 <style type="text/css">
-    
+
     h2 {    font-family: Open Sans;
     font-weight: bold;
     font-size: 30px;}
@@ -25,8 +25,8 @@
     color: #7f8c97;
     font-size: 15px;
     }
-    
-    
+
+
     .bg-fase:nth-child(even) {background-color: #b0b0b0;}
 
     .imgtile>img {width:65%; margin:3em;}
@@ -34,7 +34,7 @@
     .bg-fase {
     position:relative;
     min-height:320px !important;
-    
+
 }
 
     .bg-fase:after {
@@ -56,15 +56,16 @@
     z-index:10;
 }
 .bg-fase:last-child {
-    
+
      margin-bottom:50px;
 }
 .bg-fase:last-child:after {
-    
+
      display: none;;
 }
 
-</style> 
+</style>
+<div class="projectdiv">
 <div class="container">
 
     <div class="row ">
@@ -76,8 +77,8 @@
             <h5>Postcode:   {{  $project->postalcode    }}</h5>
 
             <br>
-            
-            <span>{{ $project->info }}</span>   
+
+            <span>{{ $project->info }}</span>
         </div>
     </div>
 
@@ -93,8 +94,8 @@
         </div>
     @endforeach
 </div>
-
-<script type="text/javascript">    
+</div>
+<script type="text/javascript">
 var d = document.getElementById("info");
 d.className += " active";
 </script>

@@ -6,6 +6,7 @@
 @extends('navigation-layout')
 @section('content')
 <link rel="stylesheet" href="\css/reacties.css">
+<div class="projectdiv">
 	@if(Session::has('commented'))
     <div class="alert alert-success col-md-8 col-md-offset-2">
         <p>{{ Session::get('commented')}}</p>
@@ -79,6 +80,7 @@
 	   	</div>
     </div>
    </div>
+ </div>
 <script type="text/javascript">
 	var d = document.getElementById("reacties");
 	d.className += " active";
