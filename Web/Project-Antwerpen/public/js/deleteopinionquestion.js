@@ -33,17 +33,14 @@
 
 
      this.submitme = function(id){
-
-       (function($) {
-          jQuery.post('/verwijdermeningvraag/'+id ).success(function(response) {
-            // ...
+        $http({method: 'POST', url: 'verwijdermeningvraag/'+id}).
+          success(function(data, status, headers, config) {
+            
+          }). 
+          error(function(data, status, headers, config) {
+            
           });
-        })(jQuery);
-
-
      }
-
-
   });
 
 })();
