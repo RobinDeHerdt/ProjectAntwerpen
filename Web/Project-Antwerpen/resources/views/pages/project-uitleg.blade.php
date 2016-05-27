@@ -10,11 +10,23 @@
 
 <style type="text/css">
     
-    h2 {font-family:AntwerpREG, Verdana, sans-serif;}
+    h2 {    font-family: Open Sans;
+    font-weight: bold;
+    font-size: 30px;}
     .fa-calendar {padding:0.2em 1em 0.2em 1em;}
-    h6 {text-align: left;}
-    h5 {margin-top:2em;}
-    .bg-fase {min-height:350px;}
+    h6 {    font-family: Droid Serif, serif;
+    color: #7f8c97;
+    font-size: 15px;}
+    h5 {    font-family: Droid Serif, serif;
+    color: #7f8c97;
+    font-size: 15px;}
+    h3 {
+            font-family: Droid Serif, serif;
+    color: #7f8c97;
+    font-size: 15px;
+    }
+    
+    
     .bg-fase:nth-child(even) {background-color: #b0b0b0;}
 
     .imgtile>img {width:65%; margin:3em;}
@@ -37,32 +49,25 @@
     border-left: solid 50px transparent;
     border-right: solid 50px transparent;
 }
-.bg-fase-even {
-    position:relative;
-    min-height:320px !important;
-    
-    z-index: 10;
-}
-
-    .bg-fase-even:after {
-    content:'';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -50px;
-    width: 0;
-    height: 0;
-    border-top: solid 50px #fff;
+.bg-fase:nth-child(odd):after {
+     border-top: solid 50px #fff;
     border-left: solid 50px transparent;
     border-right: solid 50px transparent;
+    z-index:10;
 }
-.col-md-8:nth-child(even) {
-    margin-top:5em;
+.bg-fase:last-child {
+    
+     margin-bottom:50px;
 }
+.bg-fase:last-child:after {
+    
+     display: none;;
+}
+
 </style> 
 <div class="container">
 
-    <div class="row top-buffer">
+    <div class="row ">
         <div class="col-md-12" style="text-align: center;">
             <h2>Projectinformatie</h2>
             <h5>Begindatum: {{  $project->start_date    }}</h5>
@@ -77,7 +82,7 @@
     </div>
 
     @foreach($projectfases as $key=>$fase)
-        <div class="row top-buffer bg-fase" id="fase{{$key + 1}}">
+        <div class="row  bg-fase" id="fase{{$key + 1}}">
             <!-- <div class="col-md-4 imgtile Tile3"> -->
                 <div class="col-md-12">
                     <h2>Fase {{ $key + 1 }}</h2>
