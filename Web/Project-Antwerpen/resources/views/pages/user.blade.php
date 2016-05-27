@@ -35,6 +35,44 @@
 	@endif
 
 	<a href="/bewerkprofiel">Bewerk deze gegevens</a>
-</div>
 
+	@if($user->isAdmin)
+	<div id="adminpanel">
+	<h1>Administratorpaneel</h1>
+		<div class="adminwindow">
+			<h3>Quizvragen</h3>
+			<a href="/nieuwequizvraag">Maak quizvragen aan voor de mobiele applicatie</a><br>
+			<a href="/verwijderquizvraag">Verwijder quizvragen van de mobiele applicatie</a>
+			
+		</div>
+		<div class="adminwindow">
+			<h3>Meningvragen</h3>
+			
+			<a href="/nieuwemeningvraag">Maak meningvragen aan voor de mobiele applicatie</a><br>
+			<a href="/verwijdermeningvraag">Verwijder meningvragen van de mobiele applicatie</a>
+		</div>
+		<div class="adminwindow">
+			<h3>Projecten</h3>
+			
+			<a href="/nieuwproject">Maak een project aan voor de website</a><br>
+			<a href="/overzicht">Verwijder, kopieer of bewerk projecten vanuit de overzichtspagina</a>
+		</div>
+	</div>
+	@endif
+</div>
+<style type="text/css">
+	.adminwindow {
+		margin-left: 10%;
+		width: 80%;
+		padding: 5px 0 20px 0;
+		margin-bottom: 20px;
+		border: solid 1px black;
+	}
+	#adminpanel {
+		font-size: 1.1em;
+		position: relative;
+		top: 20px;
+		margin-bottom: 75px;
+	}
+</style>
 @endsection
