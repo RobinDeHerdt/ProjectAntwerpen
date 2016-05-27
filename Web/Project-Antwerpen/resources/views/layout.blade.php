@@ -15,7 +15,7 @@
           if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
               document.write('<link  rel="stylesheet" href="/css/mobile-navigation.css">');
                document.write('<script src="/js/mobilenavigation.js"><\/script>');
-               document.write(' <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"><\/script>');
+          
           }
           </script>
 
