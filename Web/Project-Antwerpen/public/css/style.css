@@ -12,15 +12,15 @@ src: url("../fonts/SunAntwerpenCd_700.svg") format("svg");
 }
 @font-face {
 font-family: sun500;
-src: url("../fonts/SunAntwerpen_500.woff") format("woff");
+src: url("../fonts/SunAntwerpen_700.woff") format("woff");
 }
 @font-face {
 font-family: sun500;
-src: url("../fonts/SunAntwerpen_500.eot");
+src: url("../fonts/SunAntwerpen_700.eot");
 }
 @font-face {
 font-family: sun500;
-src: url("../fonts/SunAntwerpen_500.svg") format("svg");
+src: url("../fonts/SunAntwerpen_700.svg") format("svg");
 }
 @font-face {
 font-family: AntwerpREG;
@@ -57,7 +57,7 @@ html, body{
     min-height: 100%;
     width: 100%;
     padding-bottom: 30px;
-    margin-bottom: -45px;
+    margin-bottom: -25px;
 }
 .ContentDiv, footer {
   display: inline-block;
@@ -140,6 +140,21 @@ font-family: AntwerpREG, Verdana, sans-serif;
 .OpninionQuestionFrom label{
 margin-top: 50px;
 }
+table{
+
+    table-layout: fixed;
+    margin-top: 40px;
+    width: 80%;
+}
+td{
+    overflow: hidden;
+}
+td:first-child {
+
+
+    width: 55%;
+}
+
 
 #addOpinionQuestion
 {
@@ -152,7 +167,10 @@ margin-top: 50px;
   margin-top: -30px;
   width: 100%;
 }
-
+.alert{
+  width:100%;
+  margin-left: 0;
+}
 .switch-toggle input:first-child{
   color: white;
   }
@@ -189,6 +207,8 @@ margin-top: 50px;
 .projectnav li{
   width:20%;
   text-align: center;
+  font-family: sun500;
+  font-size: 18px;
 }
 .caption {
       width:100%;

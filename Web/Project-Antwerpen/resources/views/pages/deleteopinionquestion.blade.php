@@ -20,13 +20,19 @@
 
     	    </select>
           <div ng-repeat="projectquestion in Qcont.projectquestions" ng-if="projectquestion.id == Qcont.projectID">
+            <table class="table">
 
-              <li  data="<%projectquestion.id%>"  ><%projectquestion.body%></li>
+
+        
+
+
+              <td class="deletequestion" data="<%projectquestion.id%>" ><%projectquestion.body%></td>
 
              <!--  <a href="/verwijdermeningvraag/<% $index + 1 %>" class="btn btn-danger">delete</a> -->
-              <button ng-click="Qcont.submitme(projectquestion.Qid)">Verwijderen</button>
+              <td><button class="questionbutton btn btn-danger" ng-click="Qcont.submitme(projectquestion.Qid)">Verwijderen</button></td>
 
 
+              </table>
           </div>
 
 
