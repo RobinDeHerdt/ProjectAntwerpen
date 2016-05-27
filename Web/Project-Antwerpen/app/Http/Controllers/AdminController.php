@@ -48,6 +48,7 @@ class AdminController extends Controller
 
   protected function store(Request $request)
     {
+        dd($request);
         $this->validate($request, [
             'project_name'      =>   'required',
             'project_info'      =>   'required',
