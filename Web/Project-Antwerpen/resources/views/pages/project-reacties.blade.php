@@ -83,11 +83,5 @@
 	var d = document.getElementById("reacties");
 	d.className += " active";
 </script>
-<script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
-			<script type="text/javascript">
-			$(document).ready(function() {
-    			$("span").click(function(event) {
-        		//get value here
-    			});
-			});</script>
+
 @stop

@@ -64,13 +64,7 @@ hr {
 	 margin:1em;
 	 height:150px;
 }
-.rating {
 
-
-  /*float:right;*/
-  /*margin-top:25px;*/
-
-}
 .rating > span {
   display: inline-block;
   position: relative;
@@ -83,6 +77,11 @@ hr {
 .rating > span:hover ~ span:before {
    content: "\2605";
    position: absolute;
+}
+.stars-filled {
+content: "\2605";
+position: absolute;
+z-index: 1000;
 }
 .input-field {
 
