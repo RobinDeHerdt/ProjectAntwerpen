@@ -197,6 +197,9 @@ td:first-child {
   margin-left: 20px;
   margin-top: 0px;
 }
+.navbar {
+  border:none;
+}
 .navbar a, .navbar li {
   color:white;
 }
