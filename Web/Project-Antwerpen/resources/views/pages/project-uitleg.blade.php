@@ -26,12 +26,13 @@
 
     @foreach($projectfases as $key=>$fase)
         <div class="row top-buffer" id="fase{{$key + 1}}">
-            <div class="col-md-4 imgtile Tile3">
-                <div class="col-md-8">
+            <!-- <div class="col-md-4 imgtile Tile3"> -->
+                <div class="col-md-12">
                     <h2>Fase {{ $key + 1 }}</h2>
-                    <span>{{ $fase->milestone_title}}</span>
+                    <h3>{{ $fase->milestone_title}}</h3>
+                    <p>{{ $fase->milestone_info }}</p>
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
     @endforeach
 </div>
