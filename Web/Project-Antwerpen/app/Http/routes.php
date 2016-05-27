@@ -32,6 +32,7 @@ Route::get('/project/{id}/meningen', 'ProjectController@meningen');
 Route::get('/nieuwemeningvraag', 'AdminController@createopinionquestion');
 Route::get('/nieuwequizvraag', 'AdminController@createquestion');
 Route::get('/verwijdermeningvraag', 'AdminController@deleteopinionquestionpage');
+Route::get('/verwijderquizvraag', 'AdminController@deletequestionpage');
 
 // Api requests
 Route::get('questions_json', 'ApiController@getQuestions');
@@ -50,5 +51,6 @@ Route::post('/nieuwequizvraag', 'AdminController@addquestion');
 Route::post('/project/{id}/reacties/{comment}', 'CommentController@delete');
 Route::post('/verwijderproject/{id}', 'AdminController@deleteproject');
 Route::post('/verwijdermeningvraag/{id}', 'AdminController@deleteopinionquestion');
+Route::post('/verwijderquizvraag/{id}', 'AdminController@deletequestion');
 
 Route::auth();
