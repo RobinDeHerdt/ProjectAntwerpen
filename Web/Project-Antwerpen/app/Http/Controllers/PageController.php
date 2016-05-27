@@ -12,7 +12,7 @@ class PageController extends Controller
 {
 	public function welcome()
 	{
-		return view('pages.welcome');
+		return redirect('/overzicht');
 	}
 
 	public function about()
