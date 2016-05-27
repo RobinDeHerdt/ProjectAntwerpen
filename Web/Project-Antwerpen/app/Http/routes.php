@@ -29,8 +29,9 @@ Route::get('/project/{id}/reacties', 'CommentController@reacties');
 Route::get('/project/{id}/info', 'ProjectController@info');
 Route::get('/project/{id}/kaart', 'ProjectController@kaart');
 Route::get('/project/{id}/meningen', 'ProjectController@meningen');
-Route::get('/nieuwemeningvraag', 'AdminController@opinionquestion');
-Route::get('/deletemeningvraag', 'AdminController@deleteopinionquestionpage');
+Route::get('/nieuwemeningvraag', 'AdminController@createopinionquestion');
+Route::get('/nieuwequizvraag', 'AdminController@createquestion');
+Route::get('/verwijdermeningvraag', 'AdminController@deleteopinionquestionpage');
 
 // Api requests
 Route::get('questions_json', 'ApiController@getQuestions');
@@ -43,10 +44,11 @@ Route::post('/bewerkprofiel', 'UserController@update');
 Route::post('/kopiërenproject/{id}', 'AdminController@copy');
 Route::post('/project/{id}/reacties', 'CommentController@store');
 Route::post('/nieuwemeningvraag', 'AdminController@addopinionquestion');
+Route::post('/nieuwequizvraag', 'AdminController@addquestion');
 
 // Delete requests
 Route::post('/project/{id}/reacties/{comment}', 'CommentController@delete');
 Route::post('/verwijderproject/{id}', 'AdminController@deleteproject');
-Route::post('/deleteopinionquestion/{id}', 'AdminController@deleteopinionquestion');
+Route::post('/verwijdermeningvraag/{id}', 'AdminController@deleteopinionquestion');
 
 Route::auth();

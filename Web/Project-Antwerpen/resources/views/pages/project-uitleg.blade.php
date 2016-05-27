@@ -10,94 +10,31 @@
 
 <div class="container">
 
-<div class="row top-buffer" id="fase1">
-    
-    <div class="col-md-12" style="text-align: center;">
-    <h2>Project Uitleg</h2>
-    <h6>begindatum: 06/06/2016</h6>
-    <h6>einddatum: 08/06/2016</h6>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-    </div>
-    
     <div class="row top-buffer" id="fase1">
-    <div class="col-md-4 imgtile Tile3"><img src="http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg"></div>
-    <div class="col-md-8">
-    <h2>Fase 1</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-    </div>
-    
+        <div class="col-md-12" style="text-align: center;">
+            <h2>Projectinformatie</h2>
+            <h5>Begindatum: {{  $project->start_date    }}</h5>
+            <h5>Einddatum:  {{  $project->end_date      }}</h5>
+            <h5>Locatie:    {{  $project->location      }}</h5>
+            <h5>Postcode:   {{  $project->postalcode    }}</h5>
 
-    <div class="row top-buffer" id="fase2" >
-    <div class="col-md-8">
-    <h2>Fase 2</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-    <div class="col-md-4 imgtile Tile4" ><img src="http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg"></div>
+            <br>
+            
+            <span>{{ $project->info }}</span>   
+        </div>
     </div>
 
-
-     <div class="row top-buffer" id="fase3">
-    <div class="col-md-4 imgtile Tile3"><img src="http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg"></div>
-    <div class="col-md-8">
-    <h2>Fase 3</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-    </div>
-    
-
-    <div class="row top-buffer" id="fase4" >
-    <div class="col-md-8">
-    <h2>Fase 4</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-    <div class="col-md-4 imgtile Tile4" ><img src="http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg"></div>
-    </div> 
-
-
-    <div class="row top-buffer" id="fase5">
-    <div class="col-md-4 imgtile Tile3"><img src="http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg"></div>
-    <div class="col-md-8">
-    <h2>Fase 5</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-    </div>
-    
-
-    <div class="row top-buffer" id="fase6" >
-    <div class="col-md-8">
-    <h2>Fase 6</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-    <div class="col-md-4 imgtile Tile4" ><img src="http://www.hotelfirean.com/wordpress/wp-content/gallery/antwerpen/hotelfirean_antwerpen_02.jpg"></div>
-    </div>
-
+    @foreach($projectfases as $key=>$fase)
+        <div class="row top-buffer" id="fase{{$key + 1}}">
+            <!-- <div class="col-md-4 imgtile Tile3"> -->
+                <div class="col-md-12">
+                    <h2>Fase {{ $key + 1 }}</h2>
+                    <h3>{{ $fase->milestone_title}}</h3>
+                    <p>{{ $fase->milestone_info }}</p>
+                </div>
+            <!-- </div> -->
+        </div>
+    @endforeach
 </div>
 
 <script type="text/javascript">    

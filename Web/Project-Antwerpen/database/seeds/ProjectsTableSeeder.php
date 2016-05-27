@@ -15,7 +15,7 @@ class ProjectsTableSeeder extends Seeder
         DB::table('projects')->insert([
         	'project_name' => 'Nieuwe sporen centraal station',
         	'headerimage' => '/img/station.jpg',
-        	'info' => 'Er komen 3 nieuwe sporen in het centraal station',
+        	'info' => 'Er komen 3 nieuwe sporen in het centraal station. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         	'location' => 'Antwerpen',
         	'postalcode' => '2000',
         	'xcoord' => 51.216949,
@@ -29,7 +29,7 @@ class ProjectsTableSeeder extends Seeder
     	DB::table('projects')->insert([
         	'project_name' => 'Vernieuwing MAS',
         	'headerimage' => '/img/mas.jpg',
-        	'info' => 'Het Museum aan de Stroom zal vernieuwd worden.',
+        	'info' => 'Het Museum aan de Stroom zal vernieuwd worden. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         	'location' => 'Antwerpen',
         	'postalcode' => '2000',
         	'xcoord' => 51.2289238,
@@ -43,7 +43,7 @@ class ProjectsTableSeeder extends Seeder
     	DB::table('projects')->insert([
         	'project_name' => 'Restauratie kathedraal',
         	'headerimage' => '/img/kathedraal.jpg',
-        	'info' => 'De kathedraal zal gerestaureerd worden.',
+        	'info' => 'De kathedraal zal gerestaureerd worden. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         	'location' => 'Antwerpen',
         	'postalcode' => '2000',
         	'xcoord' => 51.2240454,
@@ -57,7 +57,7 @@ class ProjectsTableSeeder extends Seeder
     	DB::table('projects')->insert([
         	'project_name' => 'Rondleidingen Antwerpen',
         	'headerimage' => '/img/steen.jpg',
-        	'info' => 'Er worden nieuwe rondleidingen georganiseerd in Antwerpen.',
+        	'info' => 'Er worden nieuwe rondleidingen georganiseerd in Antwerpen. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         	'location' => 'Antwerpen',
         	'postalcode' => '2000',
         	'xcoord' => 51.2603015,
@@ -71,7 +71,7 @@ class ProjectsTableSeeder extends Seeder
     	DB::table('projects')->insert([
         	'project_name' => 'Aanleg sportpark',
         	'headerimage' => '/img/sportpark.jpg',
-        	'info' => 'Er komt een nieuw sportpark in Deurne.',
+        	'info' => 'Er komt een nieuw sportpark in Deurne. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         	'location' => 'Antwerpen',
         	'postalcode' => '2000',
         	'xcoord' => 51.2240454,

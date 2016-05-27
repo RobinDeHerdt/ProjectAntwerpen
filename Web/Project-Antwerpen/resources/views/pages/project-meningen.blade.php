@@ -25,7 +25,7 @@
 
 @if ($user && $user->isAdmin)
 	<a href="/nieuwemeningvraag" class="btn btn-success meningbutton">Meningvraag toevoegen</a>
-  <a href="/deletemeningvraag" class="btn btn-danger meningbutton">Meningvraag verwijderen</a>
+  <a href="/verwijdermeningvraag" class="btn btn-danger meningbutton">Meningvraag verwijderen</a>
 @endif
 
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>

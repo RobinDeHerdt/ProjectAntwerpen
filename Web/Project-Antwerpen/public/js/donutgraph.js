@@ -58,8 +58,7 @@ let pie = d3.layout.pie()
   .value(d => d)
 
 let draw = function() {
-  if (color[1]!=0 && color[0]!=0) {
-
+  if (dataset[1]!=0 && dataset[0]!=0) {
 
 
 
@@ -138,8 +137,7 @@ let draw = function() {
       return [arc.centroid(d), outerArc.centroid(d), pos]
     })
     .attr('stroke',(d, i) => colors[i])
-
-
+  }
 }
 
 function next(){
@@ -154,16 +152,19 @@ function next(){
 }
 
 function prev() {
-  if(currentQuestion>0){
-    currentQuestion--;
-    canAnimate = true;
-    dataset = [graphdata[currentQuestion].down_vote, graphdata[currentQuestion].up_vote];
-    document.getElementById('meningvraag').innerHTML = graphdata[currentQuestion].opinionquestionbody;
-  }else {
-    canAnimate = false;
-  }
+    if(currentQuestion>0)
+    {
+      currentQuestion--;
+      canAnimate = true;
+      dataset = [graphdata[currentQuestion].down_vote, graphdata[currentQuestion].up_vote];
+      document.getElementById('meningvraag').innerHTML = graphdata[currentQuestion].opinionquestionbody;
     }
-}
+    else 
+    {
+      canAnimate = false;
+    }
+  }
+
 
 draw()
 
