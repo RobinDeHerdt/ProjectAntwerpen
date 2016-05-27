@@ -10,6 +10,7 @@ use App\milestone;
 use App\opinion_question;
 use Session;
 use App\comment;
+use App\question;
 
 class AdminController extends Controller
 {
@@ -271,12 +272,21 @@ class AdminController extends Controller
         return view('pages.deleteproject', compact('project'));
     }
 
-    public function opinionquestion()
+    public function createopinionquestion()
     {
         $projects = project::orderBy('id', 'asc')->get();
+        
         // $project = Project::find($id);
 
-        return view('pages.NewOpinionQuestion', compact('projects'));
+        return view('pages.createopinionquestion', compact('projects'));
+    }
+
+    public function createquestion()
+    {
+        //$projects = project::orderBy('id', 'asc')->get();
+        $questions = question::orderBy('question_id', 'asc')->get();
+
+        return view('pages.createquestion', compact('questions'));
     }
     public function deleteopinionquestionpage()
     {
@@ -313,5 +323,18 @@ class AdminController extends Controller
         Session::flash('opinionquestionadded', 'De meningvraag werd succesvol toegevoegd.');
 
         return redirect('/project/'.$selectedProject.'/meningen');
+    }
+
+    public function addquestion(Request $request)
+    {
+        $question = new question;
+
+        $question->questionbody = $request->questionbody;
+
+        $question->save();
+
+        Session::flash('questionadded', 'De vraag werd succesvol toegevoegd.');
+
+        return back();
     }
 }
