@@ -17,6 +17,7 @@ class CommentController extends Controller
     {
         $this->validate($request, [
             'reactie'      =>   'required',
+            'rating'       =>   'required',
         ]);
 
         $comment = new comment;
@@ -25,6 +26,7 @@ class CommentController extends Controller
 
 
         $comment->comment_body  = $request->reactie;
+        $comment->rating        = $request->rating;
         $comment->project()->associate($project);
         $comment->user()->associate($user);
         $comment->save();

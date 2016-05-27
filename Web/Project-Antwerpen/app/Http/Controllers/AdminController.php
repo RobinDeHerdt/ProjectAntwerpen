@@ -57,7 +57,7 @@ class AdminController extends Controller
             'project_color'     =>   'required',
             'project_startdate' =>   'required',
             'project_enddate'   =>   'required',
-            'headerimage'       =>   'required|image',
+            'headerimage'       =>   'required',
         ]);
 
         $project = new project;

@@ -16,7 +16,7 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->string('project_name');
             $table->string('headerimage');
-            $table->string('info');
+            $table->string('info', 1500);
             $table->string('location');
             $table->string('postalcode');
             $table->double('xcoord');
