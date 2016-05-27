@@ -20,7 +20,7 @@
 	<div class="col-md-12 col-md-offset-2 reactieContainer" >
 	<div class="col-md-9 col-md-offset-2 reactieBody">
 		@foreach ($project->comments as $key=>$comment)
-    <div class="User_comment">
+    <div class="User_comment col-md-12">
 
 
     <div class="Profile_img">
