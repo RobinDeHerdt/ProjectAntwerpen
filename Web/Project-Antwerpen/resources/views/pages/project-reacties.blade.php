@@ -169,7 +169,7 @@
 		  transition: width 0.5s;
 }
  </style>
->>>>>>> upstream/master
+
 <script type="text/javascript">
 	var d = document.getElementById("reacties");
 	d.className += "active";
