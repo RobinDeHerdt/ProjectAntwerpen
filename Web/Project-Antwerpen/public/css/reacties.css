@@ -88,3 +88,6 @@ margin-top:0;
 #rating > span {
 	font-size:40px;
 }
+.reactie-error {
+	clear:both;
+}

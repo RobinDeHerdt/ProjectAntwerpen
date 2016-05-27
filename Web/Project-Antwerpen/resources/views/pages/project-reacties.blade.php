@@ -57,7 +57,7 @@
 		@endforeach
 
 
-		<div class=" col-md-11" style="margin-left:5%">
+		<div class=" col-md-12 reactie-error">
 		@if (Auth::guest())
 			<strong>Je moet ingelogd zijn om een reactie te geven. Je kan <a href="\login">hier</a> inloggen.</strong>
 			<br />
