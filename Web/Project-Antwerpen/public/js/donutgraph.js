@@ -7,7 +7,7 @@ let dataset = [graphdata[currentQuestion].down_vote, graphdata[currentQuestion].
 // let colors = ['#8dd3c7', '#ffffb3', '#bebada', '#fb8072', '#80b1d3', '#fdb462', '#b3de69', '#fccde5', '#d9d9d9', '#bc80bd'];
 // let colors = ['#67001f', '#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#e0e0e0', '#bababa', '#878787', '#4d4d4d', '#1a1a1a'];
 let colors = ['#CF0039', '#009882', '#f46d43', '#fdae61', '#fee08b', '#e6f598', '#abdda4', '#66c2a5', '#3288bd', '#5e4fa2']
-let color = ['Niet Akkoord', 'Akkoord']
+let color = ['Niet Akkoord ('+ dataset[0] + ')', 'Akkoord ('+ dataset[1] + ')']
 
 let width = document.querySelector('.chart-wrapper').offsetWidth,
   height = document.querySelector('.chart-wrapper').offsetHeight,
@@ -159,7 +159,7 @@ function prev() {
       dataset = [graphdata[currentQuestion].down_vote, graphdata[currentQuestion].up_vote];
       document.getElementById('meningvraag').innerHTML = graphdata[currentQuestion].opinionquestionbody;
     }
-    else 
+    else
     {
       canAnimate = false;
     }

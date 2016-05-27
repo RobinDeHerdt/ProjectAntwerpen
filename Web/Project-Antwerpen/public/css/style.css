@@ -231,6 +231,9 @@ td:first-child {
   font-family: sun700;
 
 }
+ #navbar .active a{
+      font-family: sun700;
+}
 
 .caption {
       width:100%;
