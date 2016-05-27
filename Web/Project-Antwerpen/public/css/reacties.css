@@ -64,26 +64,7 @@ hr {
 	 margin:1em;
 	 height:150px;
 }
-.rating {
 
-
-  /*float:right;*/
-  /*margin-top:25px;*/
-
-}
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 0.8em;
-  font-size: 30px;
-  color:#ffd203;
-  float:right;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-}
 .input-field {
 
 height:50px;
@@ -94,6 +75,9 @@ padding:0;
 
 
 }
+.rating {
+	float:right;
+}
 #rating {
 
 float:none;
@@ -103,4 +87,7 @@ margin-top:0;
 }
 #rating > span {
 	font-size:40px;
+}
+.reactie-error {
+	clear:both;
 }

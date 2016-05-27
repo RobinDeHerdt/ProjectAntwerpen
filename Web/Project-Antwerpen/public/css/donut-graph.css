@@ -25,7 +25,9 @@ src: url("../fonts/AntwerpenTall-Tall.svg") format("svg");
 
 $primColor: #0d0d0d;
 $secColor: #fff;
-
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
 body {
 	overflow: hidden;
 	font-size: 16px;
