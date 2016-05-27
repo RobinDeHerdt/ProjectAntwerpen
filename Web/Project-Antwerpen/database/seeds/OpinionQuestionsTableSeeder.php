@@ -18,7 +18,7 @@ class OpinionQuestionsTableSeeder extends Seeder
             'down_vote' => 1,
     	]);
       DB::table('opinion_questions')->insert([
-        'opinionquestionbody' => 'Vind je van Het uiterlijk van het station?',
+        'opinionquestionbody' => 'Heb je het gevoel dat er genoeg bestemmingen zijn als je met de trein vanuit Antwerpen reist?',
           'project_id' => 1,
           'up_vote' => 2,
           'down_vote' => 2,

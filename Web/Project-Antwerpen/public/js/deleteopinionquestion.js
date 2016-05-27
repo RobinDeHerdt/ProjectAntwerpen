@@ -19,9 +19,8 @@
     questionbody.push(json);
   }
 
-  app.controller('questionController', function(){
+  app.controller('questionController', function($http){
     this.projectID = projectid;
-    this.questionID = 0;
     this.projectnames = projectnamen;
     this.projectquestions = questionbody;
 
@@ -30,15 +29,18 @@
      ddl = document.getElementById("Project_names");
      projectid = ddl.options[ddl.selectedIndex].getAttribute("data");
      this.projectID = projectid;
-       console.log(projectid);
-     }
-
-     this.submitme = function(){
-
-       window.location.href = "deleteopinionquestion/"+ this.questionID;
      }
 
 
+     this.submitme = function(id){
+        $http({method: 'POST', url: 'verwijdermeningvraag/'+id}).
+          success(function(data, status, headers, config) {
+            
+          }). 
+          error(function(data, status, headers, config) {
+            
+          });
+     }
   });
 
 })();

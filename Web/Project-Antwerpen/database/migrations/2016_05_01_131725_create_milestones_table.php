@@ -16,7 +16,7 @@ class CreateMilestonesTable extends Migration
             $table->increments('milestone_id');
             $table->string('milestone_title');
             $table->string('milestone_image');
-            $table->string('milestone_info');
+            $table->string('milestone_info', 1500);
             $table->date('start_date');
             $table->date('end_date');
         });   
