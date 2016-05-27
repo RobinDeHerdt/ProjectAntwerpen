@@ -302,7 +302,7 @@ class AdminController extends Controller
 
     public function addopinionquestion(Request $request)
     {
-        $selectedProject = $request->projectname;
+        $selectedProject = $request->Project_names;
         $project = Project::find($selectedProject);
 
         $opinionquestion = new opinion_question;
