@@ -17,7 +17,6 @@ class CreateOpinonQuestionsTable extends Migration
             $table->string('opinionquestionbody');
             $table->integer('up_vote');
             $table->integer('down_vote');
-            // $table->string('project_link');
         });
 
          Schema::table('opinion_questions', function($table) {

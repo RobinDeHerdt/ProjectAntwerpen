@@ -162,10 +162,9 @@ function initialize() {
                 </div>
 
                 <div class="form-group">
-                    <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
                     <label>Projectkleur</label>
                     <select class="c-select form-control input-md" name="project_color" alt="Kies een kleur voor dit project" value="{{old('project_color')}}">
-                        <option selected disabled>Projectkleur</option>
+                        <option disabled>Projectkleur</option>
                         <option value="orange"  alt="Oranje">   Oranje  </option>
                         <option value="purple"  alt="Paars">    Paars   </option>
                         <option value="green"   alt="Groen">    Groen   </option>

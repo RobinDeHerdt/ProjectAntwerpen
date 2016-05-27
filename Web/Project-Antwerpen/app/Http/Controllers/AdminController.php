@@ -57,7 +57,7 @@ class AdminController extends Controller
             'project_color'     =>   'required',
             'project_startdate' =>   'required',
             'project_enddate'   =>   'required',
-            'headerimage'       =>   'required|image',
+            'headerimage'       =>   'required',
         ]);
 
         $project = new project;
@@ -296,6 +296,14 @@ class AdminController extends Controller
 
         return view('pages.deleteopinionquestion', compact('projects', 'questions'));
     }
+
+    public function deletequestionpage()
+    {
+        $questions = question::orderBy('question_id', 'asc')->get();
+
+        return view('pages.deletequestion', compact('questions'));
+    }
+
     public function deleteopinionquestion($id)
     {
       $opinionquestion = opinion_question::where('opinionquestion_id', $id)->first();
@@ -304,10 +312,8 @@ class AdminController extends Controller
 
       Session::flash('opinionQuestiondeleted', 'De meningvraag succesvol verwijderd.');
 
-      return redirect('/verwijdermeningvraag');
+      return redirect('/overzicht');
     }
-
-
 
     public function addopinionquestion(Request $request)
     {
@@ -329,11 +335,23 @@ class AdminController extends Controller
         $question = new question;
 
         $question->questionbody = $request->questionbody;
+        $question->correctanswer = $request->correctanswer;
 
         $question->save();
 
         Session::flash('questionadded', 'De vraag werd succesvol toegevoegd.');
 
         return back();
+    }
+
+    public function deletequestion($id)
+    {
+      $question = question::where('question_id', $id)->first();
+
+      $question->delete();
+
+      Session::flash('questiondeleted', 'De vraag succesvol verwijderd.');
+
+      return back();
     }
 }
