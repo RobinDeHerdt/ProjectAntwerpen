@@ -46,16 +46,15 @@ h1, h2 {
   .nav-tabs>li.active>a {
     background-color: #909090;
     color:white;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+   
   }
   .nav-tabs>li.active>a:hover {
     background-color: #909090;
     color:white;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  
   }
  .nav-tabs>li>a:hover {
-    
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+   
   }
 
 /* -------------------------------- 
