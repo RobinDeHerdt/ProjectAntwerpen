@@ -1,13 +1,19 @@
 var graphdata = JSON.parse(document.getElementById('Graphdata').value);
 var currentQuestion = 0 ;
 var canAnimate;
-document.getElementById('meningvraag').innerHTML = graphdata[currentQuestion].opinionquestionbody;
-let dataset = [graphdata[currentQuestion].down_vote, graphdata[currentQuestion].up_vote]
+let dataset;
+let colors;
+let color;
 
-// let colors = ['#8dd3c7', '#ffffb3', '#bebada', '#fb8072', '#80b1d3', '#fdb462', '#b3de69', '#fccde5', '#d9d9d9', '#bc80bd'];
-// let colors = ['#67001f', '#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#e0e0e0', '#bababa', '#878787', '#4d4d4d', '#1a1a1a'];
-let colors = ['#CF0039', '#009882', '#f46d43', '#fdae61', '#fee08b', '#e6f598', '#abdda4', '#66c2a5', '#3288bd', '#5e4fa2']
-let color = ['Niet Akkoord ('+ dataset[0] + ')', 'Akkoord ('+ dataset[1] + ')']
+if(graphdata != 0){
+document.getElementById('meningvraag').innerHTML = graphdata[currentQuestion].opinionquestionbody;
+dataset = [graphdata[currentQuestion].down_vote, graphdata[currentQuestion].up_vote]
+colors = ['#CF0039', '#009882', '#f46d43', '#fdae61', '#fee08b', '#e6f598', '#abdda4', '#66c2a5', '#3288bd', '#5e4fa2']
+color = ['Niet Akkoord ('+ dataset[0] + ')', 'Akkoord ('+ dataset[1] + ')']
+}else {
+  $("#NoOpninion" ).removeClass( "hide" );
+}
+
 
 let width = document.querySelector('.chart-wrapper').offsetWidth,
   height = document.querySelector('.chart-wrapper').offsetHeight,
@@ -58,9 +64,10 @@ let pie = d3.layout.pie()
   .value(d => d)
 
 let draw = function() {
+  if(graphdata != 0){
   if (dataset[1]!=0 && dataset[0]!=0) {
 
-
+    $("#noAnswers" ).addClass( "hide" );
 
   svg.append("g").attr("class", "lines")
   svg.append("g").attr("class", "slices")
@@ -137,7 +144,12 @@ let draw = function() {
       return [arc.centroid(d), outerArc.centroid(d), pos]
     })
     .attr('stroke',(d, i) => colors[i])
+  }else {
+    (function($) {
+      $("#noAnswers" ).removeClass( "hide" );
+    })(jQuery);
   }
+}
 }
 
 function next(){
@@ -171,6 +183,8 @@ draw()
     let button = document.querySelector('button');
 
     let replay = () => {
+      if(graphdata != 0){
+      color = ['Niet Akkoord ('+ dataset[0] + ')', 'Akkoord ('+ dataset[1] + ')'];
       if(canAnimate){
 
         d3.selectAll('.slices').transition().ease('back').duration(500).delay(0).style('opacity', 0).attr('transform', 'translate(0, 250)').remove()
@@ -179,6 +193,7 @@ draw()
 
         setTimeout(draw, 800)
       }
+    }
 
 }
 

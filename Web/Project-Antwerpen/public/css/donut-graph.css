@@ -120,10 +120,22 @@ h1{
 #Graphdata{
 	display: none;
 }
+#noAnswers, #NoOpninion{
+	position: absolute;
+	margin-top: -280px;
+	left: 0;
+	right: 0;
+}
+.hide{
+	display: none;
+}
 @media (max-width: 900px){
   .hidebutton{
     display: none;
   }
+	#noAnswers, #NoOpninion{
+		margin-top: -350px;
+	}
 
 }
 @media (max-width: 700px){

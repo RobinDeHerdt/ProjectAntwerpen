@@ -10,6 +10,14 @@
         <link rel="stylesheet" href="/css/font-awesome.min.css">
         <link href="http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700" rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="../../css/toggle-switch.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+          if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+              document.write('<link  rel="stylesheet" href="/css/mobile-navigation.css">');
+               document.write('<script src="/js/mobilenavigation.js"><\/script>');
+               document.write(' <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"><\/script>');
+          }
+          </script>
 
     </head>
     <body>
@@ -31,6 +39,8 @@
 
             </div>
           </div>
+
+
 
          <!--  <ul class="nav navbar-nav navbar-right">
            <li><a href="/register"><span class="fa  fa-pencil "></span> Sign Up</a></li>
@@ -54,17 +64,20 @@
 
       </div>
 
+
+
+
       @yield('navigation-layout')
 
 
     @yield('content')
     </div>
      <footer class="footer">
-      
+
         <p>&copy Stad Antwerpen</p>
-      
+
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
     <script src="../../js/sort.js"></script>
     <script src="\js/MakeMilestones.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>

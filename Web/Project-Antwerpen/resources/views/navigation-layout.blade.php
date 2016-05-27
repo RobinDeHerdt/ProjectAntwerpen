@@ -1,4 +1,7 @@
 @section('navigation-layout')
+<div  id="navmobile" class="img1">
+
+</div>
 <ul class="projectnav nav nav-tabs" id="navbar">
     <li id="tijdlijn"><a href="tijdlijn">Tijdlijn</a></li>
     <li id="info"><a href="info">Info</a></li>
@@ -6,4 +9,5 @@
     <li id="meningen"><a href="meningen">Meningen</a></li>
     <li id="reacties"><a href="reacties">Reacties</a></li>
   </ul>
+
  @stop

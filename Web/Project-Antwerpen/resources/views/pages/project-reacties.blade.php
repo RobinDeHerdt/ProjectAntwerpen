@@ -70,7 +70,7 @@
 		        	<div class="col-md-10 bannerReactie"><img class="reactieimg" src="\img/reactie.png"></div>
 		            <div class="input-field form-control">
 		            <div class="rating" id="rating">
-					
+
 					<div class="stars">
 				        <input type="radio" name="rating" class="star-1" id="star-1" value="1"/>
 				        <label class="star-1" for="star-1">1</label>
@@ -93,13 +93,14 @@
 	   	</div>
     </div>
    </div>
+
    <style type="text/css">
    		form .stars {
 		  background: url("/../img/stars.png") repeat-x 0 0;
 		  width: 150px;
 		  margin: 0 auto;
 		}
-		 
+
 		form .stars input[type="radio"] {
 		  position: absolute;
 		  opacity: 0;
@@ -166,6 +167,7 @@
 		  transition: width 0.5s;
 }
  </style>
+>>>>>>> upstream/master
 <script type="text/javascript">
 	var d = document.getElementById("reacties");
 	d.className += "active";
