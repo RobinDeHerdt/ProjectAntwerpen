@@ -1,4 +1,4 @@
-duiven<?php
+<?php
   //set headers to NOT cache a page
   header("Content-Type: application/json");
 ?>

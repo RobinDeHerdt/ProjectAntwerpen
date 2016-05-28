@@ -52,42 +52,30 @@ hr {
 .btn-reageer {
 	margin-bottom: 2em;
 }
-#sterren {
-	 margin:1em;
-	 height:50px;
-}
-#onderwerp {
-	 margin:1em;
-	 height:50px;
-}
+
 #mening {
-	 margin:1em;
-	 height:150px;
+	height:150px;
 }
-
 .input-field {
-
-height:50px;
-display:inline-block;
-margin:1em;
-padding:0;
-
-
-
+	display:inline-block;
+	padding:0;
 }
+
 .rating {
 	float:right;
 }
-#rating {
 
-float:none;
-margin:auto;
-display:table;
-margin-top:0;
+#rating {
+	float:none;
+	margin:auto;
+	display:table;
+	margin-top:0;
 }
+
 #rating > span {
 	font-size:40px;
 }
+
 .reactie-error {
 	clear:both;
 }
