@@ -38,9 +38,6 @@ function initialize() {
         draggable: true,
     });
 
-
-
-    // Inital value
     document.getElementById('lng').value = initLng;
     document.getElementById('lat').value = initLat;
 
