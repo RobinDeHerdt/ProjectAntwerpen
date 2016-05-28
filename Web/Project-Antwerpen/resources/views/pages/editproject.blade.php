@@ -14,51 +14,8 @@
 @section('content')
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-
-<script>
-function displayMap()
-{
-    document.getElementById('googleMap').style.display="block";
-    initialize();
-}
-function initialize() {
-    var initLat = {{$project->xcoord}};
-    var initLng = {{$project->ycoord}};
-    var mapProp = {
-        center:new google.maps.LatLng(51.2240454,4.3982035),
-        zoom:12,
-        mapTypeId:google.maps.MapTypeId.ROADMAP
-    };
-
-    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-    var marker = new google.maps.Marker({
-        position: {lat: initLat, lng: initLng},
-        map: map,
-        draggable: true,
-    });
-
-
-
-    // Inital value
-    document.getElementById('lng').value = initLng;
-    document.getElementById('lat').value = initLat;
-
-    google.maps.event.addDomListener(window, "resize", function() {
-        var center = map.getCenter();
-        google.maps.event.trigger(map, "resize");
-        map.setCenter(center);
-    });
-
-    google.maps.event.addListener(marker, "drag", function(event) {
-        var lat = event.latLng.lat();
-        var lng = event.latLng.lng();
-
-        document.getElementById('lng').value = lng;
-        document.getElementById('lat').value = lat;
-    });
-}
-</script>
+    <script src="\js/editgooglemaps.js"></script>
+    <link rel="stylesheet" type="text/css" href="\css/template.css">
 <body>
 
 <div class="container ProjectFrom">
@@ -66,7 +23,6 @@ function initialize() {
 
 <form role="form" method="POST" action="/bewerkproject/{{$project->id}}" novalidate="" enctype="multipart/form-data">
 {!! csrf_field() !!}
-<!-- Steps Progress and Details - START -->
 <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
     <div class="row">
     <h1 style="text-align:center">Project bewerken</h1>
@@ -78,7 +34,6 @@ function initialize() {
             <span class="progress-completed">0%</span>
         </div>
     </div>
-        <!-- Start validation messages -->
     @if ($errors->all())
         <h4>Het project is niet helemaal af. Volgende zaken zijn nog niet in orde: </h4>
     @endif
@@ -249,8 +204,8 @@ function initialize() {
                <div id="googleMap"></div>
                <strong>Sleep de marker naar de projectlocatie</strong>
 
-               <input type="hidden" id="lat" name="lat"></input>
-               <input type="hidden" id="lng" name="lng"></input>
+               <input type="hidden" id="lat" name="lat" value="{{$project->xcoord}}"></input>
+               <input type="hidden" id="lng" name="lng" value="{{$project->ycoord}}"></input>
                 <div class="form-group">
                     <input value="Volgende" type="button" class="btn  btn-width btn-danger btn-lg" onclick="triggerClick(4);" alt="Volgende knop">
                </div>
@@ -260,9 +215,7 @@ function initialize() {
     <div class="row setup-content step hiddenStepInfo" id="step-4" ng-app="FaseApp">
         <div class="col-xs-12" ng-controller="FasenController as FaseCon">
             <div class="col-md-12 well text-center">
-                <h1>Tijdlijn</h1>
-
-
+            <h1>Tijdlijn</h1>
               <div class="form-group">
                     <a href="#milestoneButtonTogle" ><input type="button" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
              </div
@@ -354,139 +307,13 @@ function initialize() {
     </div>
     </form>
 </div>
-
-<style>
-#googleMap {
-    width:100%;
-    height:450px;
-}
-
-.hiddenStepInfo {
-    display: none;
-}
-
-.activeStepInfo {
-    display: block !important;
-}
-
-.underline {
-    text-decoration: underline;
-}
-
-.step {
-    margin-top: 27px;
-}
-
-.progress {
-    position: relative;
-    height: 25px;
-}
-
-.progress > .progress-type {
-    position: absolute;
-    left: 0px;
-    font-weight: 800;
-    padding: 3px 30px 2px 10px;
-    color: rgb(255, 255, 255);
-    background-color: rgba(25, 25, 25, 0.2);
-}
-
-.progress > .progress-completed {
-    position: absolute;
-    right: 0px;
-    font-weight: 800;
-    padding: 3px 10px 2px;
-}
-
-.step {
-    text-align: center;
-}
-
-.step .col-md-2 {
-    background-color: #fff;
-    border: 1px solid #C0C0C0;
-    border-right: none;
-}
-
-.step .col-md-2:last-child {
-    border: 1px solid #C0C0C0;
-}
-
-.step .col-md-2:first-child {
-    border-radius: 5px 0 0 5px;
-}
-
-.step .col-md-2:last-child {
-    border-radius: 0 5px 5px 0;
-}
-
-.step .col-md-2:hover {
-    color: #F44336 ;
-    cursor: pointer;
-}
-
-.step .activestep {
-    color: #F44336 ;
-    height: 100px;
-    margin-top: -7px;
-    padding-top: 7px;
-    border-left: 6px solid #F44336  !important;
-    border-right: 6px solid #F44336  !important;
-    border-top: 3px solid #F44336  !important;
-    border-bottom: 3px solid #F44336  !important;
-    vertical-align: central;
-}
-
-.step .fa {
-    padding-top: 15px;
-    font-size: 40px;
-}
-</style>
-
 <script type="text/javascript">
     document.getElementById("project_color").value = "{{$project->color}}";
     document.getElementById("project_thema").value = "{{$project->thema}}";
-
-    function triggerClick(number){
-        $('#click'+number).click();
-    }
-    function resetActive(event, percent, step) {
-        $(".progress-bar").css("width", percent + "%").attr("aria-valuenow", percent);
-        $(".progress-completed").text(percent + "%");
-
-        $("div").each(function () {
-            if ($(this).hasClass("activestep")) {
-                $(this).removeClass("activestep");
-            }
-        });
-
-        if (event.target.className == "col-md-2") {
-            $(event.target).addClass("activestep");
-        }
-        else {
-            $(event.target.parentNode).addClass("activestep");
-        }
-
-        hideSteps();
-        showCurrentStepInfo(step);
-    }
-
-    function hideSteps() {
-        $("div").each(function () {
-            if ($(this).hasClass("activeStepInfo")) {
-                $(this).removeClass("activeStepInfo");
-                $(this).addClass("hiddenStepInfo");
-            }
-        });
-    }
-
-    function showCurrentStepInfo(step) {
-        var id = "#" + step;
-        $(id).addClass("activeStepInfo");
-    }
 </script>
 </div>
 <script src="\js/tijdlijn.js"></script>
+<script src="\js/currentstep.js"></script>
 </body>
 </html>
 @stop
