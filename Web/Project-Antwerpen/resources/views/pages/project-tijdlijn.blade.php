@@ -8,13 +8,12 @@
 <html lang="en" class="no-js">
 <head>
 
-	<link rel="stylesheet" href="\css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="\css/timeline-style.css"> <!-- Resource style -->
-	<script src="\js/timeline-modernizr.js"></script> <!-- Modernizr -->
+	<link rel="stylesheet" href="\css/reset.css"> 
+	<link rel="stylesheet" href="\css/timeline-style.css"> 
+	<script src="\js/timeline-modernizr.js"></script>
 
 
 </head>
-<body>
   <div class="projectdiv">
 	@if(!$project->milestones->isEmpty())
 		<section id="cd-timeline" class="cd-container">

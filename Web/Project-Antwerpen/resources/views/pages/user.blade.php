@@ -60,19 +60,4 @@
 	</div>
 	@endif
 </div>
-<style type="text/css">
-	.adminwindow {
-		margin-left: 10%;
-		width: 80%;
-		padding: 5px 0 20px 0;
-		margin-bottom: 20px;
-		border: solid 1px black;
-	}
-	#adminpanel {
-		font-size: 1.1em;
-		position: relative;
-		top: 20px;
-		margin-bottom: 75px;
-	}
-</style>
 @endsection

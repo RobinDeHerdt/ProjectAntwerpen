@@ -1,7 +1,7 @@
 
 $("#addMilestone").hide();
 $("#milestoneButtonTogle div:first-child").hide();
-function TogleForm() {
+function ToggleForm() {
   $("#addMilestone").toggle();
   $("#btn-button-milestone" ).toggleClass( "btn-success" );
   $("#btn-button-milestone" ).toggleClass( "btn-info" );
@@ -14,11 +14,11 @@ function TogleForm() {
     $("#milestoneButtonTogle div:last-child").hide();
   }
 }
-$("#btn-button-milestone").click(function() {  TogleForm() });
+$("#btn-button-milestone").click(function() {  ToggleForm() });
 $('#milestoneButtonTogle div:first-child').on('click', function(){
 
   if($("#titel_mijlpaal").val() != "" && $("#milestone_image option").html() != ""  && $("#mijlpaal_info").val() != ""){
-    TogleForm();
+    ToggleForm();
     $("#titel_mijlpaal").val("");
     document.getElementById("milestone_image").value="";
     $("#mijlpaal_info").val("");

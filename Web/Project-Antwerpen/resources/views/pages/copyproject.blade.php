@@ -2,10 +2,7 @@
   //set headers to NOT cache a page
   header("Content-Type: application/json");
 ?>
-<!-- <!DOCTYPE html>
-<html>
-<head> -->
-   @extends('layout')
+@extends('layout')
 
 @section('title')
   Bewerk project
@@ -213,22 +210,21 @@
                 <h1>Tijdlijn</h1>
 
 
-              <div class="form-group">
-                    <a href="#milestoneButtonTogle" ><input type="button" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
-             </div
+            <div class="form-group">
+                    <input type="button" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal">
+             </div>
 
-             <form name="milestoneform" >
-               <div ng-repeat="milestone in FaseCon.Fasen" class="CreatedMilestones">
-                 <h2  class="inline"><%milestone.title%></h2>
-                 <button  ng-click="FaseCon.deletemilestone($event)" class="btn  btn-danger btn-xs" type="button" name="button" ><span class="fa fa-btn fa-trash" data="<%$index%>"></span</button>
-
-
-               </div>
-
+            <table class="table">
+                    <tr ng-repeat="milestone in FaseCon.Fasen" class="CreatedMilestones">
+                        <td><h3><%milestone.title%></h3></td>
+                        <td><button ng-click="FaseCon.deletemilestone($event)" class="btn btn-danger btndeletemilestone" type="button" name="button" ><span class="fa fa-btn fa-trash" data="<%$index%>"></span></button></td>
+                    </tr>
+            </table>
+            <h3 id="noFases" ng-show="FaseCon.faseCount">Er zijn nog geen fases aangemaakt voor dit project</h3>
               <div id="addMilestone" class="form-group">
                 <div class="form-group hidden" id="error">
                   <p class="alert alert-danger">
-                    Er is een Input veld niet ingevuld
+                    Er is een inputveld niet ingevuld.
                   </p>
                 </div>
                 <div class="form-group">
@@ -238,7 +234,6 @@
                 <div class="form-group">
                     <label>Icon</label>
                     <select ng-model="milestone.icon" class="c-select form-control input-md" id="milestone_image" name="milestone_image" alt="Kies een icoon voor deze milestone" value="{{old('milestone_image')}}">
-                        <option selected disabled>Fase-icoontje</option>
                         <option value="/img/cd-icon-movie.svg"     alt="Camera">  Camera  </option>
                         <option value="/img/cd-icon-location.svg"  alt="locatie"> locatie </option>
                         <option value="/img/cd-icon-picture.svg"   alt="foto">    foto    </option>
@@ -265,7 +260,6 @@
                 <div class="form-group">
                 <input ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo)" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg"  alt="Submit mijlpaal">
                </div>
-               </form>
                 <div class="form-group">
                     <input ng-click="FaseCon.MilestoneToJson()" type="button" value="Volgende" class="btn btn-width btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
                </div>

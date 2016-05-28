@@ -143,13 +143,34 @@ font-family: AntwerpREG, Verdana, sans-serif;
 
 }
 
+.adminwindow {
+  margin-left: 10%;
+  width: 80%;
+  padding: 5px 0 20px 0;
+  margin-bottom: 20px;
+  border: solid 1px black;
+}
+#adminpanel {
+  font-size: 1.1em;
+  position: relative;
+  top: 20px;
+  margin-bottom: 75px;
+}
+
 .createtitle {
   margin-top:50px;
 }
 
-.customtable td:first-child{
-  height: 30px !important;
-  line-height: 30px !important;
+.btndeletemilestone {
+  margin-top:10px;
+}
+
+#noFases {
+  margin-bottom: 50px;
+}
+
+.milestonestable{
+  padding: 15px !important;
 }
 
 .removeflash {

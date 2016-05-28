@@ -6,6 +6,7 @@
 @extends('navigation-layout')
 @section('content')
 <link rel="stylesheet" href="\css/reacties.css">
+<link rel="stylesheet" href="\css/rating.css">
 <div class="projectdiv">
 	<div class="col-md-12 col-md-offset-2 reactieContainer" >
 	<div class="col-md-9 col-md-offset-2 reactieBody">
@@ -19,10 +20,8 @@
         <p>{{ Session::get('commentdeleted')}}</p>
     </div>
     @endif
-		@foreach ($project->comments as $key=>$comment)
+	@foreach ($project->comments as $key=>$comment)
     <div class="User_comment col-md-12">
-
-
     <div class="Profile_img">
       	<img src="{{ $comment->user->profileimage }}" >
     </div>
@@ -100,84 +99,8 @@
     </div>
    </div>
  </div>
-
-   <style type="text/css">
-   		form .stars {
-		  background: url("/../img/stars.png") repeat-x 0 0;
-		  width: 150px;
-		  margin: 0 auto;
-		}
-
-		form .stars input[type="radio"] {
-		  position: absolute;
-		  opacity: 0;
-		  filter: alpha(opacity=0);
-		}
-		form .stars input[type="radio"].star-5:checked ~ span {
-		  width: 100%;
-		}
-		form .stars input[type="radio"].star-4:checked ~ span {
-		  width: 80%;
-		}
-		form .stars input[type="radio"].star-3:checked ~ span {
-		  width: 60%;
-		}
-		form .stars input[type="radio"].star-2:checked ~ span {
-		  width: 40%;
-		}
-		form .stars input[type="radio"].star-1:checked ~ span {
-		  width: 20%;
-		}
-		form .stars label {
-		  display: block;
-		  width: 30px;
-		  height: 30px;
-		  margin: 0!important;
-		  padding: 0!important;
-		  text-indent: -999em;
-		  float: left;
-		  position: relative;
-		  z-index: 10;
-		  background: transparent!important;
-		  cursor: pointer;
-		}
-		form .stars label:hover ~ span {
-		  background-position: 0 -30px;
-		}
-		form .stars label.star-5:hover ~ span {
-		  width: 100% !important;
-		}
-		form .stars label.star-4:hover ~ span {
-		  width: 80% !important;
-		}
-		form .stars label.star-3:hover ~ span {
-		  width: 60% !important;
-		}
-		form .stars label.star-2:hover ~ span {
-		  width: 40% !important;
-		}
-		form .stars label.star-1:hover ~ span {
-		  width: 20% !important;
-		}
-		form .stars span {
-		  display: block;
-		  width: 0;
-		  position: relative;
-		  top: 0;
-		  left: 0;
-		  height: 30px;
-		  background: url("/../img/stars.png") repeat-x 0 -60px;
-		  -webkit-transition: -webkit-width 0.5s;
-		  -moz-transition: -moz-width 0.5s;
-		  -ms-transition: -ms-width 0.5s;
-		  -o-transition: -o-width 0.5s;
-		  transition: width 0.5s;
-}
- </style>
-
 <script type="text/javascript">
 	var d = document.getElementById("reacties");
 	d.className += "active";
 </script>
-
 @stop

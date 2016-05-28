@@ -1,17 +1,33 @@
 (function() {
   var app = angular.module('FaseApp', [], function($interpolateProvider){
       $interpolateProvider.startSymbol('<%');
-     $interpolateProvider.endSymbol('%>');
+      $interpolateProvider.endSymbol('%>');
   });
 
   app.controller('FasenController', function($filter){
     this.Fasen = Milestonefases;
+   
+    
+    this.countmilestones = function()
+    {
+        if(Milestonefases.length == 0)
+        {
+          this.faseCount = true;
+        }
+        else 
+        {
+          this.faseCount = false;
+        }
+    }
+
+    this.countmilestones();
 
     this.deletemilestone =function(obj) {
       var index = obj.target.getAttribute("data");
       Milestonefases.splice(index, 1);
 
       this.MilestoneToJson();
+      this.countmilestones();
     }
     this.pushmilestone = function(Fasetitle, FaseIcon, FaseStart, FaseEnd, FaseInfo ) {
       this.NewStone = {
@@ -26,12 +42,11 @@
         Milestonefases.push(this.NewStone);
       }
       this.MilestoneToJson();
+      this.countmilestones();
     }
     this.fases = JSON.stringify(Milestonefases);
 
     this.MilestoneToJson = function () {
-      console.log('Milestones set to JSON');
-
       if (Milestonefases.length >= 2)
       {
         Milestonefases.sort(function(a,b){
@@ -43,23 +58,24 @@
           date2= date2[0] +date2[1] -1 + date2[2];
           return date1 > date2 ? 1 : -1;
         })
-
-
       }
       this.fases = JSON.stringify(Milestonefases);
     };
   });
 
-  var Milestonefases = [];
-  var json = document.getElementById('existingMilestones').value;
-  var parsedJson = JSON.parse(json);
+    var Milestonefases = [];
+    if (document.getElementById('existingMilestones') != null) {
 
-  for (var i = 0; i < parsedJson.length; i++) {
+    var json = document.getElementById('existingMilestones').value;
+    var parsedJson = JSON.parse(json);
+
+    for (var i = 0; i < parsedJson.length; i++) {
       Milestonefases[i] = {};
       Milestonefases[i]['title']      = parsedJson[i].milestone_title;
       Milestonefases[i]['info']       = parsedJson[i].milestone_info
       Milestonefases[i]['icon']       = parsedJson[i].milestone_image
       Milestonefases[i]['startdate']  = parsedJson[i].start_date
       Milestonefases[i]['enddate']    = parsedJson[i].end_date;
-  }
+    }
+  };
 })();

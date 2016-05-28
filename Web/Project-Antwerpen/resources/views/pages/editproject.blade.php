@@ -217,21 +217,21 @@
             <div class="col-md-12 well text-center">
             <h1>Tijdlijn</h1>
               <div class="form-group">
-                    <a href="#milestoneButtonTogle" ><input type="button" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal"></a>
-             </div
+                    <input type="button" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal">
+             </div>
 
-             <form name="milestoneform" >
-               <div ng-repeat="milestone in FaseCon.Fasen" class="CreatedMilestones">
-                 <h2  class="inline"><%milestone.title%></h2>
-                 <button  ng-click="FaseCon.deletemilestone($event)" class="btn  btn-danger btn-xs" type="button" name="button" ><span class="fa fa-btn fa-trash" data="<%$index%>"></span</button>
-
-
-               </div>
-
+             
+            <table class="table">
+                    <tr ng-repeat="milestone in FaseCon.Fasen" class="CreatedMilestones">
+                        <td><h3><%milestone.title%></h3></td>
+                        <td><button ng-click="FaseCon.deletemilestone($event)" class="btn btn-danger btndeletemilestone" type="button" name="button" ><span class="fa fa-btn fa-trash" data="<%$index%>"></span></button></td>
+                    </tr>
+            </table>
+            <h3 id="noFases" ng-show="FaseCon.faseCount">Er zijn nog geen fases aangemaakt voor dit project</h3>
               <div id="addMilestone" class="form-group">
                 <div class="form-group hidden" id="error">
                   <p class="alert alert-danger">
-                    Er is een Input veld niet ingevuld
+                    Er is een inputveld niet ingevuld.
                   </p>
                 </div>
                 <div class="form-group">
@@ -239,10 +239,9 @@
                     <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de mijlpaal in." value="{{old('titel_mijlpaal')}}" required>
                 </div>
                 <div class="form-group">
-                    <!-- <input type="text" name="project_color" id="project_color" class="form-control input-md" placeholder="Projectkleur" required alt="Kies hier een kleur voor het project"> -->
-                    <label>Icon</label>
+                    <label>Icoontje</label>
                     <select ng-model="milestone.icon" class="c-select form-control input-md" id="milestone_image" name="milestone_image" alt="Kies een icoon voor deze milestone" value="{{old('milestone_image')}}">
-                        <option selected disabled>Mijlpaal Icoontje</option>
+                        <option selected disabled>Fase-icoontje</option>
                         <option value="/img/cd-icon-movie.svg"     alt="Camera">  Camera  </option>
                         <option value="/img/cd-icon-location.svg"  alt="locatie"> locatie </option>
                         <option value="/img/cd-icon-picture.svg"   alt="foto">    foto    </option>
@@ -257,7 +256,7 @@
                     <input ng-model="milestone.enddate" type="date" name="milestone_enddate" id="milestone_enddate" class="form-control input-md" alt="Vul hier de einddatum van de mijlpaal in." value="{{old('milestone_enddate')}}">
                 </div>
                 <div class="form-group">
-                   <label class="control-label">gedetailleerd uitleg over de mijlpaal</label>
+                   <label class="control-label">Uitleg over de mijlpaal</label>
                    <textarea ng-model="milestone.milestoneInfo" class="form-control input-md" rows="5" id="mijlpaal_info" placeholder="Uitleg over het mijlpaal" alt="Vul info over de mijlpaal in" name="mijlpaal_info">{{old('mijlpaal_info')}}</textarea>
                </div>
 
