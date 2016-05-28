@@ -142,6 +142,11 @@ font-family: AntwerpREG, Verdana, sans-serif;
   margin-top: -1px;
 
 }
+
+.loginform {
+  margin-top: 50px;
+}
+
 .comment_body{
   float: left;
   text-align: left;
