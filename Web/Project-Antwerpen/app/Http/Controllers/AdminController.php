@@ -48,7 +48,6 @@ class AdminController extends Controller
 
   protected function store(Request $request)
     {
-        dd($request);
         $this->validate($request, [
             'project_name'      =>   'required',
             'project_info'      =>   'required',
@@ -276,10 +275,10 @@ class AdminController extends Controller
     public function createopinionquestion()
     {
         $projects = project::orderBy('id', 'asc')->get();
-        
+        $questions = opinion_question::orderBy('opinionquestion_id', 'asc')->get();
         // $project = Project::find($id);
 
-        return view('pages.createopinionquestion', compact('projects'));
+        return view('pages.createopinionquestion', compact('projects', 'questions'));
     }
 
     public function createquestion()
@@ -311,9 +310,9 @@ class AdminController extends Controller
 
       $opinionquestion->delete();
 
-      Session::flash('opinionQuestiondeleted', 'De meningvraag succesvol verwijderd.');
+      Session::flash('opinionquestiondeleted', 'De meningvraag succesvol verwijderd.');
 
-      return redirect('/overzicht');
+      return back();
     }
 
     public function addopinionquestion(Request $request)
@@ -328,7 +327,7 @@ class AdminController extends Controller
 
         Session::flash('opinionquestionadded', 'De meningvraag werd succesvol toegevoegd.');
 
-        return redirect('/project/'.$selectedProject.'/meningen');
+        return back();
     }
 
     public function addquestion(Request $request)

@@ -81,11 +81,13 @@
     <div class="row ">
         <div class="col-md-12 project-info" style="text-align: center;">
             <h2>Projectinformatie</h2>
-            <h5><i class="fa fa-calendar-check-o"> </i>Begindatum: {{  $project->start_date    }}</h5>
-            <h5><i class="fa fa-calendar-times-o"> </i>Einddatum:  {{  $project->end_date      }}</h5>
-            <h5><i class="fa fa-map-marker"> </i>Locatie:    {{  $project->location      }}</h5>
-            <h5><i class="fa fa-location-arrow"></i> 
-Postcode:   {{  $project->postalcode    }}</h5>
+
+            <br>
+
+            <h5><i class="fa fa-calendar-check-o">  </i> Begindatum: {{  $project->start_date    }}</h5>
+            <h5><i class="fa fa-calendar-times-o">  </i> Einddatum:  {{  $project->end_date      }}</h5>
+            <h5><i class="fa fa-map-marker">        </i> Locatie:    {{  $project->location      }}</h5>
+            <h5><i class="fa fa-location-arrow">    </i> Postcode:   {{  $project->postalcode    }}</h5>
 
             <br>
 

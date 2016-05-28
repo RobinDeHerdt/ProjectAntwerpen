@@ -8,35 +8,35 @@
   <div class="container allTiles">
       <div class="sortnav">
       @if(Session::has('register'))
-    <div class="alert alert-success">
+    <div class="alert alert-success indexflashmessage">
         <p>{{ Session::get('register')}}</p>
     </div>
     @endif
 
     @if(Session::has('login'))
-    <div class="alert alert-success">
+    <div class="alert alert-success indexflashmessage">
         <p>{{ Session::get('login')}}</p>
     </div>
     @endif
     @if(Session::has('logout'))
-    <div class="alert alert-success">
+    <div class="alert alert-success indexflashmessage">
         <p>{{ Session::get('logout')}}</p>
     </div>
     @endif
     @if(Session::has('projectcreated'))
-    <div class="alert alert-success">
+    <div class="alert alert-success indexflashmessage">
         <p>{{ Session::get('projectcreated')}}</p>
     </div>
     @endif
 
      @if(Session::has('projectedited'))
-    <div class="alert alert-success">
+    <div class="alert alert-success indexflashmessage">
         <p>{{ Session::get('projectedited')}}</p>
     </div>
     @endif
 
      @if(Session::has('projectdeleted'))
-    <div class="alert alert-success">
+    <div class="alert alert-success indexflashmessage">
         <p>{{ Session::get('projectdeleted')}}</p>
     </div>
     @endif

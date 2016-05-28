@@ -8,14 +8,23 @@
  <link rel="stylesheet" href="/css/donut-graph.css">
  <div class="col-md-offset-3 col-md-6">
  	@if(Session::has('questionadded'))
-    <div class="alert alert-success">
+    <div class="alert alert-success flashmessage">
         <p>{{ Session::get('questionadded')}}</p>
     </div>
     @endif
-		<h1>quizvragen </h1>
+		<h1 class="createtitle">Quizvragen </h1>
 		<table class="table">
 			@foreach($questions as $question)
-				<tr><td>{{$question->questionbody}}</td></tr>
+				<tr>
+					<td>{{$question->questionbody}}</td>
+					<td>
+						@if ($question->correctanswer)
+							Correct
+						@else
+							Fout
+						@endif
+					</td>
+				</tr>
 			@endforeach
 		</table>
 	<form method="post" action="" class="OpninionQuestionFrom">
