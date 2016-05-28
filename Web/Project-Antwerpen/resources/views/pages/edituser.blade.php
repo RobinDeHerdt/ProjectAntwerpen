@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row centered-form">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+            <div class="panel panel-default loginform">
                 <div class="panel-heading">Bewerken</div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/bewerkprofiel') }}" enctype="multipart/form-data">
@@ -104,8 +104,8 @@
                                 <label class="col-md-4 control-label">Profielfoto</label>
                                 <div class="col-md-6">
                                     <p>Dit is je huidige profielfoto: </p>
-                                	<img src="{{$user->profileimage}}">
-                                	<p>Upload hier een andere profielfoto: </p>
+                                	<img src="{{$user->profileimage}}" class="btn-block">
+                                	<p>Je kan hier een andere profielfoto uploaden: </p>
                                     <input type="file" name="profileimage">
 
                                     @if ($errors->has('profileimage'))
@@ -115,38 +115,9 @@
                                     @endif
                                 </div>
                             </div>
-
-                            <!-- <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Wachtwoord*</label>
-
-                                <div class="col-md-6">
-                                    <input type="password" class="form-control" name="password">
-
-                                    @if ($errors->has('password'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Bevestig wachtwoord*</label>
-
-                                <div class="col-md-6">
-                                    <input type="password" class="form-control" name="password_confirmation">
-
-                                    @if ($errors->has('password_confirmation'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div> -->
-
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary btn-block">
                                         <i class="fa fa-btn"></i>Wijzigingen opslaan
                                     </button>
                                 </div>
