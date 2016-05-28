@@ -34,7 +34,7 @@
 			@endforeach
 		</section>
 	@else
-		<h3>Er is nog geen tijdlijn aangemaakt voor dit project.</h3>
+		<h3 id="notimeline">Er is nog geen tijdlijn aangemaakt voor dit project.</h3>
 	@endif
 </div>
 <script type="text/javascript">
