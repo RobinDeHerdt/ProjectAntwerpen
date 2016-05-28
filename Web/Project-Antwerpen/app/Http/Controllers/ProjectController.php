@@ -21,9 +21,13 @@ class ProjectController extends Controller
         return view('pages.project-tijdlijn', compact('project'));
     }
 
-    public function info()
+    public function info($id)
     {
-        return view('pages.project-uitleg');
+        $project = Project::find($id);
+        $projectfases = milestone::where('project_id', $id)->get();
+ 
+ 
+        return view('pages.project-uitleg', compact('project', 'projectfases'));
     }
     public function kaart($id)
     {
