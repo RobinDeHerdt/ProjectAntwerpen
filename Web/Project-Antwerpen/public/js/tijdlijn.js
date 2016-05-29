@@ -5,9 +5,19 @@
   });
 
   app.controller('FasenController', function($filter){
+    
+    var savedMilestones = document.getElementById("remembertimeline").value;
+
+    if(savedMilestones.length != 0)
+    {
+        var obj = JSON.parse(savedMilestones);
+        Milestonefases = obj;
+    }
+
     this.Fasen = Milestonefases;
    
     
+
     this.countmilestones = function()
     {
         if(Milestonefases.length == 0)
@@ -44,7 +54,7 @@
       this.MilestoneToJson();
       this.countmilestones();
     }
-    this.fases = JSON.stringify(Milestonefases);
+    this.fases = angular.toJson(Milestonefases);
 
     this.MilestoneToJson = function () {
       if (Milestonefases.length >= 2)
@@ -59,7 +69,7 @@
           return date1 > date2 ? 1 : -1;
         })
       }
-      this.fases = JSON.stringify(Milestonefases);
+      this.fases = angular.toJson(Milestonefases);
     };
   });
 

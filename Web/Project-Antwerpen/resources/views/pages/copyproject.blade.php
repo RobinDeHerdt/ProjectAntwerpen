@@ -31,55 +31,53 @@
     @if ($errors->all())
         <h4>Het project is niet helemaal af. Volgende zaken zijn nog niet in orde: </h4>
     @endif
-    <ul>
-    @if ($errors->has('project_name'))
-        <li>
+        @if ($errors->has('project_name'))
+       
             <strong>Je hebt nog geen naam aan het project gegeven.</strong>
-        </li>
+            <br>
+        
     @endif
     @if ($errors->has('project_info'))
-        <li>
+        
             <strong>Je hebt nog geen uitleg over het project gegeven. </strong>
-        </li>
+            <br>
+        
     @endif
     @if ($errors->has('project_thema'))
-        <li>
+       
             <strong>Je hebt nog geen thema voor het project gekozen.</strong>
-        </li>
+            <br>
     @endif
     @if ($errors->has('project_location'))
-        <li>
+       
             <strong>Je hebt de locatie van het project nog niet opgegeven.</strong>
-        </li>
+            <br>
     @endif
     @if ($errors->has('project_postalcode'))
-        <li>
+       
             <strong>Je hebt de postcode nog niet ingegeven.</strong>
-        </li>
+            <br>
     @endif
     @if ($errors->has('project_startdate'))
-        <li>
+       
             <strong>Je hebt nog geen startdatum voor het project ingesteld.</strong>
-        </li>
+            <br>
     @endif
     @if ($errors->has('project_enddate'))
-        <li>
+       
             <strong>Je hebt nog geen einddatum voor het project ingesteld.</strong>
-        </li>
+            <br>
     @endif
     @if ($errors->has('project_color'))
-        <li>
+       
             <strong>Je hebt het project nog geen kleur toegekend.</strong>
-        </li>
+            <br>
     @endif
     @if ($errors->has('headerimage'))
-        <li>
+       
             <strong>Je hebt nog geen headerimage geupload.</strong>
-        </li>
+            <br>
     @endif
-    </ul>
-
-    <!-- End validation messages -->
     <div class="row">
         <div class="row step">
             <div id="div1" class="col-md-2 activestep" onclick="javascript: resetActive(event, 0, 'step-1');">
@@ -253,6 +251,7 @@
                </div>
 
               </div>
+              <input type="hidden" id="remembertimeline" value="{{old('milestone_json')}}">
               <input type="hidden" name="existingMilestones" id="existingMilestones" class="form-control input-md " alt="" value="{{$milestones}}">
               <input type="hidden" name="milestone_json" id="milestone_json" class="form-control input-md " alt="" value="<% FaseCon.fases %>">
               <div id="milestoneButtonTogle">
