@@ -15,7 +15,7 @@
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 <script src="js/currentstep.js"></script>
-<script src="js/tijdlijn.js"></script>
+<script src="js/createprojecttijdlijn.js"></script>
 <script src="js/creategooglemaps.js"></script>
 <link rel="stylesheet" type="text/css" href="\css/template.css">
 
@@ -38,49 +38,51 @@
     @endif
     <ul>
     @if ($errors->has('project_name'))
-        <li>
+       
             <strong>Je hebt nog geen naam aan het project gegeven.</strong>
-        </li>
+            <br>
+        
     @endif
     @if ($errors->has('project_info'))
-        <li>
+        
             <strong>Je hebt nog geen uitleg over het project gegeven. </strong>
-        </li>
+            <br>
+        
     @endif
     @if ($errors->has('project_thema'))
-        <li>
+       
             <strong>Je hebt nog geen thema voor het project gekozen.</strong>
-        </li>
+            <br>
     @endif
     @if ($errors->has('project_location'))
-        <li>
+       
             <strong>Je hebt de locatie van het project nog niet opgegeven.</strong>
-        </li>
+            <br>
     @endif
     @if ($errors->has('project_postalcode'))
-        <li>
+       
             <strong>Je hebt de postcode nog niet ingegeven.</strong>
-        </li>
+            <br>
     @endif
     @if ($errors->has('project_startdate'))
-        <li>
+       
             <strong>Je hebt nog geen startdatum voor het project ingesteld.</strong>
-        </li>
+            <br>
     @endif
     @if ($errors->has('project_enddate'))
-        <li>
+       
             <strong>Je hebt nog geen einddatum voor het project ingesteld.</strong>
-        </li>
+            <br>
     @endif
     @if ($errors->has('project_color'))
-        <li>
+       
             <strong>Je hebt het project nog geen kleur toegekend.</strong>
-        </li>
+            <br>
     @endif
     @if ($errors->has('headerimage'))
-        <li>
+       
             <strong>Je hebt nog geen headerimage geupload.</strong>
-        </li>
+            <br>
     @endif
     </ul>
 
@@ -154,8 +156,8 @@
                         </span>
                     @endif
 
-                    <select class="c-select form-control input-md" id="project_thema" name="project_thema" alt="Kies een thema voor dit project" value="{{old('project->thema')}}">
-                        <option selected disabled>Thema</option>
+                    <select class="c-select form-control input-md" id="project_thema" name="project_thema" alt="Kies een thema voor dit project" value="{{old('project_thema')}}">
+                        <option disabled>Thema</option>
                         <option value="fa-car"              alt="Mobiliteit">   Mobiliteit   </option>
                         <option value="fa-futbol-o"         alt="Sport">        Sport        </option>
                         <option value="fa-plane"            alt="Toerisme">     Toerisme     </option>
@@ -214,8 +216,8 @@
                             <strong>{{ $errors->first('project_color') }}</strong>
                         </span>
                     @endif
-                    <select class="c-select form-control input-md" name="project_color" alt="Kies een kleur voor dit project" value="{{old('project_color')}}">
-                        <option selected disabled>Projectkleur</option>
+                    <select class="c-select form-control input-md" name="project_color" id="project_color" alt="Kies een kleur voor dit project" value="{{old('project_color')}}">
+                        <option disabled>Projectkleur</option>
                         <option value="orange"  alt="Oranje">   Oranje  </option>
                         <option value="purple"  alt="Paars">    Paars   </option>
                         <option value="green"   alt="Groen">    Groen   </option>
@@ -292,6 +294,7 @@
                </div>
 
               </div>
+              <input type="hidden" id="remembertimeline" value="{{old('milestone_json')}}">
               <input type="text" name="milestone_json" id="milestone_json" class="form-control input-md hidden" alt="Vul hier de einddatum van de mijlpaal in." value="<% FaseCon.fases %>">
 
               <div id="milestoneButtonTogle">
@@ -340,6 +343,8 @@
     </form>
 </div>
 </div>
-</body>
-</html>
+<script type="text/javascript">
+    document.getElementById("project_thema").value = "{{old('project_thema')}}";
+    document.getElementById("project_color").value = "{{old('project_color')}}";
+</script>
 @stop
