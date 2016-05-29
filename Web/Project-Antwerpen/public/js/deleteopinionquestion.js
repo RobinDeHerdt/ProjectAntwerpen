@@ -34,13 +34,12 @@
 
      this.submitme = function(id){
         $http({method: 'POST', url: 'verwijdermeningvraag/'+id}).
-          success(function(data, status, headers, config) {
-              window.location.href = "verwijdermeningvraag"
-          }).
-          error(function(data, status, headers, config) {
-
-          });
-
+           success(function(data, status, headers, config) {
+               window.location.href = "verwijdermeningvraag"
+           }).
+           error(function(data, status, headers, config) {
+ 
+           });
      }
   });
 

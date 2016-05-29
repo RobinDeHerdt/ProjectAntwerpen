@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 use App\User;
+use Input;
+use File;
 
 class ApiController extends Controller
 {
@@ -17,21 +19,23 @@ class ApiController extends Controller
     	return response()->json($users);
     }
 
-    public function getQuestions()
+    public function getQuestions(Request $request)
     {
     	$questions = DB::table('questions')->get();
-    	json_encode($questions);
 
-    	return response()->json($questions);
+    	return response()->json($questions)->setCallback($request->input("callback"));
     }
 
-    public function getOpinionQuestions()
+    public function getOpinionQuestions(Request $request)
     {
         $opinionquestions = DB::table('opinion_questions')->get();
-        json_encode($opinionquestions);
 
-        return response()->json($opinionquestions);
+        return response()->json($opinionquestions)->setCallback($request->input("callback"));
     }
 
+    public function postVote()
+    {
+
+    }
 
 }

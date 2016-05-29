@@ -4,13 +4,14 @@ var menu;
 var mening;
 var lastQuestionMening = false;
   //hardcoded test array
-var opinionQuestions = ["meningvraag1", "meningvraag2"];
+//var opinionQuestions = ["meningvraag1", "meningvraag2"];
   //hardcoded test array
-var questions = [["De antwerpse zoo is de oudste dierentuin in België.", 1], ["Oorspronkelijk keek het standbeeld van Rubens op de groenplaats naar het noorden.", 0], ["vraag3", 1], ["vraag4", 0], ["vraag5", 1]];
+//var questions = [["De antwerpse zoo is de oudste dierentuin in België.", 1], ["Oorspronkelijk keek het standbeeld van Rubens op de groenplaats naar het noorden.", 0], ["vraag3", 1], ["vraag4", 0], ["vraag5", 1]];
 var counter = 0;
 var meningCounter = 0;
 var questionsJSON;
 var opinionQuestionsJSON;
+var vote;
 
 
 if( !JSON.parse(localStorage.getItem("opinionCheck")) ){
@@ -18,7 +19,6 @@ if( !JSON.parse(localStorage.getItem("opinionCheck")) ){
 }else{
   var opinionCheck = JSON.parse(localStorage.getItem("opinionCheck")) ;
 }
-
 
 
 window.onload = function () {
@@ -84,47 +84,25 @@ preload.prototype = {
         //text fix
         questionText = game.add.text(-1000, -1000, "", {"font":"1pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"1"});
 
-        //get JSON file
-        //game.load.json("questions", "http://antwerpen.local/questions_json");
-        //game.load.json("opinionQuestions", "http://antwerpen.local/opinionquestions_json");
-
-        function receive(json){
-          console.log(json);
-          questionsJSON = json;
-        };
+        //get JSON files
 
         $.ajax({
-          dataType:"jsonp",
-          type: "GET",
-          crossDomain: true,
-          cache: false,
-          jsonp: false,
-          jsonpCallback: "receive",
-          url: "http://www.exiles.multimediatechnology.be/questions_json?callback=receive?"
-        });
-
-        receive();
-        console.log(questionsJSON);
-
-        $.ajax({
-          url:"http://www.exiles.multimediatechnology.be/opinionquestions_json",
-          dataType:"json",
-          succes: function(json){
-            opnionionQuestionsJSON = json;
+          url: "http://antwerpen.local/questions_json?callback=?",
+          dataType: "jsonp",
+          success: function(response){
+            console.log(response);
+            questionsJSON = response;
           }
         });
 
-        console.log(opinionQuestionsJSON);
-
-
-        //opinionCheck.push("a");
-        //opinionCheck.push("b");
-        //localStorage.setItem("opinionCheck", JSON.stringify(opinionCheck));
-        //console.log(opinionCheck);
-        //console.log(localStorage.getItem("opinionCheck"));
-
-
-
+        $.ajax({
+          url: "http://antwerpen.local/opinionquestions_json?callback=?",
+          dataType: "jsonp",
+          success: function(response){
+            console.log(response);
+            opinionQuestionsJSON = response;
+          }
+        });
 
         //Define constant variables
         game.CENTER_X          = (game.width/2);
@@ -143,6 +121,10 @@ preload.prototype = {
 menu = function(game) {};
 menu.prototype = {
     create: function () {
+
+        //HIDDEN CLEAR BUTTON --> CLEARS LOCAL STORAGE FOR TESTING PURPOSES
+        clearbtn = game.add.button(0,0, "", function(){console.log("voor: "+opinionCheck);localStorage.removeItem("opinionCheck");opinionCheck = [];console.log("na: "+opinionCheck);}, this);
+
 
         //Set background color of menu
         game.stage.backgroundColor = "#b1003b";
@@ -240,7 +222,7 @@ play.prototype = {
           //questionText = game.add.text(game.CENTER_X + 4, 130, questionsJSON[counter].questionbody, {"font":"20pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"280"});
           questionText = game.add.text(
               game.CENTER_X + 4, 140,
-             "dit is test tekst om de tekst van het tekstvak te testen, en dit is nog meer tekst om te testen",
+             questionsJSON[counter].questionbody,
              {"font":"20pt SunAntwerpen", "fill":"#000000", "align":"center", "wordWrap":"true", "wordWrapWidth":"280"}
           );
           questionText.anchor.set(0.5);
@@ -388,7 +370,7 @@ mening.prototype = {
         this.background.scale.setTo(0.334);
 
         //init question text
-        questionText = game.add.text(game.CENTER_X + 4, 130, opinionQuestionsJSON[meningCounter].opinionquestionbody, {"font":"20pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"280"});
+        questionText = game.add.text(game.CENTER_X + 4, 130, opinionQuestionsJSON[meningCounter].opinionquestionbody, {"font":"20pt SunAntwerpen", "fill":"#000000", "align":"center", "wordWrap":"true", "wordWrapWidth":"280"});
         questionText.anchor.set(0.5);
 
         //init project button
@@ -407,12 +389,12 @@ mening.prototype = {
         this.thumbsdownbtn.scale.setTo(0.205);
 
         //init back to menu button
-        this.backbtn = game.add.button(game.CENTER_X + 75, game.CENTER_Y + 250, "back", this.backToMenu, this);
+        this.backbtn = game.add.button(game.CENTER_X + 75, game.CENTER_Y + 250, "smallmenusheet", this.backToMenu, this);
         this.backbtn.anchor.set(0.5);
         this.backbtn.scale.setTo(0.75);
 
         //init website button
-        this.webbtn = game.add.button(game.CENTER_X - 75, game.CENTER_Y + 250, "website-btn-small", this.goToWebsite, this);
+        this.webbtn = game.add.button(game.CENTER_X - 75, game.CENTER_Y + 250, "smallwebsitesheet", this.goToWebsite, this);
         this.webbtn.anchor.set(0.5);
         this.webbtn.scale.setTo(0.75);
 
@@ -428,26 +410,26 @@ mening.prototype = {
     thumbsUp: function() {
       //Will send data to online database
 
-      if(arrayContains(parseInt(opinionQuestionsJSON[meningCounter].opinionquestion_id))){
+      if(this.arrayContains(opinionCheck, parseInt(opinionQuestionsJSON[meningCounter].opinionquestion_id))){
+        console.log("this question was already answered!");
+      }else{
+        console.log("this question was not yet answered! going to post now!");
+        vote = "downvote";
+        $.ajax({
+          url:"http://antwerpen.local/postvote",
+          type:"POST",
+          data: {"vote":"upvote"},
+          success: function(){
+            console.log("post success!");
+          }
+        });
         opinionCheck.push(opinionQuestionsJSON[meningCounter].opinionquestion_id);
         localStorage.setItem("opinionCheck", JSON.stringify(opinionCheck));
-      }else{
-        $.ajax({
-          url:"http://www.exiles.multimediatechnology.be/getvote.php",
-          type:"POST",
-          data:"upvote"
-        })
       }
 
       //window.alert("Jij bent akkoord!");
       meningCounter += 1;
       lastQuestionMening = true;
-
-      console.log(counter);
-      console.log(questions.length);
-      console.log(meningCounter);
-      console.log(opinionQuestions.length);
-
 
 
       if(counter == questionsJSON.length || meningCounter == opinionQuestionsJSON.length){
@@ -502,15 +484,21 @@ mening.prototype = {
     thumbsDown: function() {
       //will send data to online database
 
-      if(arrayContains(opninionCheck, parseInt(opinionQuestionsJSON[meningCounter].opinionquestion_id))){
+      if(this.arrayContains(opinionCheck, parseInt(opinionQuestionsJSON[meningCounter].opinionquestion_id))){
+        console.log("this question was already answered!");
+      }else{
+        console.log("this question was not yet answered! going to post now!");
+        vote = "downvote";
+        $.ajax({
+          url:"http://antwerpen.local/postvote",
+          type:"POST",
+          data: {"vote":"downvote"},
+          success: function(){
+            console.log("post success!");
+          }
+        });
         opinionCheck.push(opinionQuestionsJSON[meningCounter].opinionquestion_id);
         localStorage.setItem("opinionCheck", JSON.stringify(opinionCheck));
-      }else{
-        $.ajax({
-          url:"http://www.exiles.multimediatechnology.be/getvote.php",
-          type:"POST",
-          data:"downvote"
-        })
       }
 
       //window.alert("Jij bent niet akkoord!")

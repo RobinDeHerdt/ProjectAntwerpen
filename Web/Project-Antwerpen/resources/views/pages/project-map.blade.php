@@ -29,7 +29,7 @@ function initialize() {
 
 
 	var infowindow = new google.maps.InfoWindow({
-        content:"<h4>{{$project->project_name}}</h4><p>{{$project->info}}</p>" //<img style=max-width:100%;max-height:100%; src={{$project->headerimage}}>
+        content:"<h4>{{$project->project_name}}</h4><p>{{$project->info}}</p>"
     });
 
     google.maps.event.addListener(marker, 'click', function() {

@@ -7,6 +7,19 @@
  @section('content')
  <link rel="stylesheet" href="/css/donut-graph.css">
  <div class="col-md-offset-3 col-md-6">
+ 	   @if(Session::has('opinionquestionadded'))
+      <div class="alert alert-success flashmessage">
+          <p>{{ Session::get('opinionquestionadded')}}</p>
+      </div>
+    @endif
+ 	<h1 class="createtitle">Meningvragen</h1>
+ 	<table class="table customtable">
+			@foreach($questions as $question)
+				<tr>
+					<td>{{$question->opinionquestionbody}}</td>
+				</tr>
+			@endforeach
+		</table>
  	<form method="post" action="" class="OpninionQuestionFrom">
 		{!! csrf_field() !!}
 	    <label for="Project_names">Kies je project: </label><select class="c-select form-control input-md" id="Project_names" name="Project_names" alt="Kies een project waaraan u een mening wilt toevoegen" value="{{old('project->projectname')}}">

@@ -5,16 +5,9 @@
 @stop
 @extends('navigation-layout')
 @section('content')
-	@if(Session::has('opinionquestionadded'))
-	    <div class="alert alert-success col-md-8 col-md-offset-2">
-	        <p>{{ Session::get('opinionquestionadded')}}</p>
-	    </div>
-    @endif
 <link rel="stylesheet" href="/css/donut-graph.css">
 
 <div class="projectdiv">
-
-
 <h1 id="meningvraag"></h1>
 
 <div class="wrapper">

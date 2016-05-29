@@ -6,23 +6,28 @@
  @section('content')
  <link rel="stylesheet" href="/css/donut-graph.css">
   @if(Session::has('questiondeleted'))
-  <div class="alert alert-success">
+  <div class="alert alert-success removeflash">
       <p>{{ Session::get('questiondeleted')}}</p>
   </div>
 @endif
  <div class="col-md-offset-3 col-md-6">
-    <ul>
-		  @foreach ($questions as $question)
-        <li value="{{$question->question_id}}" alt="Vraag: {{$question->questionbody}}">{{$question->questionbody}}   
-          <form method="post" action="/verwijderquizvraag/{{$question->question_id}}" class="OpninionQuestionFrom">
+    <h1 class="createtitle">Quizvraag verwijderen</h1>
+<table class="table customtable">
+
+
+        
+      @foreach ($questions as $question)
+      <tr>
+        <td value="{{$question->question_id}}" alt="Vraag: {{$question->questionbody}}">{{$question->questionbody}}  </td> 
+        <td>
+        <form method="post" action="/verwijderquizvraag/{{$question->question_id}}" class="OpninionQuestionFrom">
             {!! csrf_field() !!}
-            <input type="submit" value="Verwijderen">
-          </form>
-        </li>
+            <input type="submit" value="Verwijderen" class="btn btn-danger">
+        </form>
+        </td>
+      </tr>
       @endforeach
-	  </ul>
-
-
+  </table>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 <script src="/js/deleteopinionquestion.js" ></script>

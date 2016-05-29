@@ -37,6 +37,7 @@ Route::get('/verwijderquizvraag', 'AdminController@deletequestionpage');
 // Api requests
 Route::get('questions_json', 'ApiController@getQuestions');
 Route::get('opinionquestions_json', 'ApiController@getOpinionQuestions');
+Route::post('postvote', 'ApiController@postVote');
 
 // Post requests
 Route::post('/nieuwproject', 'AdminController@store');
