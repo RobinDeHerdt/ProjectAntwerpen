@@ -10,10 +10,8 @@
 
     if(savedMilestones.length != 0)
     {
-        console.log(savedMilestones);
         var obj = JSON.parse(savedMilestones);
         Milestonefases = obj;
-        console.log(obj);
     }
 
     this.Fasen = Milestonefases;
