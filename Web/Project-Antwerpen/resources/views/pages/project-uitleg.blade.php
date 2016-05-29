@@ -6,7 +6,8 @@
 @extends('navigation-layout')
 @section('content')
 <link rel="stylesheet" type="text/css" href="/css/uitleg.css">
-<body>
+<link rel="stylesheet" type="text/css" href="/css/projectinfo.css">
+
 
 <style type="text/css">
     
@@ -73,16 +74,21 @@
 }
 
 </style> 
+
+<div class="projectdiv">
+
 <div class="container">
 
     <div class="row ">
         <div class="col-md-12 project-info" style="text-align: center;">
             <h2>Projectinformatie</h2>
-            <h5><i class="fa fa-calendar-check-o"> </i>Begindatum: {{  $project->start_date    }}</h5>
-            <h5><i class="fa fa-calendar-times-o"> </i>Einddatum:  {{  $project->end_date      }}</h5>
-            <h5><i class="fa fa-map-marker"> </i>Locatie:    {{  $project->location      }}</h5>
-            <h5><i class="fa fa-location-arrow"></i> 
-Postcode:   {{  $project->postalcode    }}</h5>
+
+            <br>
+
+            <h5><i class="fa fa-calendar-check-o">  </i> Begindatum: {{  $project->start_date    }}</h5>
+            <h5><i class="fa fa-calendar-times-o">  </i> Einddatum:  {{  $project->end_date      }}</h5>
+            <h5><i class="fa fa-map-marker">        </i> Locatie:    {{  $project->location      }}</h5>
+            <h5><i class="fa fa-location-arrow">    </i> Postcode:   {{  $project->postalcode    }}</h5>
 
             <br>
             
@@ -92,13 +98,11 @@ Postcode:   {{  $project->postalcode    }}</h5>
 
     @foreach($projectfases as $key=>$fase)
         <div class="row  bg-fase" id="fase{{$key + 1}}">
-            <!-- <div class="col-md-4 imgtile Tile3"> -->
                 <div class="col-md-12 fase-text">
                     <h2>Fase {{ $key + 1 }}</h2>
                     <h3>{{ $fase->milestone_title}}</h3>
                     <p>{{ $fase->milestone_info }}</p>
                 </div>
-            <!-- </div> -->
         </div>
     @endforeach
 </div>
