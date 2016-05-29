@@ -235,8 +235,8 @@
                 <h1>Kaart</h1>
                <div id="googleMap"></div>
                <strong>Sleep de marker naar de projectlocatie</strong>
-               <input type="hidden" id="lat" name="lat"></input>
-               <input type="hidden" id="lng" name="lng"></input>
+               <input type="hidden" id="lat" name="lat" value="{{old('lat')}}"></input>
+               <input type="hidden" id="lng" name="lng" value="{{old('lng')}}"></input>
                 <div class="form-group">
                     <input value="Volgende" type="button" class="btn  btn-width btn-danger btn-lg" onclick="triggerClick(4);" alt="Volgende knop">
                </div>
