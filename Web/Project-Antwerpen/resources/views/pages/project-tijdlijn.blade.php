@@ -5,15 +5,11 @@
 @stop
 @extends('navigation-layout')
 @section('content')
-<html lang="en" class="no-js">
-<head>
-
-	<link rel="stylesheet" href="\css/reset.css"> 
-	<link rel="stylesheet" href="\css/timeline-style.css"> 
-	<script src="\js/timeline-modernizr.js"></script>
 
 
-</head>
+<link rel="stylesheet" href="\css/reset.css"> 
+<link rel="stylesheet" href="\css/timeline-style.css"> 
+<script src="\js/timeline-modernizr.js"></script>
   <div class="projectdiv">
 	@if(!$project->milestones->isEmpty())
 		<section id="cd-timeline" class="cd-container">
@@ -33,7 +29,7 @@
 			@endforeach
 		</section>
 	@else
-		<h3 id="notimeline">Er is nog geen tijdlijn aangemaakt voor dit project.</h3>
+		<h2 id="notimeline">Er is nog geen tijdlijn aangemaakt voor dit project.</h2>
 	@endif
 </div>
 <script type="text/javascript">
