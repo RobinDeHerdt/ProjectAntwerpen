@@ -56,7 +56,7 @@
                   <li><a href="{{ url('/login') }}"><span class="fa fa-btn fa-sign-in" ></span> Login</a></li>
                   <li><a href="{{ url('/register') }}"><span class="fa fa-btn fa-pencil" ></span> Registreren</a></li>
               @else
-                <li id="welcome">Welkom,<a href="{{ url('/profiel') }}" id="account"> {{ Auth::user()->firstname }}</a></li>
+                <li id="welcome">Welkom,<a href="{{ url('/profiel') }}" id="account">{{ Auth::user()->firstname }}</a></li>
                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
               @endif
             </ul>
