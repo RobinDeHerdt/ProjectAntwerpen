@@ -8,12 +8,14 @@
     font-size: 15px;}
     h5 {    font-family: Droid Serif, serif;
     color: #7f8c97;
-    font-size: 15px;}
+    font-size: 15px;
+    }
     h3 {
             font-family: Droid Serif, serif;
     color: #7f8c97;
     font-size: 15px;
     }
+    .info {margin-top:50px;}
 
     .fase-text {
         margin-top:50px;
@@ -21,8 +23,16 @@
     
     
     .bg-fase:nth-child(even) {background-color: #DBDBDB;
-        margin-left: -381px;
-    margin-right: -381px;}
+    margin-left: -381px;
+    margin-right: -381px;
+    padding-left:381px;
+    padding-right:381px;
+}
+.fase-date {
+
+    margin-top:20px;
+
+}
 
 
     .imgtile>img {width:65%; margin:3em;}
@@ -51,14 +61,11 @@
     border-right: solid 50px transparent;
     z-index:10;
 }
-.bg-fase:last-child {
 
-     margin-bottom:50px;
-}
 .bg-fase:last-child:after {
 
      display: none;;
 }
 .project-info {
-    min-height:50vh;
+    min-height:320px;
 }
