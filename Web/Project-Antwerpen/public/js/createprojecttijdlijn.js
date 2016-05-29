@@ -1,23 +1,21 @@
-(function() {
+ (function() {
   var app = angular.module('FaseApp', [], function($interpolateProvider){
       $interpolateProvider.startSymbol('<%');
       $interpolateProvider.endSymbol('%>');
   });
-
   app.controller('FasenController', function($filter){
-    
+   
     var savedMilestones = document.getElementById("remembertimeline").value;
 
     if(savedMilestones.length != 0)
     {
+        Milestonefases = [];
         var obj = JSON.parse(savedMilestones);
         Milestonefases = obj;
     }
-
-    this.Fasen = Milestonefases;
-   
     
-
+    this.Fasen = Milestonefases;
+    
     this.countmilestones = function()
     {
         if(Milestonefases.length == 0)
@@ -32,7 +30,7 @@
 
     this.countmilestones();
 
-    this.deletemilestone =function(obj) {
+    this.deletemilestone = function(obj) {
       var index = obj.target.getAttribute("data");
       Milestonefases.splice(index, 1);
 
