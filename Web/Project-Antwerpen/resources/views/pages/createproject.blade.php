@@ -36,7 +36,6 @@
     @if ($errors->all())
         <h4>Het project is niet helemaal af. Volgende zaken zijn nog niet in orde: </h4>
     @endif
-    <ul>
     @if ($errors->has('project_name'))
        
             <strong>Je hebt nog geen naam aan het project gegeven.</strong>
@@ -84,9 +83,6 @@
             <strong>Je hebt nog geen headerimage geupload.</strong>
             <br>
     @endif
-    </ul>
-
-    <!-- End validation messages -->
     <div class="row">
         <div class="row step">
             <div id="div1" class="col-md-2 activestep" onclick="javascript: resetActive(event, 0, 'step-1');">
