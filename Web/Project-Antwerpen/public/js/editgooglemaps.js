@@ -4,21 +4,29 @@ function displayMap()
     initialize();
 }
 function initialize() {
-    var initLng = 0;
-    var initLat = 0;
+    var initLat = parseFloat(document.getElementById('lat').value);
+    var initLng = parseFloat(document.getElementById('lng').value);
 
-    initLng = parseFloat(document.getElementById('lng').value);
-    initLat = parseFloat(document.getElementById('lat').value);
+    if (document.getElementById('saveLng').value != 0 && document.getElementById('saveLat').value != 0) 
+    {
+        var savedLat = parseFloat(document.getElementById('saveLat').value);
+        var savedLng = parseFloat(document.getElementById('saveLng').value);
+        
+        initLat = savedLat;
+        initLng = savedLng;
+
+        document.getElementById('lat').value = initLat;
+        document.getElementById('lng').value = initLng;
+    }
 
     var mapProp = {
-        center:new google.maps.LatLng(51.2240454,4.3982035),
+        center:new google.maps.LatLng(initLat,initLng),
         zoom:12,
         mapTypeId:google.maps.MapTypeId.ROADMAP
     };
 
     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
-    console.log(initLat + ' ' + initLng);
     var marker = new google.maps.Marker({
         position: {lat: initLat, lng: initLng},
         map: map,
@@ -26,7 +34,6 @@ function initialize() {
     });
 
     
-
     google.maps.event.addDomListener(window, "resize", function() {
         var center = map.getCenter();
         google.maps.event.trigger(map, "resize");

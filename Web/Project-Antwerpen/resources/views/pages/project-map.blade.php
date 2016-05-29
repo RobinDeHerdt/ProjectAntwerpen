@@ -12,7 +12,7 @@ d.className += " active";
 
 function initialize() {
 	var LatLng = new google.maps.LatLng({{$project->xcoord}},{{$project->ycoord}});
-	console.log(LatLng);
+
 	var mapProp = {
 		center: LatLng,
 		zoom:12,

@@ -7,7 +7,7 @@
 @section('content')
 	<div class="container">
     <div class="row centered-form">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default loginform">
                 <div class="panel-heading">Project verwijderen</div>
                 <div class="panel-body">

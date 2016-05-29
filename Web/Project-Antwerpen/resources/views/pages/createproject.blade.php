@@ -145,29 +145,6 @@
                     <textarea class="form-control input-md" rows="5" id="project_info" placeholder="Uitleg over het project" alt="Vul project details in" name="project_info">{{old('project_info')}}</textarea>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Thema</label>
-                    @if ($errors->has('project_thema'))
-                        <span class="help-block validationerror">
-                            <strong>{{ $errors->first('project_thema') }}</strong>
-                        </span>
-                    @endif
-
-                    <select class="c-select form-control input-md" id="project_thema" name="project_thema" alt="Kies een thema voor dit project" value="{{old('project_thema')}}">
-                        <option disabled>Thema</option>
-                        <option value="fa-car"              alt="Mobiliteit">   Mobiliteit   </option>
-                        <option value="fa-futbol-o"         alt="Sport">        Sport        </option>
-                        <option value="fa-plane"            alt="Toerisme">     Toerisme     </option>
-                        <option value="fa-puzzle-piece"     alt="Recreatie">    Recreatie    </option>
-                        <option value="fa-industry"         alt="Industrie">    Industrie    </option>
-                        <option value="fa-recycle"          alt="Milieu">       Milieu       </option>
-                        <option value="fa-tree"             alt="Natuur">       Natuur       </option>
-                        <option value="fa-bank"             alt="Architectuur"> Architectuur </option>
-                        <option value="fa-users"            alt="Sociaal">      Sociaal      </option>
-                        <option value="fa-graduation-cap"   alt="Educatie">     Educatie     </option>
-                        <option value="fa-music"            alt="Cultuur">      Cultuur      </option>
-                    </select>
-                </div>
-                <div class="form-group">
                     <label class="control-label">Locatie</label>
                      @if ($errors->has('project_location'))
                         <span class="help-block validationerror">
@@ -204,7 +181,28 @@
                     @endif
                     <input type="date" name="project_enddate" id="project_enddate" class="form-control input-md" alt="Vul hier de einddatum van het project in." value="{{old('project_enddate')}}">
                 </div>
+                <div class="form-group">
+                    <label class="control-label">Thema</label>
+                    @if ($errors->has('project_thema'))
+                        <span class="help-block validationerror">
+                            <strong>{{ $errors->first('project_thema') }}</strong>
+                        </span>
+                    @endif
 
+                    <select class="c-select form-control input-md" id="project_thema" name="project_thema" alt="Kies een thema voor dit project" value="{{old('project_thema')}}">
+                        <option value="fa-car"              alt="Mobiliteit">   Mobiliteit   </option>
+                        <option value="fa-futbol-o"         alt="Sport">        Sport        </option>
+                        <option value="fa-plane"            alt="Toerisme">     Toerisme     </option>
+                        <option value="fa-puzzle-piece"     alt="Recreatie">    Recreatie    </option>
+                        <option value="fa-industry"         alt="Industrie">    Industrie    </option>
+                        <option value="fa-recycle"          alt="Milieu">       Milieu       </option>
+                        <option value="fa-tree"             alt="Natuur">       Natuur       </option>
+                        <option value="fa-bank"             alt="Architectuur"> Architectuur </option>
+                        <option value="fa-users"            alt="Sociaal">      Sociaal      </option>
+                        <option value="fa-graduation-cap"   alt="Educatie">     Educatie     </option>
+                        <option value="fa-music"            alt="Cultuur">      Cultuur      </option>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label>Projectkleur</label>
                     @if ($errors->has('project_color'))
@@ -213,7 +211,6 @@
                         </span>
                     @endif
                     <select class="c-select form-control input-md" name="project_color" id="project_color" alt="Kies een kleur voor dit project" value="{{old('project_color')}}">
-                        <option disabled>Projectkleur</option>
                         <option value="orange"  alt="Oranje">   Oranje  </option>
                         <option value="purple"  alt="Paars">    Paars   </option>
                         <option value="green"   alt="Groen">    Groen   </option>
@@ -235,8 +232,8 @@
                 <h1>Kaart</h1>
                <div id="googleMap"></div>
                <strong>Sleep de marker naar de projectlocatie</strong>
-               <input type="hidden" id="lat" name="lat"></input>
-               <input type="hidden" id="lng" name="lng"></input>
+               <input type="hidden" id="lat" name="lat" value="{{old('lat')}}"></input>
+               <input type="hidden" id="lng" name="lng" value="{{old('lng')}}"></input>
                 <div class="form-group">
                     <input value="Volgende" type="button" class="btn  btn-width btn-danger btn-lg" onclick="triggerClick(4);" alt="Volgende knop">
                </div>
@@ -327,11 +324,9 @@
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1>Opslaan</h1>
-                <h3 class="underline">Project toevoegen</h3>
-                    Ben je zeker dat je dit project wil toevoegen?
-
+                <h3>Project toevoegen?</h3>
                  <div class="form-group">
-                    <input type="submit" value="Bevestig" class="btn btn-width btn-danger btn-lg" alt="Opslaan knop">
+                    <input type="submit" value="Bevestigen" class="btn btn-width btn-danger btn-lg" alt="Sla op">
                </div>
             </div>
         </div>

@@ -165,10 +165,8 @@
                         <option value="fa-users"            alt="Sociaal">      Sociaal      </option>
                         <option value="fa-graduation-cap"   alt="Educatie">     Educatie     </option>
                         <option value="fa-music"            alt="Cultuur">      Cultuur      </option>
-
                     </select>
-                </div>
-                
+                </div>           
                 <div class="form-group">
                     <label>Projectkleur</label>
                     <select class="c-select form-control input-md" id="project_color" name="project_color" alt="Kies een kleur voor dit project" >
@@ -193,9 +191,10 @@
                 <h1>Kaart</h1>
                <div id="googleMap"></div>
                <strong>Sleep de marker naar de projectlocatie</strong>
-
                <input type="hidden" id="lat" name="lat" value="{{$project->xcoord}}"></input>
+               <input type="hidden" id="saveLat" value="{{old('lat')}}">
                <input type="hidden" id="lng" name="lng" value="{{$project->ycoord}}"></input>
+               <input type="hidden" id="saveLng" value="{{old('lng')}}">
                 <div class="form-group">
                     <input value="Volgende" type="button" class="btn  btn-width btn-danger btn-lg" onclick="triggerClick(4);" alt="Volgende knop">
                </div>
@@ -285,10 +284,9 @@
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1>Opslaan</h1>
-                <h3 class="underline">Project kopiëren</h3>
-                    Project opslaan?
+                <h3>Project toevoegen?</h3>
                  <div class="form-group">
-                    <input type="submit" value="Bevestig" class="btn btn-width btn-danger btn-lg" alt="Opslaan knop">
+                    <input type="submit" value="Bevestigen" class="btn btn-width btn-danger btn-lg" alt="Opslaan knop">
                </div>
             </div>
         </div>

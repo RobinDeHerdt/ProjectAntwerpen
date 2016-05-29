@@ -6,8 +6,20 @@ function displayMap()
 function initialize() {
     var initLat = 51.220269043488635;
     var initLng = 4.401529439178489;
+
+    if (document.getElementById('lng').value != 0) 
+    {
+        initLat = parseFloat(document.getElementById('lat').value);
+        initLng = parseFloat(document.getElementById('lng').value);
+    }
+    else 
+    {
+        document.getElementById('lng').value = initLng;
+        document.getElementById('lat').value = initLat;
+    }
+
     var mapProp = {
-        center:new google.maps.LatLng(51.2240454,4.3982035),
+        center:new google.maps.LatLng(initLat,initLng),
         zoom:12,
         mapTypeId:google.maps.MapTypeId.ROADMAP
     };
@@ -19,12 +31,6 @@ function initialize() {
         map: map,
         draggable: true,
     });
-
-
-
-    // Inital value
-    document.getElementById('lng').value = initLng;
-    document.getElementById('lat').value = initLat;
 
     google.maps.event.addDomListener(window, "resize", function() {
         var center = map.getCenter();

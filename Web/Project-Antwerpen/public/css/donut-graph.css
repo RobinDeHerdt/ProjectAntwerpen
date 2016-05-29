@@ -121,6 +121,7 @@ h1{
 	display: none;
 }
 #noAnswers, #NoOpninion{
+	font-family: AntwerpREG;
 	position: absolute;
 	margin-top: -280px;
 	left: 0;
