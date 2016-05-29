@@ -160,7 +160,6 @@
                 <div class="form-group">
                     <label class="control-label">Thema</label>
                     <select class="c-select form-control input-md" id="project_thema" name="project_thema" alt="Kies een thema voor dit project" value="{{$project->thema}}">
-                        <!-- <option selected disabled>Thema</option> -->
                         <option value="fa-car"              alt="Mobiliteit">   Mobiliteit   </option>
                         <option value="fa-futbol-o"         alt="Sport">        Sport        </option>
                         <option value="fa-plane"            alt="Toerisme">     Toerisme     </option>
@@ -179,7 +178,6 @@
                 <div class="form-group">
                     <label>Projectkleur</label>
                     <select class="c-select form-control input-md" id="project_color" name="project_color" alt="Kies een kleur voor dit project" value="{{$project->color}}">
-                        <!-- <option selected disabled>Projectkleur</option> -->
                         <option value="orange"  alt="Oranje">   Oranje  </option>
                         <option value="purple"  alt="Paars">    Paars   </option>
                         <option value="green"   alt="Groen">    Groen   </option>
@@ -295,12 +293,10 @@
     <div class="row setup-content step hiddenStepInfo" id="step-6">
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
-                <h1>Veranderingen opslaan</h1>
-                <h3 class="underline">Project bewerken</h3>
-                    Ben je zeker dat je dit project wil bewerken?
-
+                <h1>Wijzigingen opslaan</h1>
+                <h3>Ben je zeker dat je dit project wil bewerken?</h3>
                  <div class="form-group">
-                    <input type="submit" value="Bevestig" class="btn btn-width btn-danger btn-lg" alt="Opslaan knop">
+                    <input type="submit" value="Bevestigen" class="btn btn-width btn-danger btn-lg" alt="Opslaan knop">
                </div>
             </div>
         </div>

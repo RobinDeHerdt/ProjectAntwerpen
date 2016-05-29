@@ -165,10 +165,8 @@
                         <option value="fa-users"            alt="Sociaal">      Sociaal      </option>
                         <option value="fa-graduation-cap"   alt="Educatie">     Educatie     </option>
                         <option value="fa-music"            alt="Cultuur">      Cultuur      </option>
-
                     </select>
-                </div>
-                
+                </div>           
                 <div class="form-group">
                     <label>Projectkleur</label>
                     <select class="c-select form-control input-md" id="project_color" name="project_color" alt="Kies een kleur voor dit project" >
@@ -286,10 +284,9 @@
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1>Opslaan</h1>
-                <h3 class="underline">Project kopiëren</h3>
-                    Project opslaan?
+                <h3>Project toevoegen?</h3>
                  <div class="form-group">
-                    <input type="submit" value="Bevestig" class="btn btn-width btn-danger btn-lg" alt="Opslaan knop">
+                    <input type="submit" value="Bevestigen" class="btn btn-width btn-danger btn-lg" alt="Opslaan knop">
                </div>
             </div>
         </div>
