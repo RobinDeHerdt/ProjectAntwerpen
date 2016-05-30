@@ -3,17 +3,13 @@ var play;
 var menu;
 var mening;
 var lastQuestionMening = false;
-  //hardcoded test array
-//var opinionQuestions = ["meningvraag1", "meningvraag2"];
-  //hardcoded test array
-//var questions = [["De antwerpse zoo is de oudste dierentuin in België.", 1], ["Oorspronkelijk keek het standbeeld van Rubens op de groenplaats naar het noorden.", 0], ["vraag3", 1], ["vraag4", 0], ["vraag5", 1]];
 var counter = 0;
-var meningCounter = 0;
+var opinionCounter = 0;
 var questionsJSON;
 var opinionQuestionsJSON;
 var vote;
 
-
+//get already answered questions from localstorage
 if( !JSON.parse(localStorage.getItem("opinionCheck")) ){
   var opinionCheck = [];
 }else{
@@ -51,15 +47,11 @@ preload.prototype = {
           //tween image for opinion animation ending
         game.load.image("meningbg", "assets/images/meningend.png");
           //buttons
-        game.load.spritesheet("startsheet", "assets/images/new-start-sheet.png", 308, 98, 2);
-        game.load.spritesheet("websitesheet", "assets/images/new-website-sheet.png", 308, 110, 2);
-        game.load.spritesheet("smallwebsitesheet", "assets/images/small-website-sheet.png", 181, 67, 2);
-        game.load.spritesheet("smallmenusheet", "assets/images/small-menu-sheet.png", 181, 67, 2);
-        game.load.spritesheet("projectsheet", "assets/images/project-sheet.png", 263, 101, 2);
-        //game.load.image("start-btn", "assets/images/new-start-btn.png");
-        //game.load.image("website-btn", "assets/images/new-website-btn.png");
-        //game.load.image("website-btn-small", "assets/images/small-website-idle.png");
-        //game.load.image("back", "assets/images/small-menu-idle.png");
+        game.load.spritesheet("startsheet", "assets/images/new-start-sheet.png", 308, 88, 2);
+        game.load.spritesheet("websitesheet", "assets/images/new-website-sheet.png", 308, 88, 2);
+        game.load.spritesheet("smallwebsitesheet", "assets/images/small-website-sheet.png", 182, 88, 2);
+        game.load.spritesheet("smallmenusheet", "assets/images/small-menu-sheet.png", 182, 88, 2);
+        game.load.spritesheet("projectsheet", "assets/images/project-sheet.png", 308, 88, 2);
         game.load.image("true", "assets/images/waar2.png");
         game.load.image("false", "assets/images/nietwaar2.png");
         game.load.image("thumbsup", "assets/images/akkoordoutlined.png");
@@ -85,9 +77,8 @@ preload.prototype = {
         questionText = game.add.text(-1000, -1000, "", {"font":"1pt SunAntwerpen", "fill":"#ffffff", "align":"center", "wordWrap":"true", "wordWrapWidth":"1"});
 
         //get JSON files
-
         $.ajax({
-          url: "http://antwerpen.local/questions_json?callback=?",
+          url: "http://www.exiles.multimediatechnology.be/questions_json?callback=?",
           dataType: "jsonp",
           success: function(response){
             console.log(response);
@@ -96,7 +87,7 @@ preload.prototype = {
         });
 
         $.ajax({
-          url: "http://antwerpen.local/opinionquestions_json?callback=?",
+          url: "http://www.exiles.multimediatechnology.be/opinionquestions_json?callback=?",
           dataType: "jsonp",
           success: function(response){
             console.log(response);
@@ -189,7 +180,7 @@ menu.prototype = {
         //open website homepage
           //antwerpen placeholder*********************************************************
         //window.open("http://www.antwerpen.be", "_blank");
-        window.open("http://www.exiles.multimediatechnology.be", "_blank");
+        window.open("http://www.exiles.multimediatechnology.be/", "_blank");
     }
 }
 
@@ -197,18 +188,11 @@ play = function(game) {};
 play.prototype = {
     create: function () {
 
-        //create the json object
-        //questionsJSON = game.cache.getJSON("questions");
-
-          //test debug
-        //console.log(questionsJSON[0].questionbody);
-        //console.log(questionsJSON.length);
-
         //if the question counter is even and the last question wasn't an opinion, ask for opinion
         if(counter%2 == 0 && counter != 0 && lastQuestionMening == false){
-            //test debug
-          //console.log("counter%2 = 0!")
+
           game.state.start("Mening");
+
         }else{
 
           //last question wasn't an opinion
@@ -281,10 +265,10 @@ play.prototype = {
         //question counter +1
         counter += 1;
         //start "completed" state when reached last question
-        if(counter == questionsJSON.length && meningCounter == opinionQuestionsJSON.length){
+        if(counter == questionsJSON.length &&  == opinionQuestionsJSON.length){
           sprite.events.onAnimationComplete.add(function(){
             counter = 0;
-            meningCounter = 0;
+            opinionCounter = 0;
             game.state.start("Menu")
           },this);
         }
@@ -323,10 +307,10 @@ play.prototype = {
         //question counter +1
         counter += 1;
         //start "completed" state when reached last question
-        if(counter == questionsJSON.length && meningCounter == opinionQuestionsJSON.length){
+        if(counter == questionsJSON.length && opinionCounter == opinionQuestionsJSON.length){
           sprite.events.onAnimationComplete.add(function(){
             counter = 0;
-            meningCounter = 0;
+            opinionCounter = 0;
             game.state.start("Menu")
           },this);
         }
@@ -340,12 +324,11 @@ play.prototype = {
     backToMenu: function(){
         //reset question counters and go back to the menu state
         game.state.start("Menu");
-        meningCounter = 0;
+        opinionCounter = 0;
         counter = 0;
     },
     goToWebsite: function(){
         //go to website
-          //antwerpen placeholder********************************************
         window.open("http://www.exiles.multimediatechnology.be", "_blank");
     }
 }
@@ -354,7 +337,7 @@ mening = function(game) {};
 mening.prototype = {
     create: function () {
 
-      ////startscreen animation
+      //startscreen animation
       sprite = game.add.sprite(0, 0, "mening");
       sprite.scale.setTo(2);
       sprite.animations.add("mening_animation");
@@ -362,15 +345,12 @@ mening.prototype = {
 
       sprite.events.onAnimationComplete.add(function(){
 
-        //create json object
-        //opinionQuestionsJSON = game.cache.getJSON("opinionQuestions");
-
         //init background
         this.background = game.add.sprite(0, 0, "game-background");
         this.background.scale.setTo(0.334);
 
         //init question text
-        questionText = game.add.text(game.CENTER_X + 4, 130, opinionQuestionsJSON[meningCounter].opinionquestionbody, {"font":"20pt SunAntwerpen", "fill":"#000000", "align":"center", "wordWrap":"true", "wordWrapWidth":"280"});
+        questionText = game.add.text(game.CENTER_X + 4, 130, opinionQuestionsJSON[opinionCounter].opinionquestionbody, {"font":"20pt SunAntwerpen", "fill":"#000000", "align":"center", "wordWrap":"true", "wordWrapWidth":"280"});
         questionText.anchor.set(0.5);
 
         //init project button
@@ -400,7 +380,6 @@ mening.prototype = {
 
         //fade out last frame animation
         sprite = game.add.sprite(0, 0, "meningbg");
-        //sprite.scale.setTo(3);
         game.add.tween(sprite).to({alpha: 0}, 1000, "Linear", true);
 
 
@@ -408,33 +387,41 @@ mening.prototype = {
 
     },
     thumbsUp: function() {
-      //Will send data to online database
 
-      if(this.arrayContains(opinionCheck, parseInt(opinionQuestionsJSON[meningCounter].opinionquestion_id))){
+      //check in localstorage if the question was already answered before
+      if(this.arrayContains(opinionCheck, parseInt(opinionQuestionsJSON[opinionCounter].opinionquestion_id))){
+
         console.log("this question was already answered!");
+
       }else{
+
+        //if not answered, send to database
         console.log("this question was not yet answered! going to post now!");
         vote = "downvote";
         $.ajax({
-          url:"http://antwerpen.local/postvote",
+          url:"http://www.exiles.multimediatechnology.be/postvote",
           type:"POST",
           data: {"vote":"upvote"},
           success: function(){
             console.log("post success!");
           }
         });
-        opinionCheck.push(opinionQuestionsJSON[meningCounter].opinionquestion_id);
+
+        //add the question to the list of answered questions and store it in localStorage
+        opinionCheck.push(opinionQuestionsJSON[opinionCounter].opinionquestion_id);
         localStorage.setItem("opinionCheck", JSON.stringify(opinionCheck));
+
       }
 
-      //window.alert("Jij bent akkoord!");
-      meningCounter += 1;
+      opinionCounter += 1;
       lastQuestionMening = true;
 
+      //if you answer either the last regular question or the last opinion question, the game will end
+      if(counter == questionsJSON.length || opinionCounter == opinionQuestionsJSON.length){
 
-      if(counter == questionsJSON.length || meningCounter == opinionQuestionsJSON.length){
+          //reset counters and destroy current gamescreen
           counter = 0;
-          meningCounter = 0;
+          opinionCounter = 0;
           this.background.destroy();
           questionText.destroy();
           this.projectbtn.destroy();
@@ -472,6 +459,7 @@ mening.prototype = {
 
           firstTween.start();
 
+          //go back to menu after animation
           sixthTween.onComplete.add(doSomething, this);
           function doSomething () {
             game.state.start("Menu");
@@ -482,32 +470,32 @@ mening.prototype = {
       }
     },
     thumbsDown: function() {
-      //will send data to online database
 
-      if(this.arrayContains(opinionCheck, parseInt(opinionQuestionsJSON[meningCounter].opinionquestion_id))){
+      //--- see thumbsUp documentation ---//
+
+      if(this.arrayContains(opinionCheck, parseInt(opinionQuestionsJSON[opinionCounter].opinionquestion_id))){
         console.log("this question was already answered!");
       }else{
         console.log("this question was not yet answered! going to post now!");
         vote = "downvote";
         $.ajax({
-          url:"http://antwerpen.local/postvote",
+          url:"http://www.exiles.multimediatechnology.be/postvote",
           type:"POST",
           data: {"vote":"downvote"},
           success: function(){
             console.log("post success!");
           }
         });
-        opinionCheck.push(opinionQuestionsJSON[meningCounter].opinionquestion_id);
+        opinionCheck.push(opinionQuestionsJSON[opinionCounter].opinionquestion_id);
         localStorage.setItem("opinionCheck", JSON.stringify(opinionCheck));
       }
 
-      //window.alert("Jij bent niet akkoord!")
-      meningCounter +=1;
+      opinionCounter +=1;
       lastQuestionMening = true;
 
-      if(counter == questionsJSON.length || meningCounter == opinionQuestionsJSON.length){
+      if(counter == questionsJSON.length || opinionCounter == opinionQuestionsJSON.length){
           counter = 0;
-          meningCounter =0;
+          opinionCounter =0;
 
           this.background.destroy();
           questionText.destroy();
@@ -557,18 +545,18 @@ mening.prototype = {
     },
     goToProject: function(){
         //go to project page
-        window.open("http://www.exiles.multimediatechnology.be", "_blank");
+        window.open("http://www.exiles.multimediatechnology.be/project/" + opinionQuestionsJSON[opinionCounter].opinionquestion_id + "/tijdlijn", "_blank");
     },
     goToWebsite: function(){
         //go to project page
-          //antwerpen placeholder**********************************************
         window.open("http://www.exiles.multimediatechnology.be", "_blank");
     },
     backToMenu: function(){
         game.state.start("Menu");
-        meningCounter = 0;
+        opinionCounter = 0;
         counter = 0;
     },
+    //this function checks if the opinion question at hand was already answered before
     arrayContains: function(arr, id){
         return (arr.indexOf(id) != -1);
     }
