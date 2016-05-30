@@ -1,5 +1,4 @@
 <?php
-  //set headers to NOT cache a page
   header("Content-Type: application/json");
 ?>
 @extends('layout')
@@ -8,12 +7,14 @@
   Bewerk project
 @stop
 
-@section('content')
+@section('scripts')
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 <script src="\js/editgooglemaps.js"></script>
+<script src="\js/currentstep.js"></script>
 <link rel="stylesheet" type="text/css" href="\css/template.css">
-
+@stop
+@section('content')
 <div class="container ProjectFrom">
 <form role="form" method="POST" action="/kopiërenproject/{{$project->id}}" novalidate="" enctype="multipart/form-data">
 {!! csrf_field() !!}
@@ -298,8 +299,6 @@
     document.getElementById("project_color").value = "{{$project->color}}";
     document.getElementById("project_thema").value = "{{$project->thema}}";
 </script>
-<script src="\js/currentstep.js"></script>
 <script src="\js/tijdlijn.js"></script>
-</body>
-</html>
+<script src="\js/MakeMilestones.js"></script>
 @stop
