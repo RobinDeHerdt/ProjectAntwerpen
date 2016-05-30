@@ -4,9 +4,11 @@
   Reacties
 @stop
 @extends('navigation-layout')
-@section('content')
+@section('scripts')
 <link rel="stylesheet" href="\css/reacties.css">
 <link rel="stylesheet" href="\css/rating.css">
+@stop
+@section('content')
 <div class="projectdiv">
 	<div class="col-md-12 col-md-offset-2 reactieContainer" >
 	<div class="col-md-9 col-md-offset-2 reactieBody">
@@ -48,13 +50,10 @@
 					<input class="btn btn-danger btn-sm" type="submit" value="Verwijder je reactie">
 				</form>
 			@endif
-
       	<hr>
         </div>
 		</div>
 		@endforeach
-
-
 		<div class=" col-md-12">
 		@if (Auth::guest())
 			<strong>Je moet ingelogd zijn om een reactie te geven. Je kan <a href="\login">hier</a> inloggen.</strong>

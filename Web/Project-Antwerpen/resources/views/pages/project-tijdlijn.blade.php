@@ -4,12 +4,12 @@
   Projecttijdlijn
 @stop
 @extends('navigation-layout')
+@section('scripts')
+	<link rel="stylesheet" href="\css/reset.css"> 
+	<link rel="stylesheet" href="\css/timeline-style.css"> 
+	<script src="\js/timeline-modernizr.js"></script>
+@stop
 @section('content')
-
-
-<link rel="stylesheet" href="\css/reset.css"> 
-<link rel="stylesheet" href="\css/timeline-style.css"> 
-<script src="\js/timeline-modernizr.js"></script>
   <div class="projectdiv">
 	@if(!$project->milestones->isEmpty())
 		<section id="cd-timeline" class="cd-container">
@@ -36,12 +36,5 @@
 var d = document.getElementById("tijdlijn");
 d.className += " active";
 </script>
-
-<script type="text/javascript"> var $nav_home ;</script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="\js/timeline-main.js"></script> <!-- Resource jQuery -->
-</body>
-</html>
-
-
+<script src="\js/timeline-main.js"></script>
 @stop

@@ -4,9 +4,10 @@
   Meningen
 @stop
 @extends('navigation-layout')
+@section('scripts')
+	<link rel="stylesheet" href="/css/donut-graph.css">
+@stop
 @section('content')
-<link rel="stylesheet" href="/css/donut-graph.css">
-
 <div class="projectdiv">
 <h1 id="meningvraag"></h1>
 
@@ -30,5 +31,4 @@
 	var d = document.getElementById("meningen");
 	d.className += " active";
 </script>
-
 @stop

@@ -3,10 +3,7 @@
 @section('title')
   Profiel
 @stop
-
-
 @section('content')
-
 <div>
 	<h3>{{ $user->firstname }} {{  $user->lastname  }}</h3>
 	<img src="{{$user->profileimage}}">
