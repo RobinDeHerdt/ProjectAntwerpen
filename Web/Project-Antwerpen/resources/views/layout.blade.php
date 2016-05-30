@@ -18,70 +18,43 @@
           
           }
           </script>
-
+        @yield('scripts')
     </head>
     <body>
       <div class="ContentDiv">
-      <div class="navbar">
-          <div class="navbar-header">
-            <a class="navbar-left" id="leftfix" href="/overzicht"><img src="../../img/A_logo_RGB_123x123.jpg" alt="Logo antwerpen"/></a>
-            <a class="navbar-left titelpage" href="/overzicht">Antwerpen Projecten</a>
-            <a class="navbar-left titelpagemobile"   href="/overzicht">Projecten</a>
-            <div class="nav navbar-btn navbar-right navbar-fixed-top navbar-toggle">
-
-                <!-- Authentication Links -->
-                @if (Auth::guest())
-                    <a id="loginicon" href="{{ url('/login') }}"><span class="fa fa-btn fa-sign-in icon-large" ></span></a>
-                    <a id="registericon" href="{{ url('/register') }}"><span class="fa fa-btn fa-pencil" ></span></a>
-                @else
-                    <a id="logouticon" href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> </a>
-                @endif
-
+        <div class="navbar">
+            <div class="navbar-header">
+              <a class="navbar-left" id="leftfix" href="/overzicht"><img src="../../img/A_logo_RGB_123x123.jpg" alt="Logo antwerpen"/></a>
+              <a class="navbar-left titelpage" href="/overzicht">Antwerpen Projecten</a>
+              <a class="navbar-left titelpagemobile"   href="/overzicht">Projecten</a>
+              <div class="nav navbar-btn navbar-right navbar-fixed-top navbar-toggle">
+                  @if (Auth::guest())
+                      <a id="loginicon" href="{{ url('/login') }}"><span class="fa fa-btn fa-sign-in icon-large" ></span></a>
+                      <a id="registericon" href="{{ url('/register') }}"><span class="fa fa-btn fa-pencil" ></span></a>
+                  @else
+                      <a id="logouticon" href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> </a>
+                  @endif
+              </div>
             </div>
-          </div>
-
-
-
-         <!--  <ul class="nav navbar-nav navbar-right">
-           <li><a href="/register"><span class="fa  fa-pencil "></span> Sign Up</a></li>
-           <li><a href="/login"><span class="fa  fa-sign-in "></span> Login</a></li>
-          </ul> -->
-
-
-         <div class="collapse navbar-collapse" id="app-navbar-collapse">
-
-            <ul class="nav navbar-nav navbar-right">
-              <!-- Authentication Links -->
-              @if (Auth::guest())
-                  <li><a href="{{ url('/login') }}"><span class="fa fa-btn fa-sign-in" ></span> Login</a></li>
-                  <li><a href="{{ url('/register') }}"><span class="fa fa-btn fa-pencil" ></span> Registreren</a></li>
-              @else
-                <li id="welcome">Welkom,<a href="{{ url('/profiel') }}" id="account">{{ Auth::user()->firstname }}</a></li>
-                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
-              @endif
-            </ul>
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}"><span class="fa fa-btn fa-sign-in" ></span> Login</a></li>
+                    <li><a href="{{ url('/register') }}"><span class="fa fa-btn fa-pencil" ></span> Registreren</a></li>
+                @else
+                  <li id="welcome">Welkom,<a href="{{ url('/profiel') }}" id="account">{{ Auth::user()->firstname }}</a></li>
+                  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
+                @endif
+              </ul>
+            </div>
         </div>
-
-      </div>
-
-
-
-
       @yield('navigation-layout')
-
-
-    @yield('content')
-    </div>
-     <footer class="footer">
-
+      @yield('content')
+      </div>
+      <footer class="footer">
         <p>&copy Stad Antwerpen</p>
-
-    </footer>
-
-    <script src="../../js/sort.js"></script>
-    <script src="\js/MakeMilestones.js"></script>
+      </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="\js/style.js"></script>
     </body>
 </html>

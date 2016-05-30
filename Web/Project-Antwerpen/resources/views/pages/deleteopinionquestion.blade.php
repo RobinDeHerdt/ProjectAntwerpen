@@ -4,8 +4,10 @@
    Nieuwe meningvraag
  @stop
 
- @section('content')
+ @section('scripts')
  <link rel="stylesheet" href="/css/donut-graph.css">
+ @stop
+ @section('content')
  <div class="col-md-offset-3 col-md-6">
      @if(Session::has('opinionQuestiondeleted'))
       <div class="alert alert-success col-md-8 col-md-offset-2">
@@ -32,10 +34,10 @@
           </div>
           <input type="hidden" id="hiddenprojects" name="name" value="{{$projects}}">
           <input type="hidden" id="hiddenquestions" name="name" value="{{$questions}}">
-        </div>
+        </form>
       </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    <script src="/js/deleteopinionquestion.js" ></script>
-	</form>
+  </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="/js/deleteopinionquestion.js" ></script>
 @stop

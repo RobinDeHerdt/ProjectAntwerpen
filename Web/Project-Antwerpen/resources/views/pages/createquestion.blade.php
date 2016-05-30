@@ -4,8 +4,10 @@
    Nieuwe quizvraag
  @stop
 
- @section('content')
+@section('scripts')
  <link rel="stylesheet" href="/css/donut-graph.css">
+@stop
+@section('content')
  <div class="col-md-offset-3 col-md-6">
  	@if(Session::has('questionadded'))
     <div class="alert alert-success flashmessage">
