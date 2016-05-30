@@ -28,7 +28,9 @@
                     <h2>{{ $fase->milestone_title}}</h2>
                     <h5 class="fase-date"><i class="fa fa-calendar-check-o">  </i> Begindatum: {{  $fase->start_date    }}&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar-times-o">  </i> Einddatum:  {{  $fase->end_date      }}</h5>
                     <p class="info">{{ $fase->milestone_info }}</p>
+
                 </div>
+                
         </div>
     @endforeach
 </div>
