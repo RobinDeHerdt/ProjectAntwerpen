@@ -32,7 +32,6 @@
                     <p class="info">{{ $fase->milestone_info }}</p>
 
                 </div>
-                
         </div>
     @endforeach
     </div>

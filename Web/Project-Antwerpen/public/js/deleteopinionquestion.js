@@ -6,8 +6,8 @@
   });
   var projects = JSON.parse(document.getElementById("hiddenprojects").value);
   var questions = JSON.parse(document.getElementById("hiddenquestions").value);
-  var ddl = document.getElementById("Project_names");
-  var projectid = ddl.options[ddl.selectedIndex].getAttribute("data")-1;
+  // var ddl = document.getElementById("Project_names");
+  // var projectid = ddl.options[ddl.selectedIndex].getAttribute("data")-1;
   var projectnamen = [];
   var questionbody = [];
   for(index in projects){
@@ -20,18 +20,30 @@
   }
 
   app.controller('questionController', function($http){
-    this.projectID = projectid;
+    // this.projectID = projectid;
     this.projectnames = projectnamen;
     this.projectquestions = questionbody;
 
-
     this.updateid = function() {
-     ddl = document.getElementById("Project_names");
-     projectid = ddl.options[ddl.selectedIndex].getAttribute("data");
-     this.projectID = projectid;
-     }
+      ddl = document.getElementById("Project_names");
+      projectid = ddl.options[ddl.selectedIndex].getAttribute("data");
+      this.projectID = projectid;
 
-
+      for (var i = 0; i < questionbody.length; i++)
+      {
+          if(questionbody[i].id == projectid)
+          {
+            console.log(questionbody[i].id + " == " + projectid);
+            console.log('There are questions.');
+            this.checkForQuestions = true;
+            break;
+          } 
+          else
+          {
+            this.checkForQuestions = false;
+          }
+      }           
+    }
      this.submitme = function(id){
         $http({method: 'POST', url: 'verwijdermeningvraag/'+id}).
            success(function(data, status, headers, config) {

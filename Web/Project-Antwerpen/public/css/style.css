@@ -147,7 +147,7 @@ font-family: AntwerpREG, Verdana, sans-serif;
   margin-bottom: 20px;
   border: solid 1px black;
 }
-#adminpanel {
+#adminpaneel {
   font-size: 1.1em;
   position: relative;
   top: 20px;
@@ -155,15 +155,31 @@ font-family: AntwerpREG, Verdana, sans-serif;
 }
 
 .createtitle {
-  margin-top:50px;
+  margin-top:100px;
+}
+.returnlink {
+  float: right;
+  margin-top: 20px;
 }
 
+.returnlink a{
+  padding-right: 7.5px;
+  font-size: 1.1em;
+}
 .btndeletemilestone {
   margin-top:10px;
 }
 
 #noFases {
   margin-bottom: 50px;
+}
+
+#noOpinionQuestions {
+  margin-top: 20px;
+}
+
+.noquestions {
+  margin-top: 20px;
 }
 
 .milestonestable{
