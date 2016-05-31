@@ -9,17 +9,18 @@
 @stop
 @section('content')
  <div class="col-md-offset-3 col-md-6">
- 	<div class="returnlink">
-      <a href="/profiel#adminpaneel">   Adminpaneel</a>
-      <a href="/overzicht"> Overzicht</a>
-    </div>
  	@if(Session::has('questionadded'))
     <div class="alert alert-success flashmessage">
         <p>{{ Session::get('questionadded')}}</p>
     </div>
     @endif
+    <div class="returnlink">
+      <a href="/profiel#adminpaneel">   Adminpaneel</a>
+      <a href="/overzicht"> Overzicht</a>
+    </div>
 		<h1 class="createtitle">Quizvragen </h1>
 		<table class="table">
+		@if(!$questions->isEmpty())
 			@foreach($questions as $question)
 				<tr>
 					<td>{{$question->questionbody}}</td>
@@ -32,6 +33,11 @@
 					</td>
 				</tr>
 			@endforeach
+		@else
+		<div class="noquestions">
+			<p>Er zijn nog geen quizvragen.</p>
+		</div>
+		@endif
 		</table>
 	<form method="post" action="" class="OpninionQuestionFrom">
 		{!! csrf_field() !!}

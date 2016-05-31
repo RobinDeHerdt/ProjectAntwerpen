@@ -178,6 +178,10 @@ font-family: AntwerpREG, Verdana, sans-serif;
   margin-top: 20px;
 }
 
+.noquestions {
+  margin-top: 20px;
+}
+
 .milestonestable{
   padding: 15px !important;
 }

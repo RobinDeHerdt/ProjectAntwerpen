@@ -18,6 +18,7 @@
       <a href="/overzicht"> Overzicht</a>
     </div>
     <h1 class="createtitle">Quizvragen verwijderen</h1>
+    @if(!$questions->isEmpty())
     <table class="table customtable"> 
       @foreach ($questions as $question)
       <tr>
@@ -31,6 +32,11 @@
       </tr>
       @endforeach
     </table>
+    @else
+      <div class="noquestions">
+        <p>Er zijn nog geen quizvragen. Klik <a href="/nieuwequizvraag">hier</a> om quizvragen aan te maken</p>
+      </div>
+    @endif
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 <script src="/js/deleteopinionquestion.js" ></script>
