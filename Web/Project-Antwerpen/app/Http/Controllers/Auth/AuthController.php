@@ -54,8 +54,8 @@ class AuthController extends Controller
             'firstname'         =>  'required|max:255',
             'lastname'          =>  'required|max:255',
             'email'             =>  'required|email|max:255|unique:users',
-            'password'          =>  'required|min:6|confirmed',
-            'postalcode'        =>  'integer',
+            'password'          =>  'required|min:4|confirmed',
+            'postalcode'        =>  'integer|digits:4',
             'age'               =>  'integer',
             'profileimage'      =>  'image',
         ]);
@@ -113,11 +113,4 @@ class AuthController extends Controller
         Session::flash('logout', 'Je bent nu uitgelogd. Tot de volgende keer!');
         return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/overzicht');
     }
-
-    // public function getLogout()
-    // {
-        
-        
-    //     return redirect('/');
-    // }
 }

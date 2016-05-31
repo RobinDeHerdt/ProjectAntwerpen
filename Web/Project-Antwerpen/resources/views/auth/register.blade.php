@@ -8,6 +8,9 @@
 <div class="container">
     <div class="row centered-form">
         <div class="col-md-8 col-md-offset-2">
+        <div class="returnlink">
+            <a href="/overzicht"> Terug naar overzicht</a>
+        </div>
             <div class="panel panel-default loginform">
                 <div class="panel-heading">Registratie</div>
                     <div class="panel-body">
@@ -22,7 +25,7 @@
 
                                     @if ($errors->has('firstname'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('firstname') }}</strong>
+                                            <strong class="validationerror">{{ $errors->first('firstname') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -36,7 +39,7 @@
 
                                     @if ($errors->has('lastname'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('lastname') }}</strong>
+                                            <strong class="validationerror">{{ $errors->first('lastname') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -50,7 +53,7 @@
 
                                     @if ($errors->has('email'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('email') }}</strong>
+                                            <strong class="validationerror">{{ $errors->first('email') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -63,7 +66,7 @@
                                     <input type="number" name="age" id="age" class="form-control input-md" alt="vul je leeftijd in" value="{{ old('age') }}">
                                      @if ($errors->has('age'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('age') }}</strong>
+                                            <strong class="validationerror">{{ $errors->first('age') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -76,7 +79,7 @@
                                 <div class="col-md-6">
                                     <input type="number" name="postalcode" id="postcode" class="form-control input-md" alt="vul je postcode in" value="{{ old('postalcode') }}">@if ($errors->has('postalcode'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('postalcode') }}</strong>
+                                            <strong class="validationerror">{{ $errors->first('postalcode') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -94,7 +97,7 @@
                                     </select>
                                     @if ($errors->has('gender'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('gender') }}</strong>
+                                            <strong class="validationerror">{{ $errors->first('gender') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -104,10 +107,10 @@
                                 <label class="col-md-4 control-label">Profielfoto</label>
 
                                 <div class="col-md-6">
-                                    <input type="file" name="profileimage">
+                                    <input type="file" name="profileimage" value="{{old('profileimage')}}">
                                     @if ($errors->has('profileimage'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('profileimage') }}</strong>
+                                            <strong class="validationerror">{{ $errors->first('profileimage') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -121,7 +124,7 @@
 
                                     @if ($errors->has('password'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('password') }}</strong>
+                                            <strong class="validationerror">{{ $errors->first('password') }}</strong>
                                         </span>
                                     @endif
                                 </div>
