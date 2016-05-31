@@ -8,7 +8,11 @@
  <link rel="stylesheet" href="/css/donut-graph.css">
 @stop
 @section('content')
- <div class="col-md-offset-3 col-md-6 addscroll">
+ <div class="col-md-offset-3 col-md-6">
+ 	<div class="returnlink">
+      <a href="/profiel#adminpaneel">   Adminpaneel</a>
+      <a href="/overzicht"> Overzicht</a>
+    </div>
  	@if(Session::has('questionadded'))
     <div class="alert alert-success flashmessage">
         <p>{{ Session::get('questionadded')}}</p>
@@ -31,7 +35,7 @@
 		</table>
 	<form method="post" action="" class="OpninionQuestionFrom">
 		{!! csrf_field() !!}
-      	<label for="addOpinionQuestion">Vul hier een quizvraag in voor dit project:</label>
+      	<label for="addOpinionQuestion">Vul hier een quizvraag in:</label>
 		<input type="text" name="questionbody" id="addOpinionQuestion">
 		<label for="correctanswer">Juiste antwoord:</label>
 		<input class="radio" type="radio" name="correctanswer" value="1" id="correctanswer"> <label for="correctanswer">Correct</label>

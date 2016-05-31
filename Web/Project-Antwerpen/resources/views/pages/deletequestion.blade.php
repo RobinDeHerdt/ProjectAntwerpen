@@ -7,13 +7,17 @@
  <link rel="stylesheet" href="/css/donut-graph.css">
 @stop
 @section('content')
-@if(Session::has('questiondeleted'))
-  <div class="alert alert-success removeflash">
-      <p>{{ Session::get('questiondeleted')}}</p>
-  </div>
-@endif
 <div class="col-md-offset-3 col-md-6">
-    <h1 class="createtitle">Quizvraag verwijderen</h1>
+    @if(Session::has('questiondeleted'))
+      <div class="alert alert-success removeflash">
+        <p>{{ Session::get('questiondeleted')}}</p>
+      </div>
+    @endif
+    <div class="returnlink">
+      <a href="/profiel#adminpaneel">   Adminpaneel</a>
+      <a href="/overzicht"> Overzicht</a>
+    </div>
+    <h1 class="createtitle">Quizvragen verwijderen</h1>
     <table class="table customtable"> 
       @foreach ($questions as $question)
       <tr>

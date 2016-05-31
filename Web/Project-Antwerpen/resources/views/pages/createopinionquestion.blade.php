@@ -9,11 +9,15 @@
  @stop
  @section('content')
  <div class="col-md-offset-3 col-md-6">
- 	   @if(Session::has('opinionquestionadded'))
-      <div class="alert alert-success flashmessage">
+ 	@if(Session::has('opinionquestionadded'))
+      	<div class="alert alert-success flashmessage">
           <p>{{ Session::get('opinionquestionadded')}}</p>
-      </div>
+      	</div>
     @endif
+    <div class="returnlink">
+      <a href="/profiel#adminpaneel">   Adminpaneel</a>
+      <a href="/overzicht"> Overzicht</a>
+    </div>
  	<h1 class="createtitle">Meningvragen</h1>
  	<table class="table customtable">
 			@foreach($questions as $question)

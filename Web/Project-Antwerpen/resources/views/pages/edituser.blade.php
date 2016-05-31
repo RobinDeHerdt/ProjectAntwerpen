@@ -8,6 +8,9 @@
 <div class="container">
     <div class="row centered-form">
         <div class="col-md-8 col-md-offset-2">
+            <div class="returnlink">
+                <a href="/profiel">Terug naar profiel</a>
+            </div>
             <div class="panel panel-default loginform">
                 <div class="panel-heading">Bewerken</div>
                     <div class="panel-body">

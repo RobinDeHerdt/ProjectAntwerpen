@@ -34,7 +34,7 @@
 	<a href="/bewerkprofiel">Bewerk deze gegevens</a>
 
 	@if($user->isAdmin)
-	<div id="adminpanel">
+	<div id="adminpaneel">
 	<h1>Administratorpaneel</h1>
 		<div class="adminwindow">
 			<h3>Quizvragen</h3>

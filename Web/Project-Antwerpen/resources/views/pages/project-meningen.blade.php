@@ -22,7 +22,7 @@
 <h1 id="NoOpninion" class="hide">Er zijn nog geen meningvragen voor dit project</h1>
 @if ($user && $user->isAdmin)
 	<a href="/nieuwemeningvraag" class="btn btn-success meningbutton">Meningvraag toevoegen</a>
-  <a href="/verwijdermeningvraag" class="btn btn-danger meningbutton">Meningvraag verwijderen</a>
+  	<a href="/verwijdermeningvraag" class="btn btn-danger meningbutton">Meningvraag verwijderen</a>
 @endif
 </div>
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
