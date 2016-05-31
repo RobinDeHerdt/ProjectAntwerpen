@@ -33,51 +33,50 @@
         <h4>Het project is niet helemaal af. Volgende zaken zijn nog niet in orde: </h4>
     @endif
     @if ($errors->has('project_name'))
-       
+        <span class="help-block">
             <strong>Je hebt nog geen naam aan het project gegeven.</strong>
-            <br>
-        
+        </span> 
     @endif
     @if ($errors->has('project_info'))
-        
+        <span class="help-block">
             <strong>Je hebt nog geen uitleg over het project gegeven. </strong>
-            <br>
+        </span>
         
     @endif
     @if ($errors->has('project_thema'))
-       
+        <span class="help-block">
             <strong>Je hebt nog geen thema voor het project gekozen.</strong>
-            <br>
+        </span>
     @endif
     @if ($errors->has('project_location'))
-       
+        <span class="help-block">
             <strong>Je hebt de locatie van het project nog niet opgegeven.</strong>
-            <br>
+        </span>
     @endif
     @if ($errors->has('project_postalcode'))
-       
+        <span class="help-block">
             <strong>Je hebt de postcode nog niet ingegeven.</strong>
-            <br>
+        </span>
     @endif
     @if ($errors->has('project_startdate'))
-       
-            <strong>Je hebt nog geen startdatum voor het project ingesteld.</strong>
-            <br>
+        <span class="help-block">
+            <strong>{{ $errors->first('project_startdate') }}</strong>
+        </span>
     @endif
     @if ($errors->has('project_enddate'))
-       
+        <span class="help-block">
             <strong>Je hebt nog geen einddatum voor het project ingesteld.</strong>
-            <br>
+        </span>
     @endif
     @if ($errors->has('project_color'))
-       
+        <span class="help-block">
             <strong>Je hebt het project nog geen kleur toegekend.</strong>
-            <br>
+        </span>
     @endif
     @if ($errors->has('headerimage'))
-       
+        <span class="help-block">
             <strong>Je hebt nog geen headerimage geupload.</strong>
-            <br>
+        </span>
     @endif
     <div class="row">
         <div class="row step">
@@ -127,21 +126,18 @@
             <div class="col-md-12 well text-center">
                 <h1>Projectdetails</h1>
 
-                 <div class="form-group">
+                <div class="form-group">
                     <label class="control-label">Uitleg over het project</label>
                     <textarea class="form-control input-md" rows="5" id="project_info" placeholder="Uitleg over het project" alt="Vul project details in" name="project_info">{{$project->info}}</textarea>
                 </div>
-
-                <div class="form-group">
-                    <label class="control-label">Locatie</label>
-                    <input type="text" name="project_location" id="project_location" class="form-control input-md" placeholder="Locatie" alt="Vul hier de locatie van het project in." value="{{$project->location}}">
-                </div>
-
                 <div class="form-group">
                     <label class="control-label">Postcode</label>
                     <input type="text" name="project_postalcode" id="project_postalcode" class="form-control input-md" placeholder="2000" alt="Vul hier de postcode van de locatie in." value="{{$project->postalcode}}">
                 </div>
-
+                <div class="form-group">
+                    <label class="control-label">Locatie</label>
+                    <input type="text" name="project_location" id="project_location" class="form-control input-md" placeholder="Locatie" alt="Vul hier de locatie van het project in." value="{{$project->location}}">
+                </div>
                 <div class="form-group">
                     <label class="control-label">Startdatum</label>
                     <input type="date" name="project_startdate" id="project_startdate" class="form-control input-md" alt="Vul hier de startdatum van het project in." value="{{$project->start_date}}">
@@ -210,7 +206,7 @@
             <div class="col-md-12 well text-center">
             <h1>Tijdlijn</h1>
               <div class="form-group">
-                    <input type="button" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg" id="btn-button-milestone" onclick="" alt="open form mijlpaal">
+                    <input type="button" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg" id="btn-button-milestone" onclick="" alt="Voeg een projectfase toe">
              </div>
 
              
@@ -227,14 +223,18 @@
                     Er is een inputveld niet ingevuld.
                   </p>
                 </div>
+                <div class="form-group hidden" id="datumerror">
+                  <p class="alert alert-danger">
+                    De startdatum van de projectfase moet zich voor de einddatum bevinden!
+                  </p>
+                </div>
                 <div class="form-group">
-                    <label class="control-label">Titel mijlpaal</label>
-                    <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de mijlpaal in." value="{{old('titel_mijlpaal')}}" required>
+                    <label class="control-label">Titel projectfase</label>
+                    <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier de titel van de projectfase in." value="{{old('titel_mijlpaal')}}" required>
                 </div>
                 <div class="form-group">
                     <label>Icoontje</label>
-                    <select ng-model="milestone.icon" class="c-select form-control input-md" id="milestone_image" name="milestone_image" alt="Kies een icoon voor deze milestone" value="{{old('milestone_image')}}">
-                        <option selected disabled>Fase-icoontje</option>
+                    <select ng-model="milestone.icon" class="c-select form-control input-md" id="milestone_image" name="milestone_image" alt="Kies een icoontje voor deze projectfase" value="{{old('milestone_image')}}">
                         <option value="/img/cd-icon-movie.svg"     alt="Camera">  Camera  </option>
                         <option value="/img/cd-icon-location.svg"  alt="locatie"> locatie </option>
                         <option value="/img/cd-icon-picture.svg"   alt="foto">    foto    </option>
@@ -242,25 +242,25 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label">Startdatum</label>
-                    <input ng-model="milestone.startdate" type="date" name="milestone_startdate" id="milestone_startdate" class="form-control input-md" alt="Vul hier de startdatum van de mijlpaal in." value="{{old('milestone_startdate')}}">
+                    <input ng-model="milestone.startdate" type="date" name="milestone_startdate" id="milestone_startdate" class="form-control input-md" alt="Vul hier de startdatum van de projectfase in." value="{{old('milestone_startdate')}}">
                 </div>
                 <div class="form-group">
                     <label class="control-label">EindDatum</label>
-                    <input ng-model="milestone.enddate" type="date" name="milestone_enddate" id="milestone_enddate" class="form-control input-md" alt="Vul hier de einddatum van de mijlpaal in." value="{{old('milestone_enddate')}}">
+                    <input ng-model="milestone.enddate" type="date" name="milestone_enddate" id="milestone_enddate" class="form-control input-md" alt="Vul hier de einddatum van de projectfase in." value="{{old('milestone_enddate')}}">
                 </div>
                 <div class="form-group">
-                   <label class="control-label">Uitleg over de mijlpaal</label>
-                   <textarea ng-model="milestone.milestoneInfo" class="form-control input-md" rows="5" id="mijlpaal_info" placeholder="Uitleg over het mijlpaal" alt="Vul info over de mijlpaal in" name="mijlpaal_info">{{old('mijlpaal_info')}}</textarea>
+                   <label class="control-label">Uitleg over de projectfase</label>
+                   <textarea ng-model="milestone.milestoneInfo" class="form-control input-md" rows="5" id="mijlpaal_info" placeholder="Uitleg over de projectfase" alt="Vul uitleg over de projectfase in" name="mijlpaal_info">{{old('mijlpaal_info')}}</textarea>
                </div>
 
               </div>
               <input type="hidden" id="remembertimeline" value="{{old('milestone_json')}}">
               <input type="text" name="existingMilestones" id="existingMilestones" class="form-control input-md hidden" alt="" value="{{$milestones}}">
               <input type="text" name="milestone_json" id="milestone_json" class="form-control input-md hidden" alt="" value="<% FaseCon.fases %>">
-              <div id="milestoneButtonTogle">
+              <div id="milestoneButtonToggle">
 
                 <div class="form-group">
-                <input ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo)" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg"  alt="Submit mijlpaal">
+                <input type="button" ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo)" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg"  alt="Voeg projectfase toe">
                </div>
                </form>
                 <div class="form-group">

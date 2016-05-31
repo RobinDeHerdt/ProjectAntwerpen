@@ -20,7 +20,7 @@ return [
     'alpha_dash'           => 'The :attribute may only contain letters, numbers, and dashes.',
     'alpha_num'            => 'The :attribute may only contain letters and numbers.',
     'array'                => 'The :attribute must be an array.',
-    'before'               => 'The :attribute must be a date before :date.',
+    'before'               => 'De startdatum moet zich voor de einddatum bevinden.',
     'between'              => [
         'numeric' => 'The :attribute must be between :min and :max.',
         'file'    => 'The :attribute must be between :min and :max kilobytes.',
@@ -45,7 +45,7 @@ return [
     'ip'                   => 'The :attribute must be a valid IP address.',
     'json'                 => 'The :attribute must be a valid JSON string.',
     'max'                  => [
-        'numeric' => 'Dit veld mag maximum :max tekens bevatten.',
+        'numeric' => 'Deze waarde mag niet hoger zijn dan :max',
         'file'    => 'The :attribute may not be greater than :max kilobytes.',
         'string'  => 'Dit veld mag maximum :max tekens bevatten.',
         'array'   => 'The :attribute may not have more than :max items.',

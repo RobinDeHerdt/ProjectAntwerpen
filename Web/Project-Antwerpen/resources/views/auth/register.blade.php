@@ -9,7 +9,7 @@
     <div class="row centered-form">
         <div class="col-md-8 col-md-offset-2">
         <div class="returnlink">
-            <a href="/overzicht"> Terug naar overzicht</a>
+            <a href="/overzicht">Terug naar overzicht</a>
         </div>
             <div class="panel panel-default loginform">
                 <div class="panel-heading">Registratie</div>
@@ -90,7 +90,7 @@
                                 <label class="col-md-4 control-label">Geslacht</label>
 
                                 <div class="col-md-6">
-                                    <select class="c-select form-control input-md" name="gender" alt="Duid je geslacht aan" value="{{old('gender')}}">
+                                    <select class="c-select form-control input-md" id="gender" name="gender" alt="Duid je geslacht aan">
                                         <option value="0" selected></option>
                                         <option value="1" alt="Man"     >Man</option>
                                         <option value="2" alt="Vrouw"   >Vrouw</option>
@@ -98,19 +98,6 @@
                                     @if ($errors->has('gender'))
                                         <span class="help-block">
                                             <strong class="validationerror">{{ $errors->first('gender') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Profielfoto</label>
-
-                                <div class="col-md-6">
-                                    <input type="file" name="profileimage" value="{{old('profileimage')}}">
-                                    @if ($errors->has('profileimage'))
-                                        <span class="help-block">
-                                            <strong class="validationerror">{{ $errors->first('profileimage') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -160,4 +147,10 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    if("{{old('gender')}}")
+    {
+        document.getElementById("gender").value = "{{old('gender')}}";
+    }
+</script>
 @endsection

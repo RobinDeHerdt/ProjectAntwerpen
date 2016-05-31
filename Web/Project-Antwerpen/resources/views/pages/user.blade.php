@@ -9,7 +9,8 @@
         <a href="/overzicht"> Terug naar overzicht</a>
     </div>
 	<h2 style="margin-top:50px;">{{ $user->firstname }} {{  $user->lastname  }}</h2>
-	<img id="profielfoto"src="{{$user->profileimage}}">
+	<img class="profielfoto" src="{{$user->profileimage}}"><br>
+	<a href="/profielfoto">Bewerk je profielfoto</a>
 	<h1>{{ $user->points }} punten</h1>
 	<h5>Jouw gegevens:</h5>
 	<p>Voornaam: {{ $user->firstname }}</p>

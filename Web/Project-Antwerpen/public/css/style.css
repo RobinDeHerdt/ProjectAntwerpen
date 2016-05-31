@@ -139,9 +139,16 @@ font-family: AntwerpREG, Verdana, sans-serif;
   margin-top: -1px;
 
 }
-#profielfoto
+.profielfoto
 {
     width: 20%;
+}
+
+.uploadimage 
+{
+  margin-top: 20px;
+  margin-left:30%;
+  width: 40%;
 }
 
 .adminwindow {
@@ -528,9 +535,7 @@ display: block!important;
 .hidden{
   height: 0px;
 }
-#error p{
-  text-align: left;
-}
+
 .btn-width{
   width: 220px;
 }

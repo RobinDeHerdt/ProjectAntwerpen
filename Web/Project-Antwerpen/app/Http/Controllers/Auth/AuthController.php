@@ -51,13 +51,12 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'firstname'         =>  'required|max:255',
-            'lastname'          =>  'required|max:255',
-            'email'             =>  'required|email|max:255|unique:users',
+            'firstname'         =>  'required|max:35',
+            'lastname'          =>  'required|max:35',
+            'email'             =>  'required|email|max:90|unique:users',
             'password'          =>  'required|min:4|confirmed',
             'postalcode'        =>  'integer|digits:4',
-            'age'               =>  'integer',
-            'profileimage'      =>  'image',
+            'age'               =>  'integer|max:120',
         ]);
     }
 
@@ -70,21 +69,7 @@ class AuthController extends Controller
 
     protected function create(array $data)
     {
-        $fileName = 'null';
-
-        if (Input::hasFile('profileimage') && Input::file('profileimage')->isValid()) {
-            $destinationPath = '/public/img';
-            $extension = Input::file('profileimage')->getClientOriginalExtension();
-            $fileName = '/img/' . uniqid().'.'.$extension;
-
-            Input::file('profileimage')->move(base_path() . $destinationPath, $fileName);
-
-        }  
-        else 
-        {
-            $fileName = '/img/profile.png';
-        }
-
+        $this->redirectTo = '/profielfoto';
 
         Session::flash('register', 'Je bent nu geregistreerd. Welkom!');
 
@@ -96,7 +81,7 @@ class AuthController extends Controller
             'gender_1male_2female'  => $data['gender'],
             'email'                 => $data['email'],
             'password'              => bcrypt($data['password']),
-            'profileimage'          => $fileName,
+            'profileimage'          => '/img/profile.png',
         ]);
     }
 
