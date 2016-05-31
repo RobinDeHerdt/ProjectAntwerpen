@@ -111,7 +111,6 @@ class AdminController extends Controller
     protected function copy(Request $request, $id)
     {
         $projectToCopy = Project::find($id);
-        // dd($projectToCopy->headerimage);
         $this->validate($request, [
             'project_name'      =>   'required',
             'project_info'      =>   'required',
@@ -151,14 +150,11 @@ class AdminController extends Controller
                 $project->headerimage   = $projectToCopy->headerimage;
         }
 
-
-
         $project->save();
 
 
         $jsonArray = json_decode($request->milestone_json, true);
 
-        // dd($jsonArray);
         for ($i = 0; $i < count($jsonArray); $i++) {
             $milestone = new milestone;
 
@@ -276,14 +272,12 @@ class AdminController extends Controller
     {
         $projects = project::orderBy('id', 'asc')->get();
         $questions = opinion_question::orderBy('opinionquestion_id', 'asc')->get();
-        // $project = Project::find($id);
 
         return view('pages.createopinionquestion', compact('projects', 'questions'));
     }
 
     public function createquestion()
     {
-        //$projects = project::orderBy('id', 'asc')->get();
         $questions = question::orderBy('question_id', 'asc')->get();
 
         return view('pages.createquestion', compact('questions'));
@@ -292,7 +286,6 @@ class AdminController extends Controller
     {
         $projects = project::orderBy('id', 'asc')->get();
         $questions = opinion_question::orderBy('opinionquestion_id', 'asc')->get();
-        // $project = Project::find($id);
 
         return view('pages.deleteopinionquestion', compact('projects', 'questions'));
     }
@@ -317,6 +310,11 @@ class AdminController extends Controller
 
     public function addopinionquestion(Request $request)
     {
+        $this->validate($request, [
+            'Project_names'             =>   'required',
+            'opinionquestionbody'       =>   'required',
+        ]);
+
         $selectedProject = $request->Project_names;
         $project = Project::find($selectedProject);
 
@@ -332,6 +330,11 @@ class AdminController extends Controller
 
     public function addquestion(Request $request)
     {
+         $this->validate($request, [
+            'questionbody'       =>   'required',
+            'correctanswer'      =>   'required',
+        ]);
+
         $question = new question;
 
         $question->questionbody = $request->questionbody;

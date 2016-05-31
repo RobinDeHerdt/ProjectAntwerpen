@@ -44,8 +44,16 @@
 	          	<option value="{{$projectnaam->id}}" alt="Project: {{$projectnaam->project_name}}">   {{$projectnaam->project_name}}   </option>
 		    @endforeach
 	    </select>
-      <label for="opinionquestionbody">Vul hier een meningvraag in voor dit project:</label>
-		<input type="text" name="opinionquestionbody" id="addOpinionQuestion">
+	    @if ($errors->has('Project_names'))
+  			<br>
+            <span class="validationerror">Je bent vergeten een project te kiezen.</span>           
+    	@endif
+      	<label for="opinionquestionbody">Vul hier een meningvraag in voor dit project:</label>
+		<input type="text" name="opinionquestionbody" id="addOpinionQuestion" value="{{old('opinionquestionbody')}}">
+		@if ($errors->has('opinionquestionbody'))
+  			<br>
+            <span class="validationerror">Je bent vergeten een meningvraag in te vullen.</span>           
+    	@endif
 		<input type="submit" value="Meningvraag toevoegen" class="btn btn-success meningbutton" id="btnAddOpinionQuestion">
 	</form>
 </div>

@@ -55,8 +55,6 @@ class UserController extends Controller
 		$user->postalcode 	= $request->postalcode;
 		$user->gender_1male_2female = $request->gender;
 
-		
-
 		$user->save();
 
 		return redirect('/profiel');
