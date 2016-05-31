@@ -12,7 +12,7 @@
                 <a href="/profiel">Terug naar profiel</a>
             </div>
             <div class="panel panel-default loginform">
-                <div class="panel-heading">Bewerken</div>
+                <div class="panel-heading">Profiel bewerken</div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/bewerkprofiel') }}" enctype="multipart/form-data">
                             {!! csrf_field() !!}
@@ -77,7 +77,7 @@
                                 <label class="col-md-4 control-label">Postcode</label>
 
                                 <div class="col-md-6">
-                                    <input type="number" name="postalcode" id="postcode" class="form-control input-md" alt="vul je postcode in" value="{{ $user->postalcode }}">@if ($errors->has('postalcode'))
+                                    <input type="number" name="postalcode" id="postalcode" class="form-control input-md" alt="vul je postcode in" value="{{ $user->postalcode }}">@if ($errors->has('postalcode'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('postalcode') }}</strong>
                                         </span>
@@ -102,22 +102,6 @@
                                     @endif
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Profielfoto</label>
-                                <div class="col-md-6">
-                                    <p>Dit is je huidige profielfoto: </p>
-                                	<img src="{{$user->profileimage}}" class="btn-block">
-                                	<p>Je kan hier een andere profielfoto uploaden: </p>
-                                    <input type="file" name="profileimage">
-
-                                    @if ($errors->has('profileimage'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('profileimage') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary btn-block">
@@ -135,6 +119,32 @@
     </div>
 </div>
 <script type="text/javascript">
-    document.getElementById("gender").value = "{{$user->gender_1male_2female}}";
+    if('{{old('gender')}}')
+    {
+        document.getElementById("gender").value = '{{old('gender')}}';
+    }
+    else
+    {
+        document.getElementById("gender").value = "{{$user->gender_1male_2female}}";
+    }
+
+    if('{{old('age')}}')
+    {
+        document.getElementById("age").value = '{{old('age')}}';
+    }
+    else
+    {
+        document.getElementById("age").value = "{{$user->age}}";
+    }
+
+    if('{{old('postalcode')}}')
+    {
+        document.getElementById("postalcode").value = '{{old('postalcode')}}';
+    }
+    else
+    {
+        document.getElementById("postalcode").value = "{{$user->postalcode}}";
+    }
+
 </script>
 @endsection

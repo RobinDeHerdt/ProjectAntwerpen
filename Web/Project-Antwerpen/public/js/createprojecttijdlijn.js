@@ -44,10 +44,17 @@
         startdate:FaseStart,
         enddate:FaseEnd,
         info:FaseInfo
-      };
+      }
 
-      if(Fasetitle != null && FaseIcon != null && FaseInfo != null){
-        Milestonefases.push(this.NewStone);
+      if(Fasetitle != null && FaseIcon != null && FaseInfo != null  && FaseStart != undefined && FaseEnd != undefined)
+      {
+        var date1 = new Date(FaseStart);
+        var date2  = new Date(FaseEnd);
+
+        if(date1 < date2)
+        {
+            Milestonefases.push(this.NewStone);
+        }
       }
       this.MilestoneToJson();
       this.countmilestones();

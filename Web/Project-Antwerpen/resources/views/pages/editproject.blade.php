@@ -223,6 +223,11 @@
                     Er is een inputveld niet ingevuld.
                   </p>
                 </div>
+                <div class="form-group hidden" id="datumerror">
+                  <p class="alert alert-danger">
+                    De startdatum van de projectfase moet zich voor de einddatum bevinden!
+                  </p>
+                </div>
                 <div class="form-group">
                     <label class="control-label">Titel projectfase</label>
                     <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier de titel van de projectfase in." value="{{old('titel_mijlpaal')}}" required>
@@ -230,7 +235,6 @@
                 <div class="form-group">
                     <label>Icoontje</label>
                     <select ng-model="milestone.icon" class="c-select form-control input-md" id="milestone_image" name="milestone_image" alt="Kies een icoontje voor deze projectfase" value="{{old('milestone_image')}}">
-                        <option selected disabled>Fase-icoontje</option>
                         <option value="/img/cd-icon-movie.svg"     alt="Camera">  Camera  </option>
                         <option value="/img/cd-icon-location.svg"  alt="locatie"> locatie </option>
                         <option value="/img/cd-icon-picture.svg"   alt="foto">    foto    </option>
@@ -253,10 +257,10 @@
               <input type="hidden" id="remembertimeline" value="{{old('milestone_json')}}">
               <input type="text" name="existingMilestones" id="existingMilestones" class="form-control input-md hidden" alt="" value="{{$milestones}}">
               <input type="text" name="milestone_json" id="milestone_json" class="form-control input-md hidden" alt="" value="<% FaseCon.fases %>">
-              <div id="milestoneButtonTogle">
+              <div id="milestoneButtonToggle">
 
                 <div class="form-group">
-                <input ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo)" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg"  alt="Voeg projectfase toe">
+                <input type="button" ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo)" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg"  alt="Voeg projectfase toe">
                </div>
                </form>
                 <div class="form-group">

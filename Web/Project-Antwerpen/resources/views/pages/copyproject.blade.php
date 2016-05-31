@@ -220,6 +220,11 @@
                     Er is een inputveld niet ingevuld.
                   </p>
                 </div>
+                <div class="form-group hidden" id="datumerror">
+                  <p class="alert alert-danger">
+                    De startdatum van de projectfase moet zich voor de einddatum bevinden!
+                  </p>
+                </div>
                 <div class="form-group">
                     <label class="control-label">Titel projectfase</label>
                     <input ng-model="milestone.title" type="text" name="titel_mijlpaal" id="titel_mijlpaal" class="form-control input-md" placeholder="Titel" alt="Vul hier het titel van de projectfase in." value="{{old('titel_mijlpaal')}}" required>
@@ -249,10 +254,10 @@
               <input type="hidden" id="remembertimeline" value="{{old('milestone_json')}}">
               <input type="hidden" name="existingMilestones" id="existingMilestones" class="form-control input-md " alt="" value="{{$milestones}}">
               <input type="hidden" name="milestone_json" id="milestone_json" class="form-control input-md " alt="" value="<% FaseCon.fases %>">
-              <div id="milestoneButtonTogle">
+              <div id="milestoneButtonToggle">
 
                 <div class="form-group">
-                <input ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo)" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg"  alt="Voeg projectfase toe">
+                <input type="button" ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo)" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg"  alt="Voeg projectfase toe">
                </div>
                 <div class="form-group">
                     <input ng-click="FaseCon.MilestoneToJson()" type="button" value="Volgende" class="btn btn-width btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">

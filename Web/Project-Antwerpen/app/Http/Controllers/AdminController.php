@@ -217,7 +217,7 @@ class AdminController extends Controller
         }
 
         $jsonArray = json_decode($request->milestone_json, true);
-
+        
         for ($i = 0; $i < count($jsonArray); $i++) {
             $milestone = new milestone;
 
