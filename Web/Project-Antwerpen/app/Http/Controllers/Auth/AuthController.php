@@ -51,12 +51,12 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'firstname'         =>  'required|max:255',
-            'lastname'          =>  'required|max:255',
-            'email'             =>  'required|email|max:255|unique:users',
+            'firstname'         =>  'required|max:35',
+            'lastname'          =>  'required|max:35',
+            'email'             =>  'required|email|max:90|unique:users',
             'password'          =>  'required|min:4|confirmed',
             'postalcode'        =>  'integer|digits:4',
-            'age'               =>  'integer',
+            'age'               =>  'integer|max:120',
             'profileimage'      =>  'image',
         ]);
     }
@@ -78,7 +78,6 @@ class AuthController extends Controller
             $fileName = '/img/' . uniqid().'.'.$extension;
 
             Input::file('profileimage')->move(base_path() . $destinationPath, $fileName);
-
         }  
         else 
         {

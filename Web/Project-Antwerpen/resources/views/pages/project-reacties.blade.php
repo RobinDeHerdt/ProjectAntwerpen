@@ -60,7 +60,7 @@
 			<br />
 			<strong>Heb je nog geen account? Registreren kan <a href="\register">hier</a>.</strong>
 	   	@else
-	   	 	<form role="form" method="POST" action="reacties">
+	   	 	<form role="form" method="POST" action="reacties" name="reactieform">
 		        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		        <div class="form-group">
 		        	<div class="col-md-10 bannerReactie">
@@ -83,6 +83,7 @@
 						    </div>
 						</div>
 					</div>
+					<input type="hidden" value="{{old('rating')}}" id="saveRating">
 					@if ($errors->has('rating'))
 			       		<span class="validationerror">Geef dit project alstublieft ook een waardering!</span>
     				@endif
@@ -101,5 +102,8 @@
 <script type="text/javascript">
 	var d = document.getElementById("reacties");
 	d.className += "active";
+
+	var rating = document.getElementById('saveRating').value;
+	document.reactieform.rating[rating - 1].checked = true;
 </script>
 @stop

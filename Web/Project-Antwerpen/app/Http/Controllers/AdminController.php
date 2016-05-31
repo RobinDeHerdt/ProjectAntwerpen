@@ -53,9 +53,9 @@ class AdminController extends Controller
             'project_info'      =>   'required',
             'project_thema'     =>   'required',
             'project_location'  =>   'required',
-            'project_postalcode'=>   'required|integer',
+            'project_postalcode'=>   'required|integer|digits:4',
             'project_color'     =>   'required',
-            'project_startdate' =>   'required',
+            'project_startdate' =>   'required|before:project_enddate',
             'project_enddate'   =>   'required',
             'headerimage'       =>   'required',
         ]);
@@ -118,7 +118,7 @@ class AdminController extends Controller
             'project_location'  =>   'required',
             'project_postalcode'=>   'required',
             'project_color'     =>   'required',
-            'project_startdate' =>   'required',
+            'project_startdate' =>   'required|before:project_enddate',
             'project_enddate'   =>   'required',
         ]);
 
@@ -181,6 +181,8 @@ class AdminController extends Controller
             'project_location'  =>   'required',
             'project_postalcode'=>   'required',
             'project_color'     =>   'required',
+            'project_startdate' =>   'required|before:project_enddate',
+            'project_enddate'   =>   'required',
         ]);
 
         $project = project::find($id);
