@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/css/projectinfo.css">
 @stop
 @section('content')
-<div class="container">
+<div class="container uitlegcontainer">
     <div class="row ">
         <div class="col-md-12 project-info" style="text-align: center;">
             <h2>Projectinformatie</h2>
@@ -20,8 +20,10 @@
             <h5><i class="fa fa-location-arrow">    </i> Postcode:   {{  $project->postalcode    }}</h5>
             <br>
             <span>{{ $project->info }}</span>   
+            <hr>
         </div>
     </div>
+    <div class="uitleg">
     @foreach($projectfases as $key=>$fase)
         <div class="row  bg-fase" id="fase{{$key + 1}}">
                 <div class="col-md-12 fase-text">
@@ -31,8 +33,8 @@
                 </div>
         </div>
     @endforeach
+    </div>
 </div>
-
 <script type="text/javascript">    
 var d = document.getElementById("info");
 d.className += " active";

@@ -8,7 +8,7 @@
  <link rel="stylesheet" href="/css/donut-graph.css">
 @stop
 @section('content')
- <div class="col-md-offset-3 col-md-6">
+ <div class="col-md-offset-3 col-md-6 addscroll">
  	@if(Session::has('questionadded'))
     <div class="alert alert-success flashmessage">
         <p>{{ Session::get('questionadded')}}</p>

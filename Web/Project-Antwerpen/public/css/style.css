@@ -131,7 +131,6 @@ font-family: AntwerpREG, Verdana, sans-serif;
   background:#c03b44;
   margin-right: 38px;
   overflow:hidden;
-
 }
 .Profile_img img{
   border-radius: 50%;
@@ -297,16 +296,7 @@ td:first-child {
 .captionlink:hover{
   text-decoration: none;
 }
-.ribbon-wrapper-green {
-  width: 85px;
-  height: 88px;
-  overflow: hidden;
-  position: absolute;
-  top: -3px;
-  right: -3px;
-  z-index:10000;
-  pointer-events: none;
-}
+
 .divbtn {
   width: 305px;
   height: 88px;
