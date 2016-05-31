@@ -4,9 +4,12 @@
   Profiel
 @stop
 @section('content')
-<div>
-	<h3>{{ $user->firstname }} {{  $user->lastname  }}</h3>
-	<img src="{{$user->profileimage}}">
+<div class="col-md-10 col-md-offset-1">
+	<div class="returnlink">
+        <a href="/overzicht"> Terug naar overzicht</a>
+    </div>
+	<h2 style="margin-top:50px;">{{ $user->firstname }} {{  $user->lastname  }}</h2>
+	<img id="profielfoto"src="{{$user->profileimage}}">
 	<h1>{{ $user->points }} punten</h1>
 	<h5>Jouw gegevens:</h5>
 	<p>Voornaam: {{ $user->firstname }}</p>

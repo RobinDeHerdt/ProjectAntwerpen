@@ -30,7 +30,7 @@
 		<div class=" container comment_body">
 			<h3>{{ $comment->user->firstname }}</h3>
 
-			<p>{{ $comment->comment_body }}</p>
+			<p class="reactie">{{ $comment->comment_body }}</p>
 
     		<h5>Gepost op: {{ $comment->created_at }}</h5>
     		<div class="rating">
@@ -84,12 +84,12 @@
 						</div>
 					</div>
 					@if ($errors->has('rating'))
-			       		<span class="validationerror">Geef dit project alstublieft ook een rating!</span>
+			       		<span class="validationerror">Geef dit project alstublieft ook een waardering!</span>
     				@endif
-		            <textarea type="text" name="reactie" id="mening" class="form-control input-md" placeholder="Mening plaatsen" required alt="Vul hier een reactie in op dit project">{{old('reactie') }}</textarea>
+		            <textarea type="text" name="reactie" id="mening" class="form-control input-md" placeholder="Geef hier uw reactie" required alt="Vul hier een reactie in op dit project">{{old('reactie') }}</textarea>
 		        </div>
     			@if ($errors->has('reactie'))
-			        <span class="validationerror">Je hebt nog geen reactie ingegeven.</span>
+			        <span class="validationerror">{{ $errors->first('reactie') }}</span>
     			@endif
 		        <input type="submit" value="Reageer" class="btn btn-danger btn-block btn-reageer" alt="Bevestig uw reactie">
 	    	</form>

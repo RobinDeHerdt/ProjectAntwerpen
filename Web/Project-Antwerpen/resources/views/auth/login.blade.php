@@ -8,6 +8,9 @@
 <div class="container">
     <div class="row centered-form">
         <div class="col-md-8 col-md-offset-2">
+        <div class="returnlink">
+            <a href="/overzicht"> Terug naar overzicht</a>
+        </div>
             <div class="panel panel-default loginform">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
@@ -22,7 +25,7 @@
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>We kunnen je niet inloggen met wat je net hebt ingevoerd. Probeer nog een keer.</strong>
                                     </span>
                                 @endif
                             </div>

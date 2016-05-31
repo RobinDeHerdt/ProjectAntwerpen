@@ -16,7 +16,7 @@ class CommentController extends Controller
     protected function store(Request $request, $id)
     {
         $this->validate($request, [
-            'reactie'      =>   'required',
+            'reactie'      =>   'required|max:1000',
             'rating'       =>   'required',
         ]);
 
