@@ -42,10 +42,18 @@
 	<form method="post" action="" class="OpninionQuestionFrom">
 		{!! csrf_field() !!}
       	<label for="addOpinionQuestion">Vul hier een quizvraag in:</label>
-		<input type="text" name="questionbody" id="addOpinionQuestion">
+		<input type="text" name="questionbody" id="addOpinionQuestion" value="{{old('questionbody')}}">
+		@if ($errors->has('questionbody'))
+            <span class="validationerror">Je bent vergeten een vraag in te vullen.</span>
+            <br>
+    	@endif
 		<label for="correctanswer">Juiste antwoord:</label>
 		<input class="radio" type="radio" name="correctanswer" value="1" id="correctanswer"> <label for="correctanswer">Correct</label>
   		<input class="radio" type="radio" name="correctanswer" value="0" id="correctanswer"> <label for="correctanswer">Fout</label>
+  		@if ($errors->has('correctanswer'))
+  			<br>
+            <span class="validationerror">Je bent vergeten het correcte antwoord aan te duiden.</span>           
+    	@endif
 		<input type="submit" value="Toevoegen" class="btn btn-success meningbutton" id="btnAddOpinionQuestion">
 	</form>
 </div>
