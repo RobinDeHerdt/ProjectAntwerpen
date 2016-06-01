@@ -52,10 +52,8 @@
       {
         if(FaseStart < FaseEnd)
         {
-          console.log(FaseStart + ' ' + FaseEnd);
           FaseStart.setDate(FaseStart.getDate() + 1);
           FaseEnd.setDate(FaseEnd.getDate() + 1); 
-          console.log(FaseStart + ' ' + FaseEnd);
           Milestonefases.push(this.NewStone);
         }
       }
