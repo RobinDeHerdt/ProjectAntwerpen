@@ -48,11 +48,10 @@
 
       if(Fasetitle != null && FaseIcon != null && FaseInfo != null  && FaseStart != undefined && FaseEnd != undefined)
       {
-        var date1 = new Date(FaseStart);
-        var date2  = new Date(FaseEnd);
-
-        if(date1 < date2)
+        if(FaseStart < FaseEnd)
         {
+            FaseStart.setDate(FaseStart.getDate() + 1);
+            FaseEnd.setDate(FaseEnd.getDate() + 1); 
             Milestonefases.push(this.NewStone);
         }
       }

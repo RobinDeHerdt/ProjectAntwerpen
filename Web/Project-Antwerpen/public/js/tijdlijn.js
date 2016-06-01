@@ -50,14 +50,13 @@
 
       if(Fasetitle != null && FaseIcon != null && FaseInfo != null && FaseStart != null && FaseEnd != null)
       {
-        console.log(FaseStart + ' ' + FaseEnd);
         if(FaseStart < FaseEnd)
         {
+          console.log(FaseStart + ' ' + FaseEnd);
+          FaseStart.setDate(FaseStart.getDate() + 1);
+          FaseEnd.setDate(FaseEnd.getDate() + 1); 
+          console.log(FaseStart + ' ' + FaseEnd);
           Milestonefases.push(this.NewStone);
-        }
-        else
-        {
-          console.log('ERROR');
         }
       }
       this.MilestoneToJson();
@@ -76,7 +75,7 @@
           var date2  = $filter('date')(new Date(b["startdate"]), 'yyyy-MM-dd');
           date2 = date2.split('-');
           date2 = date2[0] + date2[1] + date2[2];
-
+          
           return date1 > date2 ? 1 : -1;
         })
       }
