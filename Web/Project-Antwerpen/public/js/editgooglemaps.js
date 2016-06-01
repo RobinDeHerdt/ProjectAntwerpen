@@ -1,3 +1,5 @@
+var maploaded = false;
+
 function displayMap()
 {
     document.getElementById('googleMap').style.display="block";
@@ -7,17 +9,19 @@ function initialize() {
     var initLat = parseFloat(document.getElementById('lat').value);
     var initLng = parseFloat(document.getElementById('lng').value);
 
-    if (document.getElementById('saveLng').value != 0 && document.getElementById('saveLat').value != 0) 
+    if (document.getElementById('saveLng').value != 0 && document.getElementById('saveLat').value != 0 && !maploaded)
     {
         var savedLat = parseFloat(document.getElementById('saveLat').value);
-        var savedLng = parseFloat(document.getElementById('saveLng').value);
+        var savedLng = parseFloat(document.getElementById('saveLng').value); 
         
         initLat = savedLat;
         initLng = savedLng;
 
-        document.getElementById('lat').value = initLat;
-        document.getElementById('lng').value = initLng;
+        maploaded = true;
     }
+
+    document.getElementById('lat').value = initLat;
+    document.getElementById('lng').value = initLng;
 
     var mapProp = {
         center:new google.maps.LatLng(initLat,initLng),

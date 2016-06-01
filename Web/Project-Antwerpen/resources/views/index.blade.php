@@ -63,7 +63,7 @@
 
                         @if ($user && $user->isAdmin)
                           <a class="EditTile" href="bewerkproject/{{$project->id}}"> <span class="fa fa-btn fa-pencil editicon"></span>  Bewerken</a>
-                            <a class="CopyTile" href="kopiërenproject/{{$project->id}}"> <span class="fa fa-btn fa-copy editicon"></span>  Kopiëren project</a>
+                            <a class="CopyTile" href="kopiërenproject/{{$project->id}}"> <span class="fa fa-btn fa-copy editicon"></span>  Kopiëren</a>
                           <a class="deleteTile" href="verwijderproject/{{$project->id}}">Verwijderen <span class="fa fa-btn fa-close"></span> </a>
                         @endif
                     </div>

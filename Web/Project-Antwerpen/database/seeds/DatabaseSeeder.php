@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(QuestionsTableSeeder::class);
         $this->call(OpinionQuestionsTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
-        $this->call(VotesTableSeeder::class);
         $this->call(MilestonesTableSeeder::class);
     }
 }

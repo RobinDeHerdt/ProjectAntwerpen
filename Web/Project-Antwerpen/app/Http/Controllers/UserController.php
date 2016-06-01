@@ -33,20 +33,7 @@ class UserController extends Controller
             'email'     		=>   'required|email|max:255|unique:users,email,'.$user->id,
             'postalcode'  		=>   'integer',
             'age'				=>   'integer',
-           	'profileimage'		=>   'image',
-        ]);
-		
-		
-
-		if (Input::hasFile('profileimage') && Input::file('profileimage')->isValid()) {
-	        $destinationPath = '/public/img';
-	        $extension = Input::file('profileimage')->getClientOriginalExtension();
-	        $fileName = '/img/' . uniqid().'.'.$extension;
-
-	        Input::file('profileimage')->move(base_path() . $destinationPath, $fileName);
-
-	        $user->profileimage = $fileName;
-        }  
+        ]); 
 
 		$user->firstname 	= $request->firstname;
 		$user->lastname 	= $request->lastname;
@@ -55,10 +42,39 @@ class UserController extends Controller
 		$user->postalcode 	= $request->postalcode;
 		$user->gender_1male_2female = $request->gender;
 
-		
-
 		$user->save();
 
 		return redirect('/profiel');
+	}
+
+	public function profileimage()
+	{
+		$user = Auth::user();
+
+		return view('auth.registerprofileimage', compact('user'));
+	}
+
+	public function addprofileimage(Request $request)
+	{
+		$this->validate($request, [
+            'profileimage'		=>   'image',
+        ]); 
+		
+
+		if (Input::hasFile('profileimage') && Input::file('profileimage')->isValid()) 
+		{
+			$user = Auth::user();
+
+	        $destinationPath = '/public/img';
+	        $extension = Input::file('profileimage')->getClientOriginalExtension();
+	        $fileName = '/img/' . uniqid().'.'.$extension;
+
+	        Input::file('profileimage')->move(base_path() . $destinationPath, $fileName);
+
+	        $user->profileimage = $fileName;
+	        $user->save();
+        } 
+
+        return redirect('/profiel');
 	}
 }

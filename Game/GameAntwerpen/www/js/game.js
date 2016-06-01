@@ -56,7 +56,6 @@ preload.prototype = {
         game.load.image("false", "assets/images/nietwaar2.png");
         game.load.image("thumbsup", "assets/images/akkoordoutlined.png");
         game.load.image("thumbsdown", "assets/images/nietakkoordoutlined.png");
-        game.load.image("project-btn", "assets/images/project-btn.png");
           //intro tween images
         game.load.image("title-tween", "assets/images/title-tween.png");
         game.load.image("logo-tween", "assets/images/a-logo-tween.png");
@@ -265,7 +264,7 @@ play.prototype = {
         //question counter +1
         counter += 1;
         //start "completed" state when reached last question
-        if(counter == questionsJSON.length &&  == opinionQuestionsJSON.length){
+        if(counter == questionsJSON.length &&  opinionCounter == opinionQuestionsJSON.length){
           sprite.events.onAnimationComplete.add(function(){
             counter = 0;
             opinionCounter = 0;

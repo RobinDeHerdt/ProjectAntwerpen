@@ -37,10 +37,6 @@ h3
     margin-top:20px;
 
 }
-.imgtile>img {
-    width:65%; 
-    margin:3em;
-}
 .bg-fase {
     position:relative;
     min-height:400px !important;
@@ -68,5 +64,18 @@ h3
      display: none;;
 }
 .project-info {
+    margin-left:15%;
+    width: 70%;
     min-height:320px;
 }
+    
+.uitlegcontainer {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.uitleg {
+    width: 70%;
+    margin-left: 15%;
+}
+

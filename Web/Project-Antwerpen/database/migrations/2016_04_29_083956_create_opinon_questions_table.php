@@ -32,7 +32,6 @@ class CreateOpinonQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('votes');
         Schema::drop('opinion_questions');
     }
 }

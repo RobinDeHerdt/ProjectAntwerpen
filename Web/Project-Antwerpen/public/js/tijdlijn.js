@@ -48,8 +48,14 @@
         info:FaseInfo
       };
 
-      if(Fasetitle != null && FaseIcon != null && FaseInfo != null){
-        Milestonefases.push(this.NewStone);
+      if(Fasetitle != null && FaseIcon != null && FaseInfo != null && FaseStart != null && FaseEnd != null)
+      {
+        if(FaseStart < FaseEnd)
+        {
+          FaseStart.setDate(FaseStart.getDate() + 1);
+          FaseEnd.setDate(FaseEnd.getDate() + 1); 
+          Milestonefases.push(this.NewStone);
+        }
       }
       this.MilestoneToJson();
       this.countmilestones();
@@ -62,10 +68,12 @@
         Milestonefases.sort(function(a,b){
           var date1 = $filter('date')(new Date(a["startdate"]), 'yyyy-MM-dd');
           date1 = date1.split('-');
-          date1 = date1[0] +date1[1] -1 + date1[2];
+          date1 = date1[0] + date1[1] + date1[2];
+          
           var date2  = $filter('date')(new Date(b["startdate"]), 'yyyy-MM-dd');
-          date2= date2.split('-');
-          date2= date2[0] +date2[1] -1 + date2[2];
+          date2 = date2.split('-');
+          date2 = date2[0] + date2[1] + date2[2];
+          
           return date1 > date2 ? 1 : -1;
         })
       }

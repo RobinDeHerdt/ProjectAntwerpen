@@ -13,9 +13,4 @@ class opinion_question extends Model
     {
         return $this->belongsTo('App\project','project_id');
     }
-
-    public function votes()
-    {
-     	return $this->hasMany('App\vote', 'vote_id'); 
-    }
 }

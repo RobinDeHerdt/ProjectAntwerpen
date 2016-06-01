@@ -4,9 +4,13 @@
   Profiel
 @stop
 @section('content')
-<div>
-	<h3>{{ $user->firstname }} {{  $user->lastname  }}</h3>
-	<img src="{{$user->profileimage}}">
+<div class="col-md-10 col-md-offset-1">
+	<div class="returnlink">
+        <a href="/overzicht"> Terug naar overzicht</a>
+    </div>
+	<h2 style="margin-top:50px;">{{ $user->firstname }} {{  $user->lastname  }}</h2>
+	<img class="profielfoto" src="{{$user->profileimage}}"><br>
+	<a href="/profielfoto">Bewerk je profielfoto</a>
 	<h1>{{ $user->points }} punten</h1>
 	<h5>Jouw gegevens:</h5>
 	<p>Voornaam: {{ $user->firstname }}</p>
@@ -34,7 +38,7 @@
 	<a href="/bewerkprofiel">Bewerk deze gegevens</a>
 
 	@if($user->isAdmin)
-	<div id="adminpanel">
+	<div id="adminpaneel">
 	<h1>Administratorpaneel</h1>
 		<div class="adminwindow">
 			<h3>Quizvragen</h3>

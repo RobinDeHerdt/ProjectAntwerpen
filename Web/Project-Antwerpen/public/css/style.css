@@ -131,7 +131,6 @@ font-family: AntwerpREG, Verdana, sans-serif;
   background:#c03b44;
   margin-right: 38px;
   overflow:hidden;
-
 }
 .Profile_img img{
   border-radius: 50%;
@@ -140,15 +139,24 @@ font-family: AntwerpREG, Verdana, sans-serif;
   margin-top: -1px;
 
 }
+.profielfoto
+{
+    width: 20%;
+}
+
+.uploadimage 
+{
+  margin-top: 20px;
+  margin-left:30%;
+  width: 40%;
+}
 
 .adminwindow {
-  margin-left: 10%;
-  width: 80%;
   padding: 5px 0 20px 0;
   margin-bottom: 20px;
   border: solid 1px black;
 }
-#adminpanel {
+#adminpaneel {
   font-size: 1.1em;
   position: relative;
   top: 20px;
@@ -156,15 +164,31 @@ font-family: AntwerpREG, Verdana, sans-serif;
 }
 
 .createtitle {
-  margin-top:50px;
+  margin-top:100px;
+}
+.returnlink {
+  float: right;
+  margin-top: 20px;
 }
 
+.returnlink a{
+  padding-right: 7.5px;
+  font-size: 1.1em;
+}
 .btndeletemilestone {
   margin-top:10px;
 }
 
 #noFases {
   margin-bottom: 50px;
+}
+
+#noOpinionQuestions {
+  margin-top: 20px;
+}
+
+.noquestions {
+  margin-top: 20px;
 }
 
 .milestonestable{
@@ -297,16 +321,7 @@ td:first-child {
 .captionlink:hover{
   text-decoration: none;
 }
-.ribbon-wrapper-green {
-  width: 85px;
-  height: 88px;
-  overflow: hidden;
-  position: absolute;
-  top: -3px;
-  right: -3px;
-  z-index:10000;
-  pointer-events: none;
-}
+
 .divbtn {
   width: 305px;
   height: 88px;
@@ -520,9 +535,7 @@ display: block!important;
 .hidden{
   height: 0px;
 }
-#error p{
-  text-align: left;
-}
+
 .btn-width{
   width: 220px;
 }
