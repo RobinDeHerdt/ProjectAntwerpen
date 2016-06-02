@@ -29,7 +29,7 @@ h3
 .fase-text {
     margin-top:50px;
 }    
-.bg-fase:nth-child(even) {background-color: #DBDBDB;
+.bg-fase:nth-child(odd) {background-color: #DBDBDB;
     margin-left: -381px;
     margin-right: -381px;
     padding-left:381px;
@@ -55,7 +55,7 @@ h3
     border-left: solid 50px transparent;
     border-right: solid 50px transparent;
 }
-.bg-fase:nth-child(odd):after {
+.bg-fase:nth-child(even):after {
      border-top: solid 50px #fff;
     border-left: solid 50px transparent;
     border-right: solid 50px transparent;
