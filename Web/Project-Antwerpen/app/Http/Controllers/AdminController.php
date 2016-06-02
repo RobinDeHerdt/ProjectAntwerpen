@@ -30,7 +30,6 @@ class AdminController extends Controller
 		$projectid = $project->id;
 
         $milestones = milestone::where('project_id', $projectid)->get();
-        json_encode($milestones);
 
 		return view('pages.editproject', compact('project', 'milestones'));
 	}

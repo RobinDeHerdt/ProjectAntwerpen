@@ -158,7 +158,15 @@ if(currentQuestion==0){
   })(jQuery);
 }
 
+if(graphdata.length-1 == 0 || graphdata.length == 0){
+  (function($) {
+    $(".prevbutton" ).addClass( "hide" );
+    $(".nextbutton" ).addClass( "hide" );
+  })(jQuery);
+}
+
 function next(){
+  $("#noAnswers" ).addClass( "hide" );
   if(currentQuestion<graphdata.length-1){
     currentQuestion++;
     canAnimate = true;
@@ -178,6 +186,7 @@ function next(){
 }
 
 function prev() {
+    $("#noAnswers" ).addClass( "hide" );
     if(currentQuestion>0)
     {
       currentQuestion--;

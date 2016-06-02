@@ -262,7 +262,7 @@
                 <div class="form-group">
                 <input type="button" ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo)" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg"  alt="Voeg projectfase toe">
                </div>
-               </form>
+               
                 <div class="form-group">
                     <input ng-click="FaseCon.MilestoneToJson()" type="button" value="Volgende" class="btn btn-width btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
                </div>
@@ -297,6 +297,7 @@
         </div>
     </div>
     </form>
+</div>
 </div>
 <script type="text/javascript">
     if('{{old('project_color')}}'){
