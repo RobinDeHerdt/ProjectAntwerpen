@@ -41,10 +41,5 @@
 var d = document.getElementById("tijdlijn");
 d.className += " active";
 </script>
-<<<<<<< HEAD
 
-=======
-<script src="/js/timeline-main.js"></script>
-<script src="/js/timeline-modernizr.js"></script>
->>>>>>> 35d40315536e6eb3bbbfe6fcf3de77f6c7930cc8
 @stop
