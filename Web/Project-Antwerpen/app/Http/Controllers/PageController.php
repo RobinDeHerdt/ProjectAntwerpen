@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Auth;
-use App\project;
+use App\Project;
 
 class PageController extends Controller
 {
@@ -22,7 +22,7 @@ class PageController extends Controller
 
 	public function overview()
 	{
-		$projects = project::orderBy('id', 'asc')->get();
+		$projects = Project::orderBy('id', 'asc')->get();
 		$user = null;
 		
 		if(Auth::user())

@@ -14,7 +14,6 @@ class ApiController extends Controller
     public function getUsers()
     {
     	$users = DB::table('users')->get();
-    	json_encode($users);
 
     	return response()->json($users);
     }

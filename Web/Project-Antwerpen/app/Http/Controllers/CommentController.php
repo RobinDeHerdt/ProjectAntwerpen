@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\comment;
-use App\project;
+use App\Comment;
+use App\Project;
 use App\User;
 use Auth;
 use Session;
@@ -20,15 +20,15 @@ class CommentController extends Controller
             'rating'       =>   'required',
         ]);
 
-        $comment = new comment;
+        $comment = new Comment;
         $project = Project::find($id);
         $user 	 = Auth::user();
 
 
         $comment->comment_body  = $request->reactie;
         $comment->rating        = $request->rating;
-        $comment->project()->associate($project);
-        $comment->user()->associate($user);
+        $comment->Project()->associate($project);
+        $comment->User()->associate($user);
         $comment->save();
 
         Session::flash('commented', 'Bedankt voor je reactie!');
@@ -48,7 +48,7 @@ class CommentController extends Controller
 
     public function delete($id, $commentid)
     {
-    	$comment = comment::find($commentid);
+    	$comment = Comment::find($commentid);
 		$comment->delete();
 
 		Session::flash('commentdeleted', 'De reactie werd succesvol verwijderd.');
