@@ -134,7 +134,7 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label">Postcode</label>
-                    <input type="hidden" id="savePostcalcode" value="{{old('project_postalcode')}}">
+                    <input type="hidden" id="savePostalcode" value="{{old('project_postalcode')}}">
                     <input type="text" name="project_postalcode" id="project_postalcode" class="form-control input-md" placeholder="2000" alt="Vul hier de postcode van de locatie in." value="{{$project->postalcode}}">
                 </div>
                 <div class="form-group">
@@ -169,7 +169,6 @@
                         <option value="fa-users"            alt="Sociaal">      Sociaal      </option>
                         <option value="fa-graduation-cap"   alt="Educatie">     Educatie     </option>
                         <option value="fa-music"            alt="Cultuur">      Cultuur      </option>
-
                     </select>
                 </div>
 
