@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="\css/reset.css"> 
 	<link rel="stylesheet" href="\css/timeline-style.css"> 
 	<script src="\js/timeline-modernizr.js"></script>
+	<script src="\js/timeline-main.js"></script>
 @stop
 @section('content')
   <div class="projectdiv">
@@ -36,5 +37,5 @@
 var d = document.getElementById("tijdlijn");
 d.className += " active";
 </script>
-<script src="\js/timeline-main.js"></script>
+
 @stop
