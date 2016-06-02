@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="/css/reset.css"> 
 	<link rel="stylesheet" href="/css/timeline-style.css"> 
 	
->>>>>>> 35d40315536e6eb3bbbfe6fcf3de77f6c7930cc8
+
 @stop
 @section('content')
   <div class="projectdiv">
