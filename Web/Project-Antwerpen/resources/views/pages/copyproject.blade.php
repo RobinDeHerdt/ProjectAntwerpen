@@ -10,9 +10,9 @@
 @section('scripts')
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-<script src="\js/editgooglemaps.js"></script>
-<script src="\js/currentstep.js"></script>
-<link rel="stylesheet" type="text/css" href="\css/template.css">
+<script src="/js/editgooglemaps.js"></script>
+<script src="/js/currentstep.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/template.css">
 @stop
 @section('content')
 <div class="container ProjectFrom">
@@ -296,9 +296,55 @@
 </div>
 </div>
 <script type="text/javascript">
-    document.getElementById("project_color").value = "{{$project->color}}";
-    document.getElementById("project_thema").value = "{{$project->thema}}";
+    if('{{old('project_color')}}'){
+        document.getElementById("project_color").value = '{{old('project_color')}}';
+    }
+    else { 
+        document.getElementById("project_color").value = "{{$project->color}}";
+    }
+    if('{{old('project_thema')}}'){
+        document.getElementById("project_thema").value = '{{old('project_thema')}}';
+    }
+    else {
+        document.getElementById("project_thema").value = "{{$project->thema}}";
+    }
+    if('{{old('project_name')}}') {
+        document.getElementById("project_name").value = '{{old('project_name')}}';
+    }
+    else {
+        document.getElementById("project_name").value = "{{$project->project_name}}";
+    }
+    if('{{old('project_info')}}'){
+        document.getElementById("project_info").value = '{{old('project_info')}}';
+    } else
+    {
+        document.getElementById("project_info").value = "{{$project->info}}";
+    }
+    if('{{old('project_postalcode')}}'){
+        document.getElementById("project_postalcode").value = '{{old('project_postalcode')}}';
+    }
+    else{
+        document.getElementById("project_postalcode").value = "{{$project->postalcode}}";
+    }
+    if('{{old('project_location')}}'){
+        document.getElementById("project_location").value = '{{old('project_location')}}';
+    }
+    else{
+        document.getElementById("project_location").value = "{{$project->location}}";
+    }
+    if('{{old('project_startdate')}}'){
+        document.getElementById("project_startdate").value = '{{old('project_startdate')}}';
+    }
+    else{
+        document.getElementById("project_startdate").value = "{{$project->start_date}}";
+    }
+    if('{{old('project_enddate')}}'){
+        document.getElementById("project_enddate").value = '{{old('project_enddate')}}';
+    }
+    else{
+        document.getElementById("project_enddate").value = "{{$project->end_date}}";
+    }
 </script>
-<script src="\js/tijdlijn.js"></script>
-<script src="\js/MakeMilestones.js"></script>
+<script src="/js/tijdlijn.js"></script>
+<script src="/js/MakeMilestones.js"></script>
 @stop
