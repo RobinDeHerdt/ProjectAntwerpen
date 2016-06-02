@@ -12,15 +12,21 @@
 <div class="container uitlegcontainer">
     <div class="row ">
         <div class="col-md-12 project-info" style="text-align: center;">
+       
             <h2>Projectinformatie</h2>
             <br>
+
+             <div class="align container">
             <h5><i class="fa fa-calendar-check-o">  </i> Begindatum: {{  $project->start_date    }}</h5>
             <h5><i class="fa fa-calendar-times-o">  </i> Einddatum:  {{  $project->end_date      }}</h5>
             <h5><i class="fa fa-map-marker">        </i> Locatie:    {{  $project->location      }}</h5>
             <h5><i class="fa fa-location-arrow">    </i> Postcode:   {{  $project->postalcode    }}</h5>
+            </div>
+
             <br>
             <span>{{ $project->info }}</span>   
             <hr>
+            
         </div>
     </div>
     <div class="uitleg">

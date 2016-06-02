@@ -54,7 +54,7 @@
         </div>
 		</div>
 		@endforeach
-		<div class=" col-md-12">
+		<div class=" col-md-12 log-in">
 		@if (Auth::guest())
 			<strong>Je moet ingelogd zijn om een reactie te geven. Je kan <a href="\login">hier</a> inloggen.</strong>
 			<br />
