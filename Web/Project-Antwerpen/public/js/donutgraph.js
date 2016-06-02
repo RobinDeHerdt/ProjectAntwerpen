@@ -152,6 +152,12 @@ let draw = function() {
 }
 }
 
+if(currentQuestion==0){
+  (function($) {
+    $(".prevbutton" ).addClass( "hide" );
+  })(jQuery);
+}
+
 function next(){
   if(currentQuestion<graphdata.length-1){
     currentQuestion++;
@@ -159,7 +165,15 @@ function next(){
     dataset = [graphdata[currentQuestion].down_vote, graphdata[currentQuestion].up_vote];
     document.getElementById('meningvraag').innerHTML = graphdata[currentQuestion].opinionquestionbody;
   }else{
-    canAnimate = false
+    canAnimate = false;
+  }
+  if(currentQuestion==graphdata.length-1){
+      $(".nextbutton" ).addClass( "hide" );
+  }
+  if(currentQuestion>0){
+    (function($) {
+      $(".prevbutton" ).removeClass( "hide" );
+    })(jQuery);
   }
 }
 
@@ -175,6 +189,15 @@ function prev() {
     {
       canAnimate = false;
     }
+    if(currentQuestion==0){
+        $(".prevbutton" ).addClass( "hide" );
+    }
+    if(currentQuestion<graphdata.length-1){
+      (function($) {
+        $(".nextbutton" ).removeClass( "hide" );
+      })(jQuery);
+    }
+
   }
 
 
