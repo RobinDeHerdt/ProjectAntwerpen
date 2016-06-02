@@ -85,5 +85,5 @@
           @endif
       </div>
     </div>
-    <script src="\js/sort.js"></script>
+    <script src="/js/sort.js"></script>
 @stop

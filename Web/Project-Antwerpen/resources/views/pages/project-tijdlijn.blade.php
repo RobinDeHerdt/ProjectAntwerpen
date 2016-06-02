@@ -5,9 +5,9 @@
 @stop
 @extends('navigation-layout')
 @section('scripts')
-	<link rel="stylesheet" href="\css/reset.css"> 
-	<link rel="stylesheet" href="\css/timeline-style.css"> 
-	<script src="\js/timeline-modernizr.js"></script>
+	<link rel="stylesheet" href="/css/reset.css"> 
+	<link rel="stylesheet" href="/css/timeline-style.css"> 
+	
 @stop
 @section('content')
   <div class="projectdiv">
@@ -36,5 +36,6 @@
 var d = document.getElementById("tijdlijn");
 d.className += " active";
 </script>
-<script src="\js/timeline-main.js"></script>
+<script src="/js/timeline-main.js"></script>
+<script src="/js/timeline-modernizr.js"></script>
 @stop

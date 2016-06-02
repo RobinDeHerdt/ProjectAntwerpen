@@ -5,8 +5,8 @@
 @stop
 @extends('navigation-layout')
 @section('scripts')
-<link rel="stylesheet" href="\css/reacties.css">
-<link rel="stylesheet" href="\css/rating.css">
+<link rel="stylesheet" href="/css/reacties.css">
+<link rel="stylesheet" href="/css/rating.css">
 @stop
 @section('content')
 <div class="projectdiv">
