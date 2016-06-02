@@ -23,7 +23,7 @@
             <h5><i class="fa fa-location-arrow">    </i> Postcode:   {{  $project->postalcode    }}</h5>
             </div>
 
-             <hr>
+             <hr class="hr">
             <span>{{ $project->info }}</span>   
            
             
