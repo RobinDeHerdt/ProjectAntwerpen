@@ -144,7 +144,7 @@ font-family: AntwerpREG, Verdana, sans-serif;
     width: 20%;
 }
 
-.uploadimage 
+.uploadimage
 {
   margin-top: 20px;
   margin-left:30%;
@@ -612,5 +612,18 @@ display: block!important;
 @media (max-width: 682px){
   .comment_body{
     width: 100%;
+  }
+}
+
+@media (max-width: 340px){
+  .ContentDiv, .footer{
+    min-width: 310px;
+  }
+  .titelpagemobile{
+    width: 20%;
+    font-size: 20px;
+  }
+  .navbar-right {
+      width: 30%;
   }
 }
