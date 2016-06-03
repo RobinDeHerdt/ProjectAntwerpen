@@ -7,6 +7,7 @@
 @section('scripts')
     <link rel="stylesheet" type="text/css" href="/css/uitleg.css">
     <link rel="stylesheet" type="text/css" href="/css/projectinfo.css">
+    <link rel="stylesheet" href="/css/timeline-style.css"> 
 @stop
 @section('content')
 <div class="container uitlegcontainer">
@@ -33,7 +34,11 @@
     @foreach($projectfases as $key=>$fase)
         <div class="row  bg-fase" id="fase{{$key + 1}}">
                 <div class="col-md-12 fase-text">
-                    <h2>{{ $fase->milestone_title}}</h2>
+                   <div class="cd-timeline-img cd-movie top"><img src={{$fase->milestone_image}}></div>
+                   <br>
+                   <br> 
+                   <br> 
+                   <h2>{{ $fase->milestone_title}}</h2> 
                     <h5 class="fase-date"><i class="fa fa-calendar-check-o">  </i> Begindatum: {{  $fase->start_date    }}&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar-times-o">  </i> Einddatum:  {{  $fase->end_date      }}</h5>
                     <p class="info">{{ $fase->milestone_info }}</p>
 
