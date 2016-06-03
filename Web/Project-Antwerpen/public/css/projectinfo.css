@@ -87,4 +87,6 @@ h3
 #hr {
     border-top:1px solid #BABABA;
 }
-
+.top {
+    margin-top: 10px;
+}
