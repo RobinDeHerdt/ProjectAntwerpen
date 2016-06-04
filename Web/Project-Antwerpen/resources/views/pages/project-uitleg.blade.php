@@ -39,7 +39,8 @@
                    <br> 
                    <br> 
                    <h2>{{ $fase->milestone_title}}</h2> 
-                   <div class="fase-date"> <div style="display:inline"><h5 style="display:inline"><i class="fa fa-calendar-check-o">  </i> Begindatum: {{  $fase->start_date    }}</h5></div>&nbsp;&nbsp;&nbsp;&nbsp;<div style="display:inline"><h5 style="display:inline"><i class="fa fa-calendar-times-o">  </i> Einddatum:  {{  $fase->end_date      }}</h5></div></div>
+                   <div class="fase-date"> <h5><i class="fa fa-calendar-check-o">  </i> Begindatum: {{  $fase->start_date    }}</h5>&nbsp;&nbsp;&nbsp;&nbsp;<h5><i class="fa fa-calendar-times-o">  </i> Einddatum:  {{  $fase->end_date      }}</h5>
+                   </div>
                     <p class="info">{{ $fase->milestone_info }}</p>
 
                 </div>
