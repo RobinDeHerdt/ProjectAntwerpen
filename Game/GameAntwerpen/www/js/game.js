@@ -400,7 +400,8 @@ mening.prototype = {
         $.ajax({
           url:"http://www.exiles.multimediatechnology.be/postvote",
           type:"POST",
-          data: {"vote":"upvote"},
+          data: {"vote":"upvote",
+                 "question_id":parseInt(opinionQuestionsJSON[opinionCounter].opinionquestion_id)},
           success: function(){
             console.log("post success!");
           }
@@ -480,7 +481,8 @@ mening.prototype = {
         $.ajax({
           url:"http://www.exiles.multimediatechnology.be/postvote",
           type:"POST",
-          data: {"vote":"downvote"},
+          data: {"vote":"downvote",
+                 "question_id":parseInt(opinionQuestionsJSON[opinionCounter].opinionquestion_id)},
           success: function(){
             console.log("post success!");
           }
