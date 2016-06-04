@@ -7,7 +7,7 @@
 @section('scripts')
     <link rel="stylesheet" type="text/css" href="/css/uitleg.css">
     <link rel="stylesheet" type="text/css" href="/css/projectinfo.css">
-    <link rel="stylesheet" href="/css/timeline-style.css"> 
+   
 @stop
 @section('content')
 <div class="container uitlegcontainer">
