@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 use App\User;
-use Input;
+use App\Opinion_question;
+use Illuminate\Support\Facades\Input;
 use File;
 
 class ApiController extends Controller
@@ -34,7 +35,23 @@ class ApiController extends Controller
 
     public function postVote()
     {
+        $data = Input::all();
+        
+        $opinionquestion    = Opinion_question::find($data['question_id']);
+        $upvotes            = $opinionquestion->up_vote;
+        $downvotes          = $opinionquestion->down_vote;
 
+        if($data['vote'] == 'upvote')
+        {
+            $upvotes++;
+            $opinionquestion->up_vote = $upvotes;
+        }
+        else
+        {
+            $downvotes++;
+            $opinionquestion->down_vote = $downvotes;
+        }
+
+        $opinionquestion->save();
     }
-
 }

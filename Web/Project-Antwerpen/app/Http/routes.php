@@ -38,7 +38,7 @@ Route::get('/profielfoto', 'UserController@profileimage');
 // Api requests
 Route::get('questions_json', 'ApiController@getQuestions');
 Route::get('opinionquestions_json', 'ApiController@getOpinionQuestions');
-Route::post('postvote', 'ApiController@postVote');
+Route::post('/postvote', 'ApiController@postVote');
 
 // Post requests
 Route::post('/nieuwproject', 'AdminController@store');
