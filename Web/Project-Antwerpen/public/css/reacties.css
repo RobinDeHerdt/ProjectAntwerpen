@@ -60,9 +60,7 @@ hr {
 	display:inline-block;
 	padding:0;
 }
-.reactie {
-	word-break: break-all;
-}
+
 .rating {
 	float:right;
 }

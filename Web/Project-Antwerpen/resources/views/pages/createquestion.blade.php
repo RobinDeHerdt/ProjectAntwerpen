@@ -15,8 +15,9 @@
     </div>
     @endif
     <div class="returnlink">
-      <a href="/profiel#adminpaneel">   Adminpaneel</a>
-      <a href="/overzicht"> Overzicht</a>
+    	<a href="/verwijderquizvraag">   Verwijder quizvragen</a>
+      	<a href="/profiel#adminpaneel">   Adminpaneel</a>
+      	<a href="/overzicht"> Overzicht</a>
     </div>
 		<h1 class="createtitle">Quizvragen </h1>
 		<table class="table">

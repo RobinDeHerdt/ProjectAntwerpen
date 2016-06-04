@@ -127,6 +127,21 @@ h1{
 	right: 0;
 	width: 60%;
 }
+
+#applicationtitle {
+	font-family: AntwerpREG;
+	margin-top: 50px;
+}
+
+.downloadlogo {
+	width: 10%;
+	height: auto;
+}
+
+#downloadbox {
+	margin: 50px 0 50px 0;
+}
+
 .hide{
 	display: none;
 }
