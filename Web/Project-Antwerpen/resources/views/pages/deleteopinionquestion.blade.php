@@ -15,6 +15,7 @@
       </div>
     @endif
     <div class="returnlink">
+      <a href="/nieuwemeningvraag">   Maak meningvragen</a>
       <a href="/profiel#adminpaneel">   Adminpaneel</a>
       <a href="/overzicht"> Overzicht</a>
     </div>

@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\project;
-use App\milestone;
-use App\opinion_question;
-use App\comment;
-use App\rating;
+use App\Project;
+use App\Milestone;
+use App\Opinion_question;
+use App\Comment;
 use Auth;
 use App\Http\Requests;
 use Session;
@@ -24,7 +23,7 @@ class ProjectController extends Controller
     public function info($id)
     {
         $project = Project::find($id);
-        $projectfases = milestone::where('project_id', $id)->get();
+        $projectfases = Milestone::where('project_id', $id)->get();
  
  
         return view('pages.project-uitleg', compact('project', 'projectfases'));
@@ -37,10 +36,8 @@ class ProjectController extends Controller
     }
     public function meningen($id)
     {
-
         $user = Auth::user();
-        $questions = opinion_question::where('project_id', $id)->get();
-
+        $questions = Opinion_question::where('project_id', $id)->get();
 
         return view('pages.project-meningen', compact('questions', 'user' ));
     }

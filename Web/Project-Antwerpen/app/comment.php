@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class comment extends Model
+class Comment extends Model
 {
 	public $primaryKey = 'comment_id';
 
     public function project()
     {
-        return $this->belongsTo('App\project','project_id');
+        return $this->belongsTo('App\Project','project_id');
     }
 
     public function user()

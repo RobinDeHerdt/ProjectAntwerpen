@@ -14,7 +14,7 @@
         <script>
           if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
               document.write('<link  rel="stylesheet" href="/css/mobile-navigation.css">');
-               document.write('<script src="/js/mobilenavigation.js"><\/script>');
+              document.write('<script src="/js/mobilenavigation.js"><\/script>');
           
           }
           </script>

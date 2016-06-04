@@ -152,18 +152,41 @@ let draw = function() {
 }
 }
 
+if(currentQuestion==0){
+  (function($) {
+    $(".prevbutton" ).addClass( "hide" );
+  })(jQuery);
+}
+
+if(graphdata.length-1 == 0 || graphdata.length == 0){
+  (function($) {
+    $(".prevbutton" ).addClass( "hide" );
+    $(".nextbutton" ).addClass( "hide" );
+  })(jQuery);
+}
+
 function next(){
+  $("#noAnswers" ).addClass( "hide" );
   if(currentQuestion<graphdata.length-1){
     currentQuestion++;
     canAnimate = true;
     dataset = [graphdata[currentQuestion].down_vote, graphdata[currentQuestion].up_vote];
     document.getElementById('meningvraag').innerHTML = graphdata[currentQuestion].opinionquestionbody;
   }else{
-    canAnimate = false
+    canAnimate = false;
+  }
+  if(currentQuestion==graphdata.length-1){
+      $(".nextbutton" ).addClass( "hide" );
+  }
+  if(currentQuestion>0){
+    (function($) {
+      $(".prevbutton" ).removeClass( "hide" );
+    })(jQuery);
   }
 }
 
 function prev() {
+    $("#noAnswers" ).addClass( "hide" );
     if(currentQuestion>0)
     {
       currentQuestion--;
@@ -175,6 +198,15 @@ function prev() {
     {
       canAnimate = false;
     }
+    if(currentQuestion==0){
+        $(".prevbutton" ).addClass( "hide" );
+    }
+    if(currentQuestion<graphdata.length-1){
+      (function($) {
+        $(".nextbutton" ).removeClass( "hide" );
+      })(jQuery);
+    }
+
   }
 
 

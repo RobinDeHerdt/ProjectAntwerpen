@@ -112,6 +112,7 @@
                 <h1>Projectnaam</h1>
 
                 <div class="form-group">
+                    <input type="hidden" id="saveName" value="{{old('project_name')}}">
                     <input type="text" name="project_name" id="project_name" class="form-control input-md" placeholder="Projectnaam" required alt="Vul hier je projectnaam in" value="{{$project->project_name}}">
                 </div>
                 <div class="form-group">
@@ -128,28 +129,34 @@
 
                 <div class="form-group">
                     <label class="control-label">Uitleg over het project</label>
+                    <input type="hidden" id="saveInfo" value="{{old('project_info')}}">
                     <textarea class="form-control input-md" rows="5" id="project_info" placeholder="Uitleg over het project" alt="Vul project details in" name="project_info">{{$project->info}}</textarea>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Postcode</label>
+                    <input type="hidden" id="savePostalcode" value="{{old('project_postalcode')}}">
                     <input type="text" name="project_postalcode" id="project_postalcode" class="form-control input-md" placeholder="2000" alt="Vul hier de postcode van de locatie in." value="{{$project->postalcode}}">
                 </div>
                 <div class="form-group">
                     <label class="control-label">Locatie</label>
+                    <input type="hidden" id="saveLocation" value="{{old('project_location')}}">
                     <input type="text" name="project_location" id="project_location" class="form-control input-md" placeholder="Locatie" alt="Vul hier de locatie van het project in." value="{{$project->location}}">
                 </div>
                 <div class="form-group">
                     <label class="control-label">Startdatum</label>
+                    <input type="hidden" id="saveStartdate" value="{{old('project_startdate')}}">
                     <input type="date" name="project_startdate" id="project_startdate" class="form-control input-md" alt="Vul hier de startdatum van het project in." value="{{$project->start_date}}">
                 </div>
 
                 <div class="form-group">
                     <label class="control-label">Einddatum</label>
+                    <input type="hidden" id="saveEnddate" value="{{old('project_enddate')}}">
                     <input type="date" name="project_enddate" id="project_enddate" class="form-control input-md" alt="Vul hier de einddatum van het project in." value="{{$project->end_date}}">
                 </div>
 
                 <div class="form-group">
                     <label class="control-label">Thema</label>
+                    <input type="hidden" id="saveThema" value="{{old('project_thema')}}">
                     <select class="c-select form-control input-md" id="project_thema" name="project_thema" alt="Kies een thema voor dit project" value="{{$project->thema}}">
                         <option value="fa-car"              alt="Mobiliteit">   Mobiliteit   </option>
                         <option value="fa-futbol-o"         alt="Sport">        Sport        </option>
@@ -162,12 +169,12 @@
                         <option value="fa-users"            alt="Sociaal">      Sociaal      </option>
                         <option value="fa-graduation-cap"   alt="Educatie">     Educatie     </option>
                         <option value="fa-music"            alt="Cultuur">      Cultuur      </option>
-
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Projectkleur</label>
+                    <input type="hidden" id="saveColor" value="{{old('project_color')}}">
                     <select class="c-select form-control input-md" id="project_color" name="project_color" alt="Kies een kleur voor dit project" value="{{$project->color}}">
                         <option value="orange"  alt="Oranje">   Oranje  </option>
                         <option value="purple"  alt="Paars">    Paars   </option>
@@ -262,7 +269,7 @@
                 <div class="form-group">
                 <input type="button" ng-click="FaseCon.pushmilestone(milestone.title,milestone.icon,milestone.startdate, milestone.enddate, milestone.milestoneInfo)" value="Projectfase toevoegen" class="btn btn-width btn-success btn-lg"  alt="Voeg projectfase toe">
                </div>
-               </form>
+               
                 <div class="form-group">
                     <input ng-click="FaseCon.MilestoneToJson()" type="button" value="Volgende" class="btn btn-width btn-danger btn-lg" onclick="triggerClick(5);" alt="Volgende knop">
                </div>
@@ -298,56 +305,27 @@
     </div>
     </form>
 </div>
+</div>
 <script type="text/javascript">
-    if('{{old('project_color')}}'){
-        document.getElementById("project_color").value = '{{old('project_color')}}';
-    }
-    else { 
-        document.getElementById("project_color").value = "{{$project->color}}";
-    }
-    if('{{old('project_thema')}}'){
-        document.getElementById("project_thema").value = '{{old('project_thema')}}';
-    }
-    else {
-        document.getElementById("project_thema").value = "{{$project->thema}}";
-    }
-    if('{{old('project_name')}}') {
-        document.getElementById("project_name").value = '{{old('project_name')}}';
-    }
-    else {
-        document.getElementById("project_name").value = "{{$project->project_name}}";
-    }
-    if('{{old('project_info')}}'){
-        document.getElementById("project_info").value = '{{old('project_info')}}';
-    } else
+    if(document.getElementById("saveColor").value)
     {
-        document.getElementById("project_info").value = "{{$project->info}}";
+        document.getElementById("project_color").value = document.getElementById("saveColor").value;
     }
-    if('{{old('project_postalcode')}}'){
-        document.getElementById("project_postalcode").value = '{{old('project_postalcode')}}';
+    else 
+    { 
+        document.getElementById("project_color").value = '{{$project->color}}';
     }
-    else{
-        document.getElementById("project_postalcode").value = "{{$project->postalcode}}";
+
+    if(document.getElementById("saveThema").value)
+    {
+        document.getElementById("project_thema").value = document.getElementById("saveThema").value;
     }
-    if('{{old('project_location')}}'){
-        document.getElementById("project_location").value = '{{old('project_location')}}';
-    }
-    else{
-        document.getElementById("project_location").value = "{{$project->location}}";
-    }
-    if('{{old('project_startdate')}}'){
-        document.getElementById("project_startdate").value = '{{old('project_startdate')}}';
-    }
-    else{
-        document.getElementById("project_startdate").value = "{{$project->start_date}}";
-    }
-    if('{{old('project_enddate')}}'){
-        document.getElementById("project_enddate").value = '{{old('project_enddate')}}';
-    }
-    else{
-        document.getElementById("project_enddate").value = "{{$project->end_date}}";
+    else 
+    {
+        document.getElementById("project_thema").value = "{{$project->thema}}";
     }
 </script>
 <script src="/js/tijdlijn.js"></script>
 <script src="/js/MakeMilestones.js"></script>
+<script src="/js/rememberValuesAfterValidation.js"></script>
 @stop
