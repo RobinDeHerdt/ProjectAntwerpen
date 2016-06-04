@@ -24,11 +24,13 @@ h3
 .info {
     margin-top:50px;
     font-family: Open Sans;
+    padding-bottom:50px;
     
 }
 .fase-text {
     margin-top:50px;
-}    
+}  
+  
 .bg-fase:nth-child(odd) {background-color: #DBDBDB;
     margin-left: -381px;
     margin-right: -381px;
