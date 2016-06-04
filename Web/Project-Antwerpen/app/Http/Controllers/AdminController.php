@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Project;
-use App\Milestone;
-use App\Opinion_question;
+use App\project;
+use App\milestone;
+use App\opinion_question;
 use Session;
-use App\Comment;
-use App\Question;
+use App\comment;
+use App\question;
 
 class AdminController extends Controller
 {

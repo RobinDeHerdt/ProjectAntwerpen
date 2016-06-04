@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Project;
-use App\Milestone;
-use App\Opinion_question;
-use App\Comment;
+use App\project;
+use App\milestone;
+use App\opinion_question;
+use App\comment;
 use Auth;
 use App\Http\Requests;
 use Session;

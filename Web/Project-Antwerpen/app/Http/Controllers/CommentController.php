@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Comment;
-use App\Project;
-use App\User;
+use App\comment;
+use App\project;
+use App\user;
 use Auth;
 use Session;
 

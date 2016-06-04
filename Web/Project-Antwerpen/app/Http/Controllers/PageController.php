@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Auth;
-use App\Project;
+use App\project;
 
 class PageController extends Controller
 {
