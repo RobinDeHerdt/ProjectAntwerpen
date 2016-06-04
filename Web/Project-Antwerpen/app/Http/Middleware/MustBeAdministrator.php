@@ -23,7 +23,7 @@ class MustBeAdministrator
         }
          else
          {
-            abort(404, 'You must be an administrator to access this page. (Vervang deze pagina door een legit errorpagina)');
+            abort(403, '');
          }
 
         
