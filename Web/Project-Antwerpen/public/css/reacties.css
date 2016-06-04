@@ -79,3 +79,9 @@ hr {
 .reactie-error {
 	clear:both;
 }
+@media only screen and (max-width: 720px) {
+  .reactieContainer {
+  	width:100%;
+  }
+  }
+}
