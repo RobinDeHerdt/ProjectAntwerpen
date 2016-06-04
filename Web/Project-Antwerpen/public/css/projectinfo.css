@@ -41,6 +41,10 @@ h3
     margin-top:20px;
 
 }
+.fase-date > h5 {
+    display:inline-block;
+
+}
 .bg-fase {
     position:relative;
     min-height:400px !important;
@@ -71,6 +75,7 @@ h3
     margin-left:15%;
     width: 70%;
     min-height:320px;
+    margin-bottom:35px;
 }
     
 .uitlegcontainer {
@@ -92,3 +97,5 @@ h3
 .top {
     margin-top: 10px;
 }
+
+
