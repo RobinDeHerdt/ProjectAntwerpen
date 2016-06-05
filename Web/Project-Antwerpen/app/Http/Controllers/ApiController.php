@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 use App\User;
-use App\Opinion_question;
+use App\opinion_question;
 use Illuminate\Support\Facades\Input;
 use File;
 
@@ -37,7 +37,7 @@ class ApiController extends Controller
     {
         $data = Input::all();
         
-        $opinionquestion    = Opinion_question::find($data['question_id']);
+        $opinionquestion    = opinion_question::find($data['question_id']);
         $upvotes            = $opinionquestion->up_vote;
         $downvotes          = $opinionquestion->down_vote;
 
