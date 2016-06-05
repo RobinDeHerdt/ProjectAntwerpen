@@ -29,7 +29,7 @@ class AdminController extends Controller
 		$project = project::find($id);
 		$projectid = $project->id;
 
-        $milestones = Milestone::where('project_id', $projectid)->get();
+        $milestones = milestone::where('project_id', $projectid)->get();
 
 		return view('pages.editproject', compact('project', 'milestones'));
 	}
@@ -39,7 +39,7 @@ class AdminController extends Controller
     	$project = project::find($id);
     	$projectid = $project->id;
 
-        $milestones = Milestone::where('project_id', $projectid)->get();
+        $milestones = milestone::where('project_id', $projectid)->get();
         $milestones = json_encode($milestones);
 
     	return view('pages.copyproject', compact('project', 'milestones'));
@@ -91,14 +91,14 @@ class AdminController extends Controller
         $jsonArray = json_decode($request->milestone_json, true);
 
         for ($i = 0; $i < count($jsonArray); $i++) {
-            $milestone = new Milestone;
+            $milestone = new milestone;
 
             $milestone->milestone_title = $jsonArray[$i]['title'];
             $milestone->milestone_info  = $jsonArray[$i]['info'];
             $milestone->milestone_image = $jsonArray[$i]['icon'];
             $milestone->start_date      = $jsonArray[$i]['startdate'];
             $milestone->end_date        = $jsonArray[$i]['enddate'];
-            $milestone->Project()->associate($project);
+            $milestone->project()->associate($project);
             $milestone->save();
         }
 
@@ -155,14 +155,14 @@ class AdminController extends Controller
         $jsonArray = json_decode($request->milestone_json, true);
 
         for ($i = 0; $i < count($jsonArray); $i++) {
-            $milestone = new Milestone;
+            $milestone = new milestone;
 
             $milestone->milestone_title = $jsonArray[$i]['title'];
             $milestone->milestone_info  = $jsonArray[$i]['info'];
             $milestone->milestone_image = $jsonArray[$i]['icon'];
             $milestone->start_date      = $jsonArray[$i]['startdate'];
             $milestone->end_date        = $jsonArray[$i]['enddate'];
-            $milestone->Project()->associate($project);
+            $milestone->project()->associate($project);
             $milestone->save();
         }
 
@@ -209,7 +209,7 @@ class AdminController extends Controller
 
         $project->save();
 
-        $milestones = Milestone::where('project_id', $id)->get();
+        $milestones = milestone::where('project_id', $id)->get();
 
         for ($i = 0; $i < count($milestones); $i++) {
             $milestones[$i]->delete();
@@ -218,14 +218,14 @@ class AdminController extends Controller
         $jsonArray = json_decode($request->milestone_json, true);
         
         for ($i = 0; $i < count($jsonArray); $i++) {
-            $milestone = new Milestone;
+            $milestone = new milestone;
 
             $milestone->milestone_title = $jsonArray[$i]['title'];
             $milestone->milestone_info  = $jsonArray[$i]['info'];
             $milestone->milestone_image = $jsonArray[$i]['icon'];
             $milestone->start_date      = $jsonArray[$i]['startdate'];
             $milestone->end_date        = $jsonArray[$i]['enddate'];
-            $milestone->Project()->associate($project);
+            $milestone->project()->associate($project);
             $milestone->save();
         }
 
@@ -236,25 +236,25 @@ class AdminController extends Controller
 
     public function deleteproject($id)
     {
-        $milestones = Milestone::where('project_id', $id)->get();
+        $milestones = milestone::where('project_id', $id)->get();
 
         for ($i = 0; $i < count($milestones); $i++) {
             $milestones[$i]->delete();
         }
 
-        $comments = Comment::where('project_id', $id)->get();
+        $comments = comment::where('project_id', $id)->get();
 
         for ($i = 0; $i < count($comments); $i++) {
             $comments[$i]->delete();
         }
 
-        $opinionquestions = Opinion_question::where('project_id', $id)->get();
+        $opinionquestions = opinion_question::where('project_id', $id)->get();
 
         for ($i = 0; $i < count($opinionquestions); $i++) {
             $opinionquestions[$i]->delete();
         }
 
-        $project = Project::find($id);
+        $project = project::find($id);
         $project->delete();
 
         Session::flash('projectdeleted', 'Het project is succesvol verwijderd.');
@@ -264,28 +264,28 @@ class AdminController extends Controller
 
     public function deletepage($id)
     {
-        $project = Project::find($id);
+        $project = project::find($id);
 
         return view('pages.deleteproject', compact('project'));
     }
 
     public function createopinionquestion()
     {
-        $projects = Project::orderBy('id', 'asc')->get();
-        $questions = Opinion_question::orderBy('opinionquestion_id', 'asc')->get();
+        $projects = project::orderBy('id', 'asc')->get();
+        $questions = opinion_question::orderBy('opinionquestion_id', 'asc')->get();
 
         return view('pages.createopinionquestion', compact('projects', 'questions'));
     }
 
     public function createquestion()
     {
-        $questions = Question::orderBy('question_id', 'asc')->get();
+        $questions = question::orderBy('question_id', 'asc')->get();
 
         return view('pages.createquestion', compact('questions'));
     }
     public function deleteopinionquestionpage()
     {
-        $projects = Project::orderBy('id', 'asc')->get();
+        $projects = project::orderBy('id', 'asc')->get();
         $questions = Opinion_question::orderBy('opinionquestion_id', 'asc')->get();
 
         return view('pages.deleteopinionquestion', compact('projects', 'questions'));
@@ -293,14 +293,14 @@ class AdminController extends Controller
 
     public function deletequestionpage()
     {
-        $questions = Question::orderBy('question_id', 'asc')->get();
+        $questions = question::orderBy('question_id', 'asc')->get();
 
         return view('pages.deletequestion', compact('questions'));
     }
 
     public function deleteopinionquestion($id)
     {
-      $opinionquestion = Opinion_question::where('opinionquestion_id', $id)->first();
+      $opinionquestion = opinion_question::where('opinionquestion_id', $id)->first();
 
       $opinionquestion->delete();
 
@@ -317,11 +317,11 @@ class AdminController extends Controller
         ]);
 
         $selectedProject = $request->Project_names;
-        $project = Project::find($selectedProject);
+        $project = project::find($selectedProject);
 
-        $opinionquestion = new Opinion_question;
+        $opinionquestion = new opinion_question;
         $opinionquestion->opinionquestionbody = $request->opinionquestionbody;
-        $opinionquestion->Project()->associate($project);
+        $opinionquestion->project()->associate($project);
         $opinionquestion->save();
 
         Session::flash('opinionquestionadded', 'De meningvraag werd succesvol toegevoegd.');
@@ -336,7 +336,7 @@ class AdminController extends Controller
             'correctanswer'      =>   'required',
         ]);
 
-        $question = new Question;
+        $question = new question;
 
         $question->questionbody = $request->questionbody;
         $question->correctanswer = $request->correctanswer;
@@ -350,7 +350,7 @@ class AdminController extends Controller
 
     public function deletequestion($id)
     {
-      $question = Question::where('question_id', $id)->first();
+      $question = question::where('question_id', $id)->first();
 
       $question->delete();
 
