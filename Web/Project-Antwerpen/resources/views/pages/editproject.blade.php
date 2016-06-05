@@ -242,9 +242,10 @@
                 <div class="form-group">
                     <label>Icoontje</label>
                     <select ng-model="milestone.icon" class="c-select form-control input-md" id="milestone_image" name="milestone_image" alt="Kies een icoontje voor deze projectfase" value="{{old('milestone_image')}}">
-                        <option value="/img/cd-icon-movie.svg"     alt="Camera">  Camera  </option>
-                        <option value="/img/cd-icon-location.svg"  alt="locatie"> locatie </option>
-                        <option value="/img/cd-icon-picture.svg"   alt="foto">    foto    </option>
+                        <option value="/img/in_progress.png"   alt="In progress (Tandwiel)">     In progress (Tandwiel)  </option>
+                        <option value="/img/in-progress.png"   alt="In progress (Hamer)">        In progress (Hamer) </option>
+                        <option value="/img/caution.png"       alt="Waarschuwing">               Waarschuwing</option>
+                        <option value="/img/oke.png"           alt=" Voltooid">                  Voltooid</option>
                     </select>
                 </div>
                 <div class="form-group">
