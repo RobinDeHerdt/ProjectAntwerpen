@@ -15,29 +15,29 @@ class ProjectController extends Controller
 {
     public function tijdlijn($id)
     {
-        $project = Project::find($id);
+        $project = project::find($id);
 
         return view('pages.project-tijdlijn', compact('project'));
     }
 
     public function info($id)
     {
-        $project = Project::find($id);
-        $projectfases = Milestone::where('project_id', $id)->get();
+        $project = project::find($id);
+        $projectfases = milestone::where('project_id', $id)->get();
  
  
         return view('pages.project-uitleg', compact('project', 'projectfases'));
     }
     public function kaart($id)
     {
-        $project = Project::find($id);
+        $project = project::find($id);
 
         return view('pages.project-map', compact('project'));
     }
     public function meningen($id)
     {
         $user = Auth::user();
-        $questions = Opinion_question::where('project_id', $id)->get();
+        $questions = opinion_question::where('project_id', $id)->get();
 
         return view('pages.project-meningen', compact('questions', 'user' ));
     }
